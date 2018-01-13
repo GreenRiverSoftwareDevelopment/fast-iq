@@ -8,7 +8,7 @@ The Definition of Done
 -Everyone agrees the code is ready to move to our “finished stage”.
 -When the product owner says the functionality meets the criteria for the product.
 -All testing via manual and automation should be completed.
--Measures of security for the user and application should be completed.
+-Security measures should be completed.
 
 
 Inception Deck
