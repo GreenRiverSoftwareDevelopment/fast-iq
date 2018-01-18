@@ -1,0 +1,24 @@
+{
+    "name": "Kevin Nguyen, Brian Saylor, Sonie Moon/fast-iq",
+    "authors": [
+        {
+            "name": "Kevin Nguyen",
+            "email": "Kevin.Nguyen0509@gmail.com"
+        },
+        {
+            "name": "Brian Saylor",
+            "email": "bsaylor3@mail.greenriver.edu"
+        },
+        {
+            "name": "Sonie Moon",
+            "email": ""
+        }
+    ],
+    "require": {
+        "bcosca/fatfree-core": "dev-master",
+        "phpoffice/phpspreadsheet": "dev-master"
+    },
+    "autoload": {	
+        "classmap": ["model/", "classes/"]    
+    }
+}
