@@ -33,7 +33,7 @@
                     if($usernameCheck == null || $passwordCheck == null){
                         $f3->reroute('/login');
                     }
-                echo $view->render('pages/home.html');
+                echo $view->render('pages/login.html');
     });
 
            
