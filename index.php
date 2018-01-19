@@ -25,15 +25,15 @@
     $f3->set('DEBUG', 3);
 
     
-    $f3->route('GET /', function($f3) {
-                $view = new View;
+    $f3->route('GET /', function($f3)
+    {
 
-                    $usernameCheck = $_SESSION['username'];
-                    $passwordCheck = $_SESSION['password'];
-                    if($usernameCheck == null || $passwordCheck == null){
-                        $f3->reroute('/login');
-                    }
-                echo $view->render('pages/login.php');
+                    //$usernameCheck = $_SESSION['username'];
+                    //$passwordCheck = $_SESSION['password'];
+                    //if($usernameCheck == null || $passwordCheck == null){
+                    //    $f3->reroute('/login');
+                    //}
+                echo Template::instance()->render('pages/login.php');
     });
 
            
