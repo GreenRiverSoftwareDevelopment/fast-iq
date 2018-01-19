@@ -11,13 +11,13 @@
 
     //require("../config_campsambica.php");
 
-    try{
-        //instantiate a database object
-        $dbh = new PDO(DB_DSN, DB_USERNAME, DB_PASSWORD);
-    }
-    catch(PDOException $e){
-        echo $e->getMessage();
-    }
+    //try{
+    //    //instantiate a database object
+    //    $dbh = new PDO(DB_DSN, DB_USERNAME, DB_PASSWORD);
+    //}
+    //catch(PDOException $e){
+    //    echo $e->getMessage();
+    //}
 
     //Create an instance of the Base class
     $f3 = Base::instance();
@@ -33,7 +33,7 @@
                     if($usernameCheck == null || $passwordCheck == null){
                         $f3->reroute('/login');
                     }
-                echo $view->render('pages/login.html');
+                echo $view->render('pages/login.php');
     });
 
            
