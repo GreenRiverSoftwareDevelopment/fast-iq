@@ -4,7 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "cd1575368cdc8d087a80a55ca983e93b",
+    "hash": "6fba6bcbcf9ec12ac601dd73402c223b",
+    "content-hash": "c049e5e0e9327ffd4601974c26d39dba",
     "packages": [
         {
             "name": "bcosca/fatfree-core",
@@ -35,7 +36,7 @@
             ],
             "description": "A powerful yet easy-to-use PHP micro-framework designed to help you build dynamic and robust Web applications - fast!",
             "homepage": "http://fatfreeframework.com/",
-            "time": "2018-01-12T18:47:02+00:00"
+            "time": "2018-01-12 18:47:02"
         }
     ],
     "packages-dev": [],
