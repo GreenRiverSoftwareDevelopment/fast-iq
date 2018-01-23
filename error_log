@@ -17,4 +17,14 @@ Stack trace:
   thrown in /home/fastiqgr/public_html/fast-iq/index.php on line 23
 =======
 [21-Jan-2018 23:22:18 America/Chicago] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/bsaylor/public_html/485/fast-iq/index.php on line 38
+<<<<<<< HEAD
+[23-Jan-2018 02:34:20 America/Chicago] Unable to open pages/category_page.php
+[23-Jan-2018 02:34:20 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:2198] Base->error()
+[23-Jan-2018 02:34:20 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:2998] user_error()
+[23-Jan-2018 02:34:20 America/Chicago] [485/fast-iq/index.php:44] Preview->render()
+[23-Jan-2018 02:34:20 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1814] call_user_func_array()
+[23-Jan-2018 02:34:20 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1635] Base->call()
+[23-Jan-2018 02:34:20 America/Chicago] [485/fast-iq/index.php:63] Base->run()
+=======
 >>>>>>> ff9ca6ed93e3f29aafec1988dc0af178de21657d
+>>>>>>> ff3d120aa398f49f921e30d6b9910351bb22c12e

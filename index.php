@@ -2,7 +2,7 @@
 
     /*
     Author: Brian, Kevin, Sonie
-    017/16/2018
+    01/16/2018
     handles routing using fat free framework*/
 
     //Require the autoload file
@@ -37,6 +37,21 @@
                     
                 echo $view->render('pages/login.php');
                 //echo Template::instance()->render('pages/login.php');
+    });
+    
+    $f3->route('GET /category', function($f3)
+    {
+        echo Template::instance()->render('pages/category_page.html');
+    });
+    
+    $f3->route('GET /exercises', function($f3)
+    {
+        echo Template::instance()->render('pages/exercise_page.html');
+    });
+    
+    $f3->route('GET /units', function($f3)
+    {
+        echo Template::instance()->render('pages/unit_page.html');
     });
 
            
