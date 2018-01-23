@@ -1,5 +1,6 @@
 [18-Jan-2018 19:53:05 America/Chicago] Fatal error: Use of undefined constant DB_PASSWORD - assumed 'DB_PASSWORD'
 [18-Jan-2018 19:53:05 America/Chicago] [485/fast-iq/index.php:16] 
+<<<<<<< HEAD
 [21-Jan-2018 06:21:25 UTC] PHP Warning:  include(/home/fastiqgr/public_html/fast-iq/vendor/composer/../bcosca/fatfree-core/base.php): failed to open stream: No such file or directory in /home/fastiqgr/public_html/fast-iq/vendor/composer/ClassLoader.php on line 444
 [21-Jan-2018 06:21:25 UTC] PHP Warning:  include(/home/fastiqgr/public_html/fast-iq/vendor/composer/../bcosca/fatfree-core/base.php): failed to open stream: No such file or directory in /home/fastiqgr/public_html/fast-iq/vendor/composer/ClassLoader.php on line 444
 [21-Jan-2018 06:21:25 UTC] PHP Warning:  include(): Failed opening '/home/fastiqgr/public_html/fast-iq/vendor/composer/../bcosca/fatfree-core/base.php' for inclusion (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/fastiqgr/public_html/fast-iq/vendor/composer/ClassLoader.php on line 444
@@ -14,3 +15,6 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in /home/fastiqgr/public_html/fast-iq/index.php on line 23
+=======
+[21-Jan-2018 23:22:18 America/Chicago] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/bsaylor/public_html/485/fast-iq/index.php on line 38
+>>>>>>> ff9ca6ed93e3f29aafec1988dc0af178de21657d

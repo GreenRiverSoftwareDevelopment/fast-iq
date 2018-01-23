@@ -33,7 +33,10 @@
                     //if($usernameCheck == null || $passwordCheck == null){
                     //    $f3->reroute('/login');
                     //}
-                echo Template::instance()->render('pages/login.php');
+                    $view = new View;
+                    
+                echo $view->render('pages/login.php');
+                //echo Template::instance()->render('pages/login.php');
     });
 
            
