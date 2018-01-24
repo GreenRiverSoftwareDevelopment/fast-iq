@@ -9,15 +9,17 @@
     require_once('vendor/autoload.php');
     session_start();
 
-    //require("../config_campsambica.php");
-
-    //try{
-    //    //instantiate a database object
-    //    $dbh = new PDO(DB_DSN, DB_USERNAME, DB_PASSWORD);
-    //}
-    //catch(PDOException $e){
-    //    echo $e->getMessage();
-    //}
+    require("../config_fast-iq.php");
+    
+    try
+    {
+        //instantiate a database object
+        $dbh = new PDO(DB_DSN, DB_USERNAME, DB_PASSWORD);
+    }
+    catch(PDOException $e)
+    {
+        echo $e->getMessage();
+    }
 
     //Create an instance of the Base class
     $f3 = Base::instance();

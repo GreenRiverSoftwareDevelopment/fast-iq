@@ -28,3 +28,6 @@ Stack trace:
 =======
 >>>>>>> ff9ca6ed93e3f29aafec1988dc0af178de21657d
 >>>>>>> ff3d120aa398f49f921e30d6b9910351bb22c12e
+[24-Jan-2018 16:37:32 America/Chicago] PHP Warning:  require(../config_fast-iq.php): failed to open stream: No such file or directory in /home/bsaylor/public_html/485/fast-iq/index.php on line 12
+[24-Jan-2018 16:37:32 America/Chicago] PHP Warning:  require(../config_fast-iq.php): failed to open stream: No such file or directory in /home/bsaylor/public_html/485/fast-iq/index.php on line 12
+[24-Jan-2018 16:37:32 America/Chicago] PHP Fatal error:  require(): Failed opening required '../config_fast-iq.php' (include_path='.:/opt/php54/lib/php') in /home/bsaylor/public_html/485/fast-iq/index.php on line 12
