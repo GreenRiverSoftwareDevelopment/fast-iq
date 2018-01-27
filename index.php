@@ -19,30 +19,35 @@
     catch(PDOException $e)
     {
         echo $e->getMessage();
+        echo "PDOEXCEPTION WAS CAUGHT HERE!";
     }
 
     //Create an instance of the Base class
     $f3 = Base::instance();
 
     $f3->set('DEBUG', 3);
+    $categoryDB = new CategoryDB();
+    $unitDB = new UnitDB();
+    $exerciseDB = new ExerciseDB();
 
     
     $f3->route('GET /', function($f3)
     {
 
-                    //$usernameCheck = $_SESSION['username'];
-                    //$passwordCheck = $_SESSION['password'];
-                    //if($usernameCheck == null || $passwordCheck == null){
-                    //    $f3->reroute('/login');
-                    //}
-                    $view = new View;
+        //$usernameCheck = $_SESSION['username'];
+        //$passwordCheck = $_SESSION['password'];
+        //if($usernameCheck == null || $passwordCheck == null){
+        //    $f3->reroute('/login');
+        //}
+        $view = new View;
                     
-                echo $view->render('pages/login.php');
-                //echo Template::instance()->render('pages/login.php');
+        echo $view->render('pages/login.php');
     });
     
     $f3->route('GET /category', function($f3)
     {
+        $categories =  $GLOBALS['categoryDB']->allCategories();
+        $f3->set('categories', $categories);
         echo Template::instance()->render('pages/category_page.html');
     });
     

@@ -12,7 +12,7 @@
     PRIMARY KEY(exercise_id)
 );*/
 
-    class CategoryDB
+    class ExerciseDB
     {
         private $_pdo;
         

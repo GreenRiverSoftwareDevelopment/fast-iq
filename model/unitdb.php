@@ -8,7 +8,7 @@
     PRIMARY KEY(unit_id)
 );*/
 
-    class UnitsDB
+    class UnitDB
     {
         private $_pdo;
         

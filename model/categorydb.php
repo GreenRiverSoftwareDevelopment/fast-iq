@@ -34,8 +34,7 @@
         }
         
          
-        //CREATE
-         
+        
         /**
          * Adds a member to the collection of activities in the db.
          *
@@ -83,22 +82,22 @@
          
         //READ
         /**
-         * Returns all activities in the database collection.
+         * Returns all categories in the database collection.
          *
          * @access public
          *
-         * @return an associative array of activities indexed by id
+         * @return an associative array of categories indexed by id
          */
-        function allActivities()
+        function allCategories()
         {
-            $select = 'SELECT activity_id, activity, camper_limit, count FROM activities ORDER BY activity';
+            $select = 'SELECT category_id, category_name, category_image FROM categories ORDER BY category_name';
             $results = $this->_pdo->query($select);
              
             $resultsArray = array();
              
             //map each activity id to a row of data for that activity
             while ($row = $results->fetch(PDO::FETCH_ASSOC)) {
-                $resultsArray[$row['activity_id']] = $row;
+                $resultsArray[$row['category_id']] = $row;
             }
              
             return $resultsArray;
