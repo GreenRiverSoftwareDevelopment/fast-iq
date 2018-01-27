@@ -33,36 +33,16 @@
                 </div>
             </nav>
             
+            <?php foreach (($categories?:[]) as $category): ?>
+                
+            <?php endforeach; ?>
             <br>
             <div class="row">
                 <div class="col-sm-2"></div>
-                <div class="col-sm-8"><button type="button" class="btn btn-primary btn-lg btn-block">Mechanical</button></div>
+                <div class="col-sm-8"><button type="button" class="btn btn-primary btn-lg btn-block"><?= ($category['category_name']) ?></button></div>
                 <div class="col-sm-2"></div>
             </div>
             <br>
-            <div class="row">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-8"><button type="button" class="btn btn-primary btn-lg btn-block">Pneumatics</button></div>
-                <div class="col-sm-2"></div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-8"><button type="button" class="btn btn-primary btn-lg btn-block">Mass</button></div>
-                <div class="col-sm-2"></div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-8"><button type="button" class="btn btn-primary btn-lg btn-block">Electrical</button></div>
-                <div class="col-sm-2"></div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-8"><button type="button" class="btn btn-primary btn-lg btn-block">Hydraulics</button></div>
-                <div class="col-sm-2"></div>
-            </div>
             
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

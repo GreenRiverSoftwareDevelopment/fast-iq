@@ -19,7 +19,6 @@
     catch(PDOException $e)
     {
         echo $e->getMessage();
-        echo "PDOEXCEPTION WAS CAUGHT HERE!";
     }
 
     //Create an instance of the Base class
@@ -46,8 +45,8 @@
     
     $f3->route('GET /category', function($f3)
     {
-        $categories =  $GLOBALS['categoryDB']->allCategories();
-        $f3->set('categories', $categories);
+        //$categories =  $GLOBALS['categoryDB']->allCategories();
+        //$f3->set('categories', $categories);
         echo Template::instance()->render('pages/category_page.html');
     });
     

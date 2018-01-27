@@ -19,7 +19,7 @@
         function __construct()
         {
             //Require configuration file
-            require_once("../config_fast-iq.php");
+            require("../config_fast-iq.php");
             //require_once("../../../config.php");
             
             try {
@@ -33,7 +33,7 @@
                 $this->_pdo->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
             }
             catch (PDOException $e) {
-                die( "Error!: " . $e->getMessage());
+                die( " Exercise Error!: " . $e->getMessage());
             }
         }
         
