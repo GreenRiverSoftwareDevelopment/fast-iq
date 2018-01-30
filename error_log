@@ -197,3 +197,8 @@ Stack trace:
 >>>>>>> 028e9ec5ccbabbeb11f860c1228d75eed01f30a9
 [29-Jan-2018 21:16:04 America/Chicago] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/knguyen/public_html/fast-iq/vendor/composer/ClassLoader.php on line 382
 [29-Jan-2018 22:14:14 America/Chicago] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/knguyen/public_html/fast-iq/vendor/composer/ClassLoader.php on line 382
+[30-Jan-2018 04:46:33 UTC] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/fastiqgr/public_html/fast-iq/vendor/composer/ClassLoader.php on line 382
+[30-Jan-2018 04:46:35 UTC] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/fastiqgr/public_html/fast-iq/vendor/composer/ClassLoader.php on line 382
+[30-Jan-2018 04:50:53 UTC] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/fastiqgr/public_html/fast-iq/vendor/composer/ClassLoader.php on line 382
+[30-Jan-2018 04:50:54 UTC] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/fastiqgr/public_html/fast-iq/vendor/composer/ClassLoader.php on line 382
+[30-Jan-2018 04:50:55 UTC] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/fastiqgr/public_html/fast-iq/vendor/composer/ClassLoader.php on line 382
