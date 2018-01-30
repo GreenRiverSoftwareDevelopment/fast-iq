@@ -42,7 +42,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         
-                            <form action="./category" method="post">
+                            <!--<form action="./category" method="post">-->
                                 <b><h3 id="signUpHeading">Log In </h3></b>
                                 <p id="wrongPasswordOrUsername">Wrong password or username.</p>
                                 <p class="usernameBlank" id="wrongPasswordOrUsername">Username can't be blank</p>
@@ -53,7 +53,7 @@
                                 <input type="password" id="password" name="password" placeholder="Password">
                                 <!-- <a href="#" id="forgotPassword">Forgot your password?</a> -->
                                 <a href="./category"><button type="submit" class="btn btn-primary">Submit</button></a>
-                            </form>
+                            <!--</form>-->
                         
                     </div>
                 </div>
