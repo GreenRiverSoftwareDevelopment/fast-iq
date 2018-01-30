@@ -25,6 +25,7 @@
     $f3 = Base::instance();
 
     $f3->set('DEBUG', 3);
+    
     $categoryDB = new CategoryDB();
     $unitDB = new UnitDB();
     $exerciseDB = new ExerciseDB();
@@ -54,7 +55,7 @@
     {
         echo Template::instance()->render('pages/exercise_page.html');
     });
-    
+     
     $f3->route('GET /units', function($f3)
     {
         echo Template::instance()->render('pages/unit_page.html');
