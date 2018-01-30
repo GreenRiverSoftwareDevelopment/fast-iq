@@ -379,9 +379,15 @@ class ClassLoader
                 $subPath = substr($subPath, 0, $lastPos);
                 $search = $subPath.'\\';
                 if (isset($this->prefixDirsPsr4[$search])) {
+<<<<<<< HEAD
+                    foreach ($this->prefixDirsPsr4[$search] as $dir) {
+                        $length = $this->prefixLengthsPsr4[$first][$search];
+                        if (file_exists($file = $dir . DIRECTORY_SEPARATOR . substr($logicalPathPsr4, $length))) {
+=======
                     $pathEnd = DIRECTORY_SEPARATOR . substr($logicalPathPsr4, $lastPos + 1);
                     foreach ($this->prefixDirsPsr4[$search] as $dir) {
                         if (file_exists($file = $dir . $pathEnd)) {
+>>>>>>> 028e9ec5ccbabbeb11f860c1228d75eed01f30a9
                             return $file;
                         }
                     }
