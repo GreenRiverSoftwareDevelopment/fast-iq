@@ -28,6 +28,7 @@ Stack trace:
 =======
 >>>>>>> ff9ca6ed93e3f29aafec1988dc0af178de21657d
 >>>>>>> ff3d120aa398f49f921e30d6b9910351bb22c12e
+<<<<<<< HEAD
 [23-Jan-2018 23:39:48 America/Chicago] PHP Warning:  include(/home/knguyen/public_html/fast-iq/vendor/bcosca/fatfree-core/base.php): failed to open stream: No such file or directory in /home/knguyen/public_html/fast-iq/vendor/composer/ClassLoader.php on line 412
 [23-Jan-2018 23:39:48 America/Chicago] PHP Warning:  include(): Failed opening '/home/knguyen/public_html/fast-iq/vendor/bcosca/fatfree-core/base.php' for inclusion (include_path='.:/opt/php54/lib/php') in /home/knguyen/public_html/fast-iq/vendor/composer/ClassLoader.php on line 412
 [23-Jan-2018 23:39:48 America/Chicago] PHP Fatal error:  Class 'Base' not found in /home/knguyen/public_html/fast-iq/index.php on line 23
@@ -163,3 +164,34 @@ Stack trace:
 [29-Jan-2018 21:11:37 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:1814] call_user_func_array()
 [29-Jan-2018 21:11:37 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:1635] Base->call()
 [29-Jan-2018 21:11:37 America/Chicago] [fast-iq/index.php:68] Base->run()
+=======
+[24-Jan-2018 16:37:32 America/Chicago] PHP Warning:  require(../config_fast-iq.php): failed to open stream: No such file or directory in /home/bsaylor/public_html/485/fast-iq/index.php on line 12
+[24-Jan-2018 16:37:32 America/Chicago] PHP Warning:  require(../config_fast-iq.php): failed to open stream: No such file or directory in /home/bsaylor/public_html/485/fast-iq/index.php on line 12
+[24-Jan-2018 16:37:32 America/Chicago] PHP Fatal error:  require(): Failed opening required '../config_fast-iq.php' (include_path='.:/opt/php54/lib/php') in /home/bsaylor/public_html/485/fast-iq/index.php on line 12
+[26-Jan-2018 18:07:11 America/Chicago] PHP Warning:  require(/config_fast-iq.php): failed to open stream: No such file or directory in /home/bsaylor/public_html/485/fast-iq/index.php on line 12
+[26-Jan-2018 18:07:11 America/Chicago] PHP Fatal error:  require(): Failed opening required '/config_fast-iq.php' (include_path='.:/opt/php54/lib/php') in /home/bsaylor/public_html/485/fast-iq/index.php on line 12
+[26-Jan-2018 18:07:22 America/Chicago] PHP Warning:  require(config_fast-iq.php): failed to open stream: No such file or directory in /home/bsaylor/public_html/485/fast-iq/index.php on line 12
+[26-Jan-2018 18:07:22 America/Chicago] PHP Warning:  require(config_fast-iq.php): failed to open stream: No such file or directory in /home/bsaylor/public_html/485/fast-iq/index.php on line 12
+[26-Jan-2018 18:07:22 America/Chicago] PHP Fatal error:  require(): Failed opening required 'config_fast-iq.php' (include_path='.:/opt/php54/lib/php') in /home/bsaylor/public_html/485/fast-iq/index.php on line 12
+[26-Jan-2018 18:14:27 America/Chicago] PHP Fatal error:  Call to a member function allCategories() on a non-object in /home/bsaylor/public_html/485/fast-iq/index.php on line 46
+[26-Jan-2018 18:14:27 America/Chicago] Fatal error: Call to a member function allCategories() on a non-object
+[26-Jan-2018 18:14:27 America/Chicago] [485/fast-iq/index.php:46] 
+[26-Jan-2018 18:15:58 America/Chicago] PHP Fatal error:  Class 'CategoryDB' not found in /home/bsaylor/public_html/485/fast-iq/index.php on line 29
+[26-Jan-2018 18:15:58 America/Chicago] Fatal error: Class 'CategoryDB' not found
+[26-Jan-2018 18:15:58 America/Chicago] [485/fast-iq/index.php:29] 
+[26-Jan-2018 18:17:24 America/Chicago] PHP Fatal error:  Class 'CategoryDB' not found in /home/bsaylor/public_html/485/fast-iq/index.php on line 29
+[26-Jan-2018 18:17:24 America/Chicago] Fatal error: Class 'CategoryDB' not found
+[26-Jan-2018 18:17:24 America/Chicago] [485/fast-iq/index.php:29] 
+[26-Jan-2018 18:17:55 America/Chicago] PHP Fatal error:  Class 'CategoryDB' not found in /home/bsaylor/public_html/485/fast-iq/index.php on line 29
+[26-Jan-2018 18:17:55 America/Chicago] Fatal error: Class 'CategoryDB' not found
+[26-Jan-2018 18:17:55 America/Chicago] [485/fast-iq/index.php:29] 
+[26-Jan-2018 18:17:56 America/Chicago] PHP Fatal error:  Class 'CategoryDB' not found in /home/bsaylor/public_html/485/fast-iq/index.php on line 29
+[26-Jan-2018 18:17:56 America/Chicago] Fatal error: Class 'CategoryDB' not found
+[26-Jan-2018 18:17:56 America/Chicago] [485/fast-iq/index.php:29] 
+[26-Jan-2018 18:17:57 America/Chicago] PHP Fatal error:  Class 'CategoryDB' not found in /home/bsaylor/public_html/485/fast-iq/index.php on line 29
+[26-Jan-2018 18:17:57 America/Chicago] Fatal error: Class 'CategoryDB' not found
+[26-Jan-2018 18:17:57 America/Chicago] [485/fast-iq/index.php:29] 
+[26-Jan-2018 18:20:37 America/Chicago] PHP Fatal error:  Class 'CategoryDB' not found in /home/bsaylor/public_html/485/fast-iq/index.php on line 29
+[26-Jan-2018 18:20:37 America/Chicago] Fatal error: Class 'CategoryDB' not found
+[26-Jan-2018 18:20:37 America/Chicago] [485/fast-iq/index.php:29] 
+>>>>>>> 028e9ec5ccbabbeb11f860c1228d75eed01f30a9
