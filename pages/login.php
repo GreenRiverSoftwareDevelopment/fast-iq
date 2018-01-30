@@ -52,7 +52,7 @@
                                 <input type="text" id="username" name="username" placeholder="Username">
                                 <input type="password" id="password" name="password" placeholder="Password">
                                 <!-- <a href="#" id="forgotPassword">Forgot your password?</a> -->
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <a href="./category"><button type="submit" class="btn btn-primary">Submit</button></a>
                             </form>
                         
                     </div>
