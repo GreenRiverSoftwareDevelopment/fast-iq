@@ -42,7 +42,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         
-                            <form action="./loginPost" method="post">
+                            <form action="./category" method="post">
                                 <b><h3 id="signUpHeading">Log In </h3></b>
                                 <p id="wrongPasswordOrUsername">Wrong password or username.</p>
                                 <p class="usernameBlank" id="wrongPasswordOrUsername">Username can't be blank</p>
