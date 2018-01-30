@@ -53,6 +53,11 @@
     {
         echo Template::instance()->render('pages/unit_page.html');
     });
+    
+        $f3->route('GET /login', function($f3)
+    {
+        echo Template::instance()->render('pages/login.html');
+    });
 
            
     require("./indexRequire/brian.php");
