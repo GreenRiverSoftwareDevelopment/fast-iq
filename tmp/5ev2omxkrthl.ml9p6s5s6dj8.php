@@ -20,10 +20,10 @@
                       <a class="nav-link" href="./"><h3>Home</h3></a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="./category"><h3>Category</h3></a>
+                      <a class="nav-link active" href="./category"><h3>Category</h3></a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link active" href="./units"><h3>Unit</h3></a>
+                      <a class="nav-link" href="./units"><h3>Unit</h3></a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="./exercises"><h3>Exercises</h3></a>
@@ -32,14 +32,14 @@
             </nav>
             
             <?php foreach (($categories?:[]) as $category): ?>
-                <br>
-                    <div class="row">
-                        <div class="col-sm-2"></div>
-                        <div class="col-sm-8"><a class="btn btn-primary btn-lg btn-block" href="./exerciseSummary" role="button"><h4><?= ($category['category_name']) ?></h4></a></div>
-                        <div class="col-sm-2"></div>
-                    </div>
+            <br>
+                <div class="row">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-8"><a class="btn btn-primary btn-lg btn-block" href="./units/<?= ($category['category_id']) ?>" role="button"><h4><?= ($category['category_name']) ?></h4></a></div>
+                    <div class="col-sm-2"></div>
+                </div>
             <?php endforeach; ?>
-                <br> 
+            <br> 
             
             
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

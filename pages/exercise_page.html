@@ -31,12 +31,14 @@
                 </ul>
             </nav>
             
+            <repeat group="{{ @exercises }}" value="{{ @exercise }}">
             <br>
-            <div class="row">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-8"><a class="btn btn-primary btn-lg btn-block" href="./exerciseSummary" role="button"><h4>Exercise 1</h4></a></div>
-                <div class="col-sm-2"></div>
-            </div>
+                <div class="row">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-8"><a class="btn btn-primary btn-lg btn-block" href="./exerciseSummary" role="button"><h4>{{ @exercise.exercise_name }}</h4></a></div>
+                    <div class="col-sm-2"></div>
+                </div>
+            </repeat>
             <br>
             
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

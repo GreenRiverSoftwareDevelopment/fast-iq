@@ -79,7 +79,7 @@
         {
 
             $select = "SELECT unit_id, category_id, unit_name
-            FROM units WHERE category_id = '" . $category_id . "' ORDER BY unit_name";
+            FROM units WHERE category_id = $category_id ORDER BY unit_name";
              
             $results = $this->_pdo->query($select);
              

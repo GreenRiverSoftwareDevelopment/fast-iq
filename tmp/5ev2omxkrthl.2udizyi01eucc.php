@@ -31,12 +31,14 @@
                 </ul>
             </nav>
             
+            <?php foreach (($units?:[]) as $unit): ?>
             <br>
-            <div class="row">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-8"><a class="btn btn-primary btn-lg btn-block" href="./exerciseSummary" role="button"><h4>Unit 1</h4></a></div>
-                <div class="col-sm-2"></div>
-            </div>
+                <div class="row">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-8"><a class="btn btn-primary btn-lg btn-block" href="./exerciseSummary" role="button"><h4><?= ($unit['unit_name']) ?></h4></a></div>
+                    <div class="col-sm-2"></div>
+                </div>
+            <?php endforeach; ?>
             <br>
             
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

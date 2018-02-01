@@ -22,16 +22,16 @@
             <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
                 <ul class="nav nav-pills nav-fill">
                     <li class="nav-item">
-                      <a class="nav-link" href="./">Home</a>
+                      <a class="nav-link" href="./"><h3>Home</h3></a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="./category">Category</a>
+                      <a class="nav-link" href="./category"><h3>Category</h3></a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="./units">Unit</a>
+                      <a class="nav-link" href="./units"><h3>Unit</h3></a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link active" href="./exercises">Exercises</a>
+                      <a class="nav-link" href="./exercises"><h3>Exercises</h3></a>
                     </li>
                 </ul>
             </nav>
