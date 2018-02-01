@@ -25,6 +25,8 @@
                 </ul>
             </nav>
             
+            <h1 class="display-2 text-center">Categories</h1>
+            
             <?php foreach (($categories?:[]) as $category): ?>
             <br>
                 <div class="row">

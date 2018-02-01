@@ -676,3 +676,6 @@ Stack trace:
 [31-Jan-2018 23:09:18 America/Chicago] HTTP 404 (GET /images/loginBackground.jpg)
 [31-Jan-2018 23:09:18 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1668] Base->error()
 [31-Jan-2018 23:09:18 America/Chicago] [485/fast-iq/index.php:74] Base->run()
+[31-Jan-2018 23:15:58 America/Chicago] HTTP 404 (POST /loginPost)
+[31-Jan-2018 23:15:58 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1668] Base->error()
+[31-Jan-2018 23:15:58 America/Chicago] [485/fast-iq/index.php:74] Base->run()
