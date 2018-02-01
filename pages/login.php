@@ -27,16 +27,6 @@
     
     
         <body>
-            <nav class="navbar navbar-default" id="nav">
-                <div class="container-fluid">
-                    <div class="navbar-brand">
-                        <p>Fast-IQ </p>
-                    </div>
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="./login">Please login to get started</a></li>
-                    </ul>
-                </div>
-            </nav>
             
             <div class="container panel panel-default" id="loginSection">
                 <div class="row">
