@@ -35,6 +35,17 @@
         
         /**
          * Adds a exercise to the collection of exercises in the db.
+         * INSERT INTO `units` (`category_id`, `unit_name`) VALUES
+            (1, 'Mass 101'),
+            (1, 'Mass over 9000'),
+            (2, 'Electronics: How do they work?'),
+            (2, '+ to + right?'),
+            (3, 'What is Pneumatics?'),
+            (3, 'Ok, but what is Pneumatics'),
+            (4, 'Hydraulics, put it... put it on my car'),
+            (4, 'Hydraulic toilets and you'),
+            (5, 'Mechanical is everything'),
+            (5, 'Mechanical 485');
          */
         function addUnit($id, $unit_name)
         {
@@ -79,7 +90,7 @@
         {
 
             $select = "SELECT unit_id, category_id, unit_name
-            FROM units WHERE category_id = $category_id ORDER BY unit_name";
+            FROM units WHERE category_id = ".$category_id." ORDER BY unit_name";
              
             $results = $this->_pdo->query($select);
              

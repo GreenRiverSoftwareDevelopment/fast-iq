@@ -95,7 +95,7 @@
         {
 
             $select = "SELECT exercise_id, unit_id, exercise_name
-            FROM exercises WHERE unit_id = ' . $unit_id . ' ORDER BY exercise_name";
+            FROM exercises WHERE unit_id = " . $unit_id . " ORDER BY exercise_name";
              
             $results = $this->_pdo->query($select);
              
