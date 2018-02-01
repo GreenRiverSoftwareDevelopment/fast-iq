@@ -22,16 +22,16 @@
             <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
                 <ul class="nav nav-pills nav-fill">
                     <li class="nav-item">
-                      <a class="nav-link" href="./">Home</a>
+                      <a class="nav-link" href="./"><h3>Home</h3></a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="./category">Category</a>
+                      <a class="nav-link" href="./category"><h3>Category</h3></a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link active" href="./units">Unit</a>
+                      <a class="nav-link active" href="./units"><h3>Unit</h3></a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="./exercises">Exercises</a>
+                      <a class="nav-link" href="./exercises"><h3>Exercises</h3></a>
                     </li>
                 </ul>
             </nav>
@@ -39,7 +39,7 @@
             <br>
             <div class="row">
                 <div class="col-sm-2"></div>
-                <div class="col-sm-8"><a class="btn btn-primary btn-lg btn-block" href="./exerciseSummary">Unit 1</a></div>
+                <div class="col-sm-8"><a class="btn btn-primary btn-lg btn-block" href="./exerciseSummary" role="button"><h4>Unit 1</h4></a></div>
                 <div class="col-sm-2"></div>
             </div>
             <br>
