@@ -40,7 +40,7 @@
                 <br>
                     <div class="row">
                         <div class="col-sm-2"></div>
-                        <div class="col-sm-8"><a type="button" class="btn btn-primary btn-lg btn-block" href="./exerciseSummary"><?= ($category['category_name']) ?></a></div>
+                        <div class="col-sm-8"><a class="btn btn-primary btn-lg btn-block" href="./exerciseSummary"><?= ($category['category_name']) ?></a></div>
                         <div class="col-sm-2"></div>
                     </div>
             <?php endforeach; ?>

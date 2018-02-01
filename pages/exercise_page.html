@@ -58,23 +58,6 @@
                 <div class="col-sm-2"></div>
             </div>
             <br>
-            <div class="row">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-8"><button type="button" class="btn btn-primary btn-lg btn-block">Exercise 2</button></div>
-                <div class="col-sm-2"></div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-8"><button type="button" class="btn btn-primary btn-lg btn-block">Exercise 3</button></div>
-                <div class="col-sm-2"></div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-8"><button type="button" class="btn btn-primary btn-lg btn-block">Exercise 4</button></div>
-                <div class="col-sm-2"></div>
-            </div>
             
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
