@@ -286,3 +286,6 @@ Stack trace:
 [31-Jan-2018 22:06:30 America/Chicago] HTTP 404 (POST /loginPost)
 [31-Jan-2018 22:06:30 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1668] Base->error()
 [31-Jan-2018 22:06:30 America/Chicago] [485/fast-iq/index.php:70] Base->run()
+[31-Jan-2018 22:11:36 America/Chicago] HTTP 404 (GET /css/nav.css)
+[31-Jan-2018 22:11:36 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1668] Base->error()
+[31-Jan-2018 22:11:36 America/Chicago] [485/fast-iq/index.php:70] Base->run()
