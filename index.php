@@ -61,6 +61,8 @@
     $f3->route('GET /exercises', function($f3)
     {
         $exercises =  $GLOBALS['exerciseDB']->exercisesByUnit($_SESSION['unitID']);
+        
+        $f3->set('unitID', $_SESSION['unitID']);
         $f3->set('exercises', $exercises);
         echo Template::instance()->render('pages/exercise_page.html');
     });

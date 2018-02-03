@@ -23,13 +23,12 @@
                       <a class="nav-link" href="./category"><h3>Category</h3></a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="./units"><h3>Unit</h3></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link active" href="./exercises"><h3>Exercises</h3></a>
+                      <a class="nav-link" href="./units/<?= ($unitID) ?>"><h3>Go Back</h3></a>
                     </li>
                 </ul>
             </nav>
+            
+            <h1 class="display-2 text-center">Exercises</h1>
             
             <?php foreach (($exercises?:[]) as $exercise): ?>
             <br>
