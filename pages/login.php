@@ -27,22 +27,12 @@
     
     
         <body>
-            <nav class="navbar navbar-default" id="nav">
-                <div class="container-fluid">
-                    <div class="navbar-brand">
-                        <p>Fast-IQ </p>
-                    </div>
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="./login">Please login to get started</a></li>
-                    </ul>
-                </div>
-            </nav>
             
             <div class="container panel panel-default" id="loginSection">
                 <div class="row">
                     <div class="col-sm-12">
                         
-                            <form action="./loginPost" method="post">
+                            <!--<form action="./category" method="post">-->
                                 <b><h3 id="signUpHeading">Log In </h3></b>
                                 <p id="wrongPasswordOrUsername">Wrong password or username.</p>
                                 <p class="usernameBlank" id="wrongPasswordOrUsername">Username can't be blank</p>
@@ -52,8 +42,8 @@
                                 <input type="text" id="username" name="username" placeholder="Username">
                                 <input type="password" id="password" name="password" placeholder="Password">
                                 <!-- <a href="#" id="forgotPassword">Forgot your password?</a> -->
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </form>
+                                <a href="./category"><button type="submit" class="btn btn-primary">Submit</button></a>
+                            <!--</form>-->
                         
                     </div>
                 </div>
