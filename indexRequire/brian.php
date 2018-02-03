@@ -10,3 +10,8 @@
             $_SESSION['categoryID'] = $params['id'];
         $f3->reroute('/units');
     });
+    $f3->route('GET /exerciseSummary/@id', function($f3, $params)
+    {
+            $_SESSION['exerciseID'] = $params['id'];
+        $f3->reroute('/exerciseSummary');
+    });

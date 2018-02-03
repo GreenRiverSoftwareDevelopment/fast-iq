@@ -14,6 +14,7 @@
                 <![endif]-->
         </head>
         <body>
+            <div>
             <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
                 <ul class="nav nav-pills nav-fill">
                     <li class="nav-item">
@@ -23,7 +24,10 @@
                       <a class="nav-link active" href="./category"><h3>Category</h3></a>
                     </li>
                 </ul>
+                <button class="btn btn-outline-success" type="submit"><h3>Login</h3></button>
             </nav>
+            </div>
+            
             
             <h1 class="display-2 text-center">Categories</h1>
             

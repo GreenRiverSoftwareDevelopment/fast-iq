@@ -105,9 +105,23 @@
         }
         
         /**
-         * deletes a exercise that has the given id.
+         * grabs a unit that has the given id.
          */
-        function deleteExercise($id)
+        function getUnitByID($id)
+        {
+            $select = 'SELECT category_id, unit_name FROM units WHERE unit_id=:id';
+             
+            $statement = $this->_pdo->prepare($select);
+            $statement->bindValue(':id', $id, PDO::PARAM_INT);
+            $statement->execute();
+            
+            return $statement->fetch(PDO::FETCH_ASSOC);
+        }
+        
+        /**
+         * deletes a unit that has the given id.
+         */
+        function deleteUnit($id)
         {
             $select = 'DELETE FROM units WHERE unit_id=:id';
              
