@@ -27,10 +27,13 @@
                     <li class="nav-item">
                       <a class="nav-link" href="./category"><h3>Category</h3></a>
                     </li>
+					<li class="nav-item">
+                      <a class="nav-link" href="./exercises/<?= ($unitID) ?>"><h3>Go Back</h3></a>
+                    </li>
                 </ul>
             </nav>
 			
-			<h1 class="display-2 text-center">Exercise Summary</h1>
+			<h1 class="display-2 text-center"><?= ($exerciseName['exercise_name']) ?></h1>
             
             <br>
             <div class="row">

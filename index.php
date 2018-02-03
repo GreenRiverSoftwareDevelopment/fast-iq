@@ -51,6 +51,13 @@
         echo Template::instance()->render('pages/category_page.html');
     });
     
+    $f3->route('GET /categorySecond', function($f3)
+    {
+         $categories =  $GLOBALS['categoryDB']->allCategories();
+        $f3->set('categories', $categories);
+        echo Template::instance()->render('pages/category_page_two.html');
+    });
+    
     $f3->route('GET /units', function($f3)
     {
         $units =  $GLOBALS['unitDB']->unitsByCategory($_SESSION['categoryID']);
