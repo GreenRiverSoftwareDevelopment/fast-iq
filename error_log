@@ -756,6 +756,9 @@ Stack trace:
 [03-Feb-2018 00:13:26 America/Chicago] HTTP 404 (GET /images/loginBackground.jpg)
 [03-Feb-2018 00:13:26 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1668] Base->error()
 [03-Feb-2018 00:13:26 America/Chicago] [485/fast-iq/index.php:83] Base->run()
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
 [03-Feb-2018 00:20:50 America/Chicago] HTTP 404 (GET /images/loginBackground.jpg)
 [03-Feb-2018 00:20:50 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1668] Base->error()
 [03-Feb-2018 00:20:50 America/Chicago] [485/fast-iq/index.php:83] Base->run()
@@ -778,9 +781,15 @@ Stack trace:
 [03-Feb-2018 01:58:18 America/Chicago] HTTP 404 (POST /loginPost)
 [03-Feb-2018 01:58:18 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:1668] Base->error()
 [03-Feb-2018 01:58:18 America/Chicago] [fast-iq/index.php:73] Base->run()
+<<<<<<< HEAD
 [03-Feb-2018 02:50:37 America/Chicago] HTTP 404 (GET /images/loginBackground.jpg)
 [03-Feb-2018 02:50:37 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:1668] Base->error()
 [03-Feb-2018 02:50:37 America/Chicago] [fast-iq/index.php:73] Base->run()
 [03-Feb-2018 02:50:39 America/Chicago] HTTP 404 (POST /loginPost)
 [03-Feb-2018 02:50:39 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:1668] Base->error()
 [03-Feb-2018 02:50:39 America/Chicago] [fast-iq/index.php:73] Base->run()
+=======
+>>>>>>> 7c7f14be86c7d2861407e20d8d0c4ec459e485de
+=======
+>>>>>>> parent of 4368e4f... added login button
+>>>>>>> ef1af41fd9e492686679f3a11c7b5f0590742e34
