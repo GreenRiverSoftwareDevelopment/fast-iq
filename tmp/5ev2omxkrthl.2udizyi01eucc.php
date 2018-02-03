@@ -28,7 +28,7 @@
                 </ul>
             </nav>
             
-            <h1 class="display-2 text-center">Units</h1>
+            <h1 class="display-2 text-center"><?= ($categoryName['category_name']) ?></h1>
             
             <?php foreach (($units?:[]) as $unit): ?>
             <br>

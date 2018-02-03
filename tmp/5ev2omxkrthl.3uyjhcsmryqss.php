@@ -23,18 +23,18 @@
                       <a class="nav-link" href="./category"><h3>Category</h3></a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="./units/<?= ($unitID) ?>"><h3>Go Back</h3></a>
+                      <a class="nav-link" href="./units/<?= ($categoryID) ?>"><h3>Go Back</h3></a>
                     </li>
                 </ul>
             </nav>
             
-            <h1 class="display-2 text-center">Exercises</h1>
+            <h1 class="display-2 text-center"><?= ($unitName['unit_name']) ?></h1>
             
             <?php foreach (($exercises?:[]) as $exercise): ?>
             <br>
                 <div class="row">
                     <div class="col-sm-2"></div>
-                    <div class="col-sm-8"><a class="btn btn-primary btn-lg btn-block" href="./exerciseSummary" role="button"><h4><?= ($exercise['exercise_name']) ?></h4></a></div>
+                    <div class="col-sm-8"><a class="btn btn-primary btn-lg btn-block" href="./exerciseSummary/<?= ($exercise['exercise_id']) ?>" role="button"><h4><?= ($exercise['exercise_name']) ?></h4></a></div>
                     <div class="col-sm-2"></div>
                 </div>
             <?php endforeach; ?>

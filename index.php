@@ -54,6 +54,10 @@
     $f3->route('GET /units', function($f3)
     {
         $units =  $GLOBALS['unitDB']->unitsByCategory($_SESSION['categoryID']);
+        
+        $categoryName = $GLOBALS['categoryDB']->getCategoryByID($_SESSION['categoryID']);
+        
+        $f3->set('categoryName', $categoryName);
         $f3->set('units', $units);
         echo Template::instance()->render('pages/unit_page.html');
     });
@@ -62,7 +66,10 @@
     {
         $exercises =  $GLOBALS['exerciseDB']->exercisesByUnit($_SESSION['unitID']);
         
-        $f3->set('unitID', $_SESSION['unitID']);
+        $unitName = $GLOBALS['unitDB']->getUnitByID($_SESSION['unitID']);
+        
+        $f3->set('categoryID', $_SESSION['categoryID']);
+        $f3->set('unitName', $unitName);
         $f3->set('exercises', $exercises);
         echo Template::instance()->render('pages/exercise_page.html');
     });
