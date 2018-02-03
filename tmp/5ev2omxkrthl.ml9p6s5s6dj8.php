@@ -14,6 +14,7 @@
                 <![endif]-->
         </head>
         <body>
+            <div>
             <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
                 <ul class="nav nav-pills nav-fill">
                     <li class="nav-item">
@@ -24,6 +25,8 @@
                     </li>
                 </ul>
             </nav>
+            </div>
+            
             
             <h1 class="display-2 text-center">Categories</h1>
             
