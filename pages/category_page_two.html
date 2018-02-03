@@ -31,14 +31,14 @@
             
             <h1 class="display-2 text-center">Categories</h1>
             
-            <?php foreach (($categories?:[]) as $category): ?>
+            <repeat group="{{ @categories }}" value="{{ @category }}">
             <br>
                 <div class="row">
                     <div class="col-sm-2"></div>
-                    <div class="col-sm-8"><a class="btn btn-primary btn-lg btn-block" href="./units/<?= ($category['category_id']) ?>" role="button"><h4><?= ($category['category_name']) ?></h4></a></div>
+                    <div class="col-sm-8"><a class="btn btn-primary btn-lg btn-block" href="./units/{{ @category.category_id }}" role="button"><h4>{{ @category.category_name }}</h4></a></div>
                     <div class="col-sm-2"></div>
                 </div>
-            <?php endforeach; ?>
+            </repeat>
             <br> 
             
             
