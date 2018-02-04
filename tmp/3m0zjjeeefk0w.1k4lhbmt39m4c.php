@@ -24,10 +24,50 @@
                       <a class="nav-link active" href="./category"><h3>Category</h3></a>
                     </li>
                 </ul>
-                <button class="btn btn-outline-success" type="submit"><h3>Login</h3></button>
+              
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                  Launch demo modal
+                </button>
+
             </nav>
             </div>
             
+            <!--*********************************** THIS IS THE MODAL*************************************-->
+            
+           
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Login To Make Changes</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <form action="./loginCheck" method="post">
+                            <div class="modal-body">
+                                <div class="form-group row">
+                                  <label for="example-time-input" class="col-2 col-form-label">username</label>
+                                  <div class="col-10">
+                                    <input class="form-control" type="Text" placeholder="username" id="username">
+                                  </div>
+                                </div>
+                                <div class="form-group row">
+                                  <label for="example-color-input" class="col-2 col-form-label">Password</label>
+                                  <div class="col-10">
+                                    <input class="form-control" type="password" placeholder="password" id="password">
+                                  </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              <button type="Submit" class="btn btn-primary">Save changes</button>
+                            </div> 
+                      </form>
+                    </div>
+                  </div>
+                </div>
+        <!--*********************************** THIS IS THE MODAL*************************************-->
             
             <h1 class="display-2 text-center">Categories</h1>
             
