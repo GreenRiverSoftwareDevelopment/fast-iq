@@ -69,17 +69,143 @@
                 </div>
         <!--*********************************** THIS IS THE MODAL*************************************-->
             
-            <h1 class="display-2 text-center">Categories</h1>
+            <h1 class="display-2 text-center">Summary Page</h1>
             
-            <repeat group="{{ @categories }}" value="{{ @category }}">
+            
             <br>
                 <div class="row">
-                    <div class="col-sm-2"></div>
-                    <div class="col-sm-8"><a class="btn btn-primary btn-lg btn-block" href="./units/{{ @category.category_id }}" role="button"><h4>{{ @category.category_name }}</h4></a></div>
-                    <div class="col-sm-2"></div>
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-6"><div class="panel panel-primary">
+      				<div class="panel-heading"><h1>Exercise Summary </h1></div>
+      				<div class="panel-body">
+                    <p>
+                    Lorem ipsum dolor sit amet, consectetu elementum. Mauris condimentum vel purus vel viverra.
+                    Mauris lacinia sapien ut ullamcorper porta. Vestibulum volutpat vulputate convallis.
+                    Aenean hendrerit aliquam lectus eu molestie.
+					</p>
+                    
+                    </div></div>
+                    <div class="col-sm-1"></div>
                 </div>
-            </repeat>
-            <br> 
+                </div>
+                
+                                <div class="row">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-6"><div class="panel panel-primary">
+      				<div class="panel-heading"><h1>Video</h1></div>
+      				<div class="panel-body">
+                        <div class="col-sm-2"> <div class="col-sm-1"></div><<iframe width="854" height="480" src="https://www.youtube.com/embed/BX2XfIID7l0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+                   
+                    
+                    </div></div>
+                    <div class="col-sm-1"></div>
+                </div>
+                </div>
+                                
+                                                <div class="row">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-6"><div class="panel panel-primary">
+      				<div class="panel-heading"><h1>Questions</h1> </div>
+      				<div class="panel-body">
+                    <p>
+                        <h1>1) What is science</h1>
+                        <h1>1) What is science</h1>
+                        <h1>1) What is science</h1>
+                        <h1>1) What is science</h1>
+                        <h1>1) What is science</h1>
+                        <h1>1) What is science</h1>
+                        <h1>1) What is science</h1>
+                        <h1>1) What is science</h1>
+                    </p>
+                    
+                    </div></div>
+                    <div class="col-sm-1"></div>
+                </div>
+                </div>
+                                                
+                                                                <div class="row">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-6"><div class="panel panel-primary">
+      				<div class="panel-heading"><h1>Photo</h1> </div>
+      				<div class="panel-body">
+                    
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="http://benbri.com.au/shared/content/uploads/service-hydraulics-benbriairandfluidsystems.jpg" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://www.mechanicshub.com/wp-content/uploads/diesel-engine-mechanicst-mechanics-technicians-jobs-hiring.jpg" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://fthmb.tqn.com/DXcKnjs9QK-gNxHhAGotDU63_M8=/768x0/filters:no_upscale()/gears-by-Guy-Sie-58b8792e3df78c353cbc4f91.jpg" alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+                    
+                    </div></div>
+                    <div class="col-sm-1"></div>
+                </div>
+                </div>
+                
+                
+            
+          
+            <br>
+            <!--Buttom ROW OF COLS-->
+                    <div class="row">
+                        <div class="col-sm-3"></div>      
+                        
+                            
+                            <div class= "col-sm-2">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">Category </div>
+                                    <repeat group="{{ @categories }}" value="{{ @category }}">
+                                    <a class="btn btn-primary btn-lg btn-block" href="./units/{{ @category.category_id }}" role="button"><h4>{{ @category.category_name }}</h4></a>
+                                    </repeat>
+                                    <div class="panel-body">  
+                                </div>
+                            </div>
+                            </div>
+                            <div class= "col-sm-2">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">Units </div>
+                                    <repeat group="{{ @categories }}" value="{{ @category }}">
+                                    <a class="btn btn-primary btn-lg btn-block" href="./units/{{ @category.category_id }}" role="button"><h4>{{ @category.category_name }}</h4></a>
+                                    </repeat>
+                                    <div class="panel-body">  
+                                </div>
+                            </div>
+                            </div>
+                            
+                            <div class= "col-sm-2">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">Exercise </div>
+                                    <repeat group="{{ @categories }}" value="{{ @category }}">
+                                    <a class="btn btn-primary btn-lg btn-block" href="./units/{{ @category.category_id }}" role="button"><h4>{{ @category.category_name }}</h4></a>
+                                    </repeat>
+                                    <div class="panel-body">  
+                                </div>
+                                </div>
+                                </div>
+                        <div class="col-sm-2"></div>    
+                        
+                    </div>
+           <!--End of COLS Bottom-->     
+
             
             
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
