@@ -1,9 +1,9 @@
 <?php
     $f3->route('GET /exerciseSummary', function($f3)
     {
-        $exerciseName = $GLOBALS['exerciseDB']->getExerciseByID($_SESSION['exerciseID']);
+        $exercise = $GLOBALS['exerciseDB']->getExerciseByID($_SESSION['exerciseID']);
         
         $f3->set('unitID', $_SESSION['unitID']);
-        $f3->set('exerciseName', $exerciseName);
+        $f3->set('exercise', $exercise);
         echo Template::instance()->render('pages/exercise_summary_page.html');
     });

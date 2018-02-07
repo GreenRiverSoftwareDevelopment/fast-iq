@@ -30,21 +30,21 @@
     $unitDB = new UnitDB();
     $exerciseDB = new ExerciseDB();
 
+    //
+    //$f3->route('GET /', function($f3)
+    //{
+    //
+    //    //$usernameCheck = $_SESSION['username'];
+    //    //$passwordCheck = $_SESSION['password'];
+    //    //if($usernameCheck == null || $passwordCheck == null){
+    //    //    $f3->reroute('/login');
+    //    //}
+    //    $view = new View;
+    //                
+    //    echo $view->render('pages/login.php');
+    //});
     
     $f3->route('GET /', function($f3)
-    {
-
-        //$usernameCheck = $_SESSION['username'];
-        //$passwordCheck = $_SESSION['password'];
-        //if($usernameCheck == null || $passwordCheck == null){
-        //    $f3->reroute('/login');
-        //}
-        $view = new View;
-                    
-        echo $view->render('pages/login.php');
-    });
-    
-    $f3->route('GET /category', function($f3)
     {
         $categories =  $GLOBALS['categoryDB']->allCategories();
         $f3->set('categories', $categories);

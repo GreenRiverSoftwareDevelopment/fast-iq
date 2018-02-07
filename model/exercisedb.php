@@ -114,7 +114,7 @@
          */
         function getExerciseByID($id)
         {
-            $select = 'SELECT exercise_name FROM exercises WHERE exercise_id=:id';
+            $select = 'SELECT exercise_name, exercise_image, exercise_video, exercise_questions, exercise_summary FROM exercises WHERE exercise_id=:id';
              
             $statement = $this->_pdo->prepare($select);
             $statement->bindValue(':id', $id, PDO::PARAM_INT);

@@ -20,10 +20,7 @@
                       <a class="nav-link" href="./"><h3>Home</h3></a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="./category"><h3>Category</h3></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="./category"><h3>Go Back</h3></a>
+                      <a class="nav-link" href="./"><h3>Go Back</h3></a>
                     </li>
                 </ul>
             </nav>
