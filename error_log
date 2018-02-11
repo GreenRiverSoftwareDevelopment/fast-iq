@@ -844,6 +844,10 @@ Stack trace:
 [10-Feb-2018 19:44:28 America/Chicago] HTTP 404 (GET /exercisesSummary)
 [10-Feb-2018 19:44:28 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:1668] Base->error()
 [10-Feb-2018 19:44:28 America/Chicago] [fast-iq/index.php:90] Base->run()
+<<<<<<< HEAD
 [10-Feb-2018 20:09:18 America/Chicago] HTTP 404 (POST /loginCheck)
 [10-Feb-2018 20:09:18 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:1668] Base->error()
 [10-Feb-2018 20:09:18 America/Chicago] [fast-iq/index.php:90] Base->run()
+=======
+[11-Feb-2018 00:16:09 America/Chicago] PHP Parse error:  syntax error, unexpected 'lor' (T_STRING), expecting '{' in /home/bsaylor/public_html/485/fast-iq/index.php on line 61
+>>>>>>> 1b2e44e95b0cb0b13f5235485d1373cfcfcd5694
