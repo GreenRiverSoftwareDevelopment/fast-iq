@@ -45,18 +45,18 @@
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
-                      <form action="./loginCheck" method="post">
+                      <form action="./loginCheck" method="POST">
                             <div class="modal-body">
                                 <div class="form-group row">
                                   <label for="example-time-input" class="col-2 col-form-label">username</label>
                                   <div class="col-10">
-                                    <input class="form-control" type="Text" placeholder="username" id="username">
+                                    <input class="form-control" type="Text" name="username" placeholder="username" id="username">
                                   </div>
                                 </div>
                                 <div class="form-group row">
                                   <label for="example-color-input" class="col-2 col-form-label">Password</label>
                                   <div class="col-10">
-                                    <input class="form-control" type="password" placeholder="password" id="password">
+                                    <input class="form-control" type="password" name="password" placeholder="password" id="password">
                                   </div>
                                 </div>
                             </div>

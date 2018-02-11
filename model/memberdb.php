@@ -333,11 +333,11 @@
          */   
         function adminNameExists($username, $password)
         {            
-            $select = 'SELECT id, name, type, color FROM pets WHERE username=:username';
+            $select = 'SELECT user_id, username, password FROM users WHERE username=:username AND password=:password';
              
             $statement = $this->_pdo->prepare($select);
-            $statement->bindValue(':name', $username, PDO::PARAM_STR);
-            
+            $statement->bindValue(':username', $username, PDO::PARAM_STR);
+            $statement->bindValue(':password', $password, PDO::PARAM_STR);            
             $statement->execute();
              
             $row = $statement->fetch(PDO::FETCH_ASSOC);
