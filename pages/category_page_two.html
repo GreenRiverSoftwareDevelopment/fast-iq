@@ -8,7 +8,8 @@
             <!-- bootstrap -->
                 <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-                <!--[if lt IE 9]>
+                <link href="css/categorySecond.css" rel="stylesheet" media="screen"> 
+			    <!--[if lt IE 9]>
                 <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
                 <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
                 <![endif]-->
@@ -83,7 +84,7 @@
                     <div class="col-sm-3"></div>
                     <div class="col-sm-6"><div class="panel panel-primary">
       				<div class="panel-heading">
-						<a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1>Exercise Summary</h1></div>
+						<a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1 id="tabHeading">Exercise Summary</h1></div>
 						</a><div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne"><div class="panel-body"><div class="panel-body">
 							<p>
 								  Lorem ipsum dolor sit amet, consectetu elementum. Mauris condimentum vel purus vel viverra.
@@ -101,7 +102,7 @@
                     
                     <div class="col-sm-12"><div class="panel panel-primary">
       				<div class="panel-heading">
-						<a role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1>Video</h1></div>
+						<a role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1 id="tabHeading">Video</h1></div>
 						</a><div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne"><div class="panel-body"><div class="panel-body">
 							 <div class="col-sm-1"><iframe width="700" height="480" src="https://www.youtube.com/embed/BX2XfIID7l0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
                     <div class="col-sm-1"></div>
@@ -114,7 +115,7 @@
                     
                     <div class="col-sm-12"><div class="panel panel-primary">
       				<div class="panel-heading">
-						<a role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1>Questions</h1></div>
+						<a role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1 id="tabHeading">Questions</h1></div>
 						</a><div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne"><div class="panel-body"><div class="panel-body">
 							 <h1>1. Why are the tires always black in color?</h1>
 								<h4>Tires are black due to the proportion of carbon mixed in it during vulcanization of rubber. Without it, tires can’t bear the friction heat and road stress.</h4>
@@ -128,34 +129,34 @@
                     
                     <div class="col-sm-12"><div class="panel panel-primary">
       				<div class="panel-heading">
-						<a role="button" data-toggle="collapse" href="#collapseFour" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1>Pictures</h1></div>
+						<a role="button" data-toggle="collapse" href="#collapseFour" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1 id="tabHeading">Pictures</h1></div>
 						</a><div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne"><div class="panel-body"><div class="panel-body">
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="http://benbri.com.au/shared/content/uploads/service-hydraulics-benbriairandfluidsystems.jpg" alt="First slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="https://www.mechanicshub.com/wp-content/uploads/diesel-engine-mechanicst-mechanics-technicians-jobs-hiring.jpg" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="https://fthmb.tqn.com/DXcKnjs9QK-gNxHhAGotDU63_M8=/768x0/filters:no_upscale()/gears-by-Guy-Sie-58b8792e3df78c353cbc4f91.jpg" alt="Third slide">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
+							<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+							  <ol class="carousel-indicators">
+								<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+								<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+								<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+							  </ol>
+							  <div class="carousel-inner">
+								<div class="carousel-item active">
+								  <img class="d-block w-100" src="http://benbri.com.au/shared/content/uploads/service-hydraulics-benbriairandfluidsystems.jpg" alt="First slide">
+								</div>
+								<div class="carousel-item">
+								  <img class="d-block w-100" src="https://www.mechanicshub.com/wp-content/uploads/diesel-engine-mechanicst-mechanics-technicians-jobs-hiring.jpg" alt="Second slide">
+								</div>
+								<div class="carousel-item">
+								  <img class="d-block w-100" src="https://fthmb.tqn.com/DXcKnjs9QK-gNxHhAGotDU63_M8=/768x0/filters:no_upscale()/gears-by-Guy-Sie-58b8792e3df78c353cbc4f91.jpg" alt="Third slide">
+								</div>
+							  </div>
+							  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+								<span class="sr-only">Previous</span>
+							  </a>
+							  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+								<span class="carousel-control-next-icon" aria-hidden="true"></span>
+								<span class="sr-only">Next</span>
+							  </a>
+							</div>
                     <div class="col-sm-1"></div>
                 </div>
                 </div>
