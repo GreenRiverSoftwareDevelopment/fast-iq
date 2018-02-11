@@ -58,7 +58,7 @@
         echo Template::instance()->render('pages/category_page_two.html');
     });
     
-    $f3->route('GET /units', function($f3)lor
+    $f3->route('GET /units', function($f3)
     {
         $units =  $GLOBALS['unitDB']->unitsByCategory($_SESSION['categoryID']);
         
