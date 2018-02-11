@@ -68,67 +68,68 @@
                   </div>
                 </div>
         <!--*********************************** THIS IS THE MODAL*************************************-->
-            
+		
+
+		
+		
+            <!--This is the Main body of the page-->
             <h1 class="display-2 text-center">Summary Page</h1>
             
             
             <br>
                 <div class="row">
+					
+					
                     <div class="col-sm-3"></div>
                     <div class="col-sm-6"><div class="panel panel-primary">
-      				<div class="panel-heading"><h1>Exercise Summary </h1></div>
-      				<div class="panel-body">
-                    <p>
-                    Lorem ipsum dolor sit amet, consectetu elementum. Mauris condimentum vel purus vel viverra.
+      				<div class="panel-heading">
+						<a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1>Exercise Summary</h1></div>
+						</a><div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne"><div class="panel-body"><div class="panel-body">
+							<p>
+								  Lorem ipsum dolor sit amet, consectetu elementum. Mauris condimentum vel purus vel viverra.
                     Mauris lacinia sapien ut ullamcorper porta. Vestibulum volutpat vulputate convallis.
                     Aenean hendrerit aliquam lectus eu molestie.
-					</p>
+								{{ @exercise.exercise_questions }}
+							</p>
                     
                     </div></div>
                     <div class="col-sm-1"></div>
                 </div>
                 </div>
                 
-                                <div class="row">
-                    <div class="col-sm-3"></div>
-                    <div class="col-sm-6"><div class="panel panel-primary">
-      				<div class="panel-heading"><h1>Video</h1></div>
-      				<div class="panel-body">
-                        <div class="col-sm-2"> <div class="col-sm-1"></div><<iframe width="854" height="480" src="https://www.youtube.com/embed/BX2XfIID7l0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
-                   
+                <div class="row">
                     
-                    </div></div>
+                    <div class="col-sm-12"><div class="panel panel-primary">
+      				<div class="panel-heading">
+						<a role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1>Video</h1></div>
+						</a><div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne"><div class="panel-body"><div class="panel-body">
+							 <div class="col-sm-1"><iframe width="700" height="480" src="https://www.youtube.com/embed/BX2XfIID7l0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
                     <div class="col-sm-1"></div>
                 </div>
                 </div>
-                                
-                                                <div class="row">
-                    <div class="col-sm-3"></div>
-                    <div class="col-sm-6"><div class="panel panel-primary">
-      				<div class="panel-heading"><h1>Questions</h1> </div>
-      				<div class="panel-body">
-                    <p>
-                        <h1>1) What is science</h1>
-                        <h1>1) What is science</h1>
-                        <h1>1) What is science</h1>
-                        <h1>1) What is science</h1>
-                        <h1>1) What is science</h1>
-                        <h1>1) What is science</h1>
-                        <h1>1) What is science</h1>
-                        <h1>1) What is science</h1>
-                    </p>
+                </div>                
+                </div>
+					
+					                <div class="row">
                     
-                    </div></div>
+                    <div class="col-sm-12"><div class="panel panel-primary">
+      				<div class="panel-heading">
+						<a role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1>Questions</h1></div>
+						</a><div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne"><div class="panel-body"><div class="panel-body">
+							 <h1>1. Why are the tires always black in color?</h1>
+								<h4>Tires are black due to the proportion of carbon mixed in it during vulcanization of rubber. Without it, tires can’t bear the friction heat and road stress.</h4>
                     <div class="col-sm-1"></div>
                 </div>
                 </div>
-                                                
-                                                                <div class="row">
-                    <div class="col-sm-3"></div>
-                    <div class="col-sm-6"><div class="panel panel-primary">
-      				<div class="panel-heading"><h1>Photo</h1> </div>
-      				<div class="panel-body">
+                </div>                
+                </div>
+					
+				<div class="row">
                     
+                    <div class="col-sm-12"><div class="panel panel-primary">
+      				<div class="panel-heading">
+						<a role="button" data-toggle="collapse" href="#collapseFour" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1>Pictures</h1></div>
+						</a><div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne"><div class="panel-body"><div class="panel-body">
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -155,22 +156,22 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-                    
-                    </div></div>
                     <div class="col-sm-1"></div>
                 </div>
                 </div>
-                
-                
+                </div>                
+                </div>					
+                                                
+   
             
           
             <br>
             <!--Buttom ROW OF COLS-->
                     <div class="row">
-                        <div class="col-sm-3"></div>      
+    
                         
                             
-                            <div class= "col-sm-2">
+                            <div class= "col-sm-4">
                                 <div class="panel panel-primary">
                                     <div class="panel-heading">Category </div>
                                     <repeat group="{{ @categories }}" value="{{ @category }}">
@@ -180,7 +181,7 @@
                                 </div>
                             </div>
                             </div>
-                            <div class= "col-sm-2">
+                            <div class= "col-sm-4">
                                 <div class="panel panel-primary">
                                     <div class="panel-heading">Units </div>
                                     <repeat group="{{ @categories }}" value="{{ @category }}">
@@ -191,7 +192,7 @@
                             </div>
                             </div>
                             
-                            <div class= "col-sm-2">
+                            <div class= "col-sm-4">
                                 <div class="panel panel-primary">
                                     <div class="panel-heading">Exercise </div>
                                     <repeat group="{{ @categories }}" value="{{ @category }}">

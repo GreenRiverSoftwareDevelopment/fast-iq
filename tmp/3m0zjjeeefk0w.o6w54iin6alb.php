@@ -24,100 +24,76 @@
                     <li class="nav-item">
                       <a class="nav-link" href="./"><h3>Home</h3></a>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="./category"><h3>Category</h3></a>
-                    </li>
 					<li class="nav-item">
                       <a class="nav-link" href="./exercises/<?= ($unitID) ?>"><h3>Go Back</h3></a>
                     </li>
                 </ul>
             </nav>
 			
-			<h1 class="display-2 text-center"><?= ($exerciseName['exercise_name']) ?></h1>
+			<h1 class="display-2 text-center"><?= ($exercise['exercise_name']) ?></h1>
             
             <br>
             <div class="row">
                 <div class="col-sm1-2"></div>
-                
-                <div class="col-sm-5">
-                
-      				<div class="panel panel-primary">
-      				<div class="panel-heading">Exercise Summary </div>
-      				<div class="panel-body">
-                    <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut aliquam nunc, vel cursus nunc. Ut nulla leo, fermentum sed posuere a, volutpat ac velit. Donec tristique et turpis non suscipit. Praesent cursus erat ipsum, id euismod nulla rhoncus eu. Nunc at urna est. Phasellus libero ex, tempus at lectus non, interdum ultrices ligula. Curabitur tincidunt commodo mauris et ultricies. Proin rhoncus viverra nibh. Aenean porta sapien id justo laoreet mattis. Morbi auctor hendrerit lectus sed elementum. Mauris condimentum vel purus vel viverra. Mauris lacinia sapien ut ullamcorper porta. Vestibulum volutpat vulputate convallis. Aenean hendrerit aliquam lectus eu molestie.
-                    sapien id justo laoreet mattis. Morbi auctor hendrerit lectus sed elementum. Mauris condimentum vel purus vel viverra. Mauris lacinia sapien ut ullamcorper porta. Vestibulum volutpat vulputate convallis. Aenean hendrerit aliquam lectus eu molestie.
-					</p>
-                    
-                    </div>
-    			</div>
-                
+					<div class="col-sm-5">
+						<div class="panel panel-primary">
+							
+						<div class="panel-heading"><a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed">Exercise Summary </div>
+						</a>
+						<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne"><div class="panel-body">
+						<p>
+							<?= ($exercise['exercise_summary'])."
+" ?>
+						</p>
+						</div></div>
+					</div>
                 </div>
                 
                 <div class="col-sm-5">
                 
                 	<div class="panel panel-primary">
-      				<div class="panel-heading">Video Ex 1 </div>
-      				<div class="panel-body">
-                    	
- 						<body>
-  						<iframe src="https://www.youtube.com/watch?v=-tiHfzBQZpI"
-   						width="500" height="250" frameborder="0" allowfullscreen></iframe>
- 					</body>
-
- 
-                    
-                    
-                    </div>
-                
-                
-                
+      				<div class="panel-heading"><a role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed">Video Ex 1 </div></a>
+						<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne"><div class="panel-body"><div class="panel-body">
+							<body>
+								<iframe src="https://www.youtube.com/watch?v=-tiHfzBQZpI"
+								width="500" height="250" frameborder="0" allowfullscreen></iframe>
+								<p>
+								<?= ($exercise['exercise_video'])."
+" ?>
+								</p>
+							</body>
+						</div></div>
                 </div>
                 <div class="col-sm-2"></div>
             </div>
             <br>
-            
-            
-            
-            
-            
-                        
-                       
             <br>
             <div class="row">
-               
-                
                 <div class="col-sm-5">
-                
       				<div class="panel panel-primary">
-      				<div class="panel-heading">Assessive Questions </div>
-      				<div class="panel-body">
-                    <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut aliquam nunc, vel cursus nunc. Ut nulla leo, fermentum sed posuere a, volutpat ac velit. Donec tristique et turpis non suscipit. Praesent cursus erat ipsum, id euismod nulla rhoncus eu. Nunc at urna est. Phasellus libero ex, tempus at lectus non, interdum ultrices ligula. Curabitur tincidunt commodo mauris et ultricies. Proin rhoncus viverra nibh. Aenean porta sapien id justo laoreet mattis. Morbi auctor hendrerit lectus sed elementum. Mauris condimentum vel purus vel viverra. Mauris lacinia sapien ut ullamcorper porta. Vestibulum volutpat vulputate convallis. Aenean hendrerit aliquam lectus eu molestie.
-</p>
-                    
-                    </div>
-    			</div>
-                
+						<div class="panel-heading"><a role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed">Assessive Questions </div>
+						</a><div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne"><div class="panel-body"><div class="panel-body">
+							<p>
+								<?= ($exercise['exercise_questions'])."
+" ?>
+							</p>
+						</div></div>
+					</div>
                 </div>
-                
                 <div class="col-sm-5">
                 
                 	<div class="panel panel-primary">
-      				<div class="panel-heading">Photos </div>
-      				<div class="panel-body">
-                    	
+      				<div class="panel-heading"><a role="button" data-toggle="collapse" href="#collapseFour" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed">Photos </div>
+      				</a><div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne"><div class="panel-body">
+                    	<body>
  						<img src="https://sc01.alicdn.com/kf/HTB11RwlJpXXXXXCXFXXq6xXFXXXU/54509/HTB11RwlJpXXXXXCXFXXq6xXFXXXU.jpg" alt="dummy photo" height="300" width="400">
                         <img src="https://www.petmd.com/sites/default/files/petmd-cat-happy-13.jpg" alt="dummy photo" height="300" width="200">
-                        
-
- 
-                    
-                    
-                    </div>
-                
-                
-                
+						<p>
+							<?= ($exercise['exercise_image'])."
+" ?>
+						</p>
+						</body>
+                    </div></div>
                 </div>
                 <div class="col-sm-2"></div>
             </div>
