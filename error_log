@@ -844,3 +844,6 @@ Stack trace:
 [10-Feb-2018 19:44:28 America/Chicago] HTTP 404 (GET /exercisesSummary)
 [10-Feb-2018 19:44:28 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:1668] Base->error()
 [10-Feb-2018 19:44:28 America/Chicago] [fast-iq/index.php:90] Base->run()
+[10-Feb-2018 20:09:18 America/Chicago] HTTP 404 (POST /loginCheck)
+[10-Feb-2018 20:09:18 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:1668] Base->error()
+[10-Feb-2018 20:09:18 America/Chicago] [fast-iq/index.php:90] Base->run()
