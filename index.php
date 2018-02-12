@@ -29,6 +29,7 @@
     $categoryDB = new CategoryDB();
     $unitDB = new UnitDB();
     $exerciseDB = new ExerciseDB();
+    $memberdb = new MemberDB();
 
     //
     //$f3->route('GET /', function($f3)
