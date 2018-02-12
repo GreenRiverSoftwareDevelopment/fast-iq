@@ -31,11 +31,89 @@
             </nav>
 			
 			<h1 class="display-2 text-center">{{ @exercise.exercise_name }}</h1>
+			<div class="col-xs-11 col-sm-7">
+    <div class="panel-group" id="accordion">
+
+        <!-- start panel left -->
+        <div class="panel-left col-sm-6">
+            <!-- start panel -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#TEST_1">
+                        EXERCISE SUMMARY
+                     </a>
+                    </h4>
+                </div>
+                <div id="TEST_1" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        {{ @exercise.exercise_summary }}
+                    </div>
+                </div>
+            </div>
+            <!-- end panel -->
+
+            <!-- start panel -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#TEST_2">
+                        VIDEOS
+                     </a>
+                    </h4>
+                </div>
+                <div id="TEST_2" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        {{ @exercise.exercise_video }}
+                    </div>
+                </div>
+            </div>
+            <!-- end panel -->
+
+            <!-- start panel -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#TEST_3">
+                        ASSESSIVE QUESTIONS
+                     </a>
+                    </h4>
+                </div>
+                <div id="TEST_3" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        {{ @exercise.exercise_questions }}
+                    </div>
+                </div>
+            </div>
+            <!-- end panel -->
+
+            <!-- start panel -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#TEST_4">
+                        PHOTOS
+                     </a>
+                    </h4>
+                </div>
+                <div id="TEST_4" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        {{ @exercise.exercise_image }}
+                    </div>
+                </div>
+            </div>
+            <!-- end panel -->
+
+			
+			
+			
+			<!--
+			
             
             <br>
             <div class="row">
                 <div class="col-sm1-2"></div>
-					<div class="col-sm-5">
+					<div class="col-sm-4">
 						<div class="panel panel-primary">
 							
 						<div class="panel-heading"><a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed">Exercise Summary </div>
@@ -47,8 +125,9 @@
 						</div></div>
 					</div>
                 </div>
-                
-                <div class="col-sm-5">
+			
+                <div class="col-sm1-2"></div>
+                <div class="col-sm-4">
                 
                 	<div class="panel panel-primary">
       				<div class="panel-heading"><a role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed">Video Ex 1 </div></a>
@@ -62,12 +141,14 @@
 							</body>
 						</div></div>
                 </div>
-                <div class="col-sm-2"></div>
+             
             </div>
+				
             <br>
             <br>
             <div class="row">
-                <div class="col-sm-5">
+				<div class="col-sm1-2"></div>
+                <div class="col-sm-4">
       				<div class="panel panel-primary">
 						<div class="panel-heading"><a role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed">Assessive Questions </div>
 						</a><div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne"><div class="panel-body"><div class="panel-body">
@@ -77,7 +158,7 @@
 						</div></div>
 					</div>
                 </div>
-                <div class="col-sm-5">
+                <div class="col-sm-4">
                 
                 	<div class="panel panel-primary">
       				<div class="panel-heading"><a role="button" data-toggle="collapse" href="#collapseFour" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed">Photos </div>
@@ -94,7 +175,7 @@
                 <div class="col-sm-2"></div>
             </div>
             <br> 
-            
+            -->
  
           
           
