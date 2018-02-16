@@ -25,12 +25,12 @@
                       <a class="nav-link" href="./"><h3>Home</h3></a>
                     </li>
 					<li class="nav-item">
-                      <a class="nav-link" href="./exercises/{{ @unitID }}"><h3>Go Back</h3></a>
+                      <a class="nav-link" href="./exercises/<?= ($unitID) ?>"><h3>Go Back</h3></a>
                     </li>
                 </ul>
             </nav>
 			
-			<h1 class="display-2 text-center">{{ @exercise.exercise_name }}</h1><br>
+			<h1 class="display-2 text-center"><?= ($exercise['exercise_name']) ?></h1><br>
 			<div class="col-xs-11 col-sm-7">
     <div class="panel-group" id="accordion">
 
@@ -48,7 +48,8 @@
                 </div>
                 <div id="TEST_1" class="panel-collapse collapse">
                     <div class="panel-body">
-                        {{ @exercise.exercise_summary }}
+                        <?= ($exercise['exercise_summary'])."
+" ?>
                     </div>
                 </div>
             </div>
@@ -65,7 +66,7 @@
                 </div>
                 <div id="TEST_2" class="panel-collapse collapse">
                     <div class="panel-body">
-                        <!--{{ @exercise.exercise_video }}-->
+                        <!--<?= ($exercise['exercise_video']) ?>-->
 						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/kvCnjVSpuv0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                     </div>
                 </div>
@@ -91,7 +92,7 @@
 					
 							
 						</ul>
-                        <!--{{ @exercise.exercise_questions }}-->
+                        <!--<?= ($exercise['exercise_questions']) ?>-->
                     </div>
                 </div>
             </div>
@@ -108,7 +109,7 @@
                 </div>
                 <div id="TEST_4" class="panel-collapse collapse">
                     <div class="panel-body">
-                        <!--{{ @exercise.exercise_image }}-->
+                        <!--<?= ($exercise['exercise_image']) ?>-->
 						<img src="http://hyperphysics.phy-astr.gsu.edu/hbase/imgmec/cm.gif" class="img-fluid" alt="Responsive image">
                     </div>
                 </div>
@@ -131,7 +132,8 @@
 						</a>
 						<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne"><div class="panel-body">
 						<p>
-							{{ @exercise.exercise_summary }}
+							<?= ($exercise['exercise_summary'])."
+" ?>
 						</p>
 						</div></div>
 					</div>
@@ -147,7 +149,8 @@
 								<iframe src="https://www.youtube.com/watch?v=-tiHfzBQZpI"
 								width="500" height="250" frameborder="0" allowfullscreen></iframe>
 								<p>
-								{{ @exercise.exercise_video }}
+								<?= ($exercise['exercise_video'])."
+" ?>
 								</p>
 							</body>
 						</div></div>
@@ -164,7 +167,8 @@
 						<div class="panel-heading"><a role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed">Assessive Questions </div>
 						</a><div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne"><div class="panel-body"><div class="panel-body">
 							<p>
-								{{ @exercise.exercise_questions }}
+								<?= ($exercise['exercise_questions'])."
+" ?>
 							</p>
 						</div></div>
 					</div>
@@ -178,7 +182,8 @@
  						<img src="https://sc01.alicdn.com/kf/HTB11RwlJpXXXXXCXFXXq6xXFXXXU/54509/HTB11RwlJpXXXXXCXFXXq6xXFXXXU.jpg" alt="dummy photo" height="300" width="400">
                         <img src="https://www.petmd.com/sites/default/files/petmd-cat-happy-13.jpg" alt="dummy photo" height="300" width="200">
 						<p>
-							{{ @exercise.exercise_image }}
+							<?= ($exercise['exercise_image'])."
+" ?>
 						</p>
 						</body>
                     </div></div>
