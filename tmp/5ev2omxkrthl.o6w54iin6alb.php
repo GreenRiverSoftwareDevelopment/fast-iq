@@ -67,7 +67,7 @@
                 <div id="TEST_2" class="panel-collapse collapse">
                     <div class="panel-body">
                         <!--<?= ($exercise['exercise_video']) ?>-->
-						<iframe width="854" height="480" src="https://www.youtube.com/embed/kvCnjVSpuv0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/kvCnjVSpuv0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
