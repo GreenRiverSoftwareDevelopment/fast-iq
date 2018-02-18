@@ -884,3 +884,6 @@ Stack trace:
 [12-Feb-2018 11:27:17 America/Chicago] PHP Warning:  include(): Failed opening '/home/bsaylor/public_html/485/fast-iq/vendor/bcosca/fatfree-core/base.php' for inclusion (include_path='.:/opt/php54/lib/php') in /home/bsaylor/public_html/485/fast-iq/vendor/composer/ClassLoader.php on line 444
 [12-Feb-2018 11:27:17 America/Chicago] PHP Fatal error:  Class 'Base' not found in /home/bsaylor/public_html/485/fast-iq/index.php on line 25
 [12-Feb-2018 11:31:25 America/Chicago] PHP Fatal error:  Class 'Base' not found in /home/bsaylor/public_html/485/fast-iq/index.php on line 25
+[18-Feb-2018 04:43:31 America/Chicago] HTTP 404 (GET /exerciseSummaryBackend)
+[18-Feb-2018 04:43:31 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1675] Base->error()
+[18-Feb-2018 04:43:31 America/Chicago] [485/fast-iq/index.php:142] Base->run()

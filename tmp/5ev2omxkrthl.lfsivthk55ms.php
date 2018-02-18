@@ -56,15 +56,29 @@
             
             <h1 class="display-2 text-center" id="<?= ($categoryName['category_name']) ?>"><?= ($categoryName['category_name']) ?></h1>
             
+            
             <?php foreach (($units?:[]) as $unit): ?>
             <br>
                 <div class="row">
-                    <div class="col-sm-2"></div>
-                    <div class="col-sm-8"><a class="btn btn-primary btn-lg btn-block" id="<?= ($unit['unit_name']) ?>" href="./exercisesBackend/<?= ($unit['unit_id']) ?>" role="button"><h4><?= ($unit['unit_name']) ?></h4></a></div>
-                    <div class="col-sm-2"></div>
+                    <div class="d-flex justify-content-center col-sm-2"><button type="button" class="btn btn-primary btn-warning btn-lg"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  Edit</button></div>
+                        
+                            <div class="d-flex justify-content-center col-sm-8"><a class="btn btn-primary btn-lg btn-block" id="<?= ($unit['unit_name']) ?>" href="./exercisesBackend/<?= ($unit['unit_id']) ?>" role="button"><h4><?= ($unit['unit_name']) ?></h4></a></div>
+                        
+                    <div class="d-flex justify-content-center col-sm-2"><button type="button" class="btn btn-primary btn-danger btn-lg"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>  Delete</button></div>
                 </div>
             <?php endforeach; ?>
+            
             <br>
+            
+            <div class="row">
+                <div class="d-flex justify-content-center col-sm-2"></div>
+                    <div class="d-flex justify-content-center col-sm-8">
+                        <button type="button" class="btn btn-primary btn-lg btn-success btn-block">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span><h5>Add</h5>
+                        </button>
+                    </div>
+                <div class="d-flex justify-content-center col-sm-2"></div>
+            </div>
             
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

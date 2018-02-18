@@ -28,7 +28,7 @@
                 </nav>
             </div>
             
-            <!--*********************************** THIS IS THE MODAL*************************************-->
+            <!--*********************************** THIS IS THE LOGIN MODAL*************************************-->
                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -52,20 +52,34 @@
                     </div>
                   </div>
                 </div>
-        <!--*********************************** THIS IS THE MODAL*************************************-->
+        <!--*********************************** THIS IS THE LOGIN MODAL*************************************-->
             
             
             <h1 class="display-2 text-center">Categories</h1>
             
+            
             <?php foreach (($categories?:[]) as $category): ?>
             <br>
                 <div class="row">
-                    <div class="col-sm-2"></div>
-                    <div class="col-sm-8"><a class="btn btn-primary btn-lg btn-block" id="<?= ($category['category_name']) ?>" href="./unitsBackend/<?= ($category['category_id']) ?>" role="button"><h4><?= ($category['category_name']) ?></h4></a></div>
-                    <div class="col-sm-2"></div>
+                    <div class="d-flex justify-content-center col-sm-2"><button type="button" class="btn btn-primary btn-warning btn-lg"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  Edit</button></div>
+                        
+                            <div class="d-flex justify-content-center col-sm-8"><a class="btn btn-primary btn-lg btn-block" id="<?= ($category['category_name']) ?>" href="./unitsBackend/<?= ($category['category_id']) ?>" role="button"><h4><?= ($category['category_name']) ?></h4></a></div>
+                        
+                    <div class="d-flex justify-content-center col-sm-2"><button type="button" class="btn btn-primary btn-danger btn-lg"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>  Delete</button></div>
                 </div>
             <?php endforeach; ?>
-            <br> 
+            
+            <br>
+            
+            <div class="row">
+                <div class="d-flex justify-content-center col-sm-2"></div>
+                    <div class="d-flex justify-content-center col-sm-8">
+                        <button type="button" class="btn btn-primary btn-lg btn-success btn-block">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span><h5>Add</h5>
+                        </button>
+                    </div>
+                <div class="d-flex justify-content-center col-sm-2"></div>
+            </div>
             
             
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
