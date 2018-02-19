@@ -97,7 +97,7 @@
          */
         function getCategoryByID($id)
         {
-            $select = 'SELECT category_name FROM categories WHERE category_id=:id';
+            $select = 'SELECT category_name, category_id FROM categories WHERE category_id=:id';
              
             $statement = $this->_pdo->prepare($select);
             $statement->bindValue(':id', $id, PDO::PARAM_INT);

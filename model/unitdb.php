@@ -47,7 +47,7 @@
             (5, 'Mechanical is everything'),
             (5, 'Mechanical 485');
          */
-        function addUnit($id, $unit_name)
+        function addUnit($unit_name, $id)
         {
             $insert =
             'INSERT INTO
@@ -66,7 +66,7 @@
         /**
          * Edits a exercise to the collection of exercises in the db.
          */
-        function editUnit($id, $unit_name)
+        function editUnit($unit_name, $id)
         {
             $insert =
             'UPDATE

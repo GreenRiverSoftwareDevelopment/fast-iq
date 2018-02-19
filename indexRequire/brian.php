@@ -6,17 +6,35 @@
             $f3->reroute('/categoryBackend');
         });
         
-        $f3->route('POST /editCategory/@id', function($f3, $params)
+            $f3->route('POST /editCategory/@id', function($f3, $params)
+            {
+                $GLOBALS['categoryDB']->editCategory($_POST['category_name'], $_POST['category_image'], $params['id']);
+                $f3->reroute('/categoryBackend');
+            });
+            
+                $f3->route('GET /deleteCategory/@id', function($f3, $params)
+                {
+                    $GLOBALS['categoryDB']->deleteCategory($params['id']);
+                    $f3->reroute('/categoryBackend');
+                });
+        
+        $f3->route('POST /addUnit/@id', function($f3, $params)
         {
-            $GLOBALS['categoryDB']->editCategory($_POST['category_name'], $_POST['category_image'], $params['id']);
-            $f3->reroute('/categoryBackend');
+            $GLOBALS['unitDB']->addUnit($_POST['unit_name'], $_SESSION['categoryID']);
+            $f3->reroute('/unitsBackend');
         });
         
-        $f3->route('GET /deleteCategory/@id', function($f3, $params)
-        {
-            $GLOBALS['categoryDB']->deleteCategory($params['id']);
-            $f3->reroute('/categoryBackend');
-        });
+            $f3->route('POST /editUnit/@id', function($f3, $params)
+            {
+                $GLOBALS['unitDB']->editUnit($_POST['unit_name'], $params['id']);
+                $f3->reroute('/unitsBackend');
+            });
+            
+                $f3->route('GET /deleteUnit/@id', function($f3, $params)
+                {
+                    $GLOBALS['unitDB']->deleteUnit($params['id']);
+                    $f3->reroute('/unitsBackend');
+                });
 
     $f3->route('GET /exercises/@id', function($f3, $params)
     {
