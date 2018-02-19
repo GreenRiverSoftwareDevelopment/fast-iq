@@ -28,17 +28,17 @@
                 </nav>
             </div>
             
-            <!--*********************************** THIS IS THE MODAL*************************************-->
+            <!--*********************************** THIS IS LOGOUT THE MODAL*************************************-->
                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Login To Make Changes</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Logout</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
-                      <form action="./logout" method="POST">
+                      <form action="./logout" method="GET">
                             <div class="modal-body">
                                 <div class="col-md-12">
                                     <h4>Are you sure you want to logout?</h4>
@@ -52,7 +52,7 @@
                     </div>
                   </div>
                 </div>
-        <!--*********************************** THIS IS THE MODAL*************************************-->
+        <!--*********************************** THIS IS LOGOUT THE MODAL*************************************-->
             
             <h1 class="display-2 text-center" id="{{ @categoryName.category_name }}">{{ @categoryName.category_name }}</h1>
             

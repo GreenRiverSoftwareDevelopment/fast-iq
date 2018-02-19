@@ -1,4 +1,23 @@
 <?php
+
+        $f3->route('POST /addCategory/@id', function($f3, $params)
+        {
+            $GLOBALS['categoryDB']->addCategory($_POST['category_name'], $_POST['category_image']);
+            $f3->reroute('/categoryBackend');
+        });
+        
+        $f3->route('POST /editCategory/@id', function($f3, $params)
+        {
+            $GLOBALS['categoryDB']->editCategory($_POST['category_name'], $_POST['category_image'], $params['id']);
+            $f3->reroute('/categoryBackend');
+        });
+        
+        $f3->route('GET /deleteCategory/@id', function($f3, $params)
+        {
+            $GLOBALS['categoryDB']->deleteCategory($params['id']);
+            $f3->reroute('/categoryBackend');
+        });
+
     $f3->route('GET /exercises/@id', function($f3, $params)
     {
             $_SESSION['unitID'] = $params['id'];
@@ -41,7 +60,7 @@
         $userPasswordAttempt = $_POST['password'];
         $_SESSION['username'] = $_POST['username'];
         $_SESSION['password'] = $_POST['password'];
-        $userExists = $GLOBALS['memberdb']->adminNameExists($usernameAttempt, $userPasswordAttempt);
+        $userExists = $GLOBALS['memberDB']->adminNameExists($usernameAttempt, $userPasswordAttempt);
         
         if($userExists)
         {

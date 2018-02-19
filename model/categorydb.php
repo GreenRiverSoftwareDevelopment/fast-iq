@@ -40,10 +40,10 @@
         {
             $insert =
             'INSERT INTO
-            category
+            categories
             (category_name, category_image)
             VALUES
-            (:id, :unit_name)';
+            (:category_name, :category_image)';
              
             $statement = $this->_pdo->prepare($insert);
             $statement->bindValue(':category_name', $category_name, PDO::PARAM_INT);
@@ -55,7 +55,7 @@
         /**
          * Edits a exercise to the collection of exercises in the db.
          */
-        function editCategory($category_name, $category_image)
+        function editCategory($category_name, $category_image, $category_id)
         {
             $insert =
             'UPDATE
@@ -69,6 +69,7 @@
             $statement = $this->_pdo->prepare($insert);
             $statement->bindValue(':category_name', $category_name, PDO::PARAM_INT);
             $statement->bindValue(':category_image', $category_image, PDO::PARAM_STR);
+            $statement->bindValue(':id', $category_id, PDO::PARAM_STR);
             
             $statement->execute();
         }
@@ -110,7 +111,7 @@
          */
         function deleteCategory($id)
         {
-            $select = 'DELETE FROM category WHERE category_id=:id';
+            $select = 'DELETE FROM categories WHERE category_id=:id';
              
             $statement = $this->_pdo->prepare($select);
             $statement->bindValue(':id', $id, PDO::PARAM_INT);
