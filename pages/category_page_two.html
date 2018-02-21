@@ -27,7 +27,7 @@
                 </ul>
               
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                  Launch demo modal
+                  Login
                 </button>
 
             </nav>
@@ -45,7 +45,7 @@
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
-                      <form action="./loginCheck" method="POST">
+                      <form action="./login" method="POST">
                             <div class="modal-body">
                                 <div class="form-group row">
                                   <label for="example-time-input" class="col-2 col-form-label">username</label>
@@ -174,45 +174,87 @@
                             
                             <div class= "col-sm-4">
 								<div id="form">
-								  <p>Which category are you interested in?</p>
-								  <select id="category-select">
+								  <p>Select category:</p>
+								  <select id="category_select">
 									<option disabled selected>Please select</option>
-									<option value="1">Furniture</option>
-									<option value="2">Lighting</option>
-									<option value="3">Accessories</option>
+									
+									 <repeat group="{{ @categories }}" value="{{ @category }}">
+										<option value="{{ @category.category_id }}">{{ @category.category_name }}</option>
+                                    </repeat>
 								  </select>
-								  <select id="subcategory-select">
-								  </select>
+
 								</div>
                             </div>
-                            </div>
                             <div class= "col-sm-4">
-                                <div class="panel panel-primary">
-                                    <div class="panel-heading">Units </div>
-                                    <repeat group="{{ @categories }}" value="{{ @category }}">
-                                    <a class="btn btn-primary btn-lg btn-block" href="./units/{{ @category.category_id }}" role="button"><h4>{{ @category.category_name }}</h4></a>
-                                    </repeat>
-                                    <div class="panel-body">  
-                                </div>
-                            </div>
+								<p>Select Units:</p>
+                               	  <select id="unit_select">
+									<!--What ever is being echoed is echoed here-->
+								  </select>
                             </div>
                             
                             <div class= "col-sm-4">
-                                <div class="panel panel-primary">
-                                    <div class="panel-heading">Exercise </div>
-                                    <repeat group="{{ @categories }}" value="{{ @category }}">
-                                    <a class="btn btn-primary btn-lg btn-block" href="./units/{{ @category.category_id }}" role="button"><h4>{{ @category.category_name }}</h4></a>
-                                    </repeat>
-                                    <div class="panel-body">  
-                                </div>
-                                </div>
-                                </div>
+								<p>Select exercises:</p>
+								 <select id="excercise_select">
+									<!--What ever is being echoed is echoed here-->
+								  </select>
+							</div>
                         <div class="col-sm-2"></div>    
                         
                     </div>
            <!--End of COLS Bottom-->     
 
-            
+              <script>
+				function updateUnits() {
+				  var cat_select = document.getElementById("category_select");
+				  var subcat_select = document.getElementById("unit_select");
+		  
+				  var cat_id = cat_select.options[cat_select.selectedIndex].value;
+		  
+				  var url = '/fast-iq/grabUnits/' + cat_id;
+				  console.log(cat_id);
+					
+				  var xhr = new XMLHttpRequest();
+				  xhr.open('GET', url, true);
+				  xhr.onreadystatechange = function () {
+				   
+					  //cat_select.innerHTML = xhr.responseText;
+					  subcat_select.innerHTML = xhr.responseText;
+					  console.log(xhr.responseText);
+					  //subcat_select.style.display = 'inline';
+					
+				  };
+				  xhr.send();
+				}
+		  
+				var cat_select = document.getElementById("category_select");
+				cat_select.addEventListener("change", updateUnits);
+				
+				
+				function updateExcercise() {
+				  var unit_select = document.getElementById("unit_select");
+				  var exercise_select = document.getElementById("excercise_select");
+		  
+				  var unit_id = unit_select.options[unit_select.selectedIndex].value;
+		  
+				  var url = '/fast-iq/grabExercise/' + unit_id;
+				  console.log(unit_id);
+					
+				  var xhr = new XMLHttpRequest();
+				  xhr.open('GET', url, true);
+				  xhr.onreadystatechange = function () {
+				   
+					  //cat_select.innerHTML = xhr.responseText;
+					  exercise_select.innerHTML = xhr.responseText;
+					  console.log(xhr.responseText);
+					 //subcat_select.style.display = 'inline';
+					
+				  };
+				  xhr.send();
+				}
+		  
+				var unit_select = document.getElementById("unit_select");
+				unit_select.addEventListener("change", updateExcercise);
+			  </script>
             
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
