@@ -174,13 +174,17 @@
                         
                             
                             <div class= "col-sm-4">
-                                <div class="panel panel-primary">
-                                    <div class="panel-heading">Category </div>
-                                    <?php foreach (($categories?:[]) as $category): ?>
-                                    <a class="btn btn-primary btn-lg btn-block" href="./units/<?= ($category['category_id']) ?>" role="button"><h4><?= ($category['category_name']) ?></h4></a>
-                                    <?php endforeach; ?>
-                                    <div class="panel-body">  
-                                </div>
+								<div id="form">
+								  <p>Which category are you interested in?</p>
+								  <select id="category-select">
+									<option disabled selected>Please select</option>
+									<option value="1">Furniture</option>
+									<option value="2">Lighting</option>
+									<option value="3">Accessories</option>
+								  </select>
+								  <select id="subcategory-select">
+								  </select>
+								</div>
                             </div>
                             </div>
                             <div class= "col-sm-4">
