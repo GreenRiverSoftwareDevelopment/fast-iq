@@ -79,7 +79,7 @@
                                                     
                                                     <div class="col-sm-8">
                                                         <div class="form-group">
-                                                            <label for="category"><h3>Unit Name</h3></label>
+                                                            <label for="unit"><h3>Unit Name</h3></label>
                                                             <input class="form-control" type="text" name="unit_name" id="unit_name" value="<?= ($unit['unit_name']) ?>" placeholder="Name" required>
                                                         </div>
                                                         <div class="form-group">
@@ -118,7 +118,7 @@
                                                     <div class="col-sm-2"></div>
                                                     
                                                     <div class="col-sm-8">
-                                                            <label for="category"><h3>Are you sure you want to delete this Unit?</h3></label>
+                                                            <label for="unit"><h3>Are you sure you want to delete this Unit?</h3></label>
                                                         <div class="form-group">
                                                             <input class="btn btn-info btn-sm" type="submit" value="Submit">
                                                         </div>
@@ -157,7 +157,7 @@
                                                     
                                                     <div class="col-sm-8">
                                                         <div class="form-group">
-                                                            <label for="category"><h3>Unit Name</h3></label>
+                                                            <label for="unit"><h3>Unit Name</h3></label>
                                                             <input class="form-control" type="text" name="unit_name" id="unit_name" placeholder="Unit Name" required>
                                                         </div>
                                                         <div class="form-group">
