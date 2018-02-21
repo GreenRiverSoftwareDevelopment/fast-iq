@@ -35,6 +35,24 @@
                     $GLOBALS['unitDB']->deleteUnit($params['id']);
                     $f3->reroute('/unitsBackend');
                 });
+                
+        $f3->route('POST /addExercise/@id', function($f3, $params)
+        {
+            $GLOBALS['exerciseDB']->addExercise($_POST['exercise_name'], $_SESSION['unitID']);
+            $f3->reroute('/exercisesBackend');
+        });
+        
+            $f3->route('POST /editExercise/@id', function($f3, $params)
+            {
+                $GLOBALS['exerciseDB']->editExercise($_POST['exercise_name'], $params['id']);
+                $f3->reroute('/exercisesBackend');
+            });
+            
+                $f3->route('GET /deleteExercise/@id', function($f3, $params)
+                {
+                    $GLOBALS['exerciseDB']->deleteExercise($params['id']);
+                    $f3->reroute('/exercisesBackend');
+                });
 
     $f3->route('GET /exercises/@id', function($f3, $params)
     {

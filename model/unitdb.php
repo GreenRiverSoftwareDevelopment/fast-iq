@@ -109,7 +109,7 @@
          */
         function getUnitByID($id)
         {
-            $select = 'SELECT category_id, unit_name FROM units WHERE unit_id=:id';
+            $select = 'SELECT category_id, unit_id, unit_name FROM units WHERE unit_id=:id';
              
             $statement = $this->_pdo->prepare($select);
             $statement->bindValue(':id', $id, PDO::PARAM_INT);
