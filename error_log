@@ -1100,3 +1100,39 @@ Stack trace:
 [21-Feb-2018 16:06:10 America/Chicago] PHP Fatal error:  Call to undefined method UnitDB::exercisesByUnit() in /home/knguyen/public_html/fast-iq/indexRequire/kevin.php on line 86
 [21-Feb-2018 16:06:10 America/Chicago] Fatal error: Call to undefined method UnitDB::exercisesByUnit()
 [21-Feb-2018 16:06:10 America/Chicago] [fast-iq/indexRequire/kevin.php:86] 
+[21-Feb-2018 17:47:50 America/Chicago] PHP Parse error:  syntax error, unexpected '}' in /home/knguyen/public_html/fast-iq/indexRequire/kevin.php on line 132
+[21-Feb-2018 17:47:50 America/Chicago] Fatal error: syntax error, unexpected '}'
+[21-Feb-2018 17:47:50 America/Chicago] [fast-iq/indexRequire/kevin.php:132] 
+[21-Feb-2018 17:56:09 America/Chicago] PHP Fatal error:  Call to undefined method ExerciseDB::exercisesById() in /home/knguyen/public_html/fast-iq/indexRequire/kevin.php on line 115
+[21-Feb-2018 17:56:09 America/Chicago] Fatal error: Call to undefined method ExerciseDB::exercisesById()
+[21-Feb-2018 17:56:09 America/Chicago] [fast-iq/indexRequire/kevin.php:115] 
+[21-Feb-2018 17:57:53 America/Chicago] PHP Fatal error:  Call to undefined method ExerciseDB::exercisesByID() in /home/knguyen/public_html/fast-iq/indexRequire/kevin.php on line 115
+[21-Feb-2018 17:57:53 America/Chicago] Fatal error: Call to undefined method ExerciseDB::exercisesByID()
+[21-Feb-2018 17:57:53 America/Chicago] [fast-iq/indexRequire/kevin.php:115] 
+[21-Feb-2018 18:07:33 America/Chicago] PHP Fatal error:  Call to undefined method ExerciseDB::exercisesByID() in /home/knguyen/public_html/fast-iq/indexRequire/kevin.php on line 115
+[21-Feb-2018 18:07:33 America/Chicago] Fatal error: Call to undefined method ExerciseDB::exercisesByID()
+[21-Feb-2018 18:07:33 America/Chicago] [fast-iq/indexRequire/kevin.php:115] 
+[21-Feb-2018 18:08:29 America/Chicago] PHP Fatal error:  Call to undefined method ExerciseDB::exerciseByID() in /home/knguyen/public_html/fast-iq/indexRequire/kevin.php on line 115
+[21-Feb-2018 18:08:29 America/Chicago] Fatal error: Call to undefined method ExerciseDB::exerciseByID()
+[21-Feb-2018 18:08:29 America/Chicago] [fast-iq/indexRequire/kevin.php:115] 
+[21-Feb-2018 18:12:05 America/Chicago] Illegal string offset 'exercise_id'
+[21-Feb-2018 18:12:05 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:2205] Base->error()
+[21-Feb-2018 18:12:05 America/Chicago] [fast-iq/indexRequire/kevin.php:95] Base->{closure}()
+[21-Feb-2018 18:12:05 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:1821] call_user_func_array()
+[21-Feb-2018 18:12:05 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:1642] Base->call()
+[21-Feb-2018 18:12:05 America/Chicago] [fast-iq/index.php:136] Base->run()
+[21-Feb-2018 18:12:16 America/Chicago] Invalid argument supplied for foreach()
+[21-Feb-2018 18:12:16 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:2205] Base->error()
+[21-Feb-2018 18:12:16 America/Chicago] [fast-iq/indexRequire/kevin.php:91] Base->{closure}()
+[21-Feb-2018 18:12:16 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:1821] call_user_func_array()
+[21-Feb-2018 18:12:16 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:1642] Base->call()
+[21-Feb-2018 18:12:16 America/Chicago] [fast-iq/index.php:136] Base->run()
+[21-Feb-2018 18:12:26 America/Chicago] Illegal string offset 'exercise_id'
+[21-Feb-2018 18:12:26 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:2205] Base->error()
+[21-Feb-2018 18:12:26 America/Chicago] [fast-iq/indexRequire/kevin.php:95] Base->{closure}()
+[21-Feb-2018 18:12:26 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:1821] call_user_func_array()
+[21-Feb-2018 18:12:26 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:1642] Base->call()
+[21-Feb-2018 18:12:26 America/Chicago] [fast-iq/index.php:136] Base->run()
+[22-Feb-2018 15:12:14 America/Chicago] HTTP 404 (GET /exerciseSummaryBackend)
+[22-Feb-2018 15:12:14 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:1675] Base->error()
+[22-Feb-2018 15:12:14 America/Chicago] [fast-iq/index.php:136] Base->run()

@@ -88,8 +88,8 @@
 						</a><div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne"><div class="panel-body"><div class="panel-body">
 							<p>
 								  Lorem ipsum dolor sit amet, consectetu elementum. Mauris condimentum vel purus vel viverra.
-                    Mauris lacinia sapien ut ullamcorper porta. Vestibulum volutpat vulputate convallis.
-                    Aenean hendrerit aliquam lectus eu molestie.
+								  Mauris lacinia sapien ut ullamcorper porta. Vestibulum volutpat vulputate convallis.
+								 Aenean hendrerit aliquam lectus eu molestie.
 								{{ @exercise.exercise_questions }}
 							</p>
                     
@@ -104,7 +104,7 @@
       				<div class="panel-heading">
 						<a role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1 id="tabHeading">Video</h1></div>
 						</a><div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne"><div class="panel-body"><div class="panel-body">
-							 <div class="col-sm-1"><iframe width="700" height="480" src="https://www.youtube.com/embed/BX2XfIID7l0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+							 
                     <div class="col-sm-1"></div>
                 </div>
                 </div>
@@ -169,9 +169,6 @@
             <br>
             <!--Buttom ROW OF COLS-->
                     <div class="row">
-    
-                        
-                            
                             <div class= "col-sm-4">
 								<div id="form">
 								  <p>Select category:</p>
@@ -199,7 +196,7 @@
 								  </select>
 							</div>
                         <div class="col-sm-2"></div>    
-                        
+                    
                     </div>
            <!--End of COLS Bottom-->     
 
@@ -254,6 +251,60 @@
 		  
 				var unit_select = document.getElementById("unit_select");
 				unit_select.addEventListener("change", updateExcercise);
+				
+				
+				//Summary
+				function updateSummary() {
+				  var excercise_select = document.getElementById("excercise_select");
+				  var summary_select = document.getElementById("collapseOne");
+		  
+				  var summary_id = excercise_select.options[excercise_select.selectedIndex].value;
+		  
+				  var url = '/fast-iq/summaryExercise/' + summary_id;
+				  console.log(summary_id);
+					
+				  var xhr = new XMLHttpRequest();
+				  xhr.open('GET', url, true);
+				  xhr.onreadystatechange = function () {
+				   
+					  //cat_select.innerHTML = xhr.responseText;
+					  summary_select.innerHTML = xhr.responseText;
+					  console.log(xhr.responseText);
+					 //subcat_select.style.display = 'inline';
+					
+				  };
+				  xhr.send();
+				}
+		  
+				var unit_select = document.getElementById("excercise_select");
+				unit_select.addEventListener("change", updateSummary);
+				
+				
+								//Summary
+				function updateVideo() {
+				  var excercise_select = document.getElementById("excercise_select");
+				  var video_select = document.getElementById("collapseTwo");
+		  
+				  var video_id = excercise_select.options[excercise_select.selectedIndex].value;
+		  
+				  var url = '/fast-iq/videoExercise/' + video_id;
+				  console.log(video_id);
+					
+				  var xhr = new XMLHttpRequest();
+				  xhr.open('GET', url, true);
+				  xhr.onreadystatechange = function () {
+				   
+					  //cat_select.innerHTML = xhr.responseText;
+					  video_select.innerHTML = xhr.responseText;
+					  console.log(xhr.responseText);
+					 //subcat_select.style.display = 'inline';
+					
+				  };
+				  xhr.send();
+				}
+		  
+				var unit_select = document.getElementById("excercise_select");
+				unit_select.addEventListener("change", updateVideo);
 			  </script>
             
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

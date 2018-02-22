@@ -108,3 +108,49 @@
            // $_SESSION['passedVar'] = "We were passedddddddddddddddYYYYYYYYYYYYYYYYYYYSdfdfd"; 
        //echo Template::instance()->render('pages/category_page_two.html');
     });
+        
+        
+    $f3->route('GET /summaryExercise/@id', function($f3, $params)
+    {
+         $summaryEntries =  $GLOBALS['exerciseDB']->getExerciseByID($params['id']);
+        $f3->set('exercise', $summaryEntries);
+        
+           
+            echo'<h3>'.$summaryEntries['exercise_summary'].'</h3>';
+                     
+        
+        
+        //echo '<br />';
+       
+        //var_dump($categories);
+       // echo '</select>';
+       
+       // var_dump($categories);
+
+           // $_SESSION['passedVar'] = "We were passedddddddddddddddYYYYYYYYYYYYYYYYYYYSdfdfd"; 
+       //echo Template::instance()->render('pages/category_page_two.html');
+    });
+    
+    
+      $f3->route('GET /videoExercise/@id', function($f3, $params)
+    {
+         $summaryEntries =  $GLOBALS['exerciseDB']->getExerciseByID($params['id']);
+        $f3->set('exercise', $summaryEntries);
+        
+            $youtubeLink = $summaryEntries['exercise_video'];
+            $youtubeEmbededCode = substr($youtubeLink, strpos($youtubeLink, "=") + 1); 
+            echo '<iframe width="700" height="480" src="https://www.youtube.com/embed/'.$youtubeEmbededCode.'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+            
+                     
+        
+        
+        //echo '<br />';
+       
+        //var_dump($categories);
+       // echo '</select>';
+       
+       // var_dump($categories);
+
+           // $_SESSION['passedVar'] = "We were passedddddddddddddddYYYYYYYYYYYYYYYYYYYSdfdfd"; 
+       //echo Template::instance()->render('pages/category_page_two.html');
+    });
