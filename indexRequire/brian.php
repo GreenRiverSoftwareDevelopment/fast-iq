@@ -38,13 +38,13 @@
                 
         $f3->route('POST /addExercise/@id', function($f3, $params)
         {
-            $GLOBALS['exerciseDB']->addExercise($_POST['exercise_name'], $_SESSION['unitID']);
+            $GLOBALS['exerciseDB']->addExerciseName($_SESSION['unitID'], $_POST['exercise_name']);
             $f3->reroute('/exercisesBackend');
         });
         
             $f3->route('POST /editExercise/@id', function($f3, $params)
             {
-                $GLOBALS['exerciseDB']->editExercise($_POST['exercise_name'], $params['id']);
+                $GLOBALS['exerciseDB']->editExerciseName($params['id'], $_POST['exercise_name']);
                 $f3->reroute('/exercisesBackend');
             });
             

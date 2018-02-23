@@ -27,7 +27,7 @@
                 </ul>
               
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                  Launch demo modal
+                  Login
                 </button>
 
             </nav>
@@ -45,7 +45,7 @@
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
-                      <form action="./loginCheck" method="POST">
+                      <form action="./login" method="POST">
                             <div class="modal-body">
                                 <div class="form-group row">
                                   <label for="example-time-input" class="col-2 col-form-label">username</label>
@@ -88,8 +88,8 @@
 						</a><div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne"><div class="panel-body"><div class="panel-body">
 							<p>
 								  Lorem ipsum dolor sit amet, consectetu elementum. Mauris condimentum vel purus vel viverra.
-                    Mauris lacinia sapien ut ullamcorper porta. Vestibulum volutpat vulputate convallis.
-                    Aenean hendrerit aliquam lectus eu molestie.
+								  Mauris lacinia sapien ut ullamcorper porta. Vestibulum volutpat vulputate convallis.
+								 Aenean hendrerit aliquam lectus eu molestie.
 								<?= ($exercise['exercise_questions'])."
 " ?>
 							</p>
@@ -105,7 +105,7 @@
       				<div class="panel-heading">
 						<a role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1 id="tabHeading">Video</h1></div>
 						</a><div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne"><div class="panel-body"><div class="panel-body">
-							 <div class="col-sm-1"><iframe width="700" height="480" src="https://www.youtube.com/embed/BX2XfIID7l0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+							 <iframe width="700" height="480" src="https://www.youtube.com/embed/BX2XfIID7l0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                     <div class="col-sm-1"></div>
                 </div>
                 </div>
@@ -170,46 +170,143 @@
             <br>
             <!--Buttom ROW OF COLS-->
                     <div class="row">
-    
-                        
-                            
                             <div class= "col-sm-4">
-                                <div class="panel panel-primary">
-                                    <div class="panel-heading">Category </div>
-                                    <?php foreach (($categories?:[]) as $category): ?>
-                                    <a class="btn btn-primary btn-lg btn-block" href="./units/<?= ($category['category_id']) ?>" role="button"><h4><?= ($category['category_name']) ?></h4></a>
+								<div id="form">
+								  <p>Select category:</p>
+								  <select id="category_select">
+									<option disabled selected>Please select</option>
+									
+									 <?php foreach (($categories?:[]) as $category): ?>
+										<option value="<?= ($category['category_id']) ?>"><?= ($category['category_name']) ?></option>
                                     <?php endforeach; ?>
-                                    <div class="panel-body">  
-                                </div>
-                            </div>
+								  </select>
+
+								</div>
                             </div>
                             <div class= "col-sm-4">
-                                <div class="panel panel-primary">
-                                    <div class="panel-heading">Units </div>
-                                    <?php foreach (($categories?:[]) as $category): ?>
-                                    <a class="btn btn-primary btn-lg btn-block" href="./units/<?= ($category['category_id']) ?>" role="button"><h4><?= ($category['category_name']) ?></h4></a>
-                                    <?php endforeach; ?>
-                                    <div class="panel-body">  
-                                </div>
-                            </div>
+								<p>Select Units:</p>
+                               	  <select id="unit_select">
+									<!--What ever is being echoed is echoed here-->
+								  </select>
                             </div>
                             
                             <div class= "col-sm-4">
-                                <div class="panel panel-primary">
-                                    <div class="panel-heading">Exercise </div>
-                                    <?php foreach (($categories?:[]) as $category): ?>
-                                    <a class="btn btn-primary btn-lg btn-block" href="./units/<?= ($category['category_id']) ?>" role="button"><h4><?= ($category['category_name']) ?></h4></a>
-                                    <?php endforeach; ?>
-                                    <div class="panel-body">  
-                                </div>
-                                </div>
-                                </div>
+								<p>Select exercises:</p>
+								 <select id="excercise_select">
+									<!--What ever is being echoed is echoed here-->
+								  </select>
+							</div>
                         <div class="col-sm-2"></div>    
-                        
+                    
                     </div>
            <!--End of COLS Bottom-->     
 
-            
+              <script>
+				function updateUnits() {
+				  var cat_select = document.getElementById("category_select");
+				  var subcat_select = document.getElementById("unit_select");
+		  
+				  var cat_id = cat_select.options[cat_select.selectedIndex].value;
+		  
+				  var url = '/fast-iq/grabUnits/' + cat_id;
+				  console.log(cat_id);
+					
+				  var xhr = new XMLHttpRequest();
+				  xhr.open('GET', url, true);
+				  xhr.onreadystatechange = function () {
+				   
+					  //cat_select.innerHTML = xhr.responseText;
+					  subcat_select.innerHTML = xhr.responseText;
+					  console.log(xhr.responseText);
+					  //subcat_select.style.display = 'inline';
+					
+				  };
+				  xhr.send();
+				}
+		  
+				var cat_select = document.getElementById("category_select");
+				cat_select.addEventListener("change", updateUnits);
+				
+				
+				function updateExcercise() {
+				  var unit_select = document.getElementById("unit_select");
+				  var exercise_select = document.getElementById("excercise_select");
+		  
+				  var unit_id = unit_select.options[unit_select.selectedIndex].value;
+		  
+				  var url = '/fast-iq/grabExercise/' + unit_id;
+				  console.log(unit_id);
+					
+				  var xhr = new XMLHttpRequest();
+				  xhr.open('GET', url, true);
+				  xhr.onreadystatechange = function () {
+				   
+					  //cat_select.innerHTML = xhr.responseText;
+					  exercise_select.innerHTML = xhr.responseText;
+					  console.log(xhr.responseText);
+					 //subcat_select.style.display = 'inline';
+					
+				  };
+				  xhr.send();
+				}
+		  
+				var unit_select = document.getElementById("unit_select");
+				unit_select.addEventListener("change", updateExcercise);
+				
+				
+				//Summary
+				function updateSummary() {
+				  var excercise_select = document.getElementById("excercise_select");
+				  var summary_select = document.getElementById("collapseOne");
+		  
+				  var summary_id = excercise_select.options[excercise_select.selectedIndex].value;
+		  
+				  var url = '/fast-iq/summaryExercise/' + summary_id;
+				  console.log(summary_id);
+					
+				  var xhr = new XMLHttpRequest();
+				  xhr.open('GET', url, true);
+				  xhr.onreadystatechange = function () {
+				   
+					  //cat_select.innerHTML = xhr.responseText;
+					  summary_select.innerHTML = xhr.responseText;
+					  console.log(xhr.responseText);
+					 //subcat_select.style.display = 'inline';
+					
+				  };
+				  xhr.send();
+				}
+		  
+				var unit_select = document.getElementById("excercise_select");
+				unit_select.addEventListener("change", updateSummary);
+				
+				
+								//Summary
+				function updateVideo() {
+				  var excercise_select = document.getElementById("excercise_select");
+				  var video_select = document.getElementById("collapseTwo");
+		  
+				  var video_id = excercise_select.options[excercise_select.selectedIndex].value;
+		  
+				  var url = '/fast-iq/videoExercise/' + video_id;
+				  console.log(video_id);
+					
+				  var xhr = new XMLHttpRequest();
+				  xhr.open('GET', url, true);
+				  xhr.onreadystatechange = function () {
+				   
+					  //cat_select.innerHTML = xhr.responseText;
+					  video_select.innerHTML = xhr.responseText;
+					  console.log(xhr.responseText);
+					 //subcat_select.style.display = 'inline';
+					
+				  };
+				  xhr.send();
+				}
+		  
+				var unit_select = document.getElementById("excercise_select");
+				unit_select.addEventListener("change", updateVideo);
+			  </script>
             
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

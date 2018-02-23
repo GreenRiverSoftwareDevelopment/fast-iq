@@ -126,12 +126,6 @@
                 echo Template::instance()->render('pages/exercise_backend.html');
             });
     
-    $f3->route('GET /categorySecond', function($f3)
-    {
-         $categories =  $GLOBALS['categoryDB']->allCategories();
-        $f3->set('categories', $categories);
-        echo Template::instance()->render('pages/category_page_two.html');
-    });
 
            
     require("./indexRequire/brian.php");
