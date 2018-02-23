@@ -1136,3 +1136,22 @@ Stack trace:
 [22-Feb-2018 15:12:14 America/Chicago] HTTP 404 (GET /exerciseSummaryBackend)
 [22-Feb-2018 15:12:14 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:1675] Base->error()
 [22-Feb-2018 15:12:14 America/Chicago] [fast-iq/index.php:136] Base->run()
+[22-Feb-2018 18:08:33 America/Chicago] PHP Fatal error:  Cannot redeclare ExerciseDB::addExercise() in /home/bsaylor/public_html/485/fast-iq/model/exercisedb.php on line 66
+[22-Feb-2018 18:08:33 America/Chicago] Fatal error: Cannot redeclare ExerciseDB::addExercise()
+[22-Feb-2018 18:08:33 America/Chicago] [485/fast-iq/model/exercisedb.php:66] 
+[22-Feb-2018 18:08:37 America/Chicago] PHP Fatal error:  Cannot redeclare ExerciseDB::addExercise() in /home/bsaylor/public_html/485/fast-iq/model/exercisedb.php on line 66
+[22-Feb-2018 18:08:37 America/Chicago] Fatal error: Cannot redeclare ExerciseDB::addExercise()
+[22-Feb-2018 18:08:37 America/Chicago] [485/fast-iq/model/exercisedb.php:66] 
+[22-Feb-2018 18:09:02 America/Chicago] HTTP 404 (GET /exerciseSummaryBackend)
+[22-Feb-2018 18:09:02 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1675] Base->error()
+[22-Feb-2018 18:09:02 America/Chicago] [485/fast-iq/index.php:136] Base->run()
+[22-Feb-2018 18:09:22 America/Chicago] Missing argument 3 for ExerciseDB::editExercise(), called in /home/bsaylor/public_html/485/fast-iq/indexRequire/brian.php on line 47 and defined
+[22-Feb-2018 18:09:22 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:2205] Base->error()
+[22-Feb-2018 18:09:22 America/Chicago] [485/fast-iq/model/exercisedb.php:85] Base->{closure}()
+[22-Feb-2018 18:09:22 America/Chicago] [485/fast-iq/indexRequire/brian.php:47] ExerciseDB->editExercise()
+[22-Feb-2018 18:09:22 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1821] call_user_func_array()
+[22-Feb-2018 18:09:22 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1642] Base->call()
+[22-Feb-2018 18:09:22 America/Chicago] [485/fast-iq/index.php:136] Base->run()
+[22-Feb-2018 18:10:36 America/Chicago] HTTP 404 (GET /exerciseSummaryBackend)
+[22-Feb-2018 18:10:36 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1675] Base->error()
+[22-Feb-2018 18:10:36 America/Chicago] [485/fast-iq/index.php:136] Base->run()
