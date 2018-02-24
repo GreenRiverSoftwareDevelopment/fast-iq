@@ -18,7 +18,10 @@
                 <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
                     <ul class="nav nav-pills nav-fill">
                         <li class="nav-item">
-                          <a class="nav-link" href="./"><h3>Home</h3></a>
+                            <a class="nav-link" href="./categoryBackend"><h3>Home</h3></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./categoryBackend"><h3>Go Back</h3></a>
                         </li>
                     </ul>
                     

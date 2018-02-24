@@ -18,7 +18,7 @@
                 <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
                     <ul class="nav nav-pills nav-fill">
                         <li class="nav-item">
-                          <a class="nav-link" href="./"><h3>Home</h3></a>
+                          <a class="nav-link" href="./categoryBackend"><h3>Home</h3></a>
                         </li>
                     </ul>
                     
@@ -82,10 +82,6 @@
                                                         <div class="form-group">
                                                             <label for="category"><h3>Category Name</h3></label>
                                                             <input class="form-control" type="text" name="category_name" id="category_name" value="<?= ($category['category_name']) ?>" placeholder="Name" required>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="image"><h3>Category Image</h3></label>
-                                                            <input class="form-control" type="text" name="category_image" id="category_image" value="<?= ($category['category_image']) ?>" placeholder="Image">
                                                         </div>
                                                         <div class="form-group">
                                                             <input class="btn btn-info btn-sm" type="submit" value="Submit">
@@ -164,10 +160,6 @@
                                                         <div class="form-group">
                                                             <label for="category"><h3>Category Name</h3></label>
                                                             <input class="form-control" type="text" name="category_name" id="category_name" placeholder="Category Name" required>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="image"><h3>Category Image</h3></label>
-                                                            <input class="form-control" type="text" name="category_image" id="category_image" placeholder="Category Image">
                                                         </div>
                                                         <div class="form-group">
                                                             <input class="btn btn-info btn-sm" type="submit" value="Submit">
