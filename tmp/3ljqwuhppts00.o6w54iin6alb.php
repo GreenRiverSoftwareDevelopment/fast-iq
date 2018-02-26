@@ -7,57 +7,31 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <!-- bootstrap -->
                 <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+                <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+                    rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+                    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+				<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
                 <!--[if lt IE 9]>
                 <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
                 <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
                 <![endif]-->
+                <link rel="shortcut icon" href="">
         </head>
         <body>
-            <div>
-                <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-                    <ul class="nav nav-pills nav-fill">
-                        <li class="nav-item">
-                            <a class="nav-link" href="./categoryBackend"><h3>Home</h3></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./unitsBackend/{{ @categoryID }}"><h3>Go Back</h3></a>
-                        </li>
-                    </ul>
-                    
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                        <h3>Logout</h3>
-                    </button>
-                </nav>
-            </div>
-            
-            <!--*********************************** THIS IS LOGOUT THE MODAL*************************************-->
-                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Logout</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <form action="./logout" method="GET">
-                            <div class="modal-body">
-                                <div class="col-md-12">
-                                    <h4>Are you sure you want to logout?</h4>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                              <button type="Submit" class="btn btn-primary">Yes</button>
-                            </div> 
-                      </form>
-                    </div>
-                  </div>
-                </div>
-                
-                
- 	<h1 class="display-2 text-center">{{ @exercise.exercise_name }}</h1><br>
+            <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+                <ul class="nav nav-pills nav-fill">
+                    <li class="nav-item">
+                      <a class="nav-link" href="./"><h3>Home</h3></a>
+                    </li>
+					<li class="nav-item">
+                      <a class="nav-link" href="./exercises/<?= ($unitID) ?>"><h3>Go Back</h3></a>
+                    </li>
+                </ul>
+            </nav>
+			
+	
+			<h1 class="display-2 text-center"><?= ($exercise['exercise_name']) ?></h1><br>
 			<div class="col-xs-11 col-sm-7">
     <div class="panel-group" id="accordion">
 
@@ -75,9 +49,8 @@
                 </div>
                 <div id="TEST_1" class="panel-collapse collapse">
                     <div class="panel-body">
-                        <div contenteditable="true">
-                        {{ @exercise.exercise_summary }}
-                        </div>
+                        <?= ($exercise['exercise_summary'])."
+" ?>
                     </div>
                 </div>
             </div>
@@ -95,10 +68,10 @@
                 <div id="TEST_2" class="panel-collapse collapse">
                     <div class="panel-body">
 						
-					<div contenteditable="true">
+					
   <iframe class="embed-responsive-item img-fluid" src="https://www.youtube.com/embed/kvCnjVSpuv0" allowfullscreen></iframe>
-                    </div>
-                        <!--{{ @exercise.exercise_video }}-->
+
+                        <!--<?= ($exercise['exercise_video']) ?>-->
 						
                 </div>
 				</div>
@@ -116,18 +89,15 @@
                 </div>
                 <div id="TEST_3" class="panel-collapse collapse">
                     <div class="panel-body">
-                        <div contenteditable="true">
 						<ul class="list-group">
-							
-                            <li class="list-group-item">How does the weight of an object (measured in newtons) affect the mass of an object?</li>
+							<li class="list-group-item">How does the weight of an object (measured in newtons) affect the mass of an object?</li>
 							<li class="list-group-item">Include supporting data from the experiment</li>
 							<li class="list-group-item">Answer the investigative question (If…then…) based off of the experimental data</li>
 							<li class="list-group-item">Restate the original investigative question</li>
 					
 							
 						</ul>
-                        </div>
-                        <!--{{ @exercise.exercise_questions }}-->
+                        <!--<?= ($exercise['exercise_questions']) ?>-->
                     </div>
                 </div>
             </div>
@@ -144,7 +114,7 @@
                 </div>
                 <div id="TEST_4" class="panel-collapse collapse">
                     <div class="panel-body">
-                        <!--{{ @exercise.exercise_image }}-->
+                        <!--<?= ($exercise['exercise_image']) ?>-->
 						<img src="http://hyperphysics.phy-astr.gsu.edu/hbase/imgmec/cm.gif" class="img-fluid" alt="Responsive image">
                     </div>
                 </div>
@@ -168,7 +138,8 @@
 						</a>
 						<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne"><div class="panel-body">
 						<p>
-							{{ @exercise.exercise_summary }}
+							<?= ($exercise['exercise_summary'])."
+" ?>
 						</p>
 						</div></div>
 					</div>
@@ -184,7 +155,8 @@
 								<iframe src="https://www.youtube.com/watch?v=-tiHfzBQZpI"
 								width="500" height="250" frameborder="0" allowfullscreen></iframe>
 								<p>
-								{{ @exercise.exercise_video }}
+								<?= ($exercise['exercise_video'])."
+" ?>
 								</p>
 							</body>
 						</div></div>
@@ -201,7 +173,8 @@
 						<div class="panel-heading"><a role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed">Assessive Questions </div>
 						</a><div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne"><div class="panel-body"><div class="panel-body">
 							<p>
-								{{ @exercise.exercise_questions }}
+								<?= ($exercise['exercise_questions'])."
+" ?>
 							</p>
 						</div></div>
 					</div>
@@ -215,7 +188,8 @@
  						<img src="https://sc01.alicdn.com/kf/HTB11RwlJpXXXXXCXFXXq6xXFXXXU/54509/HTB11RwlJpXXXXXCXFXXq6xXFXXXU.jpg" alt="dummy photo" height="300" width="400">
                         <img src="https://www.petmd.com/sites/default/files/petmd-cat-happy-13.jpg" alt="dummy photo" height="300" width="200">
 						<p>
-							{{ @exercise.exercise_image }}
+							<?= ($exercise['exercise_image'])."
+" ?>
 						</p>
 						</body>
                     </div></div>
