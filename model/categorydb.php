@@ -36,18 +36,17 @@
          /**
          * Adds a exercise to the collection of exercises in the db.
          */
-        function addCategory($category_name, $category_image)
+        function addCategory($category_name)
         {
             $insert =
             'INSERT INTO
             categories
-            (category_name, category_image)
+            (category_name)
             VALUES
-            (:category_name, :category_image)';
+            (:category_name)';
              
             $statement = $this->_pdo->prepare($insert);
             $statement->bindValue(':category_name', $category_name, PDO::PARAM_INT);
-            $statement->bindValue(':category_image', $category_image, PDO::PARAM_STR);
             
             $statement->execute();
         }
@@ -55,20 +54,18 @@
         /**
          * Edits a exercise to the collection of exercises in the db.
          */
-        function editCategory($category_name, $category_image, $category_id)
+        function editCategory($category_name, $category_id)
         {
             $insert =
             'UPDATE
             categories
             SET
-            category_name=:category_name,
-            category_image=:category_image
+            category_name=:category_name
             WHERE
             category_id=:id';
              
             $statement = $this->_pdo->prepare($insert);
             $statement->bindValue(':category_name', $category_name, PDO::PARAM_INT);
-            $statement->bindValue(':category_image', $category_image, PDO::PARAM_STR);
             $statement->bindValue(':id', $category_id, PDO::PARAM_STR);
             
             $statement->execute();
@@ -79,7 +76,7 @@
          */
         function allCategories()
         {
-            $select = 'SELECT category_id, category_name, category_image FROM categories ORDER BY category_name';
+            $select = 'SELECT category_id, category_name FROM categories ORDER BY category_name';
             $results = $this->_pdo->query($select);
              
             $resultsArray = array();

@@ -8,7 +8,7 @@
         
             $f3->route('POST /editCategory/@id', function($f3, $params)
             {
-                $GLOBALS['categoryDB']->editCategory($_POST['category_name'], $_POST['category_image'], $params['id']);
+                $GLOBALS['categoryDB']->editCategory($_POST['category_name'], $params['id']);
                 $f3->reroute('/categoryBackend');
             });
             
