@@ -52,6 +52,10 @@ p {
 li {
   font-size: medium;  
 }
+	 a:hover{
+			text-decoration: none;
+			color:white;
+}
             </style>            
             <!-- bootstrap -->
                 <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -71,7 +75,7 @@ li {
                             <a class="nav-link" href="./categoryBackend"><h3>Home</h3></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./unitsBackend/{{ @categoryID }}"><h3>Go Back</h3></a>
+                            <a class="nav-link" href="./exerciseBackend/{{ @categoryID }}"><h3>Go Back</h3></a>
                         </li>
                     </ul>
                     
@@ -166,6 +170,8 @@ li {
                         </button>
                     </div>
                     
+                    
+                    
                     <div class="text">
                         <button type="button" class="btn btn-primary btn-danger btn-lg" data-toggle="modal" data-target=".deleteExercise{{ @exercise.exercise_image }}">
                             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>  Delete
@@ -181,7 +187,16 @@ li {
 				</div>
             </div>
             
+            
+            
+            
             <!-- end panel -->
+
+
+
+
+
+
 
             <!-- start panel -->
             <div class="panel panel-primary">
@@ -277,6 +292,20 @@ li {
                 </div>
                 <div id="TEST_5" class="panel-collapse collapse">
                     <div class="panel-body">
+                        
+                            <div class="dropdown">
+            <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Students 
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+    <button class="dropdown-item" type="button">Kevin N.</button>
+    <button class="dropdown-item" type="button">Brian S.</button>
+    <button class="dropdown-item" type="button">Sonie M.</button>
+  </div>
+</div>
+                            
+                            
+                        
                         
                     
                     </div>

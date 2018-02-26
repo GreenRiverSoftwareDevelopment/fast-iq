@@ -14,6 +14,10 @@
 				li {
 					font-size: medium;  
 							}
+			 a:hover{
+			text-decoration: none;
+			color:white;
+}
 			</style>
 
 			
@@ -60,8 +64,7 @@
                 </div>
                 <div id="TEST_1" class="panel-collapse collapse">
                     <div class="panel-body">
-                        <?= ($exercise['exercise_summary'])."
-" ?>
+                       <p> <?= ($exercise['exercise_summary']) ?> </p>
                     </div>
                 </div>
             </div>
