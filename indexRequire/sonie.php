@@ -28,6 +28,9 @@
                 $f3->set('unitName', $unitName);
                 $f3->set('exercises', $exercises);
                 $f3->set('exercise', $exercise);
+                
+                
+                print_r($exercise);
                 echo Template::instance()->render('pages/exercise_summary_backend.html');
             });
      
