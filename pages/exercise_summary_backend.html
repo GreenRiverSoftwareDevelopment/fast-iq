@@ -159,7 +159,8 @@ li {
                     <div class="panel-body">
                         <div class="container">
 						<div class="hoverImage">	
-  <iframe class="embed-responsive-item img-fluid" src="https://www.youtube.com/embed/kvCnjVSpuv0" allowfullscreen></iframe></div>
+  
+                         <iframe class="embed-responsive-item img-fluid" src="{{ @exercise.exercise_video }}" allowfullscreen></iframe></div>
                       
                       <!-- Edit and Delete hover over -->
                         <div class="middle">
@@ -214,13 +215,10 @@ li {
                          <div contenteditable="true">
 						<ul class="list-group">
                             
-							<li class="list-group-item">{{ @exercise.exercise_questions }} </li> 
-							<li class="list-group-item">Include supporting data from the experiment</li>
-							<li class="list-group-item">Answer the investigative question (If…then…) based off of the experimental data</li>
-							<li class="list-group-item">Restate the original investigative question</li>
-                            
-							
-						</ul>
+                        <repeat group="{{ @questions_array }}" value = "{{ @question }}">
+                            <li class="list-group-item">{{ @question }} </li> 
+                        </repeat>
+                        </ul>
                          </div>
                          <br>
                          <div class="d-flex justify-content-center col-sm-2">
@@ -252,7 +250,7 @@ li {
                         <!--{{ @exercise.exercise_image }}-->
                         <div class="container">
                             <div class="hoverImage">
-						<img src="http://hyperphysics.phy-astr.gsu.edu/hbase/imgmec/cm.gif" class="img-fluid" alt="Responsive image">
+						<img src="{{ @exercise.exercise_image }}" class="img-fluid" alt="Responsive image">
                    
                         </div>
                         <!-- Edit and Delete hover over -->

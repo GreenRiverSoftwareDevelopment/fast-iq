@@ -30,7 +30,12 @@
                 $f3->set('exercise', $exercise);
                 
                 
-                print_r($exercise);
+                
+                
+                $questions_array = explode(',', $exercise['exercise_questions']);
+                $f3->set('questions_array', $questions_array);
+                
+                print_r($questions_array);
                 echo Template::instance()->render('pages/exercise_summary_backend.html');
             });
      
