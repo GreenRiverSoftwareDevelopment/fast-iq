@@ -52,8 +52,7 @@
             $video = '<iframe width="700" height="480" src="https://www.youtube.com/embed/'.$youtubeEmbededCode.'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
             $f3->set('youtubeEmbededCode', $youtubeEmbededCode);
                 
-                var_dump($exercise);
-                echo " hello". $_SESSION['exercise_id'];
+            
         echo Template::instance()->render('pages/exercise_summary_backend.html');
      });
      
