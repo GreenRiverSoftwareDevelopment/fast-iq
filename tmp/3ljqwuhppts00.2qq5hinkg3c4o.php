@@ -159,8 +159,8 @@ li {
                     <div class="panel-body">
                         <div class="container">
 						<div class="hoverImage">	
-  
-                         <iframe class="embed-responsive-item img-fluid" src="<?= ($exercise['exercise_video']) ?>" allowfullscreen></iframe></div>
+                            
+                         <iframe class="embed-responsive-item img-fluid" src="https://www.youtube.com/embed/<?= ($youtubeEmbededCode) ?>" allowfullscreen></iframe></div>
                       
                       <!-- Edit and Delete hover over -->
                         <div class="middle">

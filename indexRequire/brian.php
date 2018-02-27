@@ -44,6 +44,7 @@
         
             $f3->route('POST /editExercise/@id', function($f3, $params)
             {
+                $_SESSION['exercise_id'] = $params['id'];
                 $GLOBALS['exerciseDB']->editExerciseName($params['id'], $_POST['exercise_name']);
                 $f3->reroute('/exercisesBackend');
             });
@@ -87,6 +88,9 @@
             $f3->route('GET /exerciseSummaryBackend/@id', function($f3, $params)
             {
                     $_SESSION['exerciseID'] = $params['id'];
+                              $questions_array = explode(',', $exercise['exercise_questions']);
+               $f3->set('questions_array', $questions_array);
+     //           
                 $f3->reroute('/exerciseSummaryBackend');
             });
             
