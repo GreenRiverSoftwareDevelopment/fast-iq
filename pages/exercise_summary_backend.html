@@ -122,14 +122,16 @@ li {
 		<div class="col-sm-10 col-sm-offset-5">
             <!-- start panel -->
             <div class="panel panel-primary">
+                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#TEST_1">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#TEST_1">
+                    
                         
                         EXERCISE SUMMARY
-                     </a>
+                     
                     </h4>
                 </div>
+                 </a>
                 <div id="TEST_1" class="panel-collapse collapse show">
                     <div class="panel-body">
                         <div contenteditable="true">
