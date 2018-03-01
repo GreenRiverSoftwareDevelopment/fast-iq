@@ -71,16 +71,10 @@
         <!--*********************************** THIS IS THE MODAL*************************************-->
 		
 
-		
-		
-            <!--This is the Main body of the page-->
-            <h1 class="display-2 text-center">Summary Page</h1>
-            
-			<br>
-			<!--Buttom ROW OF COLS-->
+		<!--Buttom ROW OF COLS-->
                     <div class="row">
-						<div class="col-sm-3"></div> 
-                            <div class= "col-sm-2">
+						<div class="col-sm-3"></div>
+                            <div class= "col-sm-3">
 								<div id="form">
 								  <p>Select category:</p>
 								  <select id="category_select">
@@ -93,14 +87,14 @@
 
 								</div>
                             </div>
-                            <div class= "col-sm-2">
+                            <div class= "col-sm-3">
 								<p>Select Units:</p>
                                	  <select id="unit_select">
 									<!--What ever is being echoed is echoed here-->
 								  </select>
                             </div>
                             
-                            <div class= "col-sm-2">
+                            <div class= "col-sm-3">
 								<p>Select exercises:</p>
 								 <select id="excercise_select">
 									<!--What ever is being echoed is echoed here-->
@@ -109,114 +103,12 @@
                         <div class="col-sm-3"></div>    
                     
                     </div>
-           <!--End of COLS Bottom-->     
-
-              <script>
-				function updateUnits() {
-				  var cat_select = document.getElementById("category_select");
-				  var subcat_select = document.getElementById("unit_select");
-		  
-				  var cat_id = cat_select.options[cat_select.selectedIndex].value;
-		  
-				  var url = '/fast-iq/grabUnits/' + cat_id;
-				  console.log(cat_id);
-					
-				  var xhr = new XMLHttpRequest();
-				  xhr.open('GET', url, true);
-				  xhr.onreadystatechange = function () {
-				   
-					  //cat_select.innerHTML = xhr.responseText;
-					  subcat_select.innerHTML = xhr.responseText;
-					  console.log(xhr.responseText);
-					  //subcat_select.style.display = 'inline';
-					
-				  };
-				  xhr.send();
-				}
-		  
-				var cat_select = document.getElementById("category_select");
-				cat_select.addEventListener("change", updateUnits);
-				
-				
-				function updateExcercise() {
-				  var unit_select = document.getElementById("unit_select");
-				  var exercise_select = document.getElementById("excercise_select");
-		  
-				  var unit_id = unit_select.options[unit_select.selectedIndex].value;
-		  
-				  var url = '/fast-iq/grabExercise/' + unit_id;
-				  console.log(unit_id);
-					
-				  var xhr = new XMLHttpRequest();
-				  xhr.open('GET', url, true);
-				  xhr.onreadystatechange = function () {
-				   
-					  //cat_select.innerHTML = xhr.responseText;
-					  exercise_select.innerHTML = xhr.responseText;
-					  console.log(xhr.responseText);
-					 //subcat_select.style.display = 'inline';
-					
-				  };
-				  xhr.send();
-				}
-		  
-				var unit_select = document.getElementById("unit_select");
-				unit_select.addEventListener("change", updateExcercise);
-				
-				
-				//Summary
-				function updateSummary() {
-				  var excercise_select = document.getElementById("excercise_select");
-				  var summary_select = document.getElementById("collapseOne");
-		  
-				  var summary_id = excercise_select.options[excercise_select.selectedIndex].value;
-		  
-				  var url = '/fast-iq/summaryExercise/' + summary_id;
-				  console.log(summary_id);
-					
-				  var xhr = new XMLHttpRequest();
-				  xhr.open('GET', url, true);
-				  xhr.onreadystatechange = function () {
-				   
-					  //cat_select.innerHTML = xhr.responseText;
-					  summary_select.innerHTML = xhr.responseText;
-					  console.log(xhr.responseText);
-					 //subcat_select.style.display = 'inline';
-					
-				  };
-				  xhr.send();
-				}
-		  
-				var unit_select = document.getElementById("excercise_select");
-				unit_select.addEventListener("change", updateSummary);
-				
-				
-								//Summary
-				function updateVideo() {
-				  var excercise_select = document.getElementById("excercise_select");
-				  var video_select = document.getElementById("collapseTwo");
-		  
-				  var video_id = excercise_select.options[excercise_select.selectedIndex].value;
-		  
-				  var url = '/fast-iq/videoExercise/' + video_id;
-				  console.log(video_id);
-					
-				  var xhr = new XMLHttpRequest();
-				  xhr.open('GET', url, true);
-				  xhr.onreadystatechange = function () {
-				   
-					  //cat_select.innerHTML = xhr.responseText;
-					  video_select.innerHTML = xhr.responseText;
-					  console.log(xhr.responseText);
-					 //subcat_select.style.display = 'inline';
-					
-				  };
-				  xhr.send();
-				}
-		  
-				var unit_select = document.getElementById("excercise_select");
-				unit_select.addEventListener("change", updateVideo);
-			  </script>
+           <!--End of COLS Bottom--> 
+		
+		
+            <!--This is the Main body of the page-->
+            <h1 class="display-2 text-center">Summary Page</h1>
+            
             
             <br>
                 <div class="row">
@@ -308,7 +200,114 @@
             
           
             <br>
-            
+                
+
+              <script>
+				function updateUnits() {
+				  var cat_select = document.getElementById("category_select");
+				  var subcat_select = document.getElementById("unit_select");
+		  
+				  var cat_id = cat_select.options[cat_select.selectedIndex].value;
+		  
+				  var url = './grabUnits/' + cat_id;
+				  console.log(cat_id);
+					
+				  var xhr = new XMLHttpRequest();
+				  xhr.open('GET', url, true);
+				  xhr.onreadystatechange = function () {
+				   
+					  //cat_select.innerHTML = xhr.responseText;
+					  subcat_select.innerHTML = xhr.responseText;
+					  console.log(xhr.responseText);
+					  //subcat_select.style.display = 'inline';
+					
+				  };
+				  xhr.send();
+				}
+		  
+				var cat_select = document.getElementById("category_select");
+				cat_select.addEventListener("change", updateUnits);
+				
+				
+				function updateExcercise() {
+				  var unit_select = document.getElementById("unit_select");
+				  var exercise_select = document.getElementById("excercise_select");
+		  
+				  var unit_id = unit_select.options[unit_select.selectedIndex].value;
+		  
+				  var url = './grabExercise/' + unit_id;
+				  console.log(unit_id);
+					
+				  var xhr = new XMLHttpRequest();
+				  xhr.open('GET', url, true);
+				  xhr.onreadystatechange = function () {
+				   
+					  //cat_select.innerHTML = xhr.responseText;
+					  exercise_select.innerHTML = xhr.responseText;
+					  console.log(xhr.responseText);
+					 //subcat_select.style.display = 'inline';
+					
+				  };
+				  xhr.send();
+				}
+		  
+				var unit_select = document.getElementById("unit_select");
+				unit_select.addEventListener("change", updateExcercise);
+				
+				
+				//Summary
+				function updateSummary() {
+				  var excercise_select = document.getElementById("excercise_select");
+				  var summary_select = document.getElementById("collapseOne");
+		  
+				  var summary_id = excercise_select.options[excercise_select.selectedIndex].value;
+		  
+				  var url = './summaryExercise/' + summary_id;
+				  console.log(summary_id);
+					
+				  var xhr = new XMLHttpRequest();
+				  xhr.open('GET', url, true);
+				  xhr.onreadystatechange = function () {
+				   
+					  //cat_select.innerHTML = xhr.responseText;
+					  summary_select.innerHTML = xhr.responseText;
+					  console.log(xhr.responseText);
+					 //subcat_select.style.display = 'inline';
+					
+				  };
+				  xhr.send();
+				}
+		  
+				var unit_select = document.getElementById("excercise_select");
+				unit_select.addEventListener("change", updateSummary);
+				
+				
+								//Summary
+				function updateVideo() {
+				  var excercise_select = document.getElementById("excercise_select");
+				  var video_select = document.getElementById("collapseTwo");
+		  
+				  var video_id = excercise_select.options[excercise_select.selectedIndex].value;
+		  
+				  var url = './videoExercise/' + video_id;
+				  console.log(video_id);
+					
+				  var xhr = new XMLHttpRequest();
+				  xhr.open('GET', url, true);
+				  xhr.onreadystatechange = function () {
+				   
+					  //cat_select.innerHTML = xhr.responseText;
+					  video_select.innerHTML = xhr.responseText;
+					  console.log(xhr.responseText);
+					 //subcat_select.style.display = 'inline';
+					
+				  };
+				  xhr.send();
+				}
+		  
+				var unit_select = document.getElementById("excercise_select");
+				unit_select.addEventListener("change", updateVideo);
+			  </script>
             
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

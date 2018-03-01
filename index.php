@@ -47,7 +47,8 @@
     
     $f3->route('GET /angularTest', function($f3)
     {
-        echo Template::instance()->render('pages/angularTest.html');
+        $view = new View;
+        echo $view->render('pages/angularTest.html');
     });
     
     $f3->route('GET /', function($f3)
