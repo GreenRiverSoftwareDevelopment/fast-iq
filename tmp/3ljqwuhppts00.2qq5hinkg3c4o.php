@@ -75,7 +75,7 @@ li {
                             <a class="nav-link" href="./categoryBackend"><h3>Home</h3></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./exercisesBackend/{{ @categoryID }}"><h3>Go Back</h3></a>
+                            <a class="nav-link" href="./exercisesBackend/<?= ($categoryID) ?>"><h3>Go Back</h3></a>
                         </li>
                     </ul>
                     
@@ -113,7 +113,7 @@ li {
                 
                
                 
-  <h1 class="display-2 text-center">{{ @exercise.exercise_name }}</h1><br>
+  <h1 class="display-2 text-center"><?= ($exercise['exercise_name']) ?></h1><br>
 			<div class="col-xs-11 col-sm-7">
     <div class="panel-group" id="accordion">
 
@@ -135,11 +135,11 @@ li {
                 <div id="TEST_1" class="panel-collapse collapse show">
                     <div class="panel-body">
                         <div contenteditable="true">
-                        <p>{{ @exercise.exercise_summary }}</p>
+                        <p><?= ($exercise['exercise_summary']) ?></p>
                         </div>
                         <br>
                         <div class="d-flex justify-content-center col-sm-2">
-                        <button type="button" class="btn btn-primary btn-success btn-lg" data-toggle="modal" data-target=".saveExercise{{ @exercise.exercise_id }}">
+                        <button type="button" class="btn btn-primary btn-success btn-lg" data-toggle="modal" data-target=".saveExercise<?= ($exercise['exercise_id']) ?>">
                             <span class="glyphicon glyphicon-saved" aria-hidden="true"></span>  Save
                         </button></div>
                     </div>
@@ -162,13 +162,13 @@ li {
                         <div class="container">
 						<div class="hoverImage">	
                             
-                         <iframe class="embed-responsive-item img-fluid" src="https://www.youtube.com/embed/{{ @youtubeEmbededCode }}" allowfullscreen></iframe></div>
+                         <iframe class="embed-responsive-item img-fluid" src="https://www.youtube.com/embed/<?= ($youtubeEmbededCode) ?>" allowfullscreen></iframe></div>
                       
                       <!-- Edit and Delete hover over -->
                         <div class="middle">
                     <div class="text">
                         
-                        <button type="button" class="btn btn-primary btn-warning btn-lg" data-toggle="modal" data-target=".editExercise{{ @exercise.exercise_id }}">
+                        <button type="button" class="btn btn-primary btn-warning btn-lg" data-toggle="modal" data-target=".editExercise<?= ($exercise['exercise_id']) ?>">
                             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  Edit
                         </button>
                     </div>
@@ -176,7 +176,7 @@ li {
                     
                     
                     <div class="text">
-                        <button type="button" class="btn btn-primary btn-danger btn-lg" data-toggle="modal" data-target=".deleteExercise{{ @exercise.exercise_image }}">
+                        <button type="button" class="btn btn-primary btn-danger btn-lg" data-toggle="modal" data-target=".deleteExercise<?= ($exercise['exercise_image']) ?>">
                             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>  Delete
                         </button>
                     </div>
@@ -184,7 +184,7 @@ li {
                         <!-- Edit and Delete hover over end -->
 
             </div>
-                        <!--{{ @exercise.exercise_video }}-->
+                        <!--<?= ($exercise['exercise_video']) ?>-->
 						
                 </div>
 				</div>
@@ -217,20 +217,20 @@ li {
                          <div contenteditable="true">
 						<ul class="list-group">
                             
-                        <repeat group="{{ @questions_array }}" value = "{{ @question }}">
-                            <li class="list-group-item">{{ @question }} </li> 
-                        </repeat>
+                        <?php foreach (($questions_array?:[]) as $question): ?>
+                            <li class="list-group-item"><?= ($question) ?> </li> 
+                        <?php endforeach; ?>
                         </ul>
                          </div>
                          <br>
                          <div class="d-flex justify-content-center col-sm-2">
-                        <button type="button" class="btn btn-primary btn-success btn-lg" data-toggle="modal" data-target=".saveExercise{{ @exercise.exercise_id }}">
+                        <button type="button" class="btn btn-primary btn-success btn-lg" data-toggle="modal" data-target=".saveExercise<?= ($exercise['exercise_id']) ?>">
                             <span class="glyphicon glyphicon-saved" aria-hidden="true"></span>  Save
                         </button>
                          </div>
 
                          
-                        <!--{{ @exercise.exercise_questions }}-->
+                        <!--<?= ($exercise['exercise_questions']) ?>-->
                     </div>
                 </div>
             </div>
@@ -249,23 +249,23 @@ li {
                 </div>
                 <div id="TEST_4" class="panel-collapse collapse show">
                     <div class="panel-body">
-                        <!--{{ @exercise.exercise_image }}-->
+                        <!--<?= ($exercise['exercise_image']) ?>-->
                         <div class="container">
                             <div class="hoverImage">
-						<img src="{{ @exercise.exercise_image }}" class="img-fluid" alt="Responsive image">
+						<img src="<?= ($exercise['exercise_image']) ?>" class="img-fluid" alt="Responsive image">
                    
                         </div>
                         <!-- Edit and Delete hover over -->
                         <div class="middle">
                     <div class="text">
                         
-                        <button type="button" class="btn btn-primary btn-warning btn-lg" data-toggle="modal" data-target=".editExercise{{ @exercise.exercise_id }}">
+                        <button type="button" class="btn btn-primary btn-warning btn-lg" data-toggle="modal" data-target=".editExercise<?= ($exercise['exercise_id']) ?>">
                             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  Edit
                         </button>
                     </div>
                     
                     <div class="text">
-                        <button type="button" class="btn btn-primary btn-danger btn-lg" data-toggle="modal" data-target=".deleteExercise{{ @exercise.exercise_image }}">
+                        <button type="button" class="btn btn-primary btn-danger btn-lg" data-toggle="modal" data-target=".deleteExercise<?= ($exercise['exercise_image']) ?>">
                             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>  Delete
                         </button>
                     </div>
@@ -333,7 +333,8 @@ li {
 						</a>
 						<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne"><div class="panel-body">
 						<p>
-							{{ @exercise.exercise_summary }}
+							<?= ($exercise['exercise_summary'])."
+" ?>
 						</p>
 						</div></div>
 					</div>
@@ -349,7 +350,8 @@ li {
 								<iframe src="https://www.youtube.com/watch?v=-tiHfzBQZpI"
 								width="500" height="250" frameborder="0" allowfullscreen></iframe>
 								<p>
-								{{ @exercise.exercise_video }}
+								<?= ($exercise['exercise_video'])."
+" ?>
 								</p>
 							</body>
 						</div></div>
@@ -366,7 +368,8 @@ li {
 						<div class="panel-heading"><a role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed">Assessive Questions </div>
 						</a><div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne"><div class="panel-body"><div class="panel-body">
 							<p>
-								{{ @exercise.exercise_questions }}
+								<?= ($exercise['exercise_questions'])."
+" ?>
 							</p>
 						</div></div>
 					</div>
@@ -380,7 +383,8 @@ li {
  						<img src="https://sc01.alicdn.com/kf/HTB11RwlJpXXXXXCXFXXq6xXFXXXU/54509/HTB11RwlJpXXXXXCXFXXq6xXFXXXU.jpg" alt="dummy photo" height="300" width="400">
                         <img src="https://www.petmd.com/sites/default/files/petmd-cat-happy-13.jpg" alt="dummy photo" height="300" width="200">
 						<p>
-							{{ @exercise.exercise_image }}
+							<?= ($exercise['exercise_image'])."
+" ?>
 						</p>
 						</body>
                     </div></div>

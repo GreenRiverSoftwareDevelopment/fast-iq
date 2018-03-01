@@ -6,6 +6,21 @@
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <!-- bootstrap -->
+			<style>
+				p {
+					font-size: medium;  
+			}
+
+				li {
+					font-size: medium;  
+							}
+			 a:hover{
+			text-decoration: none;
+			color:white;
+}
+			</style>
+
+			
                 <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
                 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
                     rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -30,6 +45,7 @@
                 </ul>
             </nav>
 			
+	
 			<h1 class="display-2 text-center"><?= ($exercise['exercise_name']) ?></h1><br>
 			<div class="col-xs-11 col-sm-7">
     <div class="panel-group" id="accordion">
@@ -48,8 +64,7 @@
                 </div>
                 <div id="TEST_1" class="panel-collapse collapse">
                     <div class="panel-body">
-                        <?= ($exercise['exercise_summary'])."
-" ?>
+                       <p> <?= ($exercise['exercise_summary']) ?> </p>
                     </div>
                 </div>
             </div>
@@ -66,10 +81,14 @@
                 </div>
                 <div id="TEST_2" class="panel-collapse collapse">
                     <div class="panel-body">
+						
+					
+  <iframe class="embed-responsive-item img-fluid" src="https://www.youtube.com/embed/kvCnjVSpuv0" allowfullscreen></iframe>
+
                         <!--<?= ($exercise['exercise_video']) ?>-->
-						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/kvCnjVSpuv0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                    </div>
+						
                 </div>
+				</div>
             </div>
             <!-- end panel -->
 
@@ -114,6 +133,7 @@
                     </div>
                 </div>
             </div>
+		</div>
             <!-- end panel -->
 
 			

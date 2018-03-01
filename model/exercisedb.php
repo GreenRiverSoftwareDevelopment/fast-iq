@@ -59,6 +59,25 @@
             
             $statement->execute();
         }
+        
+        /**
+         * Adds a exercise with only a name and hte corresponding unit to the collection of exercises in the db.
+         */
+        function addExerciseName($id, $exercise_name)
+        {
+            $insert =
+            'INSERT INTO
+            exercises
+            (unit_id, exercise_name, exercise_summary, exercise_image, exercise_video, exercise_questions)
+            VALUES
+            (:id, :exercise_name, "", "", "", "")';
+             
+            $statement = $this->_pdo->prepare($insert);
+            $statement->bindValue(':id', $id, PDO::PARAM_INT);
+            $statement->bindValue(':exercise_name', $exercise_name, PDO::PARAM_STR);
+            
+            $statement->execute();
+        }
          
         /**
          * Edits a exercise to the collection of exercises in the db.
@@ -84,6 +103,26 @@
             $statement->bindValue(':exercise_image', $exercise_image, PDO::PARAM_STR);
             $statement->bindValue(':exercise_video', $exercise_video, PDO::PARAM_STR);
             $statement->bindValue(':exercise_questions', $exercise_questions, PDO::PARAM_STR);
+            
+            $statement->execute();
+        }
+        
+        /**
+         * Edits a exercise to the collection of exercises in the db.
+         */
+        function editExerciseName($id, $exercise_name)
+        {
+            $insert =
+            'UPDATE
+            exercises
+            SET
+            exercise_name=:exercise_name
+            WHERE
+            exercise_id=:id';
+             
+            $statement = $this->_pdo->prepare($insert);
+            $statement->bindValue(':id', $id, PDO::PARAM_INT);
+            $statement->bindValue(':exercise_name', $exercise_name, PDO::PARAM_STR);
             
             $statement->execute();
         }

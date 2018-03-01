@@ -22,7 +22,7 @@
                         </li>
                     </ul>
                     
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                    <button type="button" id="login" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
                         <h3>Login</h3>
                     </button>
                 </nav>
@@ -55,7 +55,7 @@
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                              <button type="Submit" class="btn btn-primary">Sign In</button>
+                              <button type="Submit" id="submit" class="btn btn-primary">Sign In</button>
                             </div> 
                       </form>
                     </div>

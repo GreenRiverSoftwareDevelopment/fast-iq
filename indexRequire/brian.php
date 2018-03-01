@@ -8,7 +8,7 @@
         
             $f3->route('POST /editCategory/@id', function($f3, $params)
             {
-                $GLOBALS['categoryDB']->editCategory($_POST['category_name'], $_POST['category_image'], $params['id']);
+                $GLOBALS['categoryDB']->editCategory($_POST['category_name'], $params['id']);
                 $f3->reroute('/categoryBackend');
             });
             
@@ -38,13 +38,14 @@
                 
         $f3->route('POST /addExercise/@id', function($f3, $params)
         {
-            $GLOBALS['exerciseDB']->addExercise($_POST['exercise_name'], $_SESSION['unitID']);
+            $GLOBALS['exerciseDB']->addExerciseName($_SESSION['unitID'], $_POST['exercise_name']);
             $f3->reroute('/exercisesBackend');
         });
         
             $f3->route('POST /editExercise/@id', function($f3, $params)
             {
-                $GLOBALS['exerciseDB']->editExercise($_POST['exercise_name'], $params['id']);
+                $_SESSION['exercise_id'] = $params['id'];
+                $GLOBALS['exerciseDB']->editExerciseName($params['id'], $_POST['exercise_name']);
                 $f3->reroute('/exercisesBackend');
             });
             
@@ -87,6 +88,9 @@
             $f3->route('GET /exerciseSummaryBackend/@id', function($f3, $params)
             {
                     $_SESSION['exerciseID'] = $params['id'];
+                              $questions_array = explode(',', $exercise['exercise_questions']);
+               $f3->set('questions_array', $questions_array);
+     //           
                 $f3->reroute('/exerciseSummaryBackend');
             });
             
