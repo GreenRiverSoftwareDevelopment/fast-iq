@@ -17,9 +17,9 @@
         
     });
     
-        $f3->route('GET /categorySecond', function($f3)
+    $f3->route('GET /categorySecond', function($f3)
     {
-         $categories =  $GLOBALS['categoryDB']->allCategories();
+        $categories =  $GLOBALS['categoryDB']->allCategories();
         $f3->set('categories', $categories);
        
         $testPassedVar = $_SESSION['passedVar'];
@@ -37,7 +37,7 @@
              */
         }
         
-        echo '<br />';
+    //echo '<br />';
        // var_dump($categories);
        // echo '</select>';
        
@@ -50,7 +50,7 @@
         
     $f3->route('GET /grabUnits/@id', function($f3, $params)
     {
-         $units =  $GLOBALS['unitDB']->unitsByCategory($params['id']);
+        $units =  $GLOBALS['unitDB']->unitsByCategory($params['id']);
         $f3->set('units', $units);
         
         
@@ -80,9 +80,9 @@
        //echo Template::instance()->render('pages/category_page_two.html');
     });
     
-        $f3->route('GET /grabExercise/@id', function($f3, $params)
+    $f3->route('GET /grabExercise/@id', function($f3, $params)
     {
-         $exercises =  $GLOBALS['exerciseDB']->exercisesByUnit($params['id']);
+        $exercises =  $GLOBALS['exerciseDB']->exercisesByUnit($params['id']);
         $f3->set('exercise', $exercises);
         
         
@@ -112,7 +112,7 @@
         
     $f3->route('GET /summaryExercise/@id', function($f3, $params)
     {
-         $summaryEntries =  $GLOBALS['exerciseDB']->getExerciseByID($params['id']);
+        $summaryEntries =  $GLOBALS['exerciseDB']->getExerciseByID($params['id']);
         $f3->set('exercise', $summaryEntries);
         
            
@@ -134,7 +134,7 @@
     
       $f3->route('GET /videoExercise/@id', function($f3, $params)
     {
-         $summaryEntries =  $GLOBALS['exerciseDB']->getExerciseByID($params['id']);
+        $summaryEntries =  $GLOBALS['exerciseDB']->getExerciseByID($params['id']);
         $f3->set('exercise', $summaryEntries);
         
             $youtubeLink = $summaryEntries['exercise_video'];

@@ -86,9 +86,9 @@
 								  <select id="category_select">
 									<option disabled selected>Please select</option>
 									
-									 <repeat group="{{ @categories }}" value="{{ @category }}">
-										<option value="{{ @category.category_id }}">{{ @category.category_name }}</option>
-                                    </repeat>
+									 <?php foreach (($categories?:[]) as $category): ?>
+										<option value="<?= ($category['category_id']) ?>"><?= ($category['category_name']) ?></option>
+                                    <?php endforeach; ?>
 								  </select>
 
 								</div>
@@ -231,7 +231,8 @@
 								  Lorem ipsum dolor sit amet, consectetu elementum. Mauris condimentum vel purus vel viverra.
 								  Mauris lacinia sapien ut ullamcorper porta. Vestibulum volutpat vulputate convallis.
 								 Aenean hendrerit aliquam lectus eu molestie.
-								{{ @exercise.exercise_questions }}
+								<?= ($exercise['exercise_questions'])."
+" ?>
 							</p>
                     
                     </div></div>
