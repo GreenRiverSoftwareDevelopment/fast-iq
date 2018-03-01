@@ -80,7 +80,7 @@
        //echo Template::instance()->render('pages/category_page_two.html');
     });
     
-        $f3->route('GET ./grabExercise/@id', function($f3, $params)
+        $f3->route('GET /grabExercise/@id', function($f3, $params)
     {
          $exercises =  $GLOBALS['exerciseDB']->exercisesByUnit($params['id']);
         $f3->set('exercise', $exercises);
