@@ -95,17 +95,17 @@
                 echo Template::instance()->render('pages/unit_backend.html');
             });
     
-    $f3->route('GET /exercises', function($f3)
-    {
-        $exercises =  $GLOBALS['exerciseDB']->exercisesByUnit($_SESSION['unitID']);
-        
-        $unitName = $GLOBALS['unitDB']->getUnitByID($_SESSION['unitID']);
-        
-        $f3->set('categoryID', $_SESSION['categoryID']);
-        $f3->set('unitName', $unitName);
-        $f3->set('exercises', $exercises);
-        echo Template::instance()->render('pages/exercise_page.html');
-    });
+            $f3->route('GET /exercises', function($f3)
+            {
+                $exercises =  $GLOBALS['exerciseDB']->exercisesByUnit($_SESSION['unitID']);
+                
+                $unitName = $GLOBALS['unitDB']->getUnitByID($_SESSION['unitID']);
+                
+                $f3->set('categoryID', $_SESSION['categoryID']);
+                $f3->set('unitName', $unitName);
+                $f3->set('exercises', $exercises);
+                echo Template::instance()->render('pages/exercise_page.html');
+            });
     
             $f3->route('GET /exercisesBackend', function($f3)
             {

@@ -105,7 +105,7 @@
       				<div class="panel-heading">
 						<a role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1 id="tabHeading">Video</h1></div>
 						</a><div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne"><div class="panel-body"><div class="panel-body">
-							 <iframe width="700" height="480" src="https://www.youtube.com/embed/BX2XfIID7l0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+							 
                     <div class="col-sm-1"></div>
                 </div>
                 </div>

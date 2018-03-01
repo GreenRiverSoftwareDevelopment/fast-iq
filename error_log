@@ -1136,3 +1136,17 @@ Stack trace:
 [22-Feb-2018 15:12:14 America/Chicago] HTTP 404 (GET /exerciseSummaryBackend)
 [22-Feb-2018 15:12:14 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:1675] Base->error()
 [22-Feb-2018 15:12:14 America/Chicago] [fast-iq/index.php:136] Base->run()
+[23-Feb-2018 12:07:10 America/Chicago] PHP Warning:  require_once(vendor/autoload.php): failed to open stream: No such file or directory in /home/knguyen/public_html/fast-iq/index.php on line 9
+[23-Feb-2018 12:07:10 America/Chicago] PHP Fatal error:  require_once(): Failed opening required 'vendor/autoload.php' (include_path='.:/opt/php54/lib/php') in /home/knguyen/public_html/fast-iq/index.php on line 9
+[26-Feb-2018 22:47:20 America/Chicago] HTTP 404 (GET /exerciseSummaryBackend)
+[26-Feb-2018 22:47:20 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:1675] Base->error()
+[26-Feb-2018 22:47:20 America/Chicago] [fast-iq/index.php:136] Base->run()
+[26-Feb-2018 22:47:27 America/Chicago] HTTP 404 (GET /exerciseSummaryBackend)
+[26-Feb-2018 22:47:27 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:1675] Base->error()
+[26-Feb-2018 22:47:27 America/Chicago] [fast-iq/index.php:136] Base->run()
+[26-Feb-2018 22:47:35 America/Chicago] HTTP 404 (GET /exerciseSummaryBackend)
+[26-Feb-2018 22:47:35 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:1675] Base->error()
+[26-Feb-2018 22:47:35 America/Chicago] [fast-iq/index.php:136] Base->run()
+[26-Feb-2018 23:01:13 America/Chicago] HTTP 404 (GET /exerciseSummaryBackend)
+[26-Feb-2018 23:01:13 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:1675] Base->error()
+[26-Feb-2018 23:01:13 America/Chicago] [fast-iq/index.php:136] Base->run()
