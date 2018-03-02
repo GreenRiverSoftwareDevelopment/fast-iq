@@ -87,7 +87,6 @@
 										<option value="<?= ($category['category_id']) ?>"><?= ($category['category_name']) ?></option>
                                     <?php endforeach; ?>
 								  </select>
-
 								</div>
                             </div>
                             <div class= "col-sm-2">
