@@ -13,6 +13,7 @@
                 <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
                 <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
                 <![endif]-->
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         </head>
         <body>
             <div>
@@ -27,7 +28,7 @@
                 </ul>
               
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                  Login
+					<h3>Login</h3>
                 </button>
 
             </nav>
@@ -48,21 +49,21 @@
                       <form action="./login" method="POST">
                             <div class="modal-body">
                                 <div class="form-group row">
-                                  <label for="example-time-input" class="col-2 col-form-label">username</label>
+                                  <label for="example-time-input" class="col-2 col-form-label">Email</label>
                                   <div class="col-10">
-                                    <input class="form-control" type="Text" name="username" placeholder="username" id="username">
+                                    <input class="form-control" type="email" name="username" placeholder="email" id="username" required="true">
                                   </div>
                                 </div>
                                 <div class="form-group row">
                                   <label for="example-color-input" class="col-2 col-form-label">Password</label>
                                   <div class="col-10">
-                                    <input class="form-control" type="password" name="password" placeholder="password" id="password">
+                                    <input class="form-control" type="password" name="password" placeholder="password" id="password" required="true">
                                   </div>
                                 </div>
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                              <button type="Submit" class="btn btn-primary">Save changes</button>
+                              <button type="Submit" class="btn btn-primary">Login</button>
                             </div> 
                       </form>
                     </div>
@@ -70,145 +71,166 @@
                 </div>
         <!--*********************************** THIS IS THE MODAL*************************************-->
 		
+		<br>
+		<br>
 
-		
-		
-            <!--This is the Main body of the page-->
-            <h1 class="display-2 text-center">Summary Page</h1>
-            
-            
-            <br>
-                <div class="row">
-					
-					
-                    <div class="col-sm-3"></div>
-                    <div class="col-sm-6"><div class="panel panel-primary">
-      				<div class="panel-heading">
-						<a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1 id="tabHeading">Exercise Summary</h1></div>
-						</a><div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne"><div class="panel-body"><div class="panel-body">
-							<p>
-								  Lorem ipsum dolor sit amet, consectetu elementum. Mauris condimentum vel purus vel viverra.
-								  Mauris lacinia sapien ut ullamcorper porta. Vestibulum volutpat vulputate convallis.
-								 Aenean hendrerit aliquam lectus eu molestie.
-								<?= ($exercise['exercise_questions'])."
-" ?>
-							</p>
-                    
-                    </div></div>
-                    <div class="col-sm-1"></div>
-                </div>
-                </div>
-                
-                <div class="row">
-                    
-                    <div class="col-sm-12"><div class="panel panel-primary">
-      				<div class="panel-heading">
-						<a role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1 id="tabHeading">Video</h1></div>
-						</a><div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne"><div class="panel-body"><div class="panel-body">
-							 
-                    <div class="col-sm-1"></div>
-                </div>
-                </div>
-                </div>                
-                </div>
-					
-					                <div class="row">
-                    
-                    <div class="col-sm-12"><div class="panel panel-primary">
-      				<div class="panel-heading">
-						<a role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1 id="tabHeading">Questions</h1></div>
-						</a><div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne"><div class="panel-body"><div class="panel-body">
-							 <h1>1. Why are the tires always black in color?</h1>
-								<h4>Tires are black due to the proportion of carbon mixed in it during vulcanization of rubber. Without it, tires can’t bear the friction heat and road stress.</h4>
-                    <div class="col-sm-1"></div>
-                </div>
-                </div>
-                </div>                
-                </div>
-					
-				<div class="row">
-                    
-                    <div class="col-sm-12"><div class="panel panel-primary">
-      				<div class="panel-heading">
-						<a role="button" data-toggle="collapse" href="#collapseFour" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1 id="tabHeading">Pictures</h1></div>
-						</a><div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne"><div class="panel-body"><div class="panel-body">
-							<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-							  <ol class="carousel-indicators">
-								<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-								<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-								<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-							  </ol>
-							  <div class="carousel-inner">
-								<div class="carousel-item active">
-								  <img class="d-block w-100" src="http://benbri.com.au/shared/content/uploads/service-hydraulics-benbriairandfluidsystems.jpg" alt="First slide">
-								</div>
-								<div class="carousel-item">
-								  <img class="d-block w-100" src="https://www.mechanicshub.com/wp-content/uploads/diesel-engine-mechanicst-mechanics-technicians-jobs-hiring.jpg" alt="Second slide">
-								</div>
-								<div class="carousel-item">
-								  <img class="d-block w-100" src="https://fthmb.tqn.com/DXcKnjs9QK-gNxHhAGotDU63_M8=/768x0/filters:no_upscale()/gears-by-Guy-Sie-58b8792e3df78c353cbc4f91.jpg" alt="Third slide">
-								</div>
-							  </div>
-							  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-								<span class="sr-only">Previous</span>
-							  </a>
-							  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-								<span class="carousel-control-next-icon" aria-hidden="true"></span>
-								<span class="sr-only">Next</span>
-							  </a>
-							</div>
-                    <div class="col-sm-1"></div>
-                </div>
-                </div>
-                </div>                
-                </div>					
-                                                
-   
-            
-          
-            <br>
-            <!--Buttom ROW OF COLS-->
+		<!--Buttom ROW OF COLS-->
                     <div class="row">
-                            <div class= "col-sm-4">
+						<div class="col-sm-3"></div>
+                            <div class= "col-sm-2">
 								<div id="form">
-								  <p>Select category:</p>
-								  <select id="category_select">
+								  <h3 class="text-center">Select a Category:</h3>
+								  <select class="form-control form-control-lg" id="category_select">
 									<option disabled selected>Please select</option>
 									
 									 <?php foreach (($categories?:[]) as $category): ?>
 										<option value="<?= ($category['category_id']) ?>"><?= ($category['category_name']) ?></option>
                                     <?php endforeach; ?>
 								  </select>
-
 								</div>
                             </div>
-                            <div class= "col-sm-4">
-								<p>Select Units:</p>
-                               	  <select id="unit_select">
+                            <div class= "col-sm-2">
+								<h3 class="text-center">Select a Unit:</h3>
+                               	  <select class="form-control form-control-lg" id="unit_select">
 									<!--What ever is being echoed is echoed here-->
 								  </select>
                             </div>
                             
-                            <div class= "col-sm-4">
-								<p>Select exercises:</p>
-								 <select id="excercise_select">
+                            <div class= "col-sm-2">
+								<h3 class="text-center">Select a Exercise:</h3>
+								 <select class="form-control form-control-lg" id="excercise_select">
 									<!--What ever is being echoed is echoed here-->
 								  </select>
 							</div>
-                        <div class="col-sm-2"></div>    
+                        <div class="col-sm-3"></div>    
                     
                     </div>
-           <!--End of COLS Bottom-->     
+           <!--End of COLS Bottom--> 
+		
+		
+            <!--This is the Main body of the page-->
+		<div class="summary-view" id="summary-view">
+            <h1 class="display-2 text-center">Summary Page</h1>
+            
+            
+            <br>
+			<!-- Collapse for Summary-->
+                <div class="row">
+					
+					
+                    <div class="col-sm-3">
+					</div>
+                    <div class="col-sm-6">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								<a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1 id="tabHeading">Exercise Summary</h1>
+							</div></a>
+								<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+									<div class="panel-body">
+										<div class="panel-body">
+										</div>
+									</div>
+								</div>
+						</div>
+                
+				<!-- Collapse for Videos-->
+                <div class="row">
+                    <div class="col-sm-12">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								<a role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1 id="tabHeading">Video</h1>
+							</div></a>
+							<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+								<div class="panel-body">
+									<div class="panel-body">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+					
+				<!-- Collapse for questions-->
+				<div class="row">
+                    <div class="col-sm-12">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								<a role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1 id="tabHeading">Questions</h1>
+							</div></a>
+								<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+									<div class="panel-body">
+										<div class="panel-body">
+										 <h1>1. Why are the tires always black in color?</h1>
+											<h4>Tires are black due to the proportion of carbon mixed in it during vulcanization of rubber. Without it, tires can’t bear the friction heat and road stress.</h4>
+										</div>
+									</div>
+								</div>   
+						</div>
+					</div>
+				</div>
+					
+				<!-- Collapse for pictures-->	
+				<div class="row">
+                    <div class="col-sm-12"><div class="panel panel-primary">
+						<div class="panel-heading">
+							<a role="button" data-toggle="collapse" href="#collapseFour" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1 id="tabHeading">Pictures</h1>
+						</div></a>
+							<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+								<div class="panel-body">
+									<div class="panel-body">
+										<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+										  <ol class="carousel-indicators">
+											<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+											<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+											<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+										  </ol>
+										  <div class="carousel-inner">
+											<div class="carousel-item active">
+											  <img class="d-block w-100" src="http://benbri.com.au/shared/content/uploads/service-hydraulics-benbriairandfluidsystems.jpg" alt="First slide">
+											</div>
+											<div class="carousel-item">
+											  <img class="d-block w-100" src="https://www.mechanicshub.com/wp-content/uploads/diesel-engine-mechanicst-mechanics-technicians-jobs-hiring.jpg" alt="Second slide">
+											</div>
+											<div class="carousel-item">
+											  <img class="d-block w-100" src="https://fthmb.tqn.com/DXcKnjs9QK-gNxHhAGotDU63_M8=/768x0/filters:no_upscale()/gears-by-Guy-Sie-58b8792e3df78c353cbc4f91.jpg" alt="Third slide">
+											</div>
+										  </div>
+										  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+											<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+											<span class="sr-only">Previous</span>
+										  </a>
+										  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+											<span class="carousel-control-next-icon" aria-hidden="true"></span>
+											<span class="sr-only">Next</span>
+										  </a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>                
+                </div>					
+                                                
+   
+					</div>
+		</div>
+            
+          
+            <br>
+                
 
               <script>
+				
+				var summary_view = document.getElementById("summary-view");
+				summary_view.style.display = "none";
+				
 				function updateUnits() {
 				  var cat_select = document.getElementById("category_select");
 				  var subcat_select = document.getElementById("unit_select");
 		  
 				  var cat_id = cat_select.options[cat_select.selectedIndex].value;
 		  
-				  var url = '/fast-iq/grabUnits/' + cat_id;
+				  var url = './grabUnits/' + cat_id;
 				  console.log(cat_id);
 					
 				  var xhr = new XMLHttpRequest();
@@ -218,6 +240,11 @@
 					  //cat_select.innerHTML = xhr.responseText;
 					  subcat_select.innerHTML = xhr.responseText;
 					  console.log(xhr.responseText);
+					  if(summary_view.style.display === "block")
+					  {
+						summary_view.style.display = "none";
+					  }
+					  $('#collapseOne').collapse('show');
 					  //subcat_select.style.display = 'inline';
 					
 				  };
@@ -231,10 +258,10 @@
 				function updateExcercise() {
 				  var unit_select = document.getElementById("unit_select");
 				  var exercise_select = document.getElementById("excercise_select");
-		  
+				  
 				  var unit_id = unit_select.options[unit_select.selectedIndex].value;
 		  
-				  var url = '/fast-iq/grabExercise/' + unit_id;
+				  var url = './grabExercise/' + unit_id;
 				  console.log(unit_id);
 					
 				  var xhr = new XMLHttpRequest();
@@ -244,6 +271,12 @@
 					  //cat_select.innerHTML = xhr.responseText;
 					  exercise_select.innerHTML = xhr.responseText;
 					  console.log(xhr.responseText);
+					  if(summary_view.style.display === "block")
+					  {
+						summary_view.style.display = "none";
+					  }
+					  
+					  
 					 //subcat_select.style.display = 'inline';
 					
 				  };
@@ -259,18 +292,31 @@
 				  var excercise_select = document.getElementById("excercise_select");
 				  var summary_select = document.getElementById("collapseOne");
 		  
+		
+				var summary_view = document.getElementById("summary-view");
+				
 				  var summary_id = excercise_select.options[excercise_select.selectedIndex].value;
 		  
-				  var url = '/fast-iq/summaryExercise/' + summary_id;
+				  var url = './summaryExercise/' + summary_id;
 				  console.log(summary_id);
 					
 				  var xhr = new XMLHttpRequest();
 				  xhr.open('GET', url, true);
 				  xhr.onreadystatechange = function () {
 				   
-					  //cat_select.innerHTML = xhr.responseText;
-					  summary_select.innerHTML = xhr.responseText;
-					  console.log(xhr.responseText);
+					//cat_select.innerHTML = xhr.responseText;
+					summary_select.innerHTML = xhr.responseText;
+					console.log(xhr.responseText);
+					if(summary_view.style.display === "none")
+					  {
+						
+						summary_view.style.display = "block";
+					  }
+					  
+					//  if(summary_view.style.display === "none")
+					//  {
+					//	summary_view.style.display = "block";
+					//  }
 					 //subcat_select.style.display = 'inline';
 					
 				  };
@@ -288,7 +334,7 @@
 		  
 				  var video_id = excercise_select.options[excercise_select.selectedIndex].value;
 		  
-				  var url = '/fast-iq/videoExercise/' + video_id;
+				  var url = './videoExercise/' + video_id;
 				  console.log(video_id);
 					
 				  var xhr = new XMLHttpRequest();
