@@ -37,7 +37,7 @@
              */
         }
         
-        echo '<br />';
+    //echo '<br />';
        // var_dump($categories);
        // echo '</select>';
        
@@ -112,11 +112,12 @@
         
     $f3->route('GET /summaryExercise/@id', function($f3, $params)
     {
-         $summaryEntries =  $GLOBALS['exerciseDB']->getExerciseByID($params['id']);
+        $summaryEntries =  $GLOBALS['exerciseDB']->getExerciseByID($params['id']);
         $f3->set('exercise', $summaryEntries);
         
-           
-            echo'<h3>'.$summaryEntries['exercise_summary'].'</h3>';
+            echo '<br>';
+            echo'<h3 class="text-center">'.$summaryEntries['exercise_summary'].'</h3>';
+            echo '<br>';
                      
         
         
@@ -134,7 +135,7 @@
     
       $f3->route('GET /videoExercise/@id', function($f3, $params)
     {
-         $summaryEntries =  $GLOBALS['exerciseDB']->getExerciseByID($params['id']);
+        $summaryEntries =  $GLOBALS['exerciseDB']->getExerciseByID($params['id']);
         $f3->set('exercise', $summaryEntries);
         
             $youtubeLink = $summaryEntries['exercise_video'];

@@ -5,3 +5,7 @@
 a:link{
     text-decoration: none;
 }
+#summary-view
+{
+    display: none;
+}

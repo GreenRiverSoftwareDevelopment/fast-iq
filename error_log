@@ -1776,3 +1776,27 @@ Stack trace:
 [26-Feb-2018 23:35:10 America/Chicago] Fatal error: syntax error, unexpected '$_SESSION' (T_VARIABLE), expecting ',' or ';'
 [26-Feb-2018 23:35:10 America/Chicago] [fast-iq/indexRequire/sonie.php:47] 
 >>>>>>> a5e403d598c7de77705fecf35a2a481b51a54ffb
+[28-Feb-2018 21:10:21 America/Chicago] PHP Fatal error:  Call to a member function render() on a non-object in /home/bsaylor/public_html/485/fast-iq/index.php on line 50
+[28-Feb-2018 21:10:21 America/Chicago] Fatal error: Call to a member function render() on a non-object
+[28-Feb-2018 21:10:21 America/Chicago] [485/fast-iq/index.php:50] 
+[28-Feb-2018 21:10:35 America/Chicago] PHP Fatal error:  Call to a member function render() on a non-object in /home/bsaylor/public_html/485/fast-iq/index.php on line 50
+[28-Feb-2018 21:10:35 America/Chicago] Fatal error: Call to a member function render() on a non-object
+[28-Feb-2018 21:10:35 America/Chicago] [485/fast-iq/index.php:50] 
+[28-Feb-2018 21:34:33 America/Chicago] HTTP 404 (GET /fast-iq/grabUnits/1)
+[28-Feb-2018 21:34:33 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1675] Base->error()
+[28-Feb-2018 21:34:33 America/Chicago] [485/fast-iq/index.php:142] Base->run()
+[01-Mar-2018 01:31:05 America/Chicago] HTTP 404 (GET /grabExercise/1)
+[01-Mar-2018 01:31:05 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1675] Base->error()
+[01-Mar-2018 01:31:05 America/Chicago] [485/fast-iq/index.php:142] Base->run()
+[01-Mar-2018 01:31:09 America/Chicago] HTTP 404 (GET /grabExercise/2)
+[01-Mar-2018 01:31:09 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1675] Base->error()
+[01-Mar-2018 01:31:09 America/Chicago] [485/fast-iq/index.php:142] Base->run()
+[01-Mar-2018 01:34:24 America/Chicago] HTTP 404 (GET /grabExercise/1)
+[01-Mar-2018 01:34:24 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1675] Base->error()
+[01-Mar-2018 01:34:24 America/Chicago] [485/fast-iq/index.php:142] Base->run()
+[01-Mar-2018 01:34:35 America/Chicago] HTTP 404 (GET /grabExercise/8)
+[01-Mar-2018 01:34:35 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1675] Base->error()
+[01-Mar-2018 01:34:35 America/Chicago] [485/fast-iq/index.php:142] Base->run()
+[01-Mar-2018 01:34:39 America/Chicago] HTTP 404 (GET /grabExercise/1)
+[01-Mar-2018 01:34:39 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1675] Base->error()
+[01-Mar-2018 01:34:39 America/Chicago] [485/fast-iq/index.php:142] Base->run()
