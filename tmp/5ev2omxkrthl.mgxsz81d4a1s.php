@@ -18,17 +18,16 @@
                 <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
                     <ul class="nav nav-pills nav-fill">
                         <li class="nav-item">
-                          <a class="nav-link" href="./categoryBackend"><h3>Home</h3></a>
+                          <a class="nav-link active" data-toggle="modal" data-target="#signUpModal"><h3>Create New Admin</h3></a>
                         </li>
                     </ul>
-                    
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
                         <h3>Logout</h3>
                     </button>
                 </nav>
             </div>
             
-            <!--*********************************** THIS IS THE LOGIN MODAL*************************************-->
+            <!--*********************************** THIS IS THE Sign Out MODAL*************************************-->
                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -52,7 +51,34 @@
                     </div>
                   </div>
                 </div>
-        <!--*********************************** THIS IS THE LOGIN MODAL*************************************-->
+        <!--*********************************** THIS IS THE END Sign Out MODAL*************************************-->
+        
+            <!--*********************************** THIS IS THE Sign Up MODAL*************************************-->
+                <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Login To Make Changes</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                        <form action="./createAdmin" method="post">
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp" placeholder="Enter username">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                          </div>
+                          <button type="submit" class="btn btn-primary">SignUp</button>
+                        </form>
+                    </div>
+                  </div>
+                </div>
+        <!--*********************************** THIS IS THE Sign Up MODAL*************************************-->
             
             
             <h1 class="display-2 text-center">Categories</h1>

@@ -20,16 +20,13 @@
             <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
                 <ul class="nav nav-pills nav-fill">
                     <li class="nav-item">
-                      <a class="nav-link" href="./"><h3>Home</h3></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link active" href="./category"><h3>Category</h3></a>
+						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+							<h3>Login</h3>
+						</button>
                     </li>
                 </ul>
               
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-					<h3>Login</h3>
-                </button>
+                
 
             </nav>
             </div>
@@ -49,21 +46,21 @@
                       <form action="./login" method="POST">
                             <div class="modal-body">
                                 <div class="form-group row">
-                                  <label for="example-time-input" class="col-2 col-form-label">username</label>
+                                  <label for="example-time-input" class="col-2 col-form-label">Email</label>
                                   <div class="col-10">
-                                    <input class="form-control" type="Text" name="username" placeholder="username" id="username">
+                                    <input class="form-control form-control-lg" type="Text" name="username" placeholder="username" id="username" required="true">
                                   </div>
                                 </div>
                                 <div class="form-group row">
                                   <label for="example-color-input" class="col-2 col-form-label">Password</label>
                                   <div class="col-10">
-                                    <input class="form-control" type="password" name="password" placeholder="password" id="password">
+                                    <input class="form-control" type="password" name="password" placeholder="password" id="password" required="true">
                                   </div>
                                 </div>
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                              <button type="Submit" class="btn btn-primary">Save changes</button>
+                              <button type="Submit" class="btn btn-primary">Login</button>
                             </div> 
                       </form>
                     </div>

@@ -60,24 +60,24 @@
                 </div>
         <!--*********************************** THIS IS LOGOUT THE MODAL*************************************-->
             
-            <h1 class="display-2 text-center" id="{{ @categoryName.category_name }}">{{ @categoryName.category_name }}</h1>
+            <h1 class="display-2 text-center" id="<?= ($categoryName['category_name']) ?>"><?= ($categoryName['category_name']) ?></h1>
             
             
-            <repeat group="{{ @units }}" value="{{ @unit }}">
+            <?php foreach (($units?:[]) as $unit): ?>
             <br>
                 <div class="row">
                     <div class="d-flex justify-content-center col-sm-2">
-                        <button type="button" class="btn btn-primary btn-warning btn-lg" data-toggle="modal" data-target=".editUnit{{ @unit.unit_id }}">
+                        <button type="button" class="btn btn-primary btn-warning btn-lg" data-toggle="modal" data-target=".editUnit<?= ($unit['unit_id']) ?>">
                             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  Edit
                         </button>
                     </div>
                     
                     <!-- Start of edit module-->
-                                    <div class="modal fade editUnit{{ @unit.unit_id }}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                    <div class="modal fade editUnit<?= ($unit['unit_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content" id="modalcontent">
                                                 <!-- inner modal -->
-                                                <form action="./editUnit/{{ @unit.unit_id }}" method="post" class="form-horizontal">
+                                                <form action="./editUnit/<?= ($unit['unit_id']) ?>" method="post" class="form-horizontal">
                                                     <br>
                                                     <br>
                                                     <br>
@@ -86,7 +86,7 @@
                                                     <div class="col-sm-8">
                                                         <div class="form-group">
                                                             <label for="unit"><h3>Unit Name</h3></label>
-                                                            <input class="form-control" type="text" name="unit_name" id="unit_name" value="{{ @unit.unit_name }}" placeholder="Name" required>
+                                                            <input class="form-control" type="text" name="unit_name" id="unit_name" value="<?= ($unit['unit_name']) ?>" placeholder="Name" required>
                                                         </div>
                                                         <div class="form-group">
                                                             <input class="btn btn-info btn-sm" type="submit" value="Submit">
@@ -101,23 +101,23 @@
                     <!-- End of edit module-->
                         
                             <div class="d-flex justify-content-center col-sm-8">
-                                <a class="btn btn-primary btn-lg btn-block" id="{{ @unit.unit_name }}" href="./exercisesBackend/{{ @unit.unit_id }}" role="button">
-                                    <h4>{{ @unit.unit_name }}</h4>
+                                <a class="btn btn-primary btn-lg btn-block" id="<?= ($unit['unit_name']) ?>" href="./exercisesBackend/<?= ($unit['unit_id']) ?>" role="button">
+                                    <h4><?= ($unit['unit_name']) ?></h4>
                                 </a>
                             </div>
                         
                     <div class="d-flex justify-content-center col-sm-2">
-                        <button type="button" class="btn btn-primary btn-danger btn-lg" data-toggle="modal" data-target=".deleteUnit{{ @unit.unit_id }}">
+                        <button type="button" class="btn btn-primary btn-danger btn-lg" data-toggle="modal" data-target=".deleteUnit<?= ($unit['unit_id']) ?>">
                             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>  Delete
                         </button>
                     </div>
                     
                     <!-- Start of delete module-->
-                                    <div class="modal fade deleteUnit{{ @unit.unit_id }}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                    <div class="modal fade deleteUnit<?= ($unit['unit_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content" id="modalcontent">
                                                 <!-- inner modal -->
-                                                <form action="./deleteUnit/{{ @unit.unit_id }}" method="get" class="form-horizontal">
+                                                <form action="./deleteUnit/<?= ($unit['unit_id']) ?>" method="get" class="form-horizontal">
                                                     <br>
                                                     <br>
                                                     <br>
@@ -138,24 +138,24 @@
                     <!-- End of delete module-->
                     
                 </div>
-            </repeat>
+            <?php endforeach; ?>
             
             <br>
             
             <div class="row">
                 <div class="d-flex justify-content-center col-sm-2"></div>
                     <div class="d-flex justify-content-center col-sm-8">
-                        <button type="button" class="btn btn-primary btn-lg btn-success btn-block" data-toggle="modal" data-target=".addUnit{{ @unit.unit_id }}">
+                        <button type="button" class="btn btn-primary btn-lg btn-success btn-block" data-toggle="modal" data-target=".addUnit<?= ($unit['unit_id']) ?>">
                             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span><h5>Add</h5>
                         </button>
                     </div>
                     
                     <!-- Start of add module-->
-                                    <div class="modal fade addUnit{{ @unit.unit_id }}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                    <div class="modal fade addUnit<?= ($unit['unit_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content" id="modalcontent">
                                                 <!-- inner modal -->
-                                                <form action="./addUnit/{{ @categoryName.category_id }}" method="post" class="form-horizontal">
+                                                <form action="./addUnit/<?= ($categoryName['category_id']) ?>" method="post" class="form-horizontal">
                                                     <br>
                                                     <br>
                                                     <br>
