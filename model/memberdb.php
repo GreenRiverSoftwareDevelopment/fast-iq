@@ -54,106 +54,17 @@
          *
          * @return true if the insert was successful, otherwise false
          */
-        function addMember($fname, $lname, $counselor, $activityOne, $activityTwo, $activityThree, $activityFour, $activityFive, $activitySix, $activitySeven, $activityEight, $activityNine, $activityTen)
+        function addMember($username, $password)
         {
-            $select = "UPDATE activities
-                        SET count = count + 1
-                        WHERE activity = '" . $activityOne . "'";
-             
-            $statement1 = $this->_pdo->prepare($select);
-            $statement1->execute();
-            
-            $select = "UPDATE activities
-                        SET count = count + 1
-                        WHERE activity = '" . $activityTwo . "'";
-             
-            $statement2 = $this->_pdo->prepare($select);
-            $statement2->execute();
-            
-            $select = "UPDATE activities
-                        SET count = count + 1
-                        WHERE activity = '" . $activityThree . "'";
-             
-            $statement3 = $this->_pdo->prepare($select);
-            $statement3->execute();
-            
-            $select = "UPDATE activities
-                        SET count = count + 1
-                        WHERE activity = '" . $activityFour . "'";
-             
-            $statement4 = $this->_pdo->prepare($select);
-            $statement4->execute();
-            
-            $select = "UPDATE activities
-                        SET count = count + 1
-                        WHERE activity = '" . $activityFive . "'";
-             
-            $statement5 = $this->_pdo->prepare($select);
-            $statement5->execute();
-            
-            $select = "UPDATE activities
-                        SET count = count + 1
-                        WHERE activity = '" . $activitySix . "'";
-             
-            $statement6 = $this->_pdo->prepare($select);
-            $statement6->execute();
             
             
-            $select = "UPDATE activities
-                        SET count = count + 1
-                        WHERE activity = '" . $activitySeven . "'";
-             
-            $statement7 = $this->_pdo->prepare($select);
-            $statement7->execute();
-            
-            $select = "UPDATE activities
-                        SET count = count + 1
-                        WHERE activity = '" . $activityEight . "'";
-             
-            $statement8 = $this->_pdo->prepare($select);
-            $statement8->execute();
-            
-            $select = "UPDATE activities
-                        SET count = count + 1
-                        WHERE activity = '" . $activityNine . "'";
-             
-            $statement9 = $this->_pdo->prepare($select);
-            $statement9->execute();
-            
-            $select = "UPDATE activities
-                        SET count = count + 1
-                        WHERE activity = '" . $activityTen . "'";
-             
-            $statement10 = $this->_pdo->prepare($select);
-            $statement10->execute();
-            
-            
-            $insert = 'INSERT INTO members (fname, lname, counselor, activityOne, activityTwo, activityThree, activityFour, activityFive, activitySix, activitySeven, activityEight, activityNine, activityTen) VALUES (:fname, :lname, :counselor, :activityOne, :activityTwo, :activityThree, :activityFour, :activityFive, :activitySix, :activitySeven, :activityEight, :activityNine, :activityTen)';
+            $insert = 'INSERT INTO users (username, password) VALUES (:username, :password)';
              
             $statement = $this->_pdo->prepare($insert);
-            $statement->bindValue(':fname', $fname, PDO::PARAM_STR);
-            $statement->bindValue(':lname', $lname, PDO::PARAM_STR);
-            $statement->bindValue(':counselor', $counselor, PDO::PARAM_STR);
-            $statement->bindValue(':activityOne', $activityOne, PDO::PARAM_STR);
-            $statement->bindValue(':activityTwo', $activityTwo, PDO::PARAM_STR);
-            $statement->bindValue(':activityThree', $activityThree, PDO::PARAM_STR);
-            $statement->bindValue(':activityFour', $activityFour, PDO::PARAM_STR);
-            $statement->bindValue(':activityFive', $activityFive, PDO::PARAM_STR);
-            $statement->bindValue(':activitySix', $activitySix, PDO::PARAM_STR);
-            $statement->bindValue(':activitySeven', $activitySeven, PDO::PARAM_STR);
-            $statement->bindValue(':activityEight', $activityEight, PDO::PARAM_STR);
-            $statement->bindValue(':activityNine', $activityNine, PDO::PARAM_STR);
-            $statement->bindValue(':activityTen', $activityTen, PDO::PARAM_STR);
-            
-            
+            $statement->bindValue(':username', $username, PDO::PARAM_STR);
+            $statement->bindValue(':password', $password, PDO::PARAM_STR);
+                    
             $statement->execute();
-            //UPDATE activities
-            //SET count = count + 1
-            //WHERE activity = :activity;
-            
-            
-            
-            //Return ID of inserted row
             return $this->_pdo->lastInsertId();
         }
         
@@ -343,6 +254,18 @@
             $row = $statement->fetch(PDO::FETCH_ASSOC);
              
             return !empty($row);
+        }
+        
+        
+        function memberByUsername($username)
+        {
+            $select = 'SELECT user_id, username, password FROM users WHERE username=:username';
+             
+            $statement = $this->_pdo->prepare($select);
+            $statement->bindValue(':username', $username, PDO::PARAM_INT);
+            $statement->execute();
+             
+            return $statement->fetch(PDO::FETCH_ASSOC);
         }
         
 

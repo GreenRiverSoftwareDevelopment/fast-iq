@@ -51,7 +51,7 @@
                                 <div class="form-group row">
                                   <label for="example-time-input" class="col-2 col-form-label">Email</label>
                                   <div class="col-10">
-                                    <input class="form-control" type="email" name="username" placeholder="email" id="username" required="true">
+                                    <input class="form-control form-control-lg" type="Text" name="username" placeholder="username" id="username" required="true">
                                   </div>
                                 </div>
                                 <div class="form-group row">

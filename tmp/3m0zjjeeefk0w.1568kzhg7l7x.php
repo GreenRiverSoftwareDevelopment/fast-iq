@@ -24,7 +24,7 @@
                       <a class="nav-link" href="./createAdmin"><h3>Create New Admin</h3></a>
                     </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./unitsBackend/{{ @categoryID }}"><h3>Go Back</h3></a>
+                            <a class="nav-link" href="./unitsBackend/<?= ($categoryID) ?>"><h3>Go Back</h3></a>
                         </li>
                     </ul>
                     
@@ -60,24 +60,24 @@
                 </div>
         <!--*********************************** THIS IS LOGOUT THE MODAL*************************************-->
             
-            <h1 class="display-2 text-center" id="{{ @unitName.unit_name }}">{{ @unitName.unit_name }}</h1>
+            <h1 class="display-2 text-center" id="<?= ($unitName['unit_name']) ?>"><?= ($unitName['unit_name']) ?></h1>
             
             
-            <repeat group="{{ @exercises }}" value="{{ @exercise }}">
+            <?php foreach (($exercises?:[]) as $exercise): ?>
             <br>
                 <div class="row">
                     <div class="d-flex justify-content-center col-sm-2">
-                        <button type="button" class="btn btn-primary btn-warning btn-lg" data-toggle="modal" data-target=".editExercise{{ @exercise.exercise_id }}">
+                        <button type="button" class="btn btn-primary btn-warning btn-lg" data-toggle="modal" data-target=".editExercise<?= ($exercise['exercise_id']) ?>">
                             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  Edit
                         </button>
                     </div>
                         
                         <!-- Start of edit module-->
-                                    <div class="modal fade editExercise{{ @exercise.exercise_id }}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                    <div class="modal fade editExercise<?= ($exercise['exercise_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content" id="modalcontent">
                                                 <!-- inner modal -->
-                                                <form action="./editExercise/{{ @exercise.exercise_id }}" method="post" class="form-horizontal">
+                                                <form action="./editExercise/<?= ($exercise['exercise_id']) ?>" method="post" class="form-horizontal">
                                                     <br>
                                                     <br>
                                                     <br>
@@ -86,7 +86,7 @@
                                                     <div class="col-sm-8">
                                                         <div class="form-group">
                                                             <label for="exercise"><h3>Exercise Name</h3></label>
-                                                            <input class="form-control" type="text" name="exercise_name" id="exercise_name" value="{{ @exercise.exercise_name }}" placeholder="Name" required>
+                                                            <input class="form-control" type="text" name="exercise_name" id="exercise_name" value="<?= ($exercise['exercise_name']) ?>" placeholder="Name" required>
                                                         </div>
                                                         <div class="form-group">
                                                             <input class="btn btn-info btn-sm" type="submit" value="Submit">
@@ -101,23 +101,23 @@
                     <!-- End of edit module-->
                         
                             <div class="d-flex justify-content-center col-sm-8">
-                                <a class="btn btn-primary btn-lg btn-block" id="{{ @exercise.exercise_name }}" href="./exerciseSummaryBackend/{{ @exercise.exercise_id }}" role="button">
-                                    <h4>{{ @exercise.exercise_name }}</h4>
+                                <a class="btn btn-primary btn-lg btn-block" id="<?= ($exercise['exercise_name']) ?>" href="./exerciseSummaryBackend/<?= ($exercise['exercise_id']) ?>" role="button">
+                                    <h4><?= ($exercise['exercise_name']) ?></h4>
                                 </a>
                             </div>
                         
                     <div class="d-flex justify-content-center col-sm-2">
-                        <button type="button" class="btn btn-primary btn-danger btn-lg" data-toggle="modal" data-target=".deleteExercise{{ @exercise.exercise_id }}">
+                        <button type="button" class="btn btn-primary btn-danger btn-lg" data-toggle="modal" data-target=".deleteExercise<?= ($exercise['exercise_id']) ?>">
                             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>  Delete
                         </button>
                     </div>
                     
                     <!-- Start of delete module-->
-                                    <div class="modal fade deleteExercise{{ @exercise.exercise_id }}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                    <div class="modal fade deleteExercise<?= ($exercise['exercise_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content" id="modalcontent">
                                                 <!-- inner modal -->
-                                                <form action="./deleteExercise/{{ @exercise.exercise_id }}" method="get" class="form-horizontal">
+                                                <form action="./deleteExercise/<?= ($exercise['exercise_id']) ?>" method="get" class="form-horizontal">
                                                     <br>
                                                     <br>
                                                     <br>
@@ -138,24 +138,24 @@
                     <!-- End of delete module-->
                     
                 </div>
-            </repeat>
+            <?php endforeach; ?>
             
             <br>
             
             <div class="row">
                 <div class="d-flex justify-content-center col-sm-2"></div>
                     <div class="d-flex justify-content-center col-sm-8">
-                        <button type="button" class="btn btn-primary btn-lg btn-success btn-block" data-toggle="modal" data-target=".addExercise{{ @exercise.exercise_id }}">
+                        <button type="button" class="btn btn-primary btn-lg btn-success btn-block" data-toggle="modal" data-target=".addExercise<?= ($exercise['exercise_id']) ?>">
                             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span><h5>Add</h5>
                         </button>
                     </div>
                     
                     <!-- Start of add module-->
-                                    <div class="modal fade addExercise{{ @exercise.exercise_id }}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                    <div class="modal fade addExercise<?= ($exercise['exercise_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content" id="modalcontent">
                                                 <!-- inner modal-->
-                                                <form action="./addExercise/{{ @unitName.unit_id }}" method="post" class="form-horizontal">
+                                                <form action="./addExercise/<?= ($unitName['unit_id']) ?>" method="post" class="form-horizontal">
                                                     <br>
                                                     <br>
                                                     <br>

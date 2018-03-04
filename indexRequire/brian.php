@@ -96,20 +96,30 @@
             
     $f3->route('POST /login', function($f3)
     {
+        $cost = 10; //Cost of generating has. The higher the value the more secure, but the slower the load of the server.
         $usernameAttempt = $_POST['username'];
         $userPasswordAttempt = $_POST['password'];
         $_SESSION['username'] = $_POST['username'];
         $_SESSION['password'] = $_POST['password'];
-        $userExists = $GLOBALS['memberDB']->adminNameExists($usernameAttempt, $userPasswordAttempt);
         
-        if($userExists)
+        
+        $usergrabbed = $GLOBALS['memberDB']->memberByUsername($usernameAttempt);
+        
+         $hashPasswordVerify = password_verify($userPasswordAttempt , $usergrabbed['password']);
+        $userExists = $GLOBALS['memberDB']->adminNameExists($usernameAttempt, $hashedPassword);
+        
+        
+       
+        if($hashPasswordVerify)
         {
             $f3->reroute('/categoryBackend');
         }
         else
         {
+               
             $f3->reroute('/');
         }
+
     });
 
     $f3->route('GET /logout', function($f3)

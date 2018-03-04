@@ -4,7 +4,7 @@
     {
         $usernameAttempt = $_POST['username'];
         $userPasswordAttempt = $_POST['password'];
-        $userExists = $GLOBALS['memberdb']->adminNameExists($usernameAttempt, $userPasswordAttempt);
+        $userExists = $GLOBALS['memberDB']->adminNameExists($usernameAttempt, $userPasswordAttempt);
         
         if($userExists){
             $_SESSION['username'] = $usernameAttempt;
@@ -13,6 +13,22 @@
         else{
             echo "User does not Exist";
         }
+        
+        
+    });
+    
+    $f3->route('POST /createAdmin', function($f3)
+    {
+        $cost = 10; //Cost of generating has. The higher the value the more secure, but the slower the load of the server.
+        $usernameCreated = $_POST['username'];
+        $passwordCreated = $_POST['password'];
+        
+        $hashedPassword = password_hash($passwordCreated , PASSWORD_DEFAULT, ["cost" => $cost]) ; //Creates the hashed password.
+        $hashPasswordVerify = password_verify($passwordCreated , $hashedPassword);
+        $memberCreated = $GLOBALS['memberDB']->addMember($usernameCreated, $hashedPassword);
+        
+        echo  "User has been created";
+        //var_dump($hashPasswordVerify);
         
         
     });

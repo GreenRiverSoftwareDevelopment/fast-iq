@@ -19,7 +19,7 @@
                     <ul class="nav nav-pills nav-fill">
                         <li class="nav-item">
                           <a class="nav-link" href="./"><h3>Home</h3></a>
-                        </li>
+                        </li>	
                     </ul>
                     
                     <button type="button" id="login" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
@@ -43,19 +43,19 @@
                                 <div class="form-group row">
                                   <label for="example-time-input" class="col-2 col-form-label">Username</label>
                                   <div class="col-10">
-                                    <input class="form-control" type="Text" name="username" placeholder="username" id="username">
+                                    <input class="form-control" type="Text" name="username" placeholder="username" id="username" required="true">
                                   </div>
                                 </div>
                                 <div class="form-group row">
                                   <label for="example-color-input" class="col-2 col-form-label">Password</label>
                                   <div class="col-10">
-                                    <input class="form-control" type="password" name="password" placeholder="password" id="password">
+                                    <input class="form-control" type="password" name="password" placeholder="password" id="password" required="true">
                                   </div>
                                 </div>
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                              <button type="Submit" id="submit" class="btn btn-primary">Sign In</button>
+                              <button type="Submit" id="submit" class="btn btn-primary">Login</button>
                             </div> 
                       </form>
                     </div>
