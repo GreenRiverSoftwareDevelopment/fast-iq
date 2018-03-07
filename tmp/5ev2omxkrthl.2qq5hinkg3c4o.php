@@ -64,6 +64,7 @@ li {
             <!-- bootstrap -->
                 <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+				<link href="css/categorySecond.css" rel="stylesheet" media="screen">
                 <!--[if lt IE 9]>
                 <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
                 <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -133,29 +134,26 @@ li {
                     
                     <h4 class="panel-title">
                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#TEST_1">
-                    
-                        
-                        EXERCISE SUMMARY
-                    
-                     
+						<h1 id="tabHeading">Exercise Summary</h1>
                     </h4>
                 </div>
                  </a>
                 <div id="TEST_1" class="panel-collapse show">
                     <div class="panel-body">
-                       <form action="./editExerciseSummary/<?= ($exerciseID) ?>" id="summary" method="post" class="form-horizontal">
-                    
-                        <input name="exercise_summary" id="exercise_summary" value="<?= ($exercise['exercise_summary']) ?>" onkeypress="this.style.width = ((this.value.length + 1) * 8) + 'px';">
-                       
-                       </form>
-                      
-                        <br>
-                        
-                          
-                        <div class="d-flex justify-content-center col-sm-2">
-                        <button type="button" class="btn btn-primary btn-success btn-lg" data-toggle="modal" data-target=".editExerciseSummary<?= ($exercise['exercise_id']) ?>">
-                            <span class="glyphicon glyphicon-saved" aria-hidden="true"></span>  Save
-                        </button></div>
+						<div class="row">
+							<div class="col-sm-4">
+								<form action="./editExerciseSummary/<?= ($exerciseID) ?>" id="summary" method="post" class="form-horizontal">
+									<input class="form-control" name="exercise_summary" id="exercise_summary" value="<?= ($exercise['exercise_summary']) ?>">
+								</form>
+							</div>
+							<div class="justify-content-center col-sm-6">
+							</div>
+							<div class="justify-content-center col-sm-2">
+								<button type="button" class="btn btn-primary btn-success btn-lg" data-toggle="modal" data-target=".editExerciseSummary<?= ($exercise['exercise_id']) ?>">
+									<span class="glyphicon glyphicon-saved" aria-hidden="true"></span>  Save
+								</button>
+							</div>
+						</div>
                          
                     <!-- Start of edit module-->
                                     <div class="modal fade editExerciseSummary<?= ($exercise['exercise_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -171,7 +169,7 @@ li {
                                                     <div class="col-sm-8">
                                                             <label for="exercise"><h3>Are you sure you want to save changes?</h3></label>
                                                         <div class="form-group">
-                                                            <input form="summary" class="btn btn-info btn-lg" type="submit" value="Submit">
+                                                            <input form="summary" class="btn btn-info btn-lg" type="submit" value="Save">
                                                         </div>
                                                         <br>
                                                         <br>
@@ -181,13 +179,9 @@ li {
                                         </div>
                                     </div>
                     <!-- End of edit module-->
-                        
-                        
-                        
-                        
-                    </div>
                     </div>
                 </div>
+            </div>
             
             <!-- end panel -->
 
@@ -196,7 +190,7 @@ li {
                 <div class="panel-heading">
                     <h4 class="panel-title">
                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#TEST_2">
-                        VIDEOS
+                        <h1 id="tabHeading">Videos</h1>
                      </a>
                     </h4>
                 </div>
@@ -241,7 +235,7 @@ li {
                                                                   </form>
                                                             </label>
                                                         <div class="form-group">
-                                                            <input form="video" class="btn btn-info btn-lg" type="submit" value="Submit">
+                                                            <input form="video" class="btn btn-info btn-lg" type="submit" value="Save">
                                                         </div>
                                                         <br>
                                                         <br>
@@ -252,21 +246,11 @@ li {
                                     </div>
                     <!-- End of edit module-->
 
-            </div>
-                        <!--<?= ($exercise['exercise_video']) ?>-->
-						
-                </div>
+						</div>
+					</div>
 				</div>
             </div>
-            
-            
-            
-            
             <!-- end panel -->
-
-
-
-
 
 
 
@@ -274,33 +258,39 @@ li {
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#TEST_3">
-                        ASSESSIVE QUESTIONS
-                     </a>
+						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#TEST_3">
+							<h1 id="tabHeading">Questions</h1>
+						</a>
                     </h4>
                 </div>
-                <div id="TEST_3" class="panel-collapse collapse show">
+				
+                <div id="TEST_3" class="panel-collapse show">
                     <div class="panel-body">
+						<div class="row">
+							<div class="col-sm-4">
+								<div contenteditable="true">
+									<form action="./editExerciseQuestion/<?= ($exerciseID) ?>" id="question" method="post" class="form-horizontal">
+										<?php foreach (($questions_array?:[]) as $question): ?>
+											<li id="list-group">
+												<input name="questions[]" id="questions" class="form-control" type="text" value="<?= ($question) ?>"></input>
+											</li>
+											<br>
+										<?php endforeach; ?>
+									</form>
+								</div>
+							</div>
+							<div class="justify-content-center col-sm-6">
+							</div>
+							<div class="justify-content-center col-sm-2">
+								<button type="button" class="btn btn-primary btn-success btn-lg" data-toggle="modal" data-target=".editExerciseQuestion<?= ($exercise['exercise_id']) ?>">
+									<span class="glyphicon glyphicon-saved" aria-hidden="true"></span>  Save
+								</button>
+							</div>
+						</div>
+						
+                        <br>
+						
                         
-                       
-                         <div contenteditable="true">
-						<ul class="list-group">
-                            <form action="./editExerciseQuestion/<?= ($exerciseID) ?>" id="question" method="post" class="form-horizontal">
-                    
-                        <?php foreach (($questions_array?:[]) as $question): ?>
-                            <li class="list-group-item"><input name="questions[]" id="questions"  value="<?= ($question) ?>" onkeypress="this.style.width = ((this.value.length + 1) * 8) + 'px';">
-							</li> 
-                        <?php endforeach; ?>
-                        </ul>
-                            </form>
-                         </div>
-                         <br>
-                         <div class="d-flex justify-content-center col-sm-2">
-                             
-                        <button type="button" class="btn btn-primary btn-success btn-lg" data-toggle="modal" data-target=".editExerciseQuestion<?= ($exercise['exercise_id']) ?>">
-                            <span class="glyphicon glyphicon-saved" aria-hidden="true"></span>  Save
-                        </button>
-                         </div>
                            <!-- Start of edit module-->
                                     <div class="modal fade editExerciseQuestion<?= ($exercise['exercise_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
@@ -315,7 +305,7 @@ li {
                                                     <div class="col-sm-8">
                                                             <label for="exercise"><h3>Are you sure you want to save changes?</h3></label>
                                                         <div class="form-group">
-                                                            <input form="question" class="btn btn-info btn-lg" type="submit" value="Submit">
+                                                            <input form="question" class="btn btn-info btn-lg" type="submit" value="Save">
                                                         </div>
                                                         <br>
                                                         <br>
@@ -340,7 +330,7 @@ li {
                 <div class="panel-heading">
                     <h4 class="panel-title">
                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#TEST_4">
-                        PHOTOS
+                        <h1 id="tabHeading">Photos</h1>
                      </a>
                     </h4>
                 </div>
@@ -387,7 +377,7 @@ li {
                                                                 </form
                                                             </h3></label>
                                                         <div class="form-group">
-                                                            <input form="image" class="btn btn-info btn-lg" type="submit" value="Submit">
+                                                            <input form="image" class="btn btn-info btn-lg" type="submit" value="Save">
                                                         </div>
                                                         <br>
                                                         <br>
@@ -396,7 +386,7 @@ li {
                                             </div>
                                         </div>
                                     </div>
-                    <!-- End of edit module-->
+						<!-- End of edit module-->
                         <!-- Edit and Delete hover over end -->
                         </div>
                         
@@ -404,122 +394,8 @@ li {
                         
                         
                     </div>
-                </div></div>
-            
-            
-            
-           <!-- <!-- start panel 
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#TEST_5">
-                        STUDENT EVALUATION
-                     </a>
-                    </h4>
                 </div>
-                <div id="TEST_5" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        
-                            <div class="dropdown">
-            <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Students 
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-    <button class="dropdown-item" type="button">Kevin N.</button>
-    <button class="dropdown-item" type="button">Brian S.</button>
-    <button class="dropdown-item" type="button">Sonie M.</button>
-  </div>
-</div>
-                            
-                            
-                        
-                        
-                    
-                    </div>
-                </div>
-            </div>
-            
-		</div>-->
-            <!-- end panel -->
-            
-           
-
-			
-			
-			
-			<!--
-			
-            
-            <br>
-            <div class="row">
-                <div class="col-sm1-2"></div>
-					<div class="col-sm-4">
-						<div class="panel panel-primary">
-							
-						<div class="panel-heading"><a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed">Exercise Summary </div>
-						</a>
-						<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne"><div class="panel-body">
-						<p>
-							<?= ($exercise['exercise_summary'])."
-" ?>
-						</p>
-						</div></div>
-					</div>
-                </div>
-			
-                <div class="col-sm1-2"></div>
-                <div class="col-sm-4">
-                
-                	<div class="panel panel-primary">
-      				<div class="panel-heading"><a role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed">Video Ex 1 </div></a>
-						<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne"><div class="panel-body"><div class="panel-body">
-							<body>
-								<iframe src="https://www.youtube.com/watch?v=-tiHfzBQZpI"
-								width="500" height="250" frameborder="0" allowfullscreen></iframe>
-								<p>
-								<?= ($exercise['exercise_video'])."
-" ?>
-								</p>
-							</body>
-						</div></div>
-                </div>
-             
-            </div>
-				
-            <br>
-            <br>
-            <div class="row">
-				<div class="col-sm1-2"></div>
-                <div class="col-sm-4">
-      				<div class="panel panel-primary">
-						<div class="panel-heading"><a role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed">Assessive Questions </div>
-						</a><div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne"><div class="panel-body"><div class="panel-body">
-							<p>
-								<?= ($exercise['exercise_questions'])."
-" ?>
-							</p>
-						</div></div>
-					</div>
-                </div>
-                <div class="col-sm-4">
-                
-                	<div class="panel panel-primary">
-      				<div class="panel-heading"><a role="button" data-toggle="collapse" href="#collapseFour" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed">Photos </div>
-      				</a><div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne"><div class="panel-body">
-                    	<body>
- 						<img src="https://sc01.alicdn.com/kf/HTB11RwlJpXXXXXCXFXXq6xXFXXXU/54509/HTB11RwlJpXXXXXCXFXXq6xXFXXXU.jpg" alt="dummy photo" height="300" width="400">
-                        <img src="https://www.petmd.com/sites/default/files/petmd-cat-happy-13.jpg" alt="dummy photo" height="300" width="200">
-						<p>
-							<?= ($exercise['exercise_image'])."
-" ?>
-						</p>
-						</body>
-                    </div></div>
-                </div>
-                <div class="col-sm-2"></div>
-            </div>
-            <br> 
-            -->
+			</div>
  
           
           

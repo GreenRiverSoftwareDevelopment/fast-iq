@@ -9,3 +9,7 @@ a:link{
 {
     display: none;
 }
+#list-group
+{
+    list-style-type: none;
+}

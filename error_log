@@ -1915,3 +1915,11 @@ Stack trace:
 [06-Mar-2018 20:51:08 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:1821] call_user_func_array()
 [06-Mar-2018 20:51:08 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:1642] Base->call()
 [06-Mar-2018 20:51:08 America/Chicago] [fast-iq/index.php:142] Base->run()
+[07-Mar-2018 01:35:07 America/Chicago] array_filter() expects parameter 1 to be array, string given
+[07-Mar-2018 01:35:07 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:2205] Base->error()
+[07-Mar-2018 01:35:07 America/Chicago] [485/fast-iq/indexRequire/sonie.php:97] array_filter()
+[07-Mar-2018 01:35:07 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1821] {closure}()
+[07-Mar-2018 01:35:07 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1642] Base->call()
+[07-Mar-2018 01:35:07 America/Chicago] [485/fast-iq/index.php:142] Base->run()
+[07-Mar-2018 01:36:20 America/Chicago] syntax error, unexpected '$questions' (T_VARIABLE) [/home/bsaylor/public_html/485/fast-iq/indexRequire/sonie.php:96]
+[07-Mar-2018 01:36:20 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:2199] Base->error()
