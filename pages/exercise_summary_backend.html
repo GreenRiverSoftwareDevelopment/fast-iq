@@ -236,7 +236,7 @@ li {
                                                     <div class="col-sm-8">
                                                             <label for="exercise">
                                                                   <form action="./editExerciseVideo/{{ @exerciseID }}" id="video" method="post" class="form-horizontal">
-                                                                 <input name="videolink" id="videolink"  value="{{ @exercise.exercise_video }}";>
+                                                                 <input name="videolink" id="videolink"  value="{{ @exercise.exercise_video }}" onkeypress="this.style.width = ((this.value.length + 1) * 8) + 'px';">
                       
                                                                   </form>
                                                             </label>
