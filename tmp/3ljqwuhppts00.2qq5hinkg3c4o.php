@@ -210,12 +210,12 @@ li {
                       <!-- Edit and Delete hover over -->
                         <div class="middle">
                     <div class="text">
-                         <form action="./editExerciseVideo/<?= ($exerciseID) ?>" id="video" method="post" class="form-horizontal">
+                       
                        
                         <button type="button" class="btn btn-primary btn-warning btn-lg" data-toggle="modal" data-target=".editExerciseVideo<?= ($exercise['exercise_id']) ?>">
                             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  Edit
                         </button>
-                         </form>
+                         
                     </div>
                     
                 
@@ -235,10 +235,10 @@ li {
                                                     
                                                     <div class="col-sm-8">
                                                             <label for="exercise">
-                                                                
+                                                                  <form action="./editExerciseVideo/<?= ($exerciseID) ?>" id="video" method="post" class="form-horizontal">
                                                                  <input name="videolink" id="videolink"  value="<?= ($exercise['exercise_video']) ?>";>
                       
-                                                                
+                                                                  </form>
                                                             </label>
                                                         <div class="form-group">
                                                             <input form="video" class="btn btn-info btn-lg" type="submit" value="Submit">
