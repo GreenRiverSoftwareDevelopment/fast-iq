@@ -93,7 +93,14 @@
              $f3->route('GET|POST /editExerciseQuestion/@id', function($f3, $params)
             {
                 $questionsArray = array_filter($_POST['questions']);
+                
                 $questions = implode(', ', $questionsArray);
+                
+                foreach($questionsArray as $questions)
+                {
+                    trim($questions);
+                }
+                
                 
                 $GLOBALS['exerciseDB']->editExerciseQuestion($params['id'], $questions);
                 //$id, $exercise_name, $exercise_summary, $exercise_image, $exercise_video, $exercise_questions

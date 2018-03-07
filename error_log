@@ -1923,3 +1923,15 @@ Stack trace:
 [07-Mar-2018 01:35:07 America/Chicago] [485/fast-iq/index.php:142] Base->run()
 [07-Mar-2018 01:36:20 America/Chicago] syntax error, unexpected '$questions' (T_VARIABLE) [/home/bsaylor/public_html/485/fast-iq/indexRequire/sonie.php:96]
 [07-Mar-2018 01:36:20 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:2199] Base->error()
+[07-Mar-2018 01:51:44 America/Chicago] trim() expects parameter 1 to be string, array given
+[07-Mar-2018 01:51:44 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:2205] Base->error()
+[07-Mar-2018 01:51:44 America/Chicago] [485/fast-iq/indexRequire/sonie.php:96] trim()
+[07-Mar-2018 01:51:44 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1821] {closure}()
+[07-Mar-2018 01:51:44 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1642] Base->call()
+[07-Mar-2018 01:51:44 America/Chicago] [485/fast-iq/index.php:142] Base->run()
+[07-Mar-2018 01:55:43 America/Chicago] array_walk() expects parameter 2 to be a valid callback, function ' ' not found or invalid function name
+[07-Mar-2018 01:55:43 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:2205] Base->error()
+[07-Mar-2018 01:55:43 America/Chicago] [485/fast-iq/indexRequire/sonie.php:96] array_walk()
+[07-Mar-2018 01:55:43 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1821] {closure}()
+[07-Mar-2018 01:55:43 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1642] Base->call()
+[07-Mar-2018 01:55:43 America/Chicago] [485/fast-iq/index.php:142] Base->run()
