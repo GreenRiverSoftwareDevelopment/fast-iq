@@ -1882,3 +1882,12 @@ Stack trace:
 [06-Mar-2018 17:20:05 America/Chicago] HTTP 405 (GET /editExerciseSummary/1)
 [06-Mar-2018 17:20:05 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:1691] Base->error()
 [06-Mar-2018 17:20:05 America/Chicago] [fast-iq/index.php:142] Base->run()
+[06-Mar-2018 18:13:18 America/Chicago] PHP Fatal error:  Cannot redeclare ExerciseDB::editExerciseSummary() in /home/smoon/public_html/fast-iq/model/exercisedb.php on line 133
+[06-Mar-2018 18:13:18 America/Chicago] Fatal error: Cannot redeclare ExerciseDB::editExerciseSummary()
+[06-Mar-2018 18:13:18 America/Chicago] [fast-iq/model/exercisedb.php:133] 
+[06-Mar-2018 18:13:20 America/Chicago] PHP Fatal error:  Cannot redeclare ExerciseDB::editExerciseSummary() in /home/smoon/public_html/fast-iq/model/exercisedb.php on line 133
+[06-Mar-2018 18:13:20 America/Chicago] Fatal error: Cannot redeclare ExerciseDB::editExerciseSummary()
+[06-Mar-2018 18:13:20 America/Chicago] [fast-iq/model/exercisedb.php:133] 
+[06-Mar-2018 18:13:30 America/Chicago] PHP Fatal error:  Cannot redeclare ExerciseDB::editExerciseSummary() in /home/smoon/public_html/fast-iq/model/exercisedb.php on line 133
+[06-Mar-2018 18:13:30 America/Chicago] Fatal error: Cannot redeclare ExerciseDB::editExerciseSummary()
+[06-Mar-2018 18:13:30 America/Chicago] [fast-iq/model/exercisedb.php:133] 

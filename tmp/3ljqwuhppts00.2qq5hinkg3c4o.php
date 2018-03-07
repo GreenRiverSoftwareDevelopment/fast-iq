@@ -136,7 +136,7 @@ li {
                 <div id="TEST_1" class="panel-collapse show">
                     <div class="panel-body">
                        <form action="./editExerciseSummary/<?= ($exerciseID) ?>" id="summary" method="post" class="form-horizontal">
-                        <input name="exercise_summary" id="exercise_summary" value="<?= ($exercise['exercise_summary']) ?>">
+                        <input name="exercise_summary" id="exercise_summary" value="<?= ($exercise['exercise_summary']) ?>" onkeypress="this.style.width = ((this.value.length + 1) * 8) + 'px';">
                        </form>
                         
                         <br>
@@ -200,21 +200,47 @@ li {
                       <!-- Edit and Delete hover over -->
                         <div class="middle">
                     <div class="text">
-                        
-                        <button type="button" class="btn btn-primary btn-warning btn-lg" data-toggle="modal" data-target=".editExercise<?= ($exercise['exercise_id']) ?>">
+                         <form action="./editExerciseVideo/<?= ($exerciseID) ?>" id="video" method="post" class="form-horizontal">
+                       
+                        <button type="button" class="btn btn-primary btn-warning btn-lg" data-toggle="modal" data-target=".editExerciseVideo<?= ($exercise['exercise_id']) ?>">
                             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  Edit
                         </button>
+                         </form>
                     </div>
                     
-                    
-                    
-                    <div class="text">
-                        <button type="button" class="btn btn-primary btn-danger btn-lg" data-toggle="modal" data-target=".deleteExercise<?= ($exercise['exercise_image']) ?>">
-                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>  Delete
-                        </button>
-                    </div>
+                
                         </div>
                         <!-- Edit and Delete hover over end -->
+                        
+                        <!-- Start of edit module-->
+                                    <div class="modal fade editExerciseVideo<?= ($exercise['exercise_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content" id="modalcontent">
+                                                <!-- inner modal -->
+                                                
+                                                    <br>
+                                                    <br>
+                                                    <br>
+                                                    <div class="col-sm-2"></div>
+                                                    
+                                                    <div class="col-sm-8">
+                                                            <label for="exercise"><h3>
+                                                                
+                                                                 <input name="video" id="video"  value="<?= ($exercise['exercise_video']) ?>" onkeypress="this.style.width = ((this.value.length + 1) * 8) + 'px';">
+                      
+                                                                
+                                                            </h3></label>
+                                                        <div class="form-group">
+                                                            <input form="video" class="btn btn-info btn-lg" type="submit" value="Submit">
+                                                        </div>
+                                                        <br>
+                                                        <br>
+                                                    </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                    <!-- End of edit module-->
 
             </div>
                         <!--<?= ($exercise['exercise_video']) ?>-->
@@ -291,18 +317,48 @@ li {
                         <!-- Edit and Delete hover over -->
                         <div class="middle">
                     <div class="text">
-                        
-                        <button type="button" class="btn btn-primary btn-warning btn-lg" data-toggle="modal" data-target=".editExercise<?= ($exercise['exercise_id']) ?>">
+                            <form action="./editExerciseImage/<?= ($exerciseID) ?>" id="image" method="post" class="form-horizontal">
+                       <button type="button" class="btn btn-primary btn-warning btn-lg" data-toggle="modal" data-target=".editExerciseImage<?= ($exercise['exsercise_id']) ?>">
                             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  Edit
                         </button>
+                            </form>
+                   
+                    
+                    
                     </div>
                     
-                    <div class="text">
-                        <button type="button" class="btn btn-primary btn-danger btn-lg" data-toggle="modal" data-target=".deleteExercise<?= ($exercise['exercise_image']) ?>">
-                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>  Delete
-                        </button>
-                    </div>
+                     
+
                         </div>
+                         <!-- Start of edit module-->
+                                    <div class="modal fade editExerciseImage<?= ($exercise['exercise_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content" id="modalcontent">
+                                                <!-- inner modal -->
+                                                
+                                                    <br>
+                                                    <br>
+                                                    <br>
+                                                    <div class="col-sm-2"></div>
+                                                    
+                                                    <div class="col-sm-8">
+                                                            <label for="exercise"><h3>
+                                                                
+                                                                 <input name="image" id="image"  value="<?= ($exercise['exercise_image']) ?>" onkeypress="this.style.width = ((this.value.length + 1) * 8) + 'px';">
+                      
+                                                                
+                                                            </h3></label>
+                                                        <div class="form-group">
+                                                            <input form="image" class="btn btn-info btn-lg" type="submit" value="Submit">
+                                                        </div>
+                                                        <br>
+                                                        <br>
+                                                    </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                    <!-- End of edit module-->
                         <!-- Edit and Delete hover over end -->
                         </div>
                         

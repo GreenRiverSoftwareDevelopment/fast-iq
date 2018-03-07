@@ -70,6 +70,27 @@
                 //echo Template::instance()->render('pages/exercise_summary_backend.html');
             });
             
+            $f3->route('GET|POST /editExerciseVideo/@id', function($f3, $params)
+            {
+                
+                $GLOBALS['exerciseDB']->editExerciseVideo($params['id'], $_POST['video']);
+                //$id, $exercise_name, $exercise_summary, $exercise_image, $exercise_video, $exercise_questions
+                $f3->reroute('/exerciseSummaryBackend');
+                
+                //echo Template::instance()->render('pages/exercise_summary_backend.html');
+            });
+            
+            $f3->route('GET|POST /editExerciseImage/@id', function($f3, $params)
+            {
+                
+                $GLOBALS['exerciseDB']->editExerciseImage($params['id'], $_POST['image']);
+                //$id, $exercise_name, $exercise_summary, $exercise_image, $exercise_video, $exercise_questions
+                $f3->reroute('/exerciseSummaryBackend');
+                
+                //echo Template::instance()->render('pages/exercise_summary_backend.html');
+            });
+             
+            
      
      
      

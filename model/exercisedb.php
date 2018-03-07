@@ -127,6 +127,50 @@
             $statement->execute();
         }
         
+       
+        
+               /**
+         *Edit exercise summary
+         */
+        function editExerciseVideo($id, $exercise_video)
+        {
+            $insert =
+            'UPDATE
+            exercises
+            SET
+            exercise_video=:exercise_video
+            WHERE
+            exercise_id=:id';
+             
+            $statement = $this->_pdo->prepare($insert);
+            $statement->bindValue(':id', $id, PDO::PARAM_INT);
+            $statement->bindValue(':exercise_video', $exercise_video, PDO::PARAM_STR);
+            
+            $statement->execute();
+        }
+        
+                  /**
+         *Edit exercise summary
+         */
+        function editExerciseImage($id, $exercise_image)
+        {
+            $insert =
+            'UPDATE
+            exercises
+            SET
+            exercise_image=:exercise_image
+            WHERE
+            exercise_id=:id';
+             
+            $statement = $this->_pdo->prepare($insert);
+            $statement->bindValue(':id', $id, PDO::PARAM_INT);
+            $statement->bindValue(':exercise_image', $exercise_image, PDO::PARAM_STR);
+            
+            $statement->execute();
+        }
+        
+        
+        
         
         /**
          * Edits a exercise to the collection of exercises in the db.
