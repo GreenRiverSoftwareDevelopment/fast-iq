@@ -288,7 +288,8 @@ li {
                             <form action="./editExerciseQuestion/<?= ($exerciseID) ?>" id="question" method="post" class="form-horizontal">
                     
                         <?php foreach (($questions_array?:[]) as $question): ?>
-                            <li class="list-group-item"><?= ($question) ?><input type="hidden" name="questions[]" value="<?= ($question) ?>"/> </li> 
+                            <li class="list-group-item"><input name="questions[]" id="questions"  value="<?= ($question) ?>" onkeypress="this.style.width = ((this.value.length + 1) * 8) + 'px';">
+                      </li> 
                         <?php endforeach; ?>
                         </ul>
                             </form>
