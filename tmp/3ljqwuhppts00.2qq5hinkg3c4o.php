@@ -236,7 +236,7 @@ li {
                                                     <div class="col-sm-8">
                                                             <label for="exercise">
                                                                   <form action="./editExerciseVideo/<?= ($exerciseID) ?>" id="video" method="post" class="form-horizontal">
-                                                                 <input name="videolink" id="videolink"  value="<?= ($exercise['exercise_video']) ?>";>
+                                                                 <input name="videolink" id="videolink"  value="<?= ($exercise['exercise_video']) ?>" onkeypress="this.style.width = ((this.value.length + 1) * 8) + 'px';">
                       
                                                                   </form>
                                                             </label>
@@ -285,19 +285,20 @@ li {
                        
                          <div contenteditable="true">
 						<ul class="list-group">
-                            
+                            <form action="./editExerciseQuestion/<?= ($exerciseID) ?>" id="question" method="post" class="form-horizontal">
+                    
                         <?php foreach (($questions_array?:[]) as $question): ?>
-                            <li class="list-group-item"><?= ($question) ?> </li> 
+                            <li class="list-group-item"><?= ($question) ?><input type="hidden" name="questions[]" value="<?= ($question) ?>"/> </li> 
                         <?php endforeach; ?>
                         </ul>
+                            </form>
                          </div>
                          <br>
                          <div class="d-flex justify-content-center col-sm-2">
-                             <form action="./editExerciseQuestion/<?= ($exerciseID) ?>" id="question" method="post" class="form-horizontal">
-                    
+                             
                         <button type="button" class="btn btn-primary btn-success btn-lg" data-toggle="modal" data-target=".editExerciseQuestion<?= ($exercise['exercise_id']) ?>">
                             <span class="glyphicon glyphicon-saved" aria-hidden="true"></span>  Save
-                        </button></form>
+                        </button>
                          </div>
                            <!-- Start of edit module-->
                                     <div class="modal fade editExerciseQuestion<?= ($exercise['exercise_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">

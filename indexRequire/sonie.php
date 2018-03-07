@@ -92,8 +92,11 @@
              
              $f3->route('GET|POST /editExerciseQuestion/@id', function($f3, $params)
             {
+           
+                $questions = implode(', ', $_POST['questions']);
                 
-                $GLOBALS['exerciseDB']->editExerciseQuestion($params['id'], $_POST['question']);
+                
+                $GLOBALS['exerciseDB']->editExerciseQuestion($params['id'], $questions);
                 //$id, $exercise_name, $exercise_summary, $exercise_image, $exercise_video, $exercise_questions
                 $f3->reroute('/exerciseSummaryBackend');
                 

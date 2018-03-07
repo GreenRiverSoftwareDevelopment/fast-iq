@@ -1894,3 +1894,24 @@ Stack trace:
 [06-Mar-2018 19:12:43 America/Chicago] PHP Fatal error:  Cannot redeclare ExerciseDB::editExerciseImage() in /home/smoon/public_html/fast-iq/model/exercisedb.php on line 155
 [06-Mar-2018 19:12:43 America/Chicago] Fatal error: Cannot redeclare ExerciseDB::editExerciseImage()
 [06-Mar-2018 19:12:43 America/Chicago] [fast-iq/model/exercisedb.php:155] 
+[06-Mar-2018 20:43:39 America/Chicago] implode(): Invalid arguments passed
+[06-Mar-2018 20:43:39 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:2205] Base->error()
+[06-Mar-2018 20:43:39 America/Chicago] [fast-iq/indexRequire/sonie.php:96] implode()
+[06-Mar-2018 20:43:39 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:1821] call_user_func_array()
+[06-Mar-2018 20:43:39 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:1642] Base->call()
+[06-Mar-2018 20:43:39 America/Chicago] [fast-iq/index.php:142] Base->run()
+[06-Mar-2018 20:45:20 America/Chicago] implode(): Invalid arguments passed
+[06-Mar-2018 20:45:20 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:2205] Base->error()
+[06-Mar-2018 20:45:20 America/Chicago] [fast-iq/indexRequire/sonie.php:96] implode()
+[06-Mar-2018 20:45:20 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:1821] call_user_func_array()
+[06-Mar-2018 20:45:20 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:1642] Base->call()
+[06-Mar-2018 20:45:20 America/Chicago] [fast-iq/index.php:142] Base->run()
+[06-Mar-2018 20:50:10 America/Chicago] PHP Parse error:  syntax error, unexpected ')', expecting ']' in /home/smoon/public_html/fast-iq/indexRequire/sonie.php on line 95
+[06-Mar-2018 20:50:10 America/Chicago] Fatal error: syntax error, unexpected ')', expecting ']'
+[06-Mar-2018 20:50:10 America/Chicago] [fast-iq/indexRequire/sonie.php:95] 
+[06-Mar-2018 20:51:08 America/Chicago] array_values() expects parameter 1 to be array, string given
+[06-Mar-2018 20:51:08 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:2205] Base->error()
+[06-Mar-2018 20:51:08 America/Chicago] [fast-iq/indexRequire/sonie.php:95] array_values()
+[06-Mar-2018 20:51:08 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:1821] call_user_func_array()
+[06-Mar-2018 20:51:08 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:1642] Base->call()
+[06-Mar-2018 20:51:08 America/Chicago] [fast-iq/index.php:142] Base->run()
