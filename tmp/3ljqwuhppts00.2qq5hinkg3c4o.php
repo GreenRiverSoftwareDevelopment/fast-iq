@@ -353,11 +353,11 @@ li {
                         <!-- Edit and Delete hover over -->
                         <div class="middle">
                     <div class="text">
-                            <form action="./editExerciseImage/<?= ($exerciseID) ?>" id="image" method="post" class="form-horizontal">
+                           
                        <button type="button" class="btn btn-primary btn-warning btn-lg" data-toggle="modal" data-target=".editExerciseImage<?= ($exercise['exsercise_id']) ?>">
                             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  Edit
                         </button>
-                            </form>
+                            
                    
                     
                     
@@ -379,10 +379,10 @@ li {
                                                     
                                                     <div class="col-sm-8">
                                                             <label for="exercise"><h3>
-                                                                
-                                                                 <input name="image" id="image"  value="<?= ($exercise['exercise_image']) ?>" onkeypress="this.style.width = ((this.value.length + 1) * 8) + 'px';">
+                                                                 <form action="./editExerciseImage/<?= ($exerciseID) ?>" id="image" method="post" class="form-horizontal">
+                                                                 <input name="imagelink" id="imagelink"  value="<?= ($exercise['exercise_image']) ?>" onkeypress="this.style.width = ((this.value.length + 1) * 8) + 'px';">
                       
-                                                                
+                                                                </form
                                                             </h3></label>
                                                         <div class="form-group">
                                                             <input form="image" class="btn btn-info btn-lg" type="submit" value="Submit">
