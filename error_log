@@ -1935,3 +1935,21 @@ Stack trace:
 [07-Mar-2018 01:55:43 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1821] {closure}()
 [07-Mar-2018 01:55:43 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1642] Base->call()
 [07-Mar-2018 01:55:43 America/Chicago] [485/fast-iq/index.php:142] Base->run()
+[07-Mar-2018 16:59:04 America/Chicago] array_walk() expects parameter 2 to be a valid callback, function 'trim_value' not found or invalid function name
+[07-Mar-2018 16:59:04 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:2205] Base->error()
+[07-Mar-2018 16:59:04 America/Chicago] [485/fast-iq/indexRequire/sonie.php:112] array_walk()
+[07-Mar-2018 16:59:04 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1821] {closure}()
+[07-Mar-2018 16:59:04 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1642] Base->call()
+[07-Mar-2018 16:59:04 America/Chicago] [485/fast-iq/index.php:142] Base->run()
+[07-Mar-2018 17:14:55 America/Chicago] array_walk() expects parameter 2 to be a valid callback, function ' ' not found or invalid function name
+[07-Mar-2018 17:14:55 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:2205] Base->error()
+[07-Mar-2018 17:14:55 America/Chicago] [485/fast-iq/indexRequire/sonie.php:109] array_walk()
+[07-Mar-2018 17:14:55 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1821] {closure}()
+[07-Mar-2018 17:14:55 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1642] Base->call()
+[07-Mar-2018 17:14:55 America/Chicago] [485/fast-iq/index.php:142] Base->run()
+[07-Mar-2018 17:16:27 America/Chicago] array_walk() expects parameter 2 to be a valid callback, function ' ' not found or invalid function name
+[07-Mar-2018 17:16:27 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:2205] Base->error()
+[07-Mar-2018 17:16:27 America/Chicago] [485/fast-iq/indexRequire/sonie.php:109] array_walk()
+[07-Mar-2018 17:16:27 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1821] {closure}()
+[07-Mar-2018 17:16:27 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1642] Base->call()
+[07-Mar-2018 17:16:27 America/Chicago] [485/fast-iq/index.php:142] Base->run()

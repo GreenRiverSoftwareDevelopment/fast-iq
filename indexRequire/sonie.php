@@ -92,30 +92,20 @@
              
              $f3->route('GET|POST /editExerciseQuestion/@id', function($f3, $params)
             {
-                function trimArray($itcArr)
-                {
-                    if($itcArr == null)
-                    {
-                        return null;
-                    }
-                    if(is_array($itcArr))
-                    {
-                        return array_map('trimArray', $itcArr);
-                    }
-                    else
-                    {
-                        
-                        return str_replace(' ', '', $itcArr);
-                    }
+                function trim_value(&$value) 
+                { 
+                    $value = trim($value); 
                 }
-                $questionsArrayUntrimmed = trimArray($_POST['questions']);
-                $questionsArrayWithSpacesDeleted = array_filter($questionsArrayUntrimmed);
-                $questions = implode(',', $questionsArrayWithSpacesDeleted);
                 
+                $unmodifiedArray = $_POST['questions'];
+                
+                array_walk($unmodifiedArray, 'trim_value');
+                $questionsArrayWithSpacesDeleted = array_filter($unmodifiedArray);
+                $questions = implode(',', $questionsArrayWithSpacesDeleted);
                 
                 $GLOBALS['exerciseDB']->editExerciseQuestion($params['id'], $questions);
                 //$id, $exercise_name, $exercise_summary, $exercise_image, $exercise_video, $exercise_questions
-                $f3->reroute('/exerciseSummaryBackend');
+                //$f3->reroute('/exerciseSummaryBackend');
                 
                 //echo Template::instance()->render('pages/exercise_summary_backend.html');
             });
