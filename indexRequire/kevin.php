@@ -37,6 +37,11 @@
     {
          $categories =  $GLOBALS['categoryDB']->allCategories();
         $f3->set('categories', $categories);
+        
+        $exercise = $GLOBALS['exerciseDB']->getExerciseByID($params['id']);
+                    
+        $questions_array = explode(',', $exercise['exercise_questions']);
+        $f3->set('questions_array', $questions_array);
        
         $testPassedVar = $_SESSION['passedVar'];
         $_SESSION['testName'] = $_SESSION['passedVar'];
@@ -149,7 +154,7 @@
     });
     
     
-      $f3->route('GET /videoExercise/@id', function($f3, $params)
+    $f3->route('GET /videoExercise/@id', function($f3, $params)
     {
         $summaryEntries =  $GLOBALS['exerciseDB']->getExerciseByID($params['id']);
         $f3->set('exercise', $summaryEntries);
@@ -170,4 +175,29 @@
 
            // $_SESSION['passedVar'] = "We were passedddddddddddddddYYYYYYYYYYYYYYYYYYYSdfdfd"; 
        //echo Template::instance()->render('pages/category_page_two.html');
+    });
+    
+    $f3->route('GET /questionsExercise/@id', function($f3, $params)
+    {
+        $exercise = $GLOBALS['exerciseDB']->getExerciseByID($params['id']);
+                    
+        $questions_array = explode(',', $exercise['exercise_questions']);
+        $f3->set('questions_array', $questions_array);
+        
+        foreach($questions_array as $question)
+        {
+            echo '<li class="list-group-item"><h3>'.$question.'</h3></li>';
+        }
+            
+        
+    });
+    
+    $f3->route('GET /pictureExercise/@id', function($f3, $params)
+    {
+        $exercise = $GLOBALS['exerciseDB']->getExerciseByID($params['id']);
+        
+        echo '<img src="'.$exercise['exercise_image'].'" class="img-fluid" alt="Responsive image">';
+        
+            
+        
     });

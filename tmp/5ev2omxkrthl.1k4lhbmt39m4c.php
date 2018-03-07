@@ -157,8 +157,6 @@
 								<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
 									<div class="panel-body">
 										<div class="panel-body">
-										 <h1>1. Why are the tires always black in color?</h1>
-											<h4>Tires are black due to the proportion of carbon mixed in it during vulcanization of rubber. Without it, tires can’t bear the friction heat and road stress.</h4>
 										</div>
 									</div>
 								</div>   
@@ -175,7 +173,7 @@
 							<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
 								<div class="panel-body">
 									<div class="panel-body">
-										<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+										<!--<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 										  <ol class="carousel-indicators">
 											<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
 											<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -200,7 +198,7 @@
 											<span class="carousel-control-next-icon" aria-hidden="true"></span>
 											<span class="sr-only">Next</span>
 										  </a>
-										</div>
+										</div>-->
 									</div>
 								</div>
 							</div>
@@ -324,8 +322,31 @@
 				unit_select.addEventListener("change", updateSummary);
 				
 				
-								//Summary
+				//Video
 				function updateVideo() {
+				  var excercise_select = document.getElementById("excercise_select");
+				  var question_select = document.getElementById("collapseThree");
+		  
+				  var question_id = excercise_select.options[excercise_select.selectedIndex].value;
+		  
+				  var url = './questionsExercise/' + question_id;
+				  console.log(question_id);
+					
+				  var xhr = new XMLHttpRequest();
+				  xhr.open('GET', url, true);
+				  xhr.onreadystatechange = function () {
+				   
+					  //cat_select.innerHTML = xhr.responseText;
+					  question_select.innerHTML = xhr.responseText;
+					  console.log(xhr.responseText);
+					 //subcat_select.style.display = 'inline';
+					
+				  };
+				  xhr.send();
+				}
+				
+				//Questions
+				function updateQuestions() {
 				  var excercise_select = document.getElementById("excercise_select");
 				  var video_select = document.getElementById("collapseTwo");
 		  
@@ -346,9 +367,34 @@
 				  };
 				  xhr.send();
 				}
+				
+				//Picture
+				function updatePicture() {
+				  var excercise_select = document.getElementById("excercise_select");
+				  var picture_select = document.getElementById("collapseFour");
 		  
-				var unit_select = document.getElementById("excercise_select");
+				  var picture_id = excercise_select.options[excercise_select.selectedIndex].value;
+		  
+				  var url = './pictureExercise/' + picture_id;
+				  console.log(picture_id);
+					
+				  var xhr = new XMLHttpRequest();
+				  xhr.open('GET', url, true);
+				  xhr.onreadystatechange = function () {
+				   
+					  //cat_select.innerHTML = xhr.responseText;
+					  picture_select.innerHTML = xhr.responseText;
+					  console.log(xhr.responseText);
+					 //subcat_select.style.display = 'inline';
+					
+				  };
+				  xhr.send();
+				}
+		  
 				unit_select.addEventListener("change", updateVideo);
+				unit_select.addEventListener("change", updateQuestions);
+				unit_select.addEventListener("change", updatePicture);
+				
 			  </script>
             
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

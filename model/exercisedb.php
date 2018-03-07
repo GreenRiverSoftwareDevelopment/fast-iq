@@ -70,7 +70,7 @@
             exercises
             (unit_id, exercise_name, exercise_summary, exercise_image, exercise_video, exercise_questions)
             VALUES
-            (:id, :exercise_name, "", "", "", "")';
+            (:id, :exercise_name, "Enter a summary here.", "http://performancelabus.com/entrepreneur-san-francisco-john-uke/", "", "Enter in questions here.")';
              
             $statement = $this->_pdo->prepare($insert);
             $statement->bindValue(':id', $id, PDO::PARAM_INT);

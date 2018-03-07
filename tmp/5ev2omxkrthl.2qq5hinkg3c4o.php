@@ -210,12 +210,12 @@ li {
                       <!-- Edit and Delete hover over -->
                         <div class="middle">
                     <div class="text">
-                         <form action="./editExerciseVideo/<?= ($exerciseID) ?>" id="video" method="post" class="form-horizontal">
+                       
                        
                         <button type="button" class="btn btn-primary btn-warning btn-lg" data-toggle="modal" data-target=".editExerciseVideo<?= ($exercise['exercise_id']) ?>">
                             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  Edit
                         </button>
-                         </form>
+                         
                     </div>
                     
                 
@@ -235,10 +235,10 @@ li {
                                                     
                                                     <div class="col-sm-8">
                                                             <label for="exercise">
-                                                                
-                                                                 <input name="videolink" id="videolink"  value="<?= ($exercise['exercise_video']) ?>";>
+                                                                  <form action="./editExerciseVideo/<?= ($exerciseID) ?>" id="video" method="post" class="form-horizontal">
+                                                                 <input name="videolink" id="videolink"  value="<?= ($exercise['exercise_video']) ?>" onkeypress="this.style.width = ((this.value.length + 1) * 8) + 'px';">
                       
-                                                                
+                                                                  </form>
                                                             </label>
                                                         <div class="form-group">
                                                             <input form="video" class="btn btn-info btn-lg" type="submit" value="Submit">
@@ -285,19 +285,21 @@ li {
                        
                          <div contenteditable="true">
 						<ul class="list-group">
-                            
+                            <form action="./editExerciseQuestion/<?= ($exerciseID) ?>" id="question" method="post" class="form-horizontal">
+                    
                         <?php foreach (($questions_array?:[]) as $question): ?>
-                            <li class="list-group-item"><?= ($question) ?> </li> 
+                            <li class="list-group-item"><input name="questions[]" id="questions"  value="<?= ($question) ?>" onkeypress="this.style.width = ((this.value.length + 1) * 8) + 'px';">
+							</li> 
                         <?php endforeach; ?>
                         </ul>
+                            </form>
                          </div>
                          <br>
                          <div class="d-flex justify-content-center col-sm-2">
-                             <form action="./editExerciseQuestion/<?= ($exerciseID) ?>" id="question" method="post" class="form-horizontal">
-                    
+                             
                         <button type="button" class="btn btn-primary btn-success btn-lg" data-toggle="modal" data-target=".editExerciseQuestion<?= ($exercise['exercise_id']) ?>">
                             <span class="glyphicon glyphicon-saved" aria-hidden="true"></span>  Save
-                        </button></form>
+                        </button>
                          </div>
                            <!-- Start of edit module-->
                                     <div class="modal fade editExerciseQuestion<?= ($exercise['exercise_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -353,11 +355,11 @@ li {
                         <!-- Edit and Delete hover over -->
                         <div class="middle">
                     <div class="text">
-                            <form action="./editExerciseImage/<?= ($exerciseID) ?>" id="image" method="post" class="form-horizontal">
+                           
                        <button type="button" class="btn btn-primary btn-warning btn-lg" data-toggle="modal" data-target=".editExerciseImage<?= ($exercise['exsercise_id']) ?>">
                             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  Edit
                         </button>
-                            </form>
+                            
                    
                     
                     
@@ -379,10 +381,10 @@ li {
                                                     
                                                     <div class="col-sm-8">
                                                             <label for="exercise"><h3>
-                                                                
-                                                                 <input name="image" id="image"  value="<?= ($exercise['exercise_image']) ?>" onkeypress="this.style.width = ((this.value.length + 1) * 8) + 'px';">
+                                                                 <form action="./editExerciseImage/<?= ($exerciseID) ?>" id="image" method="post" class="form-horizontal">
+                                                                 <input name="imagelink" id="imagelink"  value="<?= ($exercise['exercise_image']) ?>" onkeypress="this.style.width = ((this.value.length + 1) * 8) + 'px';">
                       
-                                                                
+                                                                </form
                                                             </h3></label>
                                                         <div class="form-group">
                                                             <input form="image" class="btn btn-info btn-lg" type="submit" value="Submit">
