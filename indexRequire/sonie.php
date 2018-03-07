@@ -92,14 +92,25 @@
              
              $f3->route('GET|POST /editExerciseQuestion/@id', function($f3, $params)
             {
-                $questionsArray = array_filter($_POST['questions']);
-                
-                $questions = implode(', ', $questionsArray);
-                
-                foreach($questionsArray as $questions)
+                function trimArray($itcArr)
                 {
-                    trim($questions);
+                    if($itcArr == null)
+                    {
+                        return null;
+                    }
+                    if(is_array($itcArr))
+                    {
+                        return array_map('trimArray', $itcArr);
+                    }
+                    else
+                    {
+                        
+                        return str_replace(' ', '', $itcArr);
+                    }
                 }
+                $questionsArrayUntrimmed = trimArray($_POST['questions']);
+                $questionsArrayWithSpacesDeleted = array_filter($questionsArrayUntrimmed);
+                $questions = implode(',', $questionsArrayWithSpacesDeleted);
                 
                 
                 $GLOBALS['exerciseDB']->editExerciseQuestion($params['id'], $questions);
