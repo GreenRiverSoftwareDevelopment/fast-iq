@@ -105,7 +105,7 @@
                 
                 $GLOBALS['exerciseDB']->editExerciseQuestion($params['id'], $questions);
                 //$id, $exercise_name, $exercise_summary, $exercise_image, $exercise_video, $exercise_questions
-                //$f3->reroute('/exerciseSummaryBackend');
+                $f3->reroute('/exerciseSummaryBackend');
                 
                 //echo Template::instance()->render('pages/exercise_summary_backend.html');
             });
