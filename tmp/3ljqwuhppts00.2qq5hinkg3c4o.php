@@ -49,6 +49,10 @@ p {
   font-size: medium;  
 }
 
+input {
+    font-size: medium;
+}
+
 li {
   font-size: medium;  
 }
@@ -120,11 +124,15 @@ li {
         <!-- start panel left -->
         <!--<div class="panel-left col-sm-6">-->
 		<div class="col-sm-10 col-sm-offset-5">
+            
+            
             <!-- start panel -->
             <div class="panel panel-primary">
-                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#TEST_1">
+                
                 <div class="panel-heading">
+                    
                     <h4 class="panel-title">
+                         <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#TEST_1">
                     
                         
                         EXERCISE SUMMARY
@@ -136,9 +144,11 @@ li {
                 <div id="TEST_1" class="panel-collapse show">
                     <div class="panel-body">
                        <form action="./editExerciseSummary/<?= ($exerciseID) ?>" id="summary" method="post" class="form-horizontal">
+                    
                         <input name="exercise_summary" id="exercise_summary" value="<?= ($exercise['exercise_summary']) ?>" onkeypress="this.style.width = ((this.value.length + 1) * 8) + 'px';">
+                       
                        </form>
-                        
+                      
                         <br>
                         
                           
@@ -224,12 +234,12 @@ li {
                                                     <div class="col-sm-2"></div>
                                                     
                                                     <div class="col-sm-8">
-                                                            <label for="exercise"><h3>
+                                                            <label for="exercise">
                                                                 
-                                                                 <input name="video" id="video"  value="<?= ($exercise['exercise_video']) ?>" onkeypress="this.style.width = ((this.value.length + 1) * 8) + 'px';">
+                                                                 <input name="videolink" id="videolink"  value="<?= ($exercise['exercise_video']) ?>";>
                       
                                                                 
-                                                            </h3></label>
+                                                            </label>
                                                         <div class="form-group">
                                                             <input form="video" class="btn btn-info btn-lg" type="submit" value="Submit">
                                                         </div>
@@ -283,10 +293,36 @@ li {
                          </div>
                          <br>
                          <div class="d-flex justify-content-center col-sm-2">
-                        <button type="button" class="btn btn-primary btn-success btn-lg" data-toggle="modal" data-target=".saveExercise<?= ($exercise['exercise_id']) ?>">
+                             <form action="./editExerciseQuestion/<?= ($exerciseID) ?>" id="question" method="post" class="form-horizontal">
+                    
+                        <button type="button" class="btn btn-primary btn-success btn-lg" data-toggle="modal" data-target=".editExerciseQuestion<?= ($exercise['exercise_id']) ?>">
                             <span class="glyphicon glyphicon-saved" aria-hidden="true"></span>  Save
-                        </button>
+                        </button></form>
                          </div>
+                           <!-- Start of edit module-->
+                                    <div class="modal fade editExerciseQuestion<?= ($exercise['exercise_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content" id="modalcontent">
+                                                <!-- inner modal -->
+                                                
+                                                    <br>
+                                                    <br>
+                                                    <br>
+                                                    <div class="col-sm-2"></div>
+                                                    
+                                                    <div class="col-sm-8">
+                                                            <label for="exercise"><h3>Are you sure you want to save changes?</h3></label>
+                                                        <div class="form-group">
+                                                            <input form="question" class="btn btn-info btn-lg" type="submit" value="Submit">
+                                                        </div>
+                                                        <br>
+                                                        <br>
+                                                    </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                    <!-- End of edit module-->
 
                          
                         <!--<?= ($exercise['exercise_questions']) ?>-->

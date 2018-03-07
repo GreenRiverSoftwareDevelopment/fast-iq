@@ -83,13 +83,22 @@
             $f3->route('GET|POST /editExerciseImage/@id', function($f3, $params)
             {
                 
-                $GLOBALS['exerciseDB']->editExerciseImage($params['id'], $_POST['image']);
+                $GLOBALS['exerciseDB']->editExerciseImage($params['id'], $_POST['imagelink']);
                 //$id, $exercise_name, $exercise_summary, $exercise_image, $exercise_video, $exercise_questions
                 $f3->reroute('/exerciseSummaryBackend');
                 
                 //echo Template::instance()->render('pages/exercise_summary_backend.html');
             });
              
+             $f3->route('GET|POST /editExerciseQuestion/@id', function($f3, $params)
+            {
+                
+                $GLOBALS['exerciseDB']->editExerciseQuestion($params['id'], $_POST['question']);
+                //$id, $exercise_name, $exercise_summary, $exercise_image, $exercise_video, $exercise_questions
+                $f3->reroute('/exerciseSummaryBackend');
+                
+                //echo Template::instance()->render('pages/exercise_summary_backend.html');
+            });
             
      
      

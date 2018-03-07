@@ -132,6 +132,26 @@
                /**
          *Edit exercise summary
          */
+        function editExerciseImage($id, $exercise_image)
+        {
+            $insert =
+            'UPDATE
+            exercises
+            SET
+            exercise_image=:exercise_image
+            WHERE
+            exercise_id=:id';
+             
+            $statement = $this->_pdo->prepare($insert);
+            $statement->bindValue(':id', $id, PDO::PARAM_INT);
+            $statement->bindValue(':exercise_image', $exercise_image, PDO::PARAM_STR);
+            
+            $statement->execute();
+        }
+        
+                  /**
+         *Edit exercise summary
+         */
         function editExerciseVideo($id, $exercise_video)
         {
             $insert =
@@ -149,22 +169,22 @@
             $statement->execute();
         }
         
-                  /**
+                      /**
          *Edit exercise summary
          */
-        function editExerciseImage($id, $exercise_image)
+        function editExerciseQuestion($id, $exercise_questions)
         {
             $insert =
             'UPDATE
             exercises
             SET
-            exercise_image=:exercise_image
+            exercise_questions=:exercise_questions
             WHERE
             exercise_id=:id';
              
             $statement = $this->_pdo->prepare($insert);
             $statement->bindValue(':id', $id, PDO::PARAM_INT);
-            $statement->bindValue(':exercise_image', $exercise_image, PDO::PARAM_STR);
+            $statement->bindValue(':exercise_questions', $exercise_questions, PDO::PARAM_STR);
             
             $statement->execute();
         }
