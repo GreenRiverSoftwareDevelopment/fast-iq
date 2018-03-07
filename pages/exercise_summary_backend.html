@@ -77,9 +77,6 @@ li {
                         <li class="nav-item">
                             <a class="nav-link" href="./exercisesBackend/{{ @categoryID }}"><h3>Go Back</h3></a>
                         </li>
-						<li class="nav-item">
-                          <a class="nav-link active" data-toggle="modal" data-target="#signUpModal"><h3>Create New Admin</h3></a>
-                        </li>
                     </ul>
                     
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
@@ -131,20 +128,53 @@ li {
                     
                         
                         EXERCISE SUMMARY
+                    
                      
                     </h4>
                 </div>
                  </a>
-                <div id="TEST_1" class="panel-collapse collapse show">
+                <div id="TEST_1" class="panel-collapse show">
                     <div class="panel-body">
-                        <div contenteditable="true">
-                        <p>{{ @exercise.exercise_summary }}</p>
-                        </div>
+                       <form action="./editExerciseSummary/{{ @exerciseID }}" id="summary" method="post" class="form-horizontal">
+                        <input name="exercise_summary" id="exercise_summary" value="{{ @exercise.exercise_summary }}">
+                       </form>
+                        
                         <br>
+                        
+                          
                         <div class="d-flex justify-content-center col-sm-2">
-                        <button type="button" class="btn btn-primary btn-success btn-lg" data-toggle="modal" data-target=".saveExercise{{ @exercise.exercise_id }}">
+                        <button type="button" class="btn btn-primary btn-success btn-lg" data-toggle="modal" data-target=".editExerciseSummary{{ @exercise.exercise_id }}">
                             <span class="glyphicon glyphicon-saved" aria-hidden="true"></span>  Save
                         </button></div>
+                         
+                    <!-- Start of edit module-->
+                                    <div class="modal fade editExerciseSummary{{ @exercise.exercise_id }}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content" id="modalcontent">
+                                                <!-- inner modal -->
+                                                
+                                                    <br>
+                                                    <br>
+                                                    <br>
+                                                    <div class="col-sm-2"></div>
+                                                    
+                                                    <div class="col-sm-8">
+                                                            <label for="exercise"><h3>Are you sure you want to save changes?</h3></label>
+                                                        <div class="form-group">
+                                                            <input form="summary" class="btn btn-info btn-lg" type="submit" value="Submit">
+                                                        </div>
+                                                        <br>
+                                                        <br>
+                                                    </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                    <!-- End of edit module-->
+                        
+                        
+                        
+                        
                     </div>
                     </div>
                 </div>

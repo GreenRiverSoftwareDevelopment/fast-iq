@@ -47,6 +47,8 @@
                 $f3->set('exercises', $exercises);
                 $f3->set('exercise', $exercise);
                 
+                //setting exercise id 
+                $f3->set('exerciseID', $_SESSION['exerciseID']);
                 $youtubeLink = $exercise['exercise_video'];
             $youtubeEmbededCode = substr($youtubeLink, strpos($youtubeLink, "=") + 1); 
             $video = '<iframe width="700" height="480" src="https://www.youtube.com/embed/'.$youtubeEmbededCode.'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
@@ -55,5 +57,21 @@
             
         echo Template::instance()->render('pages/exercise_summary_backend.html');
      });
+     
+     
+        
+            $f3->route('GET|POST /editExerciseSummary/@id', function($f3, $params)
+            {
+                
+                $GLOBALS['exerciseDB']->editExerciseSummary($params['id'], $_POST['exercise_summary']);
+                //$id, $exercise_name, $exercise_summary, $exercise_image, $exercise_video, $exercise_questions
+                $f3->reroute('/exerciseSummaryBackend');
+                
+                //echo Template::instance()->render('pages/exercise_summary_backend.html');
+            });
+            
+     
+     
+     
      
      

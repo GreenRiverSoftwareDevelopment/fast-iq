@@ -108,6 +108,27 @@
         }
         
         /**
+         *Edit exercise summary
+         */
+        function editExerciseSummary($id, $exercise_summary)
+        {
+            $insert =
+            'UPDATE
+            exercises
+            SET
+            exercise_summary=:exercise_summary
+            WHERE
+            exercise_id=:id';
+             
+            $statement = $this->_pdo->prepare($insert);
+            $statement->bindValue(':id', $id, PDO::PARAM_INT);
+            $statement->bindValue(':exercise_summary', $exercise_summary, PDO::PARAM_STR);
+            
+            $statement->execute();
+        }
+        
+        
+        /**
          * Edits a exercise to the collection of exercises in the db.
          */
         function editExerciseName($id, $exercise_name)

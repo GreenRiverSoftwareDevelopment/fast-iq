@@ -23,6 +23,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="./unitsBackend/<?= ($categoryID) ?>"><h3>Go Back</h3></a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="modal" data-target="#signUpModal"><h3>Create New Admin</h3></a>
+                        </li>
                     </ul>
                     
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">

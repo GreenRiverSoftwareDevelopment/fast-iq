@@ -1870,3 +1870,15 @@ Stack trace:
 [03-Mar-2018 23:35:53 America/Chicago] [fast-iq/index.php:142] Base->run()
 [03-Mar-2018 23:39:39 America/Chicago] syntax error, unexpected '$hashPasswordVerify' (T_VARIABLE) [/home/knguyen/public_html/fast-iq/indexRequire/brian.php:113]
 [03-Mar-2018 23:39:39 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:2199] Base->error()
+[05-Mar-2018 09:28:23 America/Chicago] PHP Fatal error:  Call to undefined function password_verify() in /home/smoon/public_html/fast-iq/indexRequire/brian.php on line 108
+[05-Mar-2018 09:28:23 America/Chicago] Fatal error: Call to undefined function password_verify()
+[05-Mar-2018 09:28:23 America/Chicago] [fast-iq/indexRequire/brian.php:108] 
+[06-Mar-2018 10:16:11 America/Chicago] PHP Parse error:  syntax error, unexpected '$f3' (T_VARIABLE) in /home/smoon/public_html/fast-iq/indexRequire/sonie.php on line 66
+[06-Mar-2018 10:16:11 America/Chicago] Fatal error: syntax error, unexpected '$f3' (T_VARIABLE)
+[06-Mar-2018 10:16:11 America/Chicago] [fast-iq/indexRequire/sonie.php:66] 
+[06-Mar-2018 10:16:24 America/Chicago] PHP Parse error:  syntax error, unexpected '}' in /home/smoon/public_html/fast-iq/indexRequire/sonie.php on line 67
+[06-Mar-2018 10:16:24 America/Chicago] Fatal error: syntax error, unexpected '}'
+[06-Mar-2018 10:16:24 America/Chicago] [fast-iq/indexRequire/sonie.php:67] 
+[06-Mar-2018 17:20:05 America/Chicago] HTTP 405 (GET /editExerciseSummary/1)
+[06-Mar-2018 17:20:05 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:1691] Base->error()
+[06-Mar-2018 17:20:05 America/Chicago] [fast-iq/index.php:142] Base->run()
