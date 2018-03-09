@@ -160,9 +160,10 @@
         $f3->set('exercise', $summaryEntries);
         
             $youtubeLink = $summaryEntries['exercise_video'];
-            $youtubeEmbededCode = substr($youtubeLink, strpos($youtubeLink, "=") + 1); 
+            $youtubeEmbededCode = substr($youtubeLink, strpos($youtubeLink, "=") + 1);
+            echo '<div class="embed-responsive embed-responsive-16by9">';
             echo '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/'.$youtubeEmbededCode.'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
-            
+            echo '</div>';
                      
         
         
