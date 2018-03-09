@@ -114,11 +114,12 @@ li {
                     </div>
                   </div>
                 </div>
+			<!--*********************************** THIS IS LOGOUT THE MODAL*************************************-->
                 
                 
                
                 
-  <h1 class="display-2 text-center"><?= ($exercise['exercise_name']) ?></h1><br>
+	<h1 class="display-2 text-center"><?= ($exercise['exercise_name']) ?></h1><br>
 			<div class="col-xs-11 col-sm-7">
     <div class="panel-group" id="accordion">
 
@@ -133,22 +134,22 @@ li {
                 <div class="panel-heading">
                     
                     <h4 class="panel-title">
-                         <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#TEST_1">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#TEST_1">
 						<h1 id="tabHeading">Exercise Summary</h1>
                     </h4>
-                </div>
-                 </a>
+                </div></a>
+                 
                 <div id="TEST_1" class="panel-collapse show">
                     <div class="panel-body">
 						<div class="row">
-							<div class="col-sm-4">
+							<div class="col-sm-6">
 								<form action="./editExerciseSummary/<?= ($exerciseID) ?>" id="summary" method="post" class="form-horizontal">
 									<div class="input-group input-group-lg">
 										<input class="form-control" name="exercise_summary" id="exercise_summary" value="<?= ($exercise['exercise_summary']) ?>">
 									</div>
 								</form>
 							</div>
-							<div class="justify-content-center col-sm-6">
+							<div class="justify-content-center col-sm-1">
 							</div>
 							<div class="justify-content-center col-sm-2">
 								<button type="button" class="btn btn-primary btn-success btn-lg" data-toggle="modal" data-target=".editExerciseSummary<?= ($exercise['exercise_id']) ?>">
@@ -175,7 +176,6 @@ li {
                                                         <br>
                                                         <br>
                                                     </div>
-                                                
                                             </div>
                                         </div>
                                     </div>
@@ -190,9 +190,9 @@ li {
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#TEST_2">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#TEST_2">
                         <h1 id="tabHeading">Videos</h1>
-                     </a>
+                    </a>
                     </h4>
                 </div>
                 <div id="TEST_2" class="panel-collapse collapse show">
@@ -200,20 +200,15 @@ li {
                         <div class="container">
 						<div class="hoverImage">	
                             
-                         <iframe class="embed-responsive-item img-fluid" src="https://www.youtube.com/embed/<?= ($youtubeEmbededCode) ?>" allowfullscreen></iframe></div>
+                         <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?= ($youtubeEmbededCode) ?>" width="100%" height="460px" allowfullscreen></iframe></div>
                       
                       <!-- Edit and Delete hover over -->
                         <div class="middle">
-                    <div class="text">
-                       
-                       
-                        <button type="button" class="btn btn-primary btn-warning btn-lg" data-toggle="modal" data-target=".editExerciseVideo<?= ($exercise['exercise_id']) ?>">
-                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  Edit
-                        </button>
-                         
-                    </div>
-                    
-                
+							<div class="text">
+								<button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target=".editExerciseVideo<?= ($exercise['exercise_id']) ?>">
+									<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  Edit
+								</button>
+							</div>
                         </div>
                         <!-- Edit and Delete hover over end -->
                         
@@ -269,7 +264,7 @@ li {
                 <div id="TEST_3" class="panel-collapse show">
                     <div class="panel-body">
 						<div class="row">
-							<div class="col-sm-4">
+							<div class="col-sm-6">
 								<div contenteditable="true">
 									<form action="./editExerciseQuestion/<?= ($exerciseID) ?>" id="question" method="post" class="form-horizontal">
 										<?php foreach (($questions_array?:[]) as $question): ?>
@@ -288,7 +283,7 @@ li {
 									</form>
 								</div>
 							</div>
-							<div class="justify-content-center col-sm-6">
+							<div class="justify-content-center col-sm-1">
 							</div>
 							<div class="justify-content-center col-sm-2">
 								<button type="button" class="btn btn-primary btn-success btn-lg" data-toggle="modal" data-target=".editExerciseQuestion<?= ($exercise['exercise_id']) ?>">
@@ -322,8 +317,6 @@ li {
                                         </div>
                                     </div>
                     <!-- End of edit module-->
-
-                         
                         <!--<?= ($exercise['exercise_questions']) ?>-->
                     </div>
                 </div>
@@ -336,7 +329,7 @@ li {
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#TEST_4">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#TEST_4">
                         <h1 id="tabHeading">Photos</h1>
                      </a>
                     </h4>
@@ -351,19 +344,11 @@ li {
                         </div>
                         <!-- Edit and Delete hover over -->
                         <div class="middle">
-                    <div class="text">
-                           
-						<button type="button" class="btn btn-primary btn-warning btn-lg" data-toggle="modal" data-target=".editExerciseImage<?= ($exercise['exsercise_id']) ?>">
-                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  Edit
-                        </button>
-                            
-                   
-                    
-                    
-                    </div>
-                    
-                     
-
+							<div class="text">     
+								<button type="button" class="btn btn-primary btn-warning btn-lg" data-toggle="modal" data-target=".editExerciseImage<?= ($exercise['exsercise_id']) ?>">
+									<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  Edit
+								</button>
+							</div>
                         </div>
                          <!-- Start of edit module-->
                                     <div class="modal fade editExerciseImage<?= ($exercise['exercise_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -390,24 +375,16 @@ li {
                                                         <br>
                                                         <br>
                                                     </div>
-                                                
                                             </div>
                                         </div>
                                     </div>
 						<!-- End of edit module-->
                         <!-- Edit and Delete hover over end -->
                         </div>
-                        
-                        
-                        
-                        
                     </div>
                 </div>
 			</div>
  
-          
-          
-          
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
             <!-- Include all compiled plugins (below), or include individual files as needed -->

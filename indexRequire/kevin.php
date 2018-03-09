@@ -161,9 +161,7 @@
         
             $youtubeLink = $summaryEntries['exercise_video'];
             $youtubeEmbededCode = substr($youtubeLink, strpos($youtubeLink, "=") + 1);
-            echo '<div class="embed-responsive embed-responsive-16by9">';
-            echo '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/'.$youtubeEmbededCode.'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
-            echo '</div>';
+            echo '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/'.$youtubeEmbededCode.'" width="100%" height="460px" allowfullscreen></iframe>';
                      
         
         

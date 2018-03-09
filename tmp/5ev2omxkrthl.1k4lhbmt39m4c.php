@@ -136,7 +136,6 @@
 							</div></a>
 							<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
 								<div class="panel-body">
-									<iframe class="embed-responsive-it" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" width="100%" height="460px" allowfullscreen></iframe>
 								</div>
 							</div>
 						</div>
@@ -294,27 +293,27 @@
 				
 				
 				//Video
-				//function updateVideo() {
-				//  var excercise_select = document.getElementById("excercise_select");
-				//  var video_select = document.getElementById("collapseTwoBody");
-				//
-				//  var video_id = excercise_select.options[excercise_select.selectedIndex].value;
-				//
-				//  var url = './videoExercise/' + video_id;
-				//  console.log(video_id);
-				//	
-				//  var xhr = new XMLHttpRequest();
-				//  xhr.open('GET', url, true);
-				//  xhr.onreadystatechange = function () {
-				//   
-				//	  //cat_select.innerHTML = xhr.responseText;
-				//	  video_select.innerHTML = xhr.responseText;
-				//	  console.log(xhr.responseText);
-				//	 //subcat_select.style.display = 'inline';
-				//	
-				//  };
-				//  xhr.send();
-				//}
+				function updateVideo() {
+				  var excercise_select = document.getElementById("excercise_select");
+				  var video_select = document.getElementById("collapseTwo");
+				
+				  var video_id = excercise_select.options[excercise_select.selectedIndex].value;
+				
+				  var url = './videoExercise/' + video_id;
+				  console.log(video_id);
+					
+				  var xhr = new XMLHttpRequest();
+				  xhr.open('GET', url, true);
+				  xhr.onreadystatechange = function () {
+				   
+					  //cat_select.innerHTML = xhr.responseText;
+					  video_select.innerHTML = xhr.responseText;
+					  console.log(xhr.responseText);
+					 //subcat_select.style.display = 'inline';
+					
+				  };
+				  xhr.send();
+				}
 				
 				//Questions
 				function updateQuestions() {
@@ -364,7 +363,7 @@
 				  xhr.send();
 				}
 		  
-				//unit_select.addEventListener("change", updateVideo);
+				unit_select.addEventListener("change", updateVideo);
 				unit_select.addEventListener("change", updateQuestions);
 				unit_select.addEventListener("change", updatePicture);
 				
