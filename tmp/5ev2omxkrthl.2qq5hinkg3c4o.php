@@ -310,13 +310,11 @@ li {
                                                     <br>
                                                     <br>
                                                     
-                                                    <div class="col-sm-12 text-center">
-                                                        <label for="exercise"><h3>Are you sure you want to save changes?</h3></label>
-															<div class="form-group">
-																<div class="input-group input-group-lg">
-																	<input form="question" class="btn btn-info btn-lg" type="submit" value="Save">
-																</div>
-															</div>
+													<div class="col-sm-12 text-center">
+                                                            <label for="exercise"><h3>Are you sure you want to save changes?</h3></label>
+                                                        <div class="form-group">
+                                                            <input form="question" class="btn btn-info btn-lg" type="submit" value="Save">
+                                                        </div>
                                                         <br>
                                                         <br>
                                                     </div>
