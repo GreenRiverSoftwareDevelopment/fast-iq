@@ -55,7 +55,7 @@
     {
         $categories =  $GLOBALS['categoryDB']->allCategories();
         $f3->set('categories', $categories);
-        echo Template::instance()->render('pages/category_page.html');
+        echo Template::instance()->render('pages/category_page_two.html');
     });
     
             $f3->route('GET /categoryBackend', function($f3)
