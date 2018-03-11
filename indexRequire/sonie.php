@@ -42,6 +42,7 @@
                 
                  $questions_array = explode(',', $exercise['exercise_questions']);
                 $f3->set('questions_array', $questions_array);
+                $f3->set('unitID', $_SESSION['unitID']);
                 $f3->set('categoryID', $_SESSION['categoryID']);
                 $f3->set('unitName', $unitName);
                 $f3->set('exercises', $exercises);

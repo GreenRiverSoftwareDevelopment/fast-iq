@@ -80,7 +80,7 @@ li {
                             <a class="nav-link" href="./categoryBackend"><h3>Home</h3></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./exercisesBackend/<?= ($categoryID) ?>"><h3>Go Back</h3></a>
+                            <a class="nav-link" href="./exercisesBackend/<?= ($unitID) ?>"><h3>Go Back</h3></a>
                         </li>
                     </ul>
                     
