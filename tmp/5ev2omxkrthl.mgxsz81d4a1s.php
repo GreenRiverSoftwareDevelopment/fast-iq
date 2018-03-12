@@ -27,12 +27,12 @@
                 </nav>
             </div>
             
-            <!--*********************************** THIS IS THE Sign Out MODAL*************************************-->
+            <!--*********************************** THIS IS LOGOUT THE MODAL*************************************-->
                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Logout</h5>
+                        <h3 class="modal-title" id="exampleModalLabel">Logout</h3>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
@@ -40,18 +40,18 @@
                       <form action="./logout" method="GET">
                             <div class="modal-body">
                                 <div class="col-md-12">
-                                    <h4>Are you sure you want to logout?</h4>
+                                    <h3>Are you sure you want to logout?</h3>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                              <button type="Submit" class="btn btn-primary">Yes</button>
+                              <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">No</button>
+                              <button type="Submit" class="btn btn-primary btn-lg">Yes</button>
                             </div> 
                       </form>
                     </div>
                   </div>
                 </div>
-        <!--*********************************** THIS IS THE END Sign Out MODAL*************************************-->
+        <!--*********************************** THIS IS LOGOUT THE MODAL*************************************-->
         
             <!--*********************************** THIS IS THE Sign Up MODAL*************************************-->
                 <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -104,13 +104,15 @@
                                                     <br>
                                                     <div class="col-sm-2"></div>
                                                     
-                                                    <div class="col-sm-8">
+                                                    <div class="col-sm-8 text-center">
                                                         <div class="form-group">
                                                             <label for="category"><h3>Category Name</h3></label>
-                                                            <input class="form-control" type="text" name="category_name" id="category_name" value="<?= ($category['category_name']) ?>" placeholder="Name" required>
+                                                            <div class="input-group input-group-lg">
+                                                                <input class="form-control" type="text" name="category_name" id="category_name" value="<?= ($category['category_name']) ?>" placeholder="Name" required>
+                                                            </div>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input class="btn btn-info btn-sm" type="submit" value="Submit">
+                                                            <input class="btn btn-warning btn-lg" type="submit" value="Save">
                                                         </div>
                                                         <br>
                                                         <br>
@@ -144,10 +146,11 @@
                                                     <br>
                                                     <div class="col-sm-2"></div>
                                                     
-                                                    <div class="col-sm-8">
-                                                            <label for="category"><h3>Are you sure you want to delete this Category?</h3></label>
+                                                    <div class="col-sm-12 text-center">
+                                                            <label for="exercise"><h3>Are you sure you want to delete this category?</h3></label>
+                                                            <br>
                                                         <div class="form-group">
-                                                            <input class="btn btn-info btn-sm" type="submit" value="Submit">
+                                                            <input class="btn btn-danger btn-lg" type="submit" value="DELETE">
                                                         </div>
                                                         <br>
                                                         <br>
@@ -182,13 +185,15 @@
                                                     <br>
                                                     <div class="col-sm-2"></div>
                                                     
-                                                    <div class="col-sm-8">
+                                                    <div class="col-sm-8 text-center">
                                                         <div class="form-group">
                                                             <label for="category"><h3>Category Name</h3></label>
-                                                            <input class="form-control" type="text" name="category_name" id="category_name" placeholder="Category Name" required>
+                                                            <div class="input-group input-group-lg">
+                                                                <input class="form-control" type="text" name="category_name" id="category_name" placeholder="Category Name" required>
+                                                            </div>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input class="btn btn-info btn-sm" type="submit" value="Submit">
+                                                            <input class="btn btn-success btn-lg" type="submit" value="Add">
                                                         </div>
                                                         <br>
                                                         <br>

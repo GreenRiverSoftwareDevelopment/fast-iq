@@ -95,7 +95,7 @@ li {
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Logout</h5>
+                        <h3 class="modal-title" id="exampleModalLabel">Logout</h3>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
@@ -103,18 +103,18 @@ li {
                       <form action="./logout" method="GET">
                             <div class="modal-body">
                                 <div class="col-md-12">
-                                    <h4>Are you sure you want to logout?</h4>
+                                    <h3>Are you sure you want to logout?</h3>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                              <button type="Submit" class="btn btn-primary">Yes</button>
+                              <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">No</button>
+                              <button type="Submit" class="btn btn-primary btn-lg">Yes</button>
                             </div> 
                       </form>
                     </div>
                   </div>
                 </div>
-			<!--*********************************** THIS IS LOGOUT THE MODAL*************************************-->
+        <!--*********************************** THIS IS LOGOUT THE MODAL*************************************-->
                 
                 
                
@@ -145,7 +145,7 @@ li {
 							<div class="col-sm-6">
 								<form action="./editExerciseSummary/<?= ($exerciseID) ?>" id="summary" method="post" class="form-horizontal">
 									<div class="input-group input-group-lg">
-										<input class="form-control" name="exercise_summary" id="exercise_summary" value="<?= ($exercise['exercise_summary']) ?>">
+										<input class="form-control" name="exercise_summary" id="exercise_summary" placeholder="Enter a Summary here" value="<?= ($exercise['exercise_summary']) ?>">
 									</div>
 								</form>
 							</div>
@@ -270,7 +270,7 @@ li {
 										<?php foreach (($questions_array?:[]) as $question): ?>
 											<li id="list-group">
 												<div class="input-group input-group-lg">
-													<input name="questions[]" id="questions" class="form-control" type="text" value="<?= ($question) ?>"></input>
+													<input name="questions[]" id="questions" class="form-control" type="text" placeholder="Enter a new question here" value="<?= ($question) ?>"></input>
 												</div>
 											</li>
 											<br>
