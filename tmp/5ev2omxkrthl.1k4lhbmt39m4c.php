@@ -38,7 +38,7 @@
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Login To Make Changes</h5>
+                        <h2 class="modal-title" id="exampleModalLabel">Login To Make Changes</h2>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
@@ -46,7 +46,7 @@
                       <form action="./login" method="POST">
                             <div class="modal-body">
                                 <div class="form-group row">
-                                  <label for="example-time-input" class="col-2 col-form-label"><h3>Email</h3></label>
+                                  <label for="example-time-input" class="col-2 col-form-label"><h4>Email</h4></label>
                                   <div class="col-10">
 									<div class="input-group input-group-lg">
 										<input class="form-control form-control-lg" type="Text" name="username" placeholder="username" id="username" required="true">
@@ -54,7 +54,7 @@
                                   </div>
                                 </div>
                                 <div class="form-group row">
-                                  <label for="example-color-input" class="col-2 col-form-label"><h3>Password</h3></label>
+                                  <label for="example-color-input" class="col-2 col-form-label"><h4>Password</h4></label>
                                   <div class="col-10">
 									<div class="input-group input-group-lg">
 										<input class="form-control" type="password" name="password" placeholder="password" id="password" required="true">
