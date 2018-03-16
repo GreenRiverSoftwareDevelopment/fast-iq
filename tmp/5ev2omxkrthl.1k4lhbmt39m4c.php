@@ -84,9 +84,9 @@
 								  <select class="form-control form-control-lg" id="category_select">
 									<option disabled selected>Please select</option>
 									
-									 <repeat group="{{ @categories }}" value="{{ @category }}">
-										<option value="{{ @category.category_id }}">{{ @category.category_name }}</option>
-                                    </repeat>
+									 <?php foreach (($categories?:[]) as $category): ?>
+										<option value="<?= ($category['category_id']) ?>"><?= ($category['category_name']) ?></option>
+                                    <?php endforeach; ?>
 								  </select>
 								</div>
                             </div>

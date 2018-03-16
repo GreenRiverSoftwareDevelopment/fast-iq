@@ -45,11 +45,17 @@
     //    echo $view->render('pages/login.php');
     //});
     
+    $f3->route('GET /angularTest', function($f3)
+    {
+        $view = new View;
+        echo $view->render('pages/angularTest.html');
+    });
+    
     $f3->route('GET /', function($f3)
     {
         $categories =  $GLOBALS['categoryDB']->allCategories();
         $f3->set('categories', $categories);
-        echo Template::instance()->render('pages/category_page.html');
+        echo Template::instance()->render('pages/category_page_two.html');
     });
     
             $f3->route('GET /categoryBackend', function($f3)
@@ -66,16 +72,16 @@
                 echo Template::instance()->render('pages/category_backend.html');
             });
     
-    $f3->route('GET /units', function($f3)
-    {
-        $units =  $GLOBALS['unitDB']->unitsByCategory($_SESSION['categoryID']);
-        
-        $categoryName = $GLOBALS['categoryDB']->getCategoryByID($_SESSION['categoryID']);
-        
-        $f3->set('categoryName', $categoryName);
-        $f3->set('units', $units);
-        echo Template::instance()->render('pages/unit_page.html');
-    });
+    //$f3->route('GET /units', function($f3)
+    //{
+    //    $units =  $GLOBALS['unitDB']->unitsByCategory($_SESSION['categoryID']);
+    //    
+    //    $categoryName = $GLOBALS['categoryDB']->getCategoryByID($_SESSION['categoryID']);
+    //    
+    //    $f3->set('categoryName', $categoryName);
+    //    $f3->set('units', $units);
+    //    echo Template::instance()->render('pages/unit_page.html');
+    //});
     
             $f3->route('GET /unitsBackend', function($f3)
             {
@@ -95,17 +101,17 @@
                 echo Template::instance()->render('pages/unit_backend.html');
             });
     
-    $f3->route('GET /exercises', function($f3)
-    {
-        $exercises =  $GLOBALS['exerciseDB']->exercisesByUnit($_SESSION['unitID']);
-        
-        $unitName = $GLOBALS['unitDB']->getUnitByID($_SESSION['unitID']);
-        
-        $f3->set('categoryID', $_SESSION['categoryID']);
-        $f3->set('unitName', $unitName);
-        $f3->set('exercises', $exercises);
-        echo Template::instance()->render('pages/exercise_page.html');
-    });
+    //$f3->route('GET /exercises', function($f3)
+    //{
+    //    $exercises =  $GLOBALS['exerciseDB']->exercisesByUnit($_SESSION['unitID']);
+    //            
+    //    $unitName = $GLOBALS['unitDB']->getUnitByID($_SESSION['unitID']);
+    //            
+    //    $f3->set('categoryID', $_SESSION['categoryID']);
+    //    $f3->set('unitName', $unitName);
+    //    $f3->set('exercises', $exercises);
+    //    echo Template::instance()->render('pages/exercise_page.html');
+    //});
     
             $f3->route('GET /exercisesBackend', function($f3)
             {

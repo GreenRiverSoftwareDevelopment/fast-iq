@@ -5,3 +5,11 @@
 a:link{
     text-decoration: none;
 }
+#summary-view
+{
+    display: none;
+}
+#list-group
+{
+    list-style-type: none;
+}

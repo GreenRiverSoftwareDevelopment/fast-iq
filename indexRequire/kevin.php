@@ -4,7 +4,7 @@
     {
         $usernameAttempt = $_POST['username'];
         $userPasswordAttempt = $_POST['password'];
-        $userExists = $GLOBALS['memberdb']->adminNameExists($usernameAttempt, $userPasswordAttempt);
+        $userExists = $GLOBALS['memberDB']->adminNameExists($usernameAttempt, $userPasswordAttempt);
         
         if($userExists){
             $_SESSION['username'] = $usernameAttempt;
@@ -17,10 +17,31 @@
         
     });
     
+    $f3->route('POST /createAdmin', function($f3)
+    {
+        $cost = 10; //Cost of generating has. The higher the value the more secure, but the slower the load of the server.
+        $usernameCreated = $_POST['username'];
+        $passwordCreated = $_POST['password'];
+        
+        $hashedPassword = password_hash($passwordCreated , PASSWORD_DEFAULT, ["cost" => $cost]) ; //Creates the hashed password.
+        $hashPasswordVerify = password_verify($passwordCreated , $hashedPassword);
+        $memberCreated = $GLOBALS['memberDB']->addMember($usernameCreated, $hashedPassword);
+        
+        echo  "User has been created";
+        //var_dump($hashPasswordVerify);
+        
+        
+    });
+    
         $f3->route('GET /categorySecond', function($f3)
     {
          $categories =  $GLOBALS['categoryDB']->allCategories();
         $f3->set('categories', $categories);
+        
+        $exercise = $GLOBALS['exerciseDB']->getExerciseByID($params['id']);
+                    
+        $questions_array = explode(',', $exercise['exercise_questions']);
+        $f3->set('questions_array', $questions_array);
        
         $testPassedVar = $_SESSION['passedVar'];
         $_SESSION['testName'] = $_SESSION['passedVar'];
@@ -37,7 +58,7 @@
              */
         }
         
-        echo '<br />';
+    //echo '<br />';
        // var_dump($categories);
        // echo '</select>';
        
@@ -112,11 +133,12 @@
         
     $f3->route('GET /summaryExercise/@id', function($f3, $params)
     {
-         $summaryEntries =  $GLOBALS['exerciseDB']->getExerciseByID($params['id']);
+        $summaryEntries =  $GLOBALS['exerciseDB']->getExerciseByID($params['id']);
         $f3->set('exercise', $summaryEntries);
         
-           
-            echo'<h3>'.$summaryEntries['exercise_summary'].'</h3>';
+            echo '<br>';
+            echo'<h3 class="text-center">'.$summaryEntries['exercise_summary'].'</h3>';
+            echo '<br>';
                      
         
         
@@ -132,15 +154,14 @@
     });
     
     
-      $f3->route('GET /videoExercise/@id', function($f3, $params)
+    $f3->route('GET /videoExercise/@id', function($f3, $params)
     {
-         $summaryEntries =  $GLOBALS['exerciseDB']->getExerciseByID($params['id']);
+        $summaryEntries =  $GLOBALS['exerciseDB']->getExerciseByID($params['id']);
         $f3->set('exercise', $summaryEntries);
         
             $youtubeLink = $summaryEntries['exercise_video'];
-            $youtubeEmbededCode = substr($youtubeLink, strpos($youtubeLink, "=") + 1); 
-            echo '<iframe width="700" height="480" src="https://www.youtube.com/embed/'.$youtubeEmbededCode.'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
-            
+            $youtubeEmbededCode = substr($youtubeLink, strpos($youtubeLink, "=") + 1);
+            echo '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/'.$youtubeEmbededCode.'" width="100%" height="460px" allowfullscreen></iframe>';
                      
         
         
@@ -153,4 +174,29 @@
 
            // $_SESSION['passedVar'] = "We were passedddddddddddddddYYYYYYYYYYYYYYYYYYYSdfdfd"; 
        //echo Template::instance()->render('pages/category_page_two.html');
+    });
+    
+    $f3->route('GET /questionsExercise/@id', function($f3, $params)
+    {
+        $exercise = $GLOBALS['exerciseDB']->getExerciseByID($params['id']);
+                    
+        $questions_array = explode(',', $exercise['exercise_questions']);
+        $f3->set('questions_array', $questions_array);
+        
+        foreach($questions_array as $question)
+        {
+            echo '<li class="list-group-item"><h3>'.$question.'</h3></li>';
+        }
+            
+        
+    });
+    
+    $f3->route('GET /pictureExercise/@id', function($f3, $params)
+    {
+        $exercise = $GLOBALS['exerciseDB']->getExerciseByID($params['id']);
+        
+        echo '<img src="'.$exercise['exercise_image'].'" class="img-fluid" alt="Responsive image">';
+        
+            
+        
     });

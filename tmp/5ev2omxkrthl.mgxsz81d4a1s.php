@@ -18,16 +18,9 @@
                 <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
                     <ul class="nav nav-pills nav-fill">
                         <li class="nav-item">
-                            <a class="nav-link" href="./categoryBackend"><h3>Home</h3></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./unitsBackend/{{ @categoryID }}"><h3>Go Back</h3></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" data-toggle="modal" data-target="#signUpModal"><h3>Create New Admin</h3></a>
+                          <a class="nav-link active" data-toggle="modal" data-target="#signUpModal"><h3>Create New Admin</h3></a>
                         </li>
                     </ul>
-                    
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
                         <h3>Logout</h3>
                     </button>
@@ -59,40 +52,68 @@
                   </div>
                 </div>
         <!--*********************************** THIS IS LOGOUT THE MODAL*************************************-->
+        
+            <!--*********************************** THIS IS THE Sign Up MODAL*************************************-->
+                <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Login To Make Changes</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                        <form action="./createAdmin" method="post">
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp" placeholder="Enter username">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                          </div>
+                          <button type="submit" class="btn btn-primary">SignUp</button>
+                        </form>
+                    </div>
+                  </div>
+                </div>
+        <!--*********************************** THIS IS THE Sign Up MODAL*************************************-->
             
-            <h1 class="display-2 text-center" id="{{ @unitName.unit_name }}">{{ @unitName.unit_name }}</h1>
+            
+            <h1 class="display-2 text-center">Categories</h1>
             
             
-            <repeat group="{{ @exercises }}" value="{{ @exercise }}">
+            <?php foreach (($categories?:[]) as $category): ?>
             <br>
                 <div class="row">
                     <div class="d-flex justify-content-center col-sm-2">
-                        <button type="button" class="btn btn-primary btn-warning btn-lg" data-toggle="modal" data-target=".editExercise{{ @exercise.exercise_id }}">
+                        <button type="button" class="btn btn-primary btn-warning btn-lg" data-toggle="modal" data-target=".editCategory<?= ($category['category_id']) ?>">
                             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  Edit
                         </button>
                     </div>
-                        
-                        <!-- Start of edit module-->
-                                    <div class="modal fade editExercise{{ @exercise.exercise_id }}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    
+                    <!-- Start of edit module-->
+                                    <div class="modal fade editCategory<?= ($category['category_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content" id="modalcontent">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Edit {{ @exercise.exercise_name }}</h5>
+                                                    <h5 class="modal-title" id="exampleModalLabel">Edit <?= ($category['category_name']) ?></h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
                                                 <!-- inner modal -->
-                                                <form action="./editExercise/{{ @exercise.exercise_id }}" method="post" class="form-horizontal">
+                                                <form action="./editCategory/<?= ($category['category_id']) ?>" method="post" class="form-horizontal">
                                                     <br>
                                                     <br>
                                                     <div class="col-sm-2"></div>
                                                     
                                                     <div class="col-sm-8 text-center">
                                                         <div class="form-group">
-                                                            <label for="exercise"><h3>Exercise Name</h3></label>
+                                                            <label for="category"><h3>Category Name</h3></label>
                                                             <div class="input-group input-group-lg">
-                                                                <input class="form-control" type="text" name="exercise_name" id="exercise_name" value="{{ @exercise.exercise_name }}" placeholder="Name" required>
+                                                                <input class="form-control" type="text" name="category_name" id="category_name" value="<?= ($category['category_name']) ?>" placeholder="Name" required>
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
@@ -108,35 +129,35 @@
                     <!-- End of edit module-->
                         
                             <div class="d-flex justify-content-center col-sm-8">
-                                <a class="btn btn-primary btn-lg btn-block" id="{{ @exercise.exercise_name }}" href="./exerciseSummaryBackend/{{ @exercise.exercise_id }}" role="button">
-                                    <h4>{{ @exercise.exercise_name }}</h4>
+                                <a class="btn btn-primary btn-lg btn-block" id="<?= ($category['category_name']) ?>" href="./unitsBackend/<?= ($category['category_id']) ?>" role="button">
+                                    <h4><?= ($category['category_name']) ?></h4>
                                 </a>
                             </div>
                         
                     <div class="d-flex justify-content-center col-sm-2">
-                        <button type="button" class="btn btn-primary btn-danger btn-lg" data-toggle="modal" data-target=".deleteExercise{{ @exercise.exercise_id }}">
+                        <button type="button" class="btn btn-primary btn-danger btn-lg" data-toggle="modal" data-target=".deleteCategory<?= ($category['category_id']) ?>">
                             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>  Delete
                         </button>
                     </div>
                     
                     <!-- Start of delete module-->
-                                    <div class="modal fade deleteExercise{{ @exercise.exercise_id }}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                    <div class="modal fade deleteCategory<?= ($category['category_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content" id="modalcontent">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Delete {{ @exercise.exercise_name }}</h5>
+                                                    <h5 class="modal-title" id="exampleModalLabel">Delete <?= ($category['category_name']) ?></h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
                                                 <!-- inner modal -->
-                                                <form action="./deleteExercise/{{ @exercise.exercise_id }}" method="get" class="form-horizontal">
+                                                <form action="./deleteCategory/<?= ($category['category_id']) ?>" method="get" class="form-horizontal">
                                                     <br>
                                                     <br>
                                                     <div class="col-sm-2"></div>
                                                     
                                                     <div class="col-sm-12 text-center">
-                                                            <label for="exercise"><h3>Are you sure you want to delete this Exercise?</h3></label>
+                                                            <label for="exercise"><h3>Are you sure you want to delete this category?</h3></label>
                                                             <br>
                                                         <div class="form-group">
                                                             <input class="btn btn-danger btn-lg" type="submit" value="DELETE">
@@ -149,41 +170,41 @@
                                         </div>
                                     </div>
                     <!-- End of delete module-->
-                    
                 </div>
-            </repeat>
+            <?php endforeach; ?>
+            
             
             <br>
             
             <div class="row">
                 <div class="d-flex justify-content-center col-sm-2"></div>
                     <div class="d-flex justify-content-center col-sm-8">
-                        <button type="button" class="btn btn-primary btn-lg btn-success btn-block" data-toggle="modal" data-target=".addExercise{{ @exercise.exercise_id }}">
+                        <button type="button" class="btn btn-primary btn-lg btn-success btn-block" data-toggle="modal" data-target=".viewCategory<?= ($category['category_name']) ?>">
                             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span><h5>Add</h5>
                         </button>
                     </div>
                     
                     <!-- Start of add module-->
-                                    <div class="modal fade addExercise{{ @exercise.exercise_id }}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                    <div class="modal fade viewCategory<?= ($category['category_name']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content" id="modalcontent">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Add a Exercise</h5>
+                                                    <h5 class="modal-title" id="exampleModalLabel">Add a Category</h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
-                                                <!-- inner modal-->
-                                                <form action="./addExercise/{{ @unitName.unit_id }}" method="post" class="form-horizontal">
+                                                <!-- inner modal -->
+                                                <form action="./addCategory/<?= ($category['category_id']) ?>" method="post" class="form-horizontal">
                                                     <br>
                                                     <br>
                                                     <div class="col-sm-2"></div>
                                                     
                                                     <div class="col-sm-8 text-center">
                                                         <div class="form-group">
-                                                            <label for="exercise"><h3>Exercise Name</h3></label>
+                                                            <label for="category"><h3>Category Name</h3></label>
                                                             <div class="input-group input-group-lg">
-                                                                <input class="form-control" type="text" name="exercise_name" id="exercise_name" placeholder="Exercise Name" required>
+                                                                <input class="form-control" type="text" name="category_name" id="category_name" placeholder="Category Name" required>
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
@@ -200,6 +221,7 @@
                     
                 <div class="d-flex justify-content-center col-sm-2"></div>
             </div>
+            
             
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

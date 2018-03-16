@@ -66,14 +66,14 @@
             
             <h1 class="display-2 text-center">Categories</h1>
             
-            <repeat group="{{ @categories }}" value="{{ @category }}">
+            <?php foreach (($categories?:[]) as $category): ?>
             <br>
                 <div class="row">
                     <div class="col-sm-2"></div>
-                    <div class="col-sm-8"><a class="btn btn-primary btn-lg btn-block" id="{{ @category.category_name }}" href="./units/{{ @category.category_id }}" role="button"><h4>{{ @category.category_name }}</h4></a></div>
+                    <div class="col-sm-8"><a class="btn btn-primary btn-lg btn-block" id="<?= ($category['category_name']) ?>" href="./units/<?= ($category['category_id']) ?>" role="button"><h4><?= ($category['category_name']) ?></h4></a></div>
                     <div class="col-sm-2"></div>
                 </div>
-            </repeat>
+            <?php endforeach; ?>
             <br> 
             
             

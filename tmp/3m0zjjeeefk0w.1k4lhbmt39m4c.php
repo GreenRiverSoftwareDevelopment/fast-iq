@@ -20,13 +20,16 @@
             <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
                 <ul class="nav nav-pills nav-fill">
                     <li class="nav-item">
-						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-							<h3>Login</h3>
-						</button>
+                      <a class="nav-link" href="./"><h3>Home</h3></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" href="./category"><h3>Category</h3></a>
                     </li>
                 </ul>
               
-                
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+					<h3>Login</h3>
+                </button>
 
             </nav>
             </div>
@@ -38,7 +41,7 @@
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h2 class="modal-title" id="exampleModalLabel">Login To Make Changes</h2>
+                        <h5 class="modal-title" id="exampleModalLabel">Login To Make Changes</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
@@ -46,25 +49,21 @@
                       <form action="./login" method="POST">
                             <div class="modal-body">
                                 <div class="form-group row">
-                                  <label for="example-time-input" class="col-2 col-form-label"><h4>Email</h4></label>
+                                  <label for="example-time-input" class="col-2 col-form-label">Email</label>
                                   <div class="col-10">
-									<div class="input-group input-group-lg">
-										<input class="form-control form-control-lg" type="Text" name="username" placeholder="username" id="username" required="true">
-									</div>
+                                    <input class="form-control form-control-lg" type="Text" name="username" placeholder="username" id="username" required="true">
                                   </div>
                                 </div>
                                 <div class="form-group row">
-                                  <label for="example-color-input" class="col-2 col-form-label"><h4>Password</h4></label>
+                                  <label for="example-color-input" class="col-2 col-form-label">Password</label>
                                   <div class="col-10">
-									<div class="input-group input-group-lg">
-										<input class="form-control" type="password" name="password" placeholder="password" id="password" required="true">
-									</div>
+                                    <input class="form-control" type="password" name="password" placeholder="password" id="password" required="true">
                                   </div>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Close</button>
-                              <button type="Submit" class="btn btn-primary btn-lg">Login</button>
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              <button type="Submit" class="btn btn-primary">Login</button>
                             </div> 
                       </form>
                     </div>
@@ -84,9 +83,9 @@
 								  <select class="form-control form-control-lg" id="category_select">
 									<option disabled selected>Please select</option>
 									
-									 <repeat group="{{ @categories }}" value="{{ @category }}">
-										<option value="{{ @category.category_id }}">{{ @category.category_name }}</option>
-                                    </repeat>
+									 <?php foreach (($categories?:[]) as $category): ?>
+										<option value="<?= ($category['category_id']) ?>"><?= ($category['category_name']) ?></option>
+                                    <?php endforeach; ?>
 								  </select>
 								</div>
                             </div>
@@ -127,7 +126,10 @@
 								<a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1 id="tabHeading">Exercise Summary</h1>
 							</div></a>
 								<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-									
+									<div class="panel-body">
+										<div class="panel-body">
+										</div>
+									</div>
 								</div>
 						</div>
                 
@@ -140,6 +142,8 @@
 							</div></a>
 							<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
 								<div class="panel-body">
+									<div class="panel-body">
+									</div>
 								</div>
 							</div>
 						</div>
@@ -156,7 +160,8 @@
 								<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
 									<div class="panel-body">
 										<div class="panel-body">
-											
+										 <h1>1. Why are the tires always black in color?</h1>
+											<h4>Tires are black due to the proportion of carbon mixed in it during vulcanization of rubber. Without it, tires can’t bear the friction heat and road stress.</h4>
 										</div>
 									</div>
 								</div>   
@@ -173,6 +178,32 @@
 							<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
 								<div class="panel-body">
 									<div class="panel-body">
+										<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+										  <ol class="carousel-indicators">
+											<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+											<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+											<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+										  </ol>
+										  <div class="carousel-inner">
+											<div class="carousel-item active">
+											  <img class="d-block w-100" src="http://benbri.com.au/shared/content/uploads/service-hydraulics-benbriairandfluidsystems.jpg" alt="First slide">
+											</div>
+											<div class="carousel-item">
+											  <img class="d-block w-100" src="https://www.mechanicshub.com/wp-content/uploads/diesel-engine-mechanicst-mechanics-technicians-jobs-hiring.jpg" alt="Second slide">
+											</div>
+											<div class="carousel-item">
+											  <img class="d-block w-100" src="https://fthmb.tqn.com/DXcKnjs9QK-gNxHhAGotDU63_M8=/768x0/filters:no_upscale()/gears-by-Guy-Sie-58b8792e3df78c353cbc4f91.jpg" alt="Third slide">
+											</div>
+										  </div>
+										  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+											<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+											<span class="sr-only">Previous</span>
+										  </a>
+										  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+											<span class="carousel-control-next-icon" aria-hidden="true"></span>
+											<span class="sr-only">Next</span>
+										  </a>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -182,7 +213,7 @@
                                                 
    
 					</div>
-				</div>
+		</div>
             
           
             <br>
@@ -296,13 +327,13 @@
 				unit_select.addEventListener("change", updateSummary);
 				
 				
-				//Video
+								//Summary
 				function updateVideo() {
 				  var excercise_select = document.getElementById("excercise_select");
 				  var video_select = document.getElementById("collapseTwo");
-				
+		  
 				  var video_id = excercise_select.options[excercise_select.selectedIndex].value;
-				
+		  
 				  var url = './videoExercise/' + video_id;
 				  console.log(video_id);
 					
@@ -318,59 +349,9 @@
 				  };
 				  xhr.send();
 				}
-				
-				//Questions
-				function updateQuestions() {
-				  var excercise_select = document.getElementById("excercise_select");
-				  var question_select = document.getElementById("collapseThree");
 		  
-				  var question_id = excercise_select.options[excercise_select.selectedIndex].value;
-					
-				  
-		  
-				  var url = './questionsExercise/' + question_id;
-				  console.log(question_id);
-					
-				  var xhr = new XMLHttpRequest();
-				  xhr.open('GET', url, true);
-				  xhr.onreadystatechange = function () {
-				   
-					  //cat_select.innerHTML = xhr.responseText;
-					  question_select.innerHTML = xhr.responseText;
-					  console.log(xhr.responseText);
-					 //subcat_select.style.display = 'inline';
-					
-				  };
-				  xhr.send();
-				}
-				
-				//Picture
-				function updatePicture() {
-				  var excercise_select = document.getElementById("excercise_select");
-				  var picture_select = document.getElementById("collapseFour");
-		  
-				  var picture_id = excercise_select.options[excercise_select.selectedIndex].value;
-		  
-				  var url = './pictureExercise/' + picture_id;
-				  console.log(picture_id);
-					
-				  var xhr = new XMLHttpRequest();
-				  xhr.open('GET', url, true);
-				  xhr.onreadystatechange = function () {
-				   
-					  //cat_select.innerHTML = xhr.responseText;
-					  picture_select.innerHTML = xhr.responseText;
-					  console.log(xhr.responseText);
-					 //subcat_select.style.display = 'inline';
-					
-				  };
-				  xhr.send();
-				}
-		  
+				var unit_select = document.getElementById("excercise_select");
 				unit_select.addEventListener("change", updateVideo);
-				unit_select.addEventListener("change", updateQuestions);
-				unit_select.addEventListener("change", updatePicture);
-				
 			  </script>
             
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
