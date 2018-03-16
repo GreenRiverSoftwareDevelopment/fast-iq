@@ -76,9 +76,14 @@
                                     <div class="modal fade editExercise{{ @exercise.exercise_id }}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content" id="modalcontent">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Edit {{ @exercise.exercise_name }}</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
                                                 <!-- inner modal -->
                                                 <form action="./editExercise/{{ @exercise.exercise_id }}" method="post" class="form-horizontal">
-                                                    <br>
                                                     <br>
                                                     <br>
                                                     <div class="col-sm-2"></div>
@@ -118,9 +123,14 @@
                                     <div class="modal fade deleteExercise{{ @exercise.exercise_id }}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content" id="modalcontent">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Delete {{ @exercise.exercise_name }}</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
                                                 <!-- inner modal -->
                                                 <form action="./deleteExercise/{{ @exercise.exercise_id }}" method="get" class="form-horizontal">
-                                                    <br>
                                                     <br>
                                                     <br>
                                                     <div class="col-sm-2"></div>
@@ -157,9 +167,14 @@
                                     <div class="modal fade addExercise{{ @exercise.exercise_id }}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content" id="modalcontent">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Add a Exercise</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
                                                 <!-- inner modal-->
                                                 <form action="./addExercise/{{ @unitName.unit_id }}" method="post" class="form-horizontal">
-                                                    <br>
                                                     <br>
                                                     <br>
                                                     <div class="col-sm-2"></div>

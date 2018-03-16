@@ -162,12 +162,15 @@ li {
                                     <div class="modal fade editExerciseSummary<?= ($exercise['exercise_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content" id="modalcontent">
+												<div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Save changes for summary</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
                                                 <!-- inner modal -->
-                                                
                                                     <br>
                                                     <br>
-                                                    <br>
-													
                                                     <div class="col-sm-12 text-center">
                                                             <label for="exercise"><h3>Are you sure you want to save changes?</h3></label>
                                                         <div class="form-group">
@@ -216,12 +219,15 @@ li {
                                     <div class="modal fade editExerciseVideo<?= ($exercise['exercise_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content" id="modalcontent">
+												<div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Save changes for video</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
                                                 <!-- inner modal -->
-                                                
                                                     <br>
                                                     <br>
-                                                    <br>
-                                                    
                                                     <div class="col-sm-12 text-center">
                                                             <label for="exercise"></label>
 																<h3>Enter a YouTube link.</h3>
@@ -237,12 +243,10 @@ li {
                                                         <br>
                                                         <br>
                                                     </div>
-                                                
                                             </div>
                                         </div>
                                     </div>
                     <!-- End of edit module-->
-
 						</div>
 					</div>
 				</div>
@@ -291,7 +295,6 @@ li {
 								</button>
 							</div>
 						</div>
-						
                         <br>
 						
                         
@@ -299,12 +302,15 @@ li {
                                     <div class="modal fade editExerciseQuestion<?= ($exercise['exercise_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content" id="modalcontent">
+												<div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Save changes for questions</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
                                                 <!-- inner modal -->
-                                                
                                                     <br>
                                                     <br>
-                                                    <br>
-                                                    
 													<div class="col-sm-12 text-center">
                                                             <label for="exercise"><h3>Are you sure you want to save changes?</h3></label>
                                                         <div class="form-group">
@@ -354,12 +360,15 @@ li {
                                     <div class="modal fade editExerciseImage<?= ($exercise['exercise_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content" id="modalcontent">
+												<div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Save changes for images</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
                                                 <!-- inner modal -->
-                                                
                                                     <br>
                                                     <br>
-                                                    <br>
-                                                    
                                                     <div class="col-sm-12 text-center">
                                                             <label for="exercise"></label>
 																<h3>Enter a Photo link.</h3>

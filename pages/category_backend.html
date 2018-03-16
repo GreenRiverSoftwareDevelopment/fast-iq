@@ -97,9 +97,14 @@
                                     <div class="modal fade editCategory{{ @category.category_id }}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content" id="modalcontent">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Edit {{ @category.category_name }}</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
                                                 <!-- inner modal -->
                                                 <form action="./editCategory/{{ @category.category_id }}" method="post" class="form-horizontal">
-                                                    <br>
                                                     <br>
                                                     <br>
                                                     <div class="col-sm-2"></div>
@@ -139,9 +144,14 @@
                                     <div class="modal fade deleteCategory{{ @category.category_id }}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content" id="modalcontent">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Delete {{ @category.category_name }}</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
                                                 <!-- inner modal -->
                                                 <form action="./deleteCategory/{{ @category.category_id }}" method="get" class="form-horizontal">
-                                                    <br>
                                                     <br>
                                                     <br>
                                                     <div class="col-sm-2"></div>
@@ -178,9 +188,14 @@
                                     <div class="modal fade viewCategory{{ @category.category_name }}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content" id="modalcontent">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Add a Category</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
                                                 <!-- inner modal -->
                                                 <form action="./addCategory/{{ @category.category_id }}" method="post" class="form-horizontal">
-                                                    <br>
                                                     <br>
                                                     <br>
                                                     <div class="col-sm-2"></div>
