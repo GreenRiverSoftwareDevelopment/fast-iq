@@ -8,9 +8,11 @@
             <!-- bootstrap -->
                 <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+                <link href="css/categorystyle.css" rel="stylesheet" media="screen">
                 <!--[if lt IE 9]>
                 <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
                 <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+                
                 <![endif]-->
         </head>
         <body>
@@ -18,13 +20,9 @@
                 <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
                     <ul class="nav nav-pills nav-fill">
                         <li class="nav-item">
-                          <a class="nav-link" href="./categoryBackend"><h3>Home</h3></a>
+                          <a data-toggle="modal" data-target="#signUpModal" class="createAdminLink"><h3 >Create New Admin</h3></a>
                         </li>
-                    <li class="nav-item">
-                      <a class="nav-link" data-toggle="modal" data-target="#signUpModal"><h3>Create New Admin</h3></a>
-                    </li>
                     </ul>
-                    
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
                         <h3>Logout</h3>
                     </button>
@@ -57,28 +55,30 @@
                 </div>
         <!--*********************************** THIS IS THE END Sign Out MODAL*************************************-->
         
-            <!--*********************************** THIS IS THE Sign Up MODAL*************************************-->
+            <!--*********************************** THIS IS THE create a new admin MODAL*************************************-->
                 <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Login To Make Changes</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Create a new admin</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
+                      <div class="container-fluid">
                         <form action="./createAdmin" method="post">
                           <div class="form-group">
                             <label for="exampleInputEmail1">Username</label>
                             <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp" placeholder="Enter username">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                           </div>
                           <div class="form-group">
                             <label for="exampleInputPassword1">Password</label>
                             <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                           </div>
-                          <button type="submit" class="btn btn-primary">SignUp</button>
-                        </form>
+                          <button type="submit" class="btn btn-primary" id="createdAdminBtn">Create</button>
+                        </form>                        
+                      </div>
+
                     </div>
                   </div>
                 </div>
@@ -189,7 +189,7 @@
                                                     <div class="col-sm-8">
                                                         <div class="form-group">
                                                             <label for="category"><h3>Category Name</h3></label>
-                                                            <input class="form-control" type="text" name="category_name" id="category_name" placeholder="Category Name" required>
+                                                            <input class="form-control" type="text" name="category_name" id="category_name" placeholder="Category Name">
                                                         </div>
                                                         <div class="form-group">
                                                             <input class="btn btn-info btn-sm" type="submit" value="Submit">

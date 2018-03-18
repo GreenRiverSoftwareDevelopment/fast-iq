@@ -8,6 +8,7 @@
             <!-- bootstrap -->
                 <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+                <link href="css/categorystyle.css" rel="stylesheet" media="screen">
                 <!--[if lt IE 9]>
                 <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
                 <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -23,8 +24,8 @@
                         <li class="nav-item">
                             <a class="nav-link" href="./categoryBackend"><h3>Go Back</h3></a>
                         </li>
-                    <li class="nav-item">
-                          <a class="nav-link active" data-toggle="modal" data-target="#signUpModal"><h3>Create New Admin</h3></a>
+                        <li class="nav-item">
+                          <a data-toggle="modal" data-target="#signUpModal"><h3>Create New Admin</h3></a>
                         </li>
                     </ul>
                     
@@ -55,6 +56,34 @@
                               <button type="Submit" class="btn btn-primary">Yes</button>
                             </div> 
                       </form>
+                    </div>
+                  </div>
+                </div>
+                
+  <!--*********************************** THIS IS THE create a new admin MODAL*************************************-->
+                <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Create a new admin</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="container-fluid">
+                        <form action="./createAdmin" method="post">
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp" placeholder="Enter username">
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                          </div>
+                          <button type="submit" class="btn btn-primary" id="createdAdminBtn">Create</button>
+                        </form>                        
+                      </div>
+
                     </div>
                   </div>
                 </div>
