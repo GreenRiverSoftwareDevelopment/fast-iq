@@ -39,7 +39,7 @@
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Logout</h5>
+                        <h3 class="modal-title" id="exampleModalLabel">Logout</h3>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
@@ -47,12 +47,12 @@
                       <form action="./logout" method="GET">
                             <div class="modal-body">
                                 <div class="col-md-12">
-                                    <h4>Are you sure you want to logout?</h4>
+                                    <h3>Are you sure you want to logout?</h3>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                              <button type="Submit" class="btn btn-primary">Yes</button>
+                              <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">No</button>
+                              <button type="Submit" class="btn btn-primary btn-lg">Yes</button>
                             </div> 
                       </form>
                     </div>
@@ -76,20 +76,27 @@
                                     <div class="modal fade editExercise<?= ($exercise['exercise_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content" id="modalcontent">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Edit <?= ($exercise['exercise_name']) ?></h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
                                                 <!-- inner modal -->
                                                 <form action="./editExercise/<?= ($exercise['exercise_id']) ?>" method="post" class="form-horizontal">
                                                     <br>
                                                     <br>
-                                                    <br>
                                                     <div class="col-sm-2"></div>
                                                     
-                                                    <div class="col-sm-8">
+                                                    <div class="col-sm-8 text-center">
                                                         <div class="form-group">
                                                             <label for="exercise"><h3>Exercise Name</h3></label>
-                                                            <input class="form-control" type="text" name="exercise_name" id="exercise_name" value="<?= ($exercise['exercise_name']) ?>" placeholder="Name" required>
+                                                            <div class="input-group input-group-lg">
+                                                                <input class="form-control" type="text" name="exercise_name" id="exercise_name" value="<?= ($exercise['exercise_name']) ?>" placeholder="Name" required>
+                                                            </div>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input class="btn btn-info btn-sm" type="submit" value="Submit">
+                                                            <input class="btn btn-warning btn-lg" type="submit" value="Save">
                                                         </div>
                                                         <br>
                                                         <br>
@@ -116,17 +123,23 @@
                                     <div class="modal fade deleteExercise<?= ($exercise['exercise_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content" id="modalcontent">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Delete <?= ($exercise['exercise_name']) ?></h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
                                                 <!-- inner modal -->
                                                 <form action="./deleteExercise/<?= ($exercise['exercise_id']) ?>" method="get" class="form-horizontal">
                                                     <br>
                                                     <br>
-                                                    <br>
                                                     <div class="col-sm-2"></div>
                                                     
-                                                    <div class="col-sm-8">
+                                                    <div class="col-sm-12 text-center">
                                                             <label for="exercise"><h3>Are you sure you want to delete this Exercise?</h3></label>
+                                                            <br>
                                                         <div class="form-group">
-                                                            <input class="btn btn-info btn-sm" type="submit" value="Submit">
+                                                            <input class="btn btn-danger btn-lg" type="submit" value="DELETE">
                                                         </div>
                                                         <br>
                                                         <br>
@@ -154,20 +167,27 @@
                                     <div class="modal fade addExercise<?= ($exercise['exercise_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content" id="modalcontent">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Add a Exercise</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
                                                 <!-- inner modal-->
                                                 <form action="./addExercise/<?= ($unitName['unit_id']) ?>" method="post" class="form-horizontal">
                                                     <br>
                                                     <br>
-                                                    <br>
                                                     <div class="col-sm-2"></div>
                                                     
-                                                    <div class="col-sm-8">
+                                                    <div class="col-sm-8 text-center">
                                                         <div class="form-group">
                                                             <label for="exercise"><h3>Exercise Name</h3></label>
-                                                            <input class="form-control" type="text" name="exercise_name" id="exercise_name" placeholder="Exercise Name" required>
+                                                            <div class="input-group input-group-lg">
+                                                                <input class="form-control" type="text" name="exercise_name" id="exercise_name" placeholder="Exercise Name" required>
+                                                            </div>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input class="btn btn-info btn-sm" type="submit" value="Submit">
+                                                            <input class="btn btn-success btn-lg" type="submit" value="Add">
                                                         </div>
                                                         <br>
                                                         <br>

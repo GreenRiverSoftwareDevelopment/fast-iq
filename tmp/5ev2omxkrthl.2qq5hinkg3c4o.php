@@ -80,7 +80,7 @@ li {
                             <a class="nav-link" href="./categoryBackend"><h3>Home</h3></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./exercisesBackend/<?= ($categoryID) ?>"><h3>Go Back</h3></a>
+                            <a class="nav-link" href="./exercisesBackend/<?= ($unitID) ?>"><h3>Go Back</h3></a>
                         </li>
                     </ul>
                     
@@ -95,7 +95,7 @@ li {
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Logout</h5>
+                        <h3 class="modal-title" id="exampleModalLabel">Logout</h3>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
@@ -103,18 +103,18 @@ li {
                       <form action="./logout" method="GET">
                             <div class="modal-body">
                                 <div class="col-md-12">
-                                    <h4>Are you sure you want to logout?</h4>
+                                    <h3>Are you sure you want to logout?</h3>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                              <button type="Submit" class="btn btn-primary">Yes</button>
+                              <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">No</button>
+                              <button type="Submit" class="btn btn-primary btn-lg">Yes</button>
                             </div> 
                       </form>
                     </div>
                   </div>
                 </div>
-			<!--*********************************** THIS IS LOGOUT THE MODAL*************************************-->
+        <!--*********************************** THIS IS LOGOUT THE MODAL*************************************-->
                 
                 
                
@@ -145,7 +145,7 @@ li {
 							<div class="col-sm-6">
 								<form action="./editExerciseSummary/<?= ($exerciseID) ?>" id="summary" method="post" class="form-horizontal">
 									<div class="input-group input-group-lg">
-										<input class="form-control" name="exercise_summary" id="exercise_summary" value="<?= ($exercise['exercise_summary']) ?>">
+										<input class="form-control" name="exercise_summary" id="exercise_summary" placeholder="Enter a Summary here" value="<?= ($exercise['exercise_summary']) ?>">
 									</div>
 								</form>
 							</div>
@@ -162,12 +162,15 @@ li {
                                     <div class="modal fade editExerciseSummary<?= ($exercise['exercise_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content" id="modalcontent">
+												<div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Save changes for summary</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
                                                 <!-- inner modal -->
-                                                
                                                     <br>
                                                     <br>
-                                                    <br>
-													
                                                     <div class="col-sm-12 text-center">
                                                             <label for="exercise"><h3>Are you sure you want to save changes?</h3></label>
                                                         <div class="form-group">
@@ -216,12 +219,15 @@ li {
                                     <div class="modal fade editExerciseVideo<?= ($exercise['exercise_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content" id="modalcontent">
+												<div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Save changes for video</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
                                                 <!-- inner modal -->
-                                                
                                                     <br>
                                                     <br>
-                                                    <br>
-                                                    
                                                     <div class="col-sm-12 text-center">
                                                             <label for="exercise"></label>
 																<h3>Enter a YouTube link.</h3>
@@ -237,12 +243,10 @@ li {
                                                         <br>
                                                         <br>
                                                     </div>
-                                                
                                             </div>
                                         </div>
                                     </div>
                     <!-- End of edit module-->
-
 						</div>
 					</div>
 				</div>
@@ -270,7 +274,7 @@ li {
 										<?php foreach (($questions_array?:[]) as $question): ?>
 											<li id="list-group">
 												<div class="input-group input-group-lg">
-													<input name="questions[]" id="questions" class="form-control" type="text" value="<?= ($question) ?>"></input>
+													<input name="questions[]" id="questions" class="form-control" type="text" placeholder="Enter a new question here" value="<?= ($question) ?>"></input>
 												</div>
 											</li>
 											<br>
@@ -291,7 +295,6 @@ li {
 								</button>
 							</div>
 						</div>
-						
                         <br>
 						
                         
@@ -299,12 +302,15 @@ li {
                                     <div class="modal fade editExerciseQuestion<?= ($exercise['exercise_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content" id="modalcontent">
+												<div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Save changes for questions</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
                                                 <!-- inner modal -->
-                                                
                                                     <br>
                                                     <br>
-                                                    <br>
-                                                    
 													<div class="col-sm-12 text-center">
                                                             <label for="exercise"><h3>Are you sure you want to save changes?</h3></label>
                                                         <div class="form-group">
@@ -354,12 +360,15 @@ li {
                                     <div class="modal fade editExerciseImage<?= ($exercise['exercise_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content" id="modalcontent">
+												<div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Save changes for images</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
                                                 <!-- inner modal -->
-                                                
                                                     <br>
                                                     <br>
-                                                    <br>
-                                                    
                                                     <div class="col-sm-12 text-center">
                                                             <label for="exercise"></label>
 																<h3>Enter a Photo link.</h3>
