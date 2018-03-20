@@ -196,6 +196,8 @@
 				function updateUnits() {
 				  var cat_select = document.getElementById("category_select");
 				  var subcat_select = document.getElementById("unit_select");
+				  var exercise_select = document.getElementById("excercise_select");
+				  
 		  
 				  var cat_id = cat_select.options[cat_select.selectedIndex].value;
 		  
@@ -208,6 +210,7 @@
 				   
 					  //cat_select.innerHTML = xhr.responseText;
 					  subcat_select.innerHTML = xhr.responseText;
+					  exercise_select.innerHTML = " ";
 					  console.log(xhr.responseText);
 					  if(summary_view.style.display === "block")
 					  {
