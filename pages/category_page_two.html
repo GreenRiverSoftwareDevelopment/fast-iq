@@ -177,12 +177,12 @@
 				<div class="col-md-3">
 				</div>
 				<div class="col-md-3 text-center">
-					<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target=".grade{{ @exercise.exercise_id }}">
+					<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target=".grade{{ @exercise_id }}">
 						<h3>Grade Students</h3>
 					</button>
 				</div>
 									<!-- Start of Grade module-->
-                                    <div class="modal fade grade{{ @exercise.exercise_id }}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                    <div class="modal fade grade{{ @exercise_id }}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content" id="modalcontent">
                                                 <div class="modal-header">
@@ -192,14 +192,14 @@
                                                     </button>
                                                 </div>
                                                 <!-- inner modal -->
-                                                <form action="./editExercise/{{ @exercise.exercise_id }}" method="post" class="form-horizontal">
+                                                <form action="./editExercise/{{ @exercise_id }}" method="post" class="form-horizontal">
                                                     <br>
                                                     <br>
                                                     <div class="col-sm-2"></div>
                                                     
                                                     <div class="col-sm-8 text-center">
                                                         <div class="form-group">
-                                                            <label for="exercise"><h3>Exercise Name</h3></label>
+                                                            <label for="exercise"><h3>{{ @exercise_id }}</h3></label>
                                                             <div class="input-group input-group-lg">
                                                                 <input class="form-control" type="text" name="exercise_name" id="exercise_name" value="{{ @exercise.exercise_name }}" placeholder="Name" required>
                                                             </div>
@@ -216,12 +216,12 @@
                                     </div>
 									<!-- End of Grade module-->
 				<div class="col-md-3 text-center">
-					<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target=".attendance{{ @exercise.exercise_id }}">
+					<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target=".attendance{{ @exercise_id }}">
 						<h3>Student Attendance</h3>
 					</button>
 				</div>
 									<!-- Start of Attendance module-->
-                                    <div class="modal fade attendance{{ @exercise.exercise_id }}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                    <div class="modal fade attendance{{ @exercise_id }}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content" id="modalcontent">
                                                 <div class="modal-header">
@@ -231,14 +231,14 @@
                                                     </button>
                                                 </div>
                                                 <!-- inner modal -->
-                                                <form action="./editExercise/{{ @exercise.exercise_id }}" method="post" class="form-horizontal">
+                                                <form action="./editExercise/{{ @exercise_id }}" method="post" class="form-horizontal">
                                                     <br>
                                                     <br>
                                                     <div class="col-sm-2"></div>
                                                     
                                                     <div class="col-sm-8 text-center">
                                                         <div class="form-group">
-                                                            <label for="exercise"><h3>Exercise Name</h3></label>
+                                                            <label for="exercise"><h3>{{ @exercise_id }}</h3></label>
                                                             <div class="input-group input-group-lg">
                                                                 <input class="form-control" type="text" name="exercise_name" id="exercise_name" value="{{ @exercise.exercise_name }}" placeholder="Name" required>
                                                             </div>

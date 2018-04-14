@@ -71,63 +71,31 @@
         
     $f3->route('GET /grabUnits/@id', function($f3, $params)
     {
-         $units =  $GLOBALS['unitDB']->unitsByCategory($params['id']);
+        $units =  $GLOBALS['unitDB']->unitsByCategory($params['id']);
         $f3->set('units', $units);
         
-        
-        //echo ' <select id="subcategory-select">';
         echo '<option disabled selected>Please select</option>';
         foreach($units as $unit)
         {
-              
-                      
             echo "<option value=\"{$unit['unit_id']}\">";
             echo $unit['unit_name'];
             echo "</option>";
-            
-            
-           
-             
         }
-        
-        //echo '<br />';
-       
-        //var_dump($categories);
-       // echo '</select>';
-       
-       // var_dump($categories);
-
-           // $_SESSION['passedVar'] = "We were passedddddddddddddddYYYYYYYYYYYYYYYYYYYSdfdfd"; 
-       //echo Template::instance()->render('pages/category_page_two.html');
     });
     
-        $f3->route('GET /grabExercise/@id', function($f3, $params)
+    $f3->route('GET /grabExercise/@id', function($f3, $params)
     {
-         $exercises =  $GLOBALS['exerciseDB']->exercisesByUnit($params['id']);
+        $exercises =  $GLOBALS['exerciseDB']->exercisesByUnit($params['id']);
         $f3->set('exercise', $exercises);
         
         
-        //echo ' <select id="subcategory-select">';
         echo '<option disabled selected>Please select</option>';
         foreach($exercises as $exercise)
-        {
-              
-                      
+        {     
             echo "<option value=\"{$exercise['exercise_id']}\">";
             echo $exercise['exercise_name'];
-            echo "</option>";
-                     
+            echo "</option>";       
         }
-        
-        //echo '<br />';
-       
-        //var_dump($categories);
-       // echo '</select>';
-       
-       // var_dump($categories);
-
-           // $_SESSION['passedVar'] = "We were passedddddddddddddddYYYYYYYYYYYYYYYYYYYSdfdfd"; 
-       //echo Template::instance()->render('pages/category_page_two.html');
     });
         
         
@@ -140,18 +108,6 @@
             echo '<br>';
             echo'<h3 class="text-center">'.$summaryEntries['exercise_summary'].'</h3>';
             echo '<br>';
-                     
-        
-        
-        //echo '<br />';
-       
-        //var_dump($categories);
-       // echo '</select>';
-       
-       // var_dump($categories);
-
-           // $_SESSION['passedVar'] = "We were passedddddddddddddddYYYYYYYYYYYYYYYYYYYSdfdfd"; 
-       //echo Template::instance()->render('pages/category_page_two.html');
     });
     
     
@@ -159,27 +115,17 @@
     {
         $summaryEntries =  $GLOBALS['exerciseDB']->getExerciseByID($params['id']);
         $f3->set('exercise', $summaryEntries);
+        $f3->set('exercise_id', $params['id']);
         
             $youtubeLink = $summaryEntries['exercise_video'];
             $youtubeEmbededCode = substr($youtubeLink, strpos($youtubeLink, "=") + 1);
             echo '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/'.$youtubeEmbededCode.'" width="100%" height="460px" allowfullscreen></iframe>';
-                     
-        
-        
-        //echo '<br />';
-       
-        //var_dump($categories);
-       // echo '</select>';
-       
-       // var_dump($categories);
-
-           // $_SESSION['passedVar'] = "We were passedddddddddddddddYYYYYYYYYYYYYYYYYYYSdfdfd"; 
-       //echo Template::instance()->render('pages/category_page_two.html');
     });
     
     $f3->route('GET /questionsExercise/@id', function($f3, $params)
     {
         $exercise = $GLOBALS['exerciseDB']->getExerciseByID($params['id']);
+        $f3->set('exercise_id', $params['id']);
                     
         $questions_array = explode(',', $exercise['exercise_questions']);
         $f3->set('questions_array', $questions_array);
@@ -188,16 +134,17 @@
         {
             echo '<li class="list-group-item"><h3>'.$question.'</h3></li>';
         }
-            
-        
     });
     
     $f3->route('GET /pictureExercise/@id', function($f3, $params)
     {
         $exercise = $GLOBALS['exerciseDB']->getExerciseByID($params['id']);
+        $f3->set('exercise_id', $params['id']);
         
         echo '<img src="'.$exercise['exercise_image'].'" class="img-fluid" alt="Responsive image">';
-        
-            
-        
+    });
+    
+    $f3->route('GET /exerciseID/@id', function($f3, $params)
+    {
+        $f3->set('exercise_id', $params['id']);
     });
