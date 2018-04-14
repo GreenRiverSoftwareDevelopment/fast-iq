@@ -135,6 +135,7 @@
     {
         $summaryEntries =  $GLOBALS['exerciseDB']->getExerciseByID($params['id']);
         $f3->set('exercise', $summaryEntries);
+        $f3->set('exercise_id', $params['id']);
         
             echo '<br>';
             echo'<h3 class="text-center">'.$summaryEntries['exercise_summary'].'</h3>';

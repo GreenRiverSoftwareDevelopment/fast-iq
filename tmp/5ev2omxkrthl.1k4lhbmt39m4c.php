@@ -106,7 +106,8 @@
                         <div class="col-sm-3"></div>    
                     
                     </div>
-           <!--End of COLS Bottom--> 
+           <!--End of COLS Bottom-->
+		   
 		
 		
             <!--This is the Main body of the page-->
@@ -121,6 +122,7 @@
 					
                     <div class="col-sm-3">
 					</div>
+					
                     <div class="col-sm-6">
 						<div class="panel panel-primary">
 							<div class="panel-heading">
@@ -131,63 +133,84 @@
 								</div>
 						</div>
                 
-				<!-- Collapse for Videos-->
-                <div class="row">
-                    <div class="col-sm-12">
-						<div class="panel panel-primary">
-							<div class="panel-heading">
-								<a role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1 id="tabHeading">Video</h1>
-							</div></a>
-							<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-								<div class="panel-body">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-					
-				<!-- Collapse for questions-->
-				<div class="row">
-                    <div class="col-sm-12">
-						<div class="panel panel-primary">
-							<div class="panel-heading">
-								<a role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1 id="tabHeading">Questions</h1>
-							</div></a>
-								<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-									<div class="panel-body">
+						<!-- Collapse for Videos-->
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="panel panel-primary">
+									<div class="panel-heading">
+										<a role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1 id="tabHeading">Video</h1>
+									</div></a>
+									<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
 										<div class="panel-body">
-											
 										</div>
 									</div>
-								</div>   
-						</div>
-					</div>
-				</div>
-					
-				<!-- Collapse for pictures-->	
-				<div class="row">
-                    <div class="col-sm-12"><div class="panel panel-primary">
-						<div class="panel-heading">
-							<a role="button" data-toggle="collapse" href="#collapseFour" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1 id="tabHeading">Pictures</h1>
-						</div></a>
-							<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-								<div class="panel-body">
-									<div class="panel-body">
-									</div>
 								</div>
 							</div>
 						</div>
-					</div>                
-                </div>					
+							
+						<!-- Collapse for questions-->
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="panel panel-primary">
+									<div class="panel-heading">
+										<a role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1 id="tabHeading">Questions</h1>
+									</div></a>
+										<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+											<div class="panel-body">
+												<div class="panel-body">
+													
+												</div>
+											</div>
+										</div>   
+								</div>
+							</div>
+						</div>
+							
+						<!-- Collapse for pictures-->	
+						<div class="row">
+							<div class="col-sm-12"><div class="panel panel-primary">
+								<div class="panel-heading">
+									<a role="button" data-toggle="collapse" href="#collapseFour" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1 id="tabHeading">Pictures</h1>
+								</div></a>
+									<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+										<div class="panel-body">
+											<div class="panel-body">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>                
+						</div>					
                                                 
    
 					</div>
 				</div>
+			
+			<div class="row">
+				<div class="col-md-3">
+					
+				</div>
+				<div class="col-md-3 text-center">
+					<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target=".editExercise<?= ($exercise['exercise_id']) ?>">
+						<h3>Grade Students</h3>
+					</button>
+				</div>
+				<div class="col-md-3 text-center">
+					<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target=".editExercise<?= ($exercise['exercise_id']) ?>">
+						<h3>Student Attendance</h3>
+					</button>
+				</div>
+				<div class="col-md-3">
+					
+				</div>
+			</div>
+			
+		</div>
             
-          
+        
+		  
             <br>
                 
-
               <script>
 				
 				var summary_view = document.getElementById("summary-view");
@@ -375,6 +398,7 @@
 				unit_select.addEventListener("change", updatePicture);
 				
 			  </script>
+			  
             
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

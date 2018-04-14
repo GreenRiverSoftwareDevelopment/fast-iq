@@ -31,7 +31,6 @@
     $exerciseDB = new ExerciseDB();
     $memberDB = new MemberDB();
 
-    //
     //$f3->route('GET /', function($f3)
     //{
     //
