@@ -1998,3 +1998,11 @@ Stack trace:
 [12-Apr-2018 21:44:31 America/Chicago] HTTP 404 (GET ://bsaylor.greenrivertech.net/485/fast-iq/)
 [12-Apr-2018 21:44:31 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1675] Base->error()
 [12-Apr-2018 21:44:31 America/Chicago] [485/fast-iq/index.php:141] Base->run()
+[14-Apr-2018 16:20:01 America/Chicago] Class 'StudentDB' not found [/home/bsaylor/public_html/485/fast-iq/index.php:33]
+[14-Apr-2018 16:20:01 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:2213] Base->error()
+[14-Apr-2018 16:20:17 America/Chicago] Class 'StudentDB' not found [/home/bsaylor/public_html/485/fast-iq/index.php:33]
+[14-Apr-2018 16:20:17 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:2213] Base->error()
+[14-Apr-2018 16:20:50 America/Chicago] Class 'StudentDB' not found [/home/bsaylor/public_html/485/fast-iq/index.php:33]
+[14-Apr-2018 16:20:50 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:2213] Base->error()
+[14-Apr-2018 16:20:52 America/Chicago] Class 'StudentDB' not found [/home/bsaylor/public_html/485/fast-iq/index.php:33]
+[14-Apr-2018 16:20:52 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:2213] Base->error()

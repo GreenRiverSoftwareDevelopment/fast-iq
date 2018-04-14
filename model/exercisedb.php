@@ -78,6 +78,29 @@
             
             $statement->execute();
         }
+        
+        //READ
+        /**
+         * Returns all exercises in the database collection.
+         *
+         * @access public
+         *
+         * @return an associative array of exercises indexed by id
+         */
+        function allExercises()
+        {
+            $select = 'SELECT exercise_id, unit_id, exercise_name FROM exercises ORDER BY exercise_id';
+            $results = $this->_pdo->query($select);
+             
+            $resultsArray = array();
+             
+            //map each student id to a row of data for that student
+            while ($row = $results->fetch(PDO::FETCH_ASSOC)) {
+                $resultsArray[$row['exercise_id']] = $row;
+            }
+             
+            return $resultsArray;
+        }
          
         /**
          * Edits a exercise to the collection of exercises in the db.

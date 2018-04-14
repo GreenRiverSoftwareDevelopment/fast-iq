@@ -173,16 +173,20 @@
 						</div>		
 					</div>
 				</div>
+		</div>
+		
+		<br>
+		
 			<div class="row">
 				<div class="col-md-3">
 				</div>
 				<div class="col-md-3 text-center">
-					<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target=".grade<?= ($exercise_id) ?>">
+					<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target=".grade">
 						<h3>Grade Students</h3>
 					</button>
 				</div>
 									<!-- Start of Grade module-->
-                                    <div class="modal fade grade<?= ($exercise_id) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                    <div class="modal fade grade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content" id="modalcontent">
                                                 <div class="modal-header">
@@ -198,14 +202,39 @@
                                                     <div class="col-sm-2"></div>
                                                     
                                                     <div class="col-sm-8 text-center">
+														<div class="form-group">
+															<label for="student">Students</label>
+															<select class="form-control form-control-lg" id="student">
+																<?php foreach (($students?:[]) as $student): ?>
+																	<option value="<?= ($student['student_id']) ?>"><?= ($student['fName']) ?></option>
+																<?php endforeach; ?>
+															</select>
+														</div>
+														<div class="form-group">
+															<label for="exercise">Exercises</label>
+															<select class="form-control form-control-lg" id="exercise">
+																<?php foreach (($exercises?:[]) as $exercise): ?>
+																	<option value="<?= ($exercise['exercise_id']) ?>"><?= ($exercise['exercise_name']) ?></option>
+																<?php endforeach; ?>
+															</select>
+														</div>
                                                         <div class="form-group">
-                                                            <label for="exercise"><h3><?= ($exercise_id) ?></h3></label>
-                                                            <div class="input-group input-group-lg">
-                                                                <input class="form-control" type="text" name="exercise_name" id="exercise_name" value="<?= ($exercise['exercise_name']) ?>" placeholder="Name" required>
-                                                            </div>
-                                                        </div>
+															<label for="grade">Grade</label>
+															<select class="form-control form-control-lg" id="grade">
+															  <option value="1">1</option>
+															  <option value="2">2</option>
+															  <option value="3">3</option>
+															  <option value="4">4</option>
+															  <option value="5">5</option>
+															  <option value="6">6</option>
+															  <option value="7">7</option>
+															  <option value="8">8</option>
+															  <option value="9">9</option>
+															  <option value="10">10</option>
+															</select>
+														</div>
                                                         <div class="form-group">
-                                                            <input class="btn btn-warning btn-lg" type="submit" value="Save">
+                                                            <input class="btn btn-success btn-lg" type="submit" value="Save">
                                                         </div>
                                                         <br>
                                                         <br>
@@ -216,12 +245,12 @@
                                     </div>
 									<!-- End of Grade module-->
 				<div class="col-md-3 text-center">
-					<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target=".attendance<?= ($exercise_id) ?>">
+					<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target=".attendance">
 						<h3>Student Attendance</h3>
 					</button>
 				</div>
 									<!-- Start of Attendance module-->
-                                    <div class="modal fade attendance<?= ($exercise_id) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                    <div class="modal fade attendance" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content" id="modalcontent">
                                                 <div class="modal-header">
@@ -231,20 +260,32 @@
                                                     </button>
                                                 </div>
                                                 <!-- inner modal -->
-                                                <form action="./editExercise/<?= ($exercise_id) ?>" method="post" class="form-horizontal">
+                                                <form action="./studentAttendance" method="post" class="form-horizontal">
                                                     <br>
                                                     <br>
                                                     <div class="col-sm-2"></div>
                                                     
                                                     <div class="col-sm-8 text-center">
+														<div class="form-group">
+															<label for="student">Student</label>
+															<select class="form-control form-control-lg" id="student">
+																<?php foreach (($students?:[]) as $student): ?>
+																	<option value="<?= ($student['student_id']) ?>"><?= ($student['fName']) ?></option>
+																<?php endforeach; ?>
+															</select>
+														</div>
                                                         <div class="form-group">
-                                                            <label for="exercise"><h3><?= ($exercise_id) ?></h3></label>
-                                                            <div class="input-group input-group-lg">
-                                                                <input class="form-control" type="text" name="exercise_name" id="exercise_name" value="<?= ($exercise['exercise_name']) ?>" placeholder="Name" required>
-                                                            </div>
-                                                        </div>
+															<label for="daysMissed">How many days were missed?</label>
+															<select class="form-control form-control-lg" id="daysMissed">
+															  <option value="1">1</option>
+															  <option value="2">2</option>
+															  <option value="3">3</option>
+															  <option value="4">4</option>
+															  <option value="5">5</option>
+															</select>
+														</div>
                                                         <div class="form-group">
-                                                            <input class="btn btn-warning btn-lg" type="submit" value="Save">
+                                                            <input class="btn btn-success btn-lg" type="submit" value="Save">
                                                         </div>
                                                         <br>
                                                         <br>
@@ -258,7 +299,6 @@
 					
 				</div>
 			</div>
-		</div>
             
         <br>
                 

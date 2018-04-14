@@ -1,21 +1,21 @@
 <?php
     /**
-     * Provides access to members in our database
+     * Provides access to students in our database
      * @author Brian Saylor <bsaylor3@mail.greenriver.edu>
      * @version 1.0
      *
-     * CREATE TABLE members
+     *CREATE TABLE students
         (
-        member_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        student_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        exercise_id int NOT NULL,
         fName varchar(255),
         lName varchar(255),
-        counselor varchar(255),
-        activities varchar(500)
+        grade int
         );
      */
     
     //CONNECT
-    class MemberDB
+    class StudentDB
     {
         private $_pdo;
         
@@ -42,229 +42,107 @@
         
          
         //CREATE
-         
         /**
-         * Adds a member to the collection of members in the db.
+         * Adds a member to the collection of students in the db.
          *
          * @access public
-         * @param string $fnamename the name of the pet
-         * @param string $lname the type of pet (giraffe, turtle, bear, ...)
-         * @param string $counselor the color of the animal
-         * @param string $activities the name of the pet
+         * @param string $exercise_id the id of the exercise the student will be graded in
+         * @param string $fname the first name of the student
+         * @param string $lname the last name of student
+         * @param string $grade the grade of the student
          *
          * @return true if the insert was successful, otherwise false
          */
-        function addMember($username, $password)
+        function addStudent($exercise_id, $fName, $lName, $grade)
         {
             
             
-            $insert = 'INSERT INTO users (username, password) VALUES (:username, :password)';
+            $insert = 'INSERT INTO students (exercise_id, fName, lName, grade) VALUES (:exercise_id, :fName, :lName, :grade)';
              
             $statement = $this->_pdo->prepare($insert);
-            $statement->bindValue(':username', $username, PDO::PARAM_STR);
-            $statement->bindValue(':password', $password, PDO::PARAM_STR);
+            $statement->bindValue(':exercise_id', $exercise_id, PDO::PARAM_STR);
+            $statement->bindValue(':fName', $fName, PDO::PARAM_STR);
+            $statement->bindValue(':lName', $lName, PDO::PARAM_STR);
+            $statement->bindValue(':grade', $grade, PDO::PARAM_STR);
                     
             $statement->execute();
             return $this->_pdo->lastInsertId();
         }
         
-        function updateMember($id, $fname, $lname, $counselor, $activityOne, $activityTwo, $activityThree, $activityFour, $activityFive, $activitySix, $activitySeven, $activityEight, $activityNine, $activityTen)
+        function updateStudent($student_id, $exercise_id, $grade)
         {
-            
-            
-            $update = 'UPDATE members
-                        SET fname = "'.$fname.'",
-                        lname = "'.$lname.'",
-                        counselor = "'.$counselor.'",
-                        activityOne = "'.$activityOne.'",
-                        activityTwo = "'.$activityTwo.'",
-                        activityThree = "'.$activityThree.'",
-                        activityFour = "'.$activityFour.'",
-                        activityFive = "'.$activityFive.'",
-                        activitySix = "'.$activitySix.'",
-                        activitySeven = "'.$activitySeven.'",
-                        activityEight = "'.$activityEight.'",
-                        activityNine = "'.$activityNine.'",
-                        activityTen = "'.$activityTen.'"
-                        WHERE member_id = '.$id.'';
+            $update = 'UPDATE
+                        students
+                        SET
+                        grade = "'.$grade.'"
+                        WHERE
+                        student_id = '.$student_id.'
+                        AND
+                        exercise_id = .'$exercise_id.'';
                         
             $statement = $this->_pdo->prepare($update);
             
-            
             $statement->execute();
         }
          
         //READ
         /**
-         * Returns all members in the database collection.
+         * Returns all students in the database collection.
          *
          * @access public
          *
-         * @return an associative array of members indexed by id
+         * @return an associative array of students indexed by id
          */
-        function allMembers()
+        function allStudents()
         {
-            $select = 'SELECT member_id, fname, lname, counselor, activityOne, activityTwo, activityThree, activityFour, activityFive, activitySix, activitySeven, activityEight, activityNine, activityTen, monday, tuesday, wednesday, thursday, friday FROM members ORDER BY member_id';
+            $select = 'SELECT student_id, exercise_id, fName, lName, grade FROM students ORDER BY student_id';
             $results = $this->_pdo->query($select);
              
             $resultsArray = array();
              
-            //map each pet id to a row of data for that pet
+            //map each student id to a row of data for that student
             while ($row = $results->fetch(PDO::FETCH_ASSOC)) {
-                $resultsArray[$row['member_id']] = $row;
-            }
-             
-            return $resultsArray;
-        }
-        
-        //READ
-        /**
-         * Returns all members in the database collection.
-         *
-         * @access public
-         *
-         * @return an associative array of members indexed by id
-         */
-        function allMembersNoDays()
-        {
-            $select = 'SELECT member_id, fname, lname, counselor, activityOne, activityTwo, activityThree, activityFour, activityFive, activitySix, activitySeven, activityEight, activityNine, activityTen FROM members ORDER BY member_id';
-            $results = $this->_pdo->query($select);
-             
-            $resultsArray = array();
-             
-            //map each pet id to a row of data for that pet
-            while ($row = $results->fetch(PDO::FETCH_ASSOC)) {
-                $resultsArray[$row['member_id']] = $row;
+                $resultsArray[$row['student_id']] = $row;
             }
              
             return $resultsArray;
         }
          
         /**
-         * Returns a member that has the given id.
+         * Returns a student that has the given id.
          *
          * @access public
-         * @param int $id the id of the member
+         * @param int $id the id of the student
          *
-         * @return an associative array of member attributes, or false if
-         * the member was not found
+         * @return an associative array of student attributes, or false if
+         * the student was not found
          */
-        function memberById($id)
+        function studentById($student_id)
         {
-            $select = 'SELECT member_id, fname, lname, counselor, activityOne, activityTwo, activityThree, activityFour, activityFive, activitySix, activitySeven, activityEight, activityNine, activityTen FROM members WHERE member_id=:id';
+            $select = 'SELECT student_id, exercise_id, fName, lName, grade FROM students WHERE student_id=:student_id';
              
             $statement = $this->_pdo->prepare($select);
-            $statement->bindValue(':id', $id, PDO::PARAM_INT);
+            $statement->bindValue(':student_id', $student_id, PDO::PARAM_INT);
             $statement->execute();
              
             return $statement->fetch(PDO::FETCH_ASSOC);
-        }
-        
-        /**
-         *Returns a members name from the search
-         *
-         *
-         */
-        function getMemberName($search)
-        {
-            $display_name = "SELECT member_id, fname, lname, counselor, activityOne, activityTwo, activityThree,
-            activityFour, activityFive, activitySix, activitySeven, activityEight, activityNine, activityTen FROM members WHERE fname LIKE '%$search%' OR lname LIKE '%$search%' OR counselor LIKE '%$search%'";
-            //var_dump ($display_name);
-            //exit();
-            
-            $statement = $this->_pdo->prepare($display_name);
-            $statement->execute();
-             
-            return $statement->fetchAll(PDO::FETCH_ASSOC);
         }
         
          /**
-         * Deletes a member that has the given id.
+         * Deletes a student that has the given id.
          *
          * @access public
-         * @param int $id the id of the member
+         * @param int $id the id of the student
          *
-         * @return an associative array of member attributes, or false if
-         * the member was not found
+         * @return an associative array of student attributes, or false if
+         * the student was not found
          */
-        function deleteOneMember($id)
+        function deleteOneStudent($student_id)
         {
-            $select = 'DELETE FROM members WHERE member_id=:id';
+            $select = 'DELETE FROM students WHERE student_id=:student_id';
              
             $statement = $this->_pdo->prepare($select);
-            $statement->bindValue(':id', $id, PDO::PARAM_INT);
+            $statement->bindValue(':student_id', $student_id, PDO::PARAM_INT);
             $statement->execute();
-        }
-        
-        /**
-         * Returns a member that has the given id.
-         *
-         * @access public
-         * @param int $id the id of the member
-         *
-         * @return an associative array of member attributes, or false if
-         * the member was not found
-         */
-        function deleteMembers()
-        {
-            $select = 'DELETE FROM members';
-             
-            $statement = $this->_pdo->prepare($select);
-            $statement->execute();
-        }
-        
-
-        
-
-        
-        /**
-          * Checks if the member exists
-          * @param ID: checks the id passed in to see if the member exists
-          * 
-          * @return Returns a row from the database that matches this. 
-          */
-        function memberExists($id, $day)
-        {            
-            $select = "SELECT " . $day . " FROM members WHERE member_id=:id";
-             
-            $statement = $this->_pdo->prepare($select);
-            $statement->bindValue(':id', $id, PDO::PARAM_STR);
-            $statement->execute();
-             
-            return $statement->fetch(PDO::FETCH_ASSOC);
-        }
-        
-                /**
-         * Returns true if the name is used by a pet in the database.
-         *
-         * @access public
-         * @param string $name the name of the pet to look for
-         *
-         * @return true if the name already exists, otherwise false
-         */   
-        function adminNameExists($username, $password)
-        {            
-            $select = 'SELECT user_id, username, password FROM users WHERE username=:username AND password=:password';
-             
-            $statement = $this->_pdo->prepare($select);
-            $statement->bindValue(':username', $username, PDO::PARAM_STR);
-            $statement->bindValue(':password', $password, PDO::PARAM_STR);            
-            $statement->execute();
-             
-            $row = $statement->fetch(PDO::FETCH_ASSOC);
-             
-            return !empty($row);
-        }
-        
-        
-        function memberByUsername($username)
-        {
-            $select = 'SELECT user_id, username, password FROM users WHERE username=:username';
-             
-            $statement = $this->_pdo->prepare($select);
-            $statement->bindValue(':username', $username, PDO::PARAM_INT);
-            $statement->execute();
-             
-            return $statement->fetch(PDO::FETCH_ASSOC);
         }
     }
