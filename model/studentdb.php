@@ -78,7 +78,7 @@
                         WHERE
                         student_id = '.$student_id.'
                         AND
-                        exercise_id = .'$exercise_id.'';
+                        exercise_id = '.$exercise_id.'';
                         
             $statement = $this->_pdo->prepare($update);
             
