@@ -75,7 +75,7 @@
 		<br>
 		<br>
 
-		<!--Buttom ROW OF COLS-->
+			<!--Buttom ROW OF COLS-->
                     <div class="row">
 						<div class="col-sm-3"></div>
                             <div class= "col-sm-2">
@@ -106,19 +106,14 @@
                         <div class="col-sm-3"></div>    
                     
                     </div>
-           <!--End of COLS Bottom--> 
-		
-		
+			<!--End of COLS Bottom-->
+		   
             <!--This is the Main body of the page-->
 		<div class="summary-view" id="summary-view">
             <h1 class="display-2 text-center">Summary Page</h1>
-            
-            
             <br>
 			<!-- Collapse for Summary-->
                 <div class="row">
-					
-					
                     <div class="col-sm-3">
 					</div>
                     <div class="col-sm-6">
@@ -130,65 +125,189 @@
 									
 								</div>
 						</div>
-                
-				<!-- Collapse for Videos-->
-                <div class="row">
-                    <div class="col-sm-12">
-						<div class="panel panel-primary">
-							<div class="panel-heading">
-								<a role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1 id="tabHeading">Video</h1>
-							</div></a>
-							<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-								<div class="panel-body">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-					
-				<!-- Collapse for questions-->
-				<div class="row">
-                    <div class="col-sm-12">
-						<div class="panel panel-primary">
-							<div class="panel-heading">
-								<a role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1 id="tabHeading">Questions</h1>
-							</div></a>
-								<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-									<div class="panel-body">
+						<!-- Collapse for Videos-->
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="panel panel-primary">
+									<div class="panel-heading">
+										<a role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1 id="tabHeading">Video</h1>
+									</div></a>
+									<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
 										<div class="panel-body">
-											
 										</div>
 									</div>
-								</div>   
-						</div>
-					</div>
-				</div>
-					
-				<!-- Collapse for pictures-->	
-				<div class="row">
-                    <div class="col-sm-12"><div class="panel panel-primary">
-						<div class="panel-heading">
-							<a role="button" data-toggle="collapse" href="#collapseFour" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1 id="tabHeading">Pictures</h1>
-						</div></a>
-							<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-								<div class="panel-body">
-									<div class="panel-body">
-									</div>
 								</div>
 							</div>
 						</div>
-					</div>                
-                </div>					
-                                                
-   
+						<!-- Collapse for questions-->
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="panel panel-primary">
+									<div class="panel-heading">
+										<a role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1 id="tabHeading">Questions</h1>
+									</div></a>
+										<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+											<div class="panel-body">
+												<div class="panel-body">
+													
+												</div>
+											</div>
+										</div>   
+								</div>
+							</div>
+						</div>
+						<!-- Collapse for pictures-->	
+						<div class="row">
+							<div class="col-sm-12"><div class="panel panel-primary">
+								<div class="panel-heading">
+									<a role="button" data-toggle="collapse" href="#collapseFour" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1 id="tabHeading">Pictures</h1>
+								</div></a>
+									<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+										<div class="panel-body">
+											<div class="panel-body">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>                
+						</div>		
 					</div>
 				</div>
+		</div>
+		
+		<br>
+		
+			<div class="row">
+				<div class="col-md-3">
+				</div>
+				<div class="col-md-3 text-center">
+					<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target=".grade">
+						<h3>Grade Students</h3>
+					</button>
+				</div>
+									<!-- Start of Grade module-->
+                                    <div class="modal fade grade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content" id="modalcontent">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Grading Students</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <!-- inner modal -->
+                                                <form action="./studentGrade" method="post" class="form-horizontal">
+                                                    <br>
+                                                    <br>
+                                                    <div class="col-sm-2"></div>
+                                                    
+                                                    <div class="col-sm-8 text-center">
+														<div class="form-group">
+															<label for="student">Students</label>
+															<select class="form-control form-control-lg" id="student" required>
+																	<option disabled selected>Please select</option>
+																<repeat group="{{ @students }}" value="{{ @student }}">
+																	<option value="{{ @student.student_id }}">{{ @student.fName }}</option>
+																</repeat>
+															</select>
+														</div>
+														<div class="form-group">
+															<label for="exercise">Exercises</label>
+															<select class="form-control form-control-lg" id="exercise" required>
+																	<option disabled selected>Please select</option>
+																<repeat group="{{ @exercises }}" value="{{ @exercise }}">
+																	<option value="{{ @exercise.exercise_id }}">{{ @exercise.exercise_name }}</option>
+																</repeat>
+															</select>
+														</div>
+                                                        <div class="form-group">
+															<label for="grade">Grade</label>
+															<select class="form-control form-control-lg" id="grade" required>
+																<option disabled selected>Please select</option>
+																<option value="1">1</option>
+																<option value="2">2</option>
+																<option value="3">3</option>
+																<option value="4">4</option>
+																<option value="5">5</option>
+																<option value="6">6</option>
+																<option value="7">7</option>
+																<option value="8">8</option>
+																<option value="9">9</option>
+																<option value="10">10</option>
+															</select>
+														</div>
+                                                        <div class="form-group">
+                                                            <input class="btn btn-success btn-lg" type="submit" value="Save">
+                                                        </div>
+                                                        <br>
+                                                        <br>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+									<!-- End of Grade module-->
+				<div class="col-md-3 text-center">
+					<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target=".attendance">
+						<h3>Student Attendance</h3>
+					</button>
+				</div>
+									<!-- Start of Attendance module-->
+                                    <div class="modal fade attendance" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content" id="modalcontent">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Attendance for Students</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <!-- inner modal -->
+                                                <form action="./studentAttendance" method="post" class="form-horizontal">
+                                                    <br>
+                                                    <br>
+                                                    <div class="col-sm-2"></div>
+                                                    
+                                                    <div class="col-sm-8 text-center">
+														<div class="form-group">
+															<label for="student">Student</label>
+															<select class="form-control form-control-lg" id="student" required>
+																	<option disabled selected>Please select</option>
+																<repeat group="{{ @students }}" value="{{ @student }}">
+																	<option value="{{ @student.student_id }}">{{ @student.fName }}</option>
+																</repeat>
+															</select>
+														</div>
+                                                        <div class="form-group">
+															<label for="daysMissed">How many days were missed?</label>
+															<select class="form-control form-control-lg" id="daysMissed" required>
+																<option disabled selected>Please select</option>
+																<option value="1">1</option>
+																<option value="2">2</option>
+																<option value="3">3</option>
+																<option value="4">4</option>
+																<option value="5">5</option>
+															</select>
+														</div>
+                                                        <div class="form-group">
+                                                            <input class="btn btn-success btn-lg" type="submit" value="Save">
+                                                        </div>
+                                                        <br>
+                                                        <br>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+									<!-- End of Attendance module-->
+				<div class="col-md-3">
+					
+				</div>
+			</div>
             
-          
-            <br>
+        <br>
                 
-
-              <script>
+            <script>
 				
 				var summary_view = document.getElementById("summary-view");
 				summary_view.style.display = "none";
@@ -196,6 +315,8 @@
 				function updateUnits() {
 				  var cat_select = document.getElementById("category_select");
 				  var subcat_select = document.getElementById("unit_select");
+				  var exercise_select = document.getElementById("excercise_select");
+				  
 		  
 				  var cat_id = cat_select.options[cat_select.selectedIndex].value;
 		  
@@ -208,6 +329,7 @@
 				   
 					  //cat_select.innerHTML = xhr.responseText;
 					  subcat_select.innerHTML = xhr.responseText;
+					  exercise_select.innerHTML = " ";
 					  console.log(xhr.responseText);
 					  if(summary_view.style.display === "block")
 					  {
@@ -371,7 +493,8 @@
 				unit_select.addEventListener("change", updateQuestions);
 				unit_select.addEventListener("change", updatePicture);
 				
-			  </script>
+			</script>
+			  
             
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

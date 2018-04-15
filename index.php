@@ -30,8 +30,8 @@
     $unitDB = new UnitDB();
     $exerciseDB = new ExerciseDB();
     $memberDB = new MemberDB();
+    $studentDB = new StudentDB();
 
-    //
     //$f3->route('GET /', function($f3)
     //{
     //
@@ -54,7 +54,12 @@
     $f3->route('GET /', function($f3)
     {
         $categories =  $GLOBALS['categoryDB']->allCategories();
+        $students =  $GLOBALS['studentDB']->allStudents();
+        $exercises =  $GLOBALS['exerciseDB']->allExercises();
+        
         $f3->set('categories', $categories);
+        $f3->set('students', $students);
+        $f3->set('exercises', $exercises);
         echo Template::instance()->render('pages/category_page_two.html');
     });
     
@@ -130,6 +135,18 @@
                 $f3->set('unitName', $unitName);
                 $f3->set('exercises', $exercises);
                 echo Template::instance()->render('pages/exercise_backend.html');
+            });
+            
+            $f3->route('POST /studentGrade', function($f3, $params)
+            {
+                $GLOBALS['studentDB']->updateStudent($_POST['student'], $_POST['exercise'], $_POST['grade']);
+                $f3->reroute('/');
+            });
+            
+            $f3->route('POST /studentAttendance', function($f3, $params)
+            {
+                //$GLOBALS['attendanceDB']->updateStudentAttendance($_POST['student'], $_POST['exercise'], $_POST['grade']);
+                //$f3->reroute('/');
             });
     
 
