@@ -174,8 +174,8 @@ li {
 						<div class="row">
 							<div class="col-sm-6">
 								<form action="./editExerciseSummary/<?= ($exerciseID) ?>" id="summary" method="post" class="form-horizontal">
-									<div class="input-group input-group-lg">
-										<input class="form-control" name="exercise_summary" id="exercise_summary" placeholder="Enter a Summary here" value="<?= ($exercise['exercise_summary']) ?>">
+									<div class="input-group">
+										<textarea rows="8" cols="50" class="form-control"  name="exercise_summary" id="exercise_summary" placeholder="Enter a Summary here" value="<?= ($exercise['exercise_summary']) ?>" style="font-size: 14px"><?= ($exercise['exercise_summary']) ?></textarea>
 									</div>
 								</form>
 							</div>
