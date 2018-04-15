@@ -35,7 +35,7 @@
         
                 
                 $exercises =  $GLOBALS['exerciseDB']->exercisesByUnit($_SESSION['unitID']);
-                
+                $allVideoLinks = $GLOBALS['exerciseDB']->allVideoLinks($_SESSION['exerciseID']);
                 $unitName = $GLOBALS['unitDB']->getUnitByID($_SESSION['unitID']);
                 
                 $exercise = $GLOBALS['exerciseDB']->getExerciseByID($_SESSION['exerciseID']);
@@ -54,6 +54,7 @@
             $youtubeEmbededCode = substr($youtubeLink, strpos($youtubeLink, "=") + 1); 
             $video = '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/'.$youtubeEmbededCode.'" width="100%" height="460px" allowfullscreen></iframe>';
             $f3->set('youtubeEmbededCode', $youtubeEmbededCode);
+            $f3->set('videoLinkExcercises', $allVideoLinks);
                 
             
         echo Template::instance()->render('pages/exercise_summary_backend.html');
@@ -73,9 +74,12 @@
             
             $f3->route('GET|POST /editExerciseVideo/@id', function($f3, $params)
             {
+                $newVideoLink = $_POST['videolink'];
+                $exercise = $GLOBALS['exerciseDB']->addVidelink($params['id'], $newVideoLink);
                 
                 $GLOBALS['exerciseDB']->editExerciseVideo($params['id'], $_POST['videolink']);
                 //$id, $exercise_name, $exercise_summary, $exercise_image, $exercise_video, $exercise_questions
+                
                 $f3->reroute('/exerciseSummaryBackend');
                 
                 //echo Template::instance()->render('pages/exercise_summary_backend.html');

@@ -79,6 +79,22 @@
             $statement->execute();
         }
         
+        function addVidelink($exercise_id, $link)
+        {
+            $insert =
+            'INSERT INTO
+            videolink
+            (exerciseId, link)
+            VALUES
+            (:exerciseId, :link)';
+             
+            $statement = $this->_pdo->prepare($insert);
+            $statement->bindValue(':exerciseId', $exercise_id, PDO::PARAM_INT);
+            $statement->bindValue(':link', $link, PDO::PARAM_STR);
+            
+            $statement->execute();
+        }
+        
         //READ
         /**
          * Returns all exercises in the database collection.
@@ -97,6 +113,21 @@
             //map each student id to a row of data for that student
             while ($row = $results->fetch(PDO::FETCH_ASSOC)) {
                 $resultsArray[$row['exercise_id']] = $row;
+            }
+             
+            return $resultsArray;
+        }
+        
+        function allVideoLinks($exerciseId)
+        {
+            $select = 'SELECT videoId, exerciseId, link FROM videolink WHERE exerciseId='. $exerciseId;
+            $results = $this->_pdo->query($select);
+             
+            $resultsArray = array();
+             
+            //map each student id to a row of data for that student
+            while ($row = $results->fetch(PDO::FETCH_ASSOC)) {
+                $resultsArray[$row['videoId']] = $row;
             }
              
             return $resultsArray;
