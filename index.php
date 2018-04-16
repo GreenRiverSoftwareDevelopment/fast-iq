@@ -30,7 +30,8 @@
     $unitDB = new UnitDB();
     $exerciseDB = new ExerciseDB();
     $memberDB = new MemberDB();
-    $studentDB = new StudentDB();
+    $studentDB = new StudentsDB();
+    $gradeDB = new GradesDB();
 
     //$f3->route('GET /', function($f3)
     //{
@@ -137,16 +138,16 @@
                 echo Template::instance()->render('pages/exercise_backend.html');
             });
             
-            $f3->route('POST /studentGrade', function($f3, $params)
+            $f3->route('POST /studentGrade', function($f3)
             {
-                $GLOBALS['studentDB']->updateStudent($_POST['student'], $_POST['exercise'], $_POST['grade']);
+                $GLOBALS['gradeDB']->updateGrade($_POST['student'], $_POST['exercise'], $_POST['grade']);
                 $f3->reroute('/');
             });
             
-            $f3->route('POST /studentAttendance', function($f3, $params)
+            $f3->route('POST /studentAttendance', function($f3)
             {
-                //$GLOBALS['attendanceDB']->updateStudentAttendance($_POST['student'], $_POST['exercise'], $_POST['grade']);
-                //$f3->reroute('/');
+                $GLOBALS['studentDB']->updateStudent($_POST['student'], $_POST['daysMissed']);
+                $f3->reroute('/');
             });
     
 

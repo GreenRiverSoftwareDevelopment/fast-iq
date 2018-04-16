@@ -190,13 +190,13 @@
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content" id="modalcontent">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Edit <?= ($exercise['exercise_name']) ?></h5>
+                                                    <h5 class="modal-title" id="exampleModalLabel">Grading Students</h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
                                                 <!-- inner modal -->
-                                                <form action="./editExercise/<?= ($exercise_id) ?>" method="post" class="form-horizontal">
+                                                <form action="./studentGrade" method="post" class="form-horizontal">
                                                     <br>
                                                     <br>
                                                     <div class="col-sm-2"></div>
@@ -204,7 +204,8 @@
                                                     <div class="col-sm-8 text-center">
 														<div class="form-group">
 															<label for="student">Students</label>
-															<select class="form-control form-control-lg" id="student">
+															<select class="form-control form-control-lg" id="student" required>
+																	<option disabled selected>Please select</option>
 																<?php foreach (($students?:[]) as $student): ?>
 																	<option value="<?= ($student['student_id']) ?>"><?= ($student['fName']) ?></option>
 																<?php endforeach; ?>
@@ -212,7 +213,8 @@
 														</div>
 														<div class="form-group">
 															<label for="exercise">Exercises</label>
-															<select class="form-control form-control-lg" id="exercise">
+															<select class="form-control form-control-lg" id="exercise" required>
+																	<option disabled selected>Please select</option>
 																<?php foreach (($exercises?:[]) as $exercise): ?>
 																	<option value="<?= ($exercise['exercise_id']) ?>"><?= ($exercise['exercise_name']) ?></option>
 																<?php endforeach; ?>
@@ -220,17 +222,18 @@
 														</div>
                                                         <div class="form-group">
 															<label for="grade">Grade</label>
-															<select class="form-control form-control-lg" id="grade">
-															  <option value="1">1</option>
-															  <option value="2">2</option>
-															  <option value="3">3</option>
-															  <option value="4">4</option>
-															  <option value="5">5</option>
-															  <option value="6">6</option>
-															  <option value="7">7</option>
-															  <option value="8">8</option>
-															  <option value="9">9</option>
-															  <option value="10">10</option>
+															<select class="form-control form-control-lg" id="grade" required>
+																<option disabled selected>Please select</option>
+																<option value="1">1</option>
+																<option value="2">2</option>
+																<option value="3">3</option>
+																<option value="4">4</option>
+																<option value="5">5</option>
+																<option value="6">6</option>
+																<option value="7">7</option>
+																<option value="8">8</option>
+																<option value="9">9</option>
+																<option value="10">10</option>
 															</select>
 														</div>
                                                         <div class="form-group">
@@ -254,7 +257,7 @@
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content" id="modalcontent">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Edit <?= ($exercise['exercise_name']) ?></h5>
+                                                    <h5 class="modal-title" id="exampleModalLabel">Attendance for Students</h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
@@ -268,20 +271,22 @@
                                                     <div class="col-sm-8 text-center">
 														<div class="form-group">
 															<label for="student">Student</label>
-															<select class="form-control form-control-lg" id="student">
+															<select class="form-control form-control-lg" name="student" id="student" required>
+																	<option disabled selected>Please select</option>
 																<?php foreach (($students?:[]) as $student): ?>
-																	<option value="<?= ($student['student_id']) ?>"><?= ($student['fName']) ?></option>
+																	<option value="<?= ($student['student_id']) ?>"><?= ($student['fName']) ?> <?= ($student['lName']) ?></option>
 																<?php endforeach; ?>
 															</select>
 														</div>
                                                         <div class="form-group">
 															<label for="daysMissed">How many days were missed?</label>
-															<select class="form-control form-control-lg" id="daysMissed">
-															  <option value="1">1</option>
-															  <option value="2">2</option>
-															  <option value="3">3</option>
-															  <option value="4">4</option>
-															  <option value="5">5</option>
+															<select class="form-control form-control-lg" name="daysMissed" id="daysMissed" required>
+																<option disabled selected>Please select</option>
+																<option value="1">1</option>
+																<option value="2">2</option>
+																<option value="3">3</option>
+																<option value="4">4</option>
+																<option value="5">5</option>
 															</select>
 														</div>
                                                         <div class="form-group">
@@ -477,7 +482,7 @@
 				   
 					  //cat_select.innerHTML = xhr.responseText;
 					  picture_select.innerHTML = xhr.responseText;
-					  console.log(xhr.responseText);
+					  //console.log(xhr.responseText);
 					 //subcat_select.style.display = 'inline';
 					
 				  };
