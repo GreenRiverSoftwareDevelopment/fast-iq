@@ -57,16 +57,20 @@
         //UPDATE
         function updateGrade($student_id, $exercise_id, $grade)
         {
-            $update = 'UPDATE
-                        grades
-                        SET
-                        grade = "'.$grade.'"
-                        WHERE
-                        student_id = '.$student_id.'
-                        AND
-                        exercise_id = '.$exercise_id.'';
+            $update = 
+                'INSERT INTO grades
+                (student_id, exercise_id, grade)
+                VALUES
+                (:student_id, :exercise_id, :grade) 
+                ON DUPLICATE KEY
+                UPDATE
+                grade = :grade';
                         
             $statement = $this->_pdo->prepare($update);
+            
+            $statement->bindValue(':student_id', $student_id, PDO::PARAM_STR);
+            $statement->bindValue(':exercise_id', $exercise_id, PDO::PARAM_STR);
+            $statement->bindValue(':grade', $grade, PDO::PARAM_INT);
             
             $statement->execute();
         }

@@ -62,8 +62,10 @@
                         WHERE
                         student_id = :student_id';
                         
-            $statement = $this->_pdo->prepare($update);$statement->bindValue(':daysMissed', $daysMissed, PDO::PARAM_INT);
+            $statement = $this->_pdo->prepare($update);
+            $statement->bindValue(':daysMissed', $daysMissed, PDO::PARAM_INT);
             $statement->bindValue(':student_id', $student_id, PDO::PARAM_STR);
+            
             $statement->execute();
         }
          

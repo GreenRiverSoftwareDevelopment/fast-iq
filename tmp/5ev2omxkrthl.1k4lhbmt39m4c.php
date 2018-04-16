@@ -203,17 +203,17 @@
                                                     
                                                     <div class="col-sm-8 text-center">
 														<div class="form-group">
-															<label for="student">Students</label>
-															<select class="form-control form-control-lg" id="student" required>
+															<h3 for="student">Students</h3>
+															<select class="form-control form-control-lg" name="student" id="student" required>
 																	<option disabled selected>Please select</option>
 																<?php foreach (($students?:[]) as $student): ?>
-																	<option value="<?= ($student['student_id']) ?>"><?= ($student['fName']) ?></option>
+																	<option value="<?= ($student['student_id']) ?>"><?= ($student['fName']) ?> <?= ($student['lName']) ?></option>
 																<?php endforeach; ?>
 															</select>
 														</div>
 														<div class="form-group">
-															<label for="exercise">Exercises</label>
-															<select class="form-control form-control-lg" id="exercise" required>
+															<h3 for="exercise">Exercises</h3>
+															<select class="form-control form-control-lg" name="exercise" id="exercise" required>
 																	<option disabled selected>Please select</option>
 																<?php foreach (($exercises?:[]) as $exercise): ?>
 																	<option value="<?= ($exercise['exercise_id']) ?>"><?= ($exercise['exercise_name']) ?></option>
@@ -221,8 +221,8 @@
 															</select>
 														</div>
                                                         <div class="form-group">
-															<label for="grade">Grade</label>
-															<select class="form-control form-control-lg" id="grade" required>
+															<h3 for="grade">Grade</h3>
+															<select class="form-control form-control-lg" name="grade" id="grade" required>
 																<option disabled selected>Please select</option>
 																<option value="1">1</option>
 																<option value="2">2</option>
@@ -270,7 +270,7 @@
                                                     
                                                     <div class="col-sm-8 text-center">
 														<div class="form-group">
-															<label for="student">Student</label>
+															<h3 for="student">Student</h3>
 															<select class="form-control form-control-lg" name="student" id="student" required>
 																	<option disabled selected>Please select</option>
 																<?php foreach (($students?:[]) as $student): ?>
@@ -279,7 +279,7 @@
 															</select>
 														</div>
                                                         <div class="form-group">
-															<label for="daysMissed">How many days were missed?</label>
+															<h3 for="daysMissed">How many days were missed?</h3>
 															<select class="form-control form-control-lg" name="daysMissed" id="daysMissed" required>
 																<option disabled selected>Please select</option>
 																<option value="1">1</option>
