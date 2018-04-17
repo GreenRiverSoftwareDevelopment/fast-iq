@@ -20,10 +20,14 @@
             <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
                 <ul class="nav nav-pills nav-fill">
                     <li class="nav-item">
-						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                        <a class="nav-link" href="./"><h3>Home</h3></a>
+                    </li>
+                    <li class="nav-item">
+                        
+                    </li>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
 							<h3>Login</h3>
 						</button>
-                    </li>
                 </ul>
               
                 
@@ -83,45 +87,45 @@
                     
                 </div>
 				<div class="col-md-5 text-center">
-                    <h2 class="display-2 text-center">Student Attendance</h2>
+                    <h3 class="display-3 text-center">Student Attendance</h2>
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Days Missed</th>
+                                <th scope="col"><h3>First</h3></th>
+                                <th scope="col"><h3>Last</h3></th>
+                                <th scope="col"><h3>Days Missed</h3></th>
                             </tr>
                         </thead>
                         <tbody>
                             <repeat group="{{ @students }}" value="{{ @student }}">
                             <tr>
-                                <th scope="row">{{ @student.fName }}</th>
-                                <th>{{ @student.lName }}</th>
-                                <th>{{ @student.daysMissed }}</th>
+                                <th scope="row"><h4>{{ @student.fName }}</h4></th>
+                                <th><h4>{{ @student.lName }}</h4></th>
+                                <th><h4>{{ @student.daysMissed }}</h4></th>
                             </tr>
                             </repeat>
                         </tbody>
                     </table>
 				</div>
 				<div class="col-md-5 text-center">
-                    <h2 class="display-2 text-center">Student Grades</h2>
+                    <h3 class="display-3 text-center">Student Grades</h2>
                     <table class="table table-hover">
-                            <thead>
-                              <tr>
-                                <th scope="col">Student</th>
-                                <th scope="col">Exercise</th>
-                                <th scope="col">Grade</th>
-                              </tr>
-                            </thead>
-                            <tbody>
+                        <thead>
+                            <tr>
+                                <th scope="col"><h3>Student</h3></th>
+                                <th scope="col"><h3>Exercise</h3></th>
+                                <th scope="col"><h3>Grade</h3></th>
+                            </tr>
+                        </thead>
+                        <tbody>
                             <repeat group="{{ @grades }}" value="{{ @grade }}">
                             <tr>
-                                <th scope="row">{{ @grade.fName }} {{ @grade.lName }}</th>
-                                <th>{{ @grade.exercise_name }}</th>
-                                <th>{{ @grade.grade }}</th>
+                                <th scope="row"><h4>{{ @grade.fName }} {{ @grade.lName }}</h4></th>
+                                <th><h4>{{ @grade.exercise_name }}</h4></th>
+                                <th><h4>{{ @grade.grade }}</h4></th>
                             </tr>
                             </repeat>
-                            </tbody>
+                        </tbody>
                         </table>
 				</div>
                 <div class="col-md-1"></div>
