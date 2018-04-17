@@ -40,6 +40,7 @@ return array(
     'Registry' => $vendorDir . '/bcosca/fatfree-core/base.php',
     'SMTP' => $vendorDir . '/bcosca/fatfree-core/smtp.php',
     'Session' => $vendorDir . '/bcosca/fatfree-core/session.php',
+    'StudentDB' => $baseDir . '/model/studentdb.php',
     'StudentsDB' => $baseDir . '/model/studentsdb.php',
     'Template' => $vendorDir . '/bcosca/fatfree-core/template.php',
     'Test' => $vendorDir . '/bcosca/fatfree-core/test.php',

@@ -12,6 +12,8 @@
         );
      */
     
+    //SELECT students.fName, students.lName, exercises.exercise_name, grades.grade FROM grades INNER JOIN students ON grades.student_id = students.student_id INNER JOIN exercises ON grades.exercise_id = exercises.exercise_id ORDER BY grades.student_id
+    
     //CONNECT
     class GradesDB
     {
@@ -75,17 +77,47 @@
             $statement->execute();
         }
          
+        ////READ
+        //function allGrades()
+        //{
+        //    $select = 'SELECT * FROM grades ORDER BY student_id';
+        //    $results = $this->_pdo->query($select);
+        //     
+        //    $resultsArray = array();
+        //     
+        //    //map each student id to a row of data for that student
+        //    while ($row = $results->fetch(PDO::FETCH_ASSOC)) {
+        //        $resultsArray[$row['student_id']] = $row;
+        //    }
+        //     
+        //    return $resultsArray;
+        //}
+        
         //READ
         function allGrades()
         {
-            $select = 'SELECT * FROM grades ORDER BY student_id';
+            $select =
+            'SELECT
+            students.fName, students.lName, exercises.exercise_name, grades.grade
+            FROM
+            grades
+            INNER JOIN
+            students
+            ON
+            grades.student_id = students.student_id
+            INNER JOIN
+            exercises
+            ON
+            grades.exercise_id = exercises.exercise_id
+            ORDER BY
+            grades.student_id';
             $results = $this->_pdo->query($select);
              
             $resultsArray = array();
              
             //map each student id to a row of data for that student
             while ($row = $results->fetch(PDO::FETCH_ASSOC)) {
-                $resultsArray[$row['student_id']] = $row;
+                $resultsArray[$row['grades.student_id']] = $row;
             }
              
             return $resultsArray;

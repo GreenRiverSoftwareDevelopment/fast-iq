@@ -31,7 +31,7 @@
             </nav>
             </div>
             
-            <!--*********************************** THIS IS THE MODAL*************************************-->
+            <!--*********************************** THIS IS THE LOGIN MODAL*************************************-->
             
            
                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -70,7 +70,7 @@
                     </div>
                   </div>
                 </div>
-        <!--*********************************** THIS IS THE MODAL*************************************-->
+        <!--*********************************** THIS IS THE LOGIN MODAL*************************************-->
 		
 		<br>
 		<br>
@@ -180,8 +180,8 @@
 			<div class="row">
 				<div class="col-md-3">
 				</div>
-				<div class="col-md-3 text-center">
-					<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target=".grade">
+				<div class="col-md-2 text-center">
+					<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target=".grade">
 						<h3>Grade Students</h3>
 					</button>
 				</div>
@@ -247,7 +247,13 @@
                                         </div>
                                     </div>
 									<!-- End of Grade module-->
-				<div class="col-md-3 text-center">
+				<div class="col-md-2 text-center">
+					<a href="./studentInfo"><button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target=".attendance">
+						<h3>Student Attendance</h3>
+					</button></a>
+				</div>
+									
+				<div class="col-md-2 text-center">
 					<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target=".attendance">
 						<h3>Student Attendance</h3>
 					</button>

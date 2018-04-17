@@ -149,6 +149,16 @@
                 $GLOBALS['studentDB']->updateStudent($_POST['student'], $_POST['daysMissed']);
                 $f3->reroute('/');
             });
+            
+            $f3->route('GET /studentInfo', function($f3)
+            {
+                $students = $GLOBALS['studentDB']->allStudents();
+                $grades = $GLOBALS['gradeDB']->allGrades();
+                
+                $f3->set('students', $students);
+                $f3->set('grades', $grades);
+                echo Template::instance()->render('pages/student_info.html');
+            });
     
 
            
