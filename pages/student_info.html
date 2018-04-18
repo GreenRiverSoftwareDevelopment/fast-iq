@@ -83,6 +83,37 @@
 		<br>
 		
 			<div class="row">
+				<div class="col-md-4">
+                    
+                </div>
+				<div class="col-md-4">
+					<form action="./addStudent" method="post" class="form-horizontal">
+						<div class="form-group">
+							<h3 for="fName">First Name</h3>
+							<input class="form-control form-control-lg" name="fName" id="fName" required>
+							</input>
+						</div>
+						<div class="form-group">
+							<h3 for="lName">Last Name</h3>
+							<input class="form-control form-control-lg" name="lName" id="lName" required>
+							</input>
+						</div>
+						<div class="form-group">
+							<input class="btn btn-success btn-lg" type="submit" value="Add">
+						</div>
+						<br>
+					</form>
+                </div>
+				<div class="col-md-4">
+                    
+                </div>
+			</div>
+		
+		<br>
+		<br>
+		<br>
+		
+			<div class="row">
                 <div class="col-md-1">
                     
                 </div>

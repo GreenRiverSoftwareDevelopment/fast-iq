@@ -150,6 +150,12 @@
                 $f3->reroute('/');
             });
             
+            $f3->route('POST /addStudent', function($f3)
+            {
+                $GLOBALS['studentDB']->addStudent($_POST['fName'], $_POST['lName']);
+                $f3->reroute('/studentInfo');
+            });
+            
             $f3->route('GET /studentInfo', function($f3)
             {
                 $students = $GLOBALS['studentDB']->allStudents();
