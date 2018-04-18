@@ -65,6 +65,7 @@ li {
                 <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 				<link href="css/categorySecond.css" rel="stylesheet" media="screen">
+				<link href="css/categorystyle.css" rel="stylesheet" media="screen">
                 <!--[if lt IE 9]>
                 <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
                 <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -82,6 +83,9 @@ li {
                         <li class="nav-item">
                             <a class="nav-link" href="./exercisesBackend/<?= ($unitID) ?>"><h3>Go Back</h3></a>
                         </li>
+                        <li class="nav-item">
+                          <a data-toggle="modal" data-target="#signUpModal"><h3>Create New Admin</h3></a>
+                        </li>
                     </ul>
                     
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
@@ -89,7 +93,33 @@ li {
                     </button>
                 </nav>
             </div>
-            
+  <!--*********************************** THIS IS THE create a new admin MODAL*************************************-->
+                <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Create a new admin</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="container-fluid">
+                        <form action="./createAdmin" method="post">
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp" placeholder="Enter username">
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                          </div>
+                          <button type="submit" class="btn btn-primary" id="createdAdminBtn">Create</button>
+                        </form>                        
+                      </div>
+
+                    </div>
+                  </div>
+                </div>            
             <!--*********************************** THIS IS LOGOUT THE MODAL*************************************-->
                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
@@ -144,8 +174,8 @@ li {
 						<div class="row">
 							<div class="col-sm-6">
 								<form action="./editExerciseSummary/<?= ($exerciseID) ?>" id="summary" method="post" class="form-horizontal">
-									<div class="input-group input-group-lg">
-										<input class="form-control" name="exercise_summary" id="exercise_summary" placeholder="Enter a Summary here" value="<?= ($exercise['exercise_summary']) ?>">
+									<div class="input-group">
+										<textarea rows="8" cols="50" class="form-control"  name="exercise_summary" id="exercise_summary" placeholder="Enter a Summary here" value="<?= ($exercise['exercise_summary']) ?>" style="font-size: 14px"><?= ($exercise['exercise_summary']) ?></textarea>
 									</div>
 								</form>
 							</div>
@@ -194,7 +224,7 @@ li {
                 <div class="panel-heading">
                     <h4 class="panel-title">
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#TEST_2">
-                        <h1 id="tabHeading">Videos</h1>
+                        <h1 id="tabHeading">Media</h1>
                     </a>
                     </h4>
                 </div>
@@ -203,10 +233,12 @@ li {
                         <div class="container">
 						<div class="hoverImage">	
                             
-                         <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?= ($youtubeEmbededCode) ?>" width="100%" height="460px" allowfullscreen></iframe></div>
-                      
+                         <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?= ($youtubeEmbededCode) ?>" width="100%" height="460px" allowfullscreen></iframe>
+						</div>
+						
                       <!-- Edit and Delete hover over -->
                         <div class="middle">
+							
 							<div class="text">
 								<button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target=".editExerciseVideo<?= ($exercise['exercise_id']) ?>">
 									<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  Edit
@@ -214,7 +246,10 @@ li {
 							</div>
                         </div>
                         <!-- Edit and Delete hover over end -->
-                        
+						<?php foreach (($videoLinkExcercises?:[]) as $videoLinkExcercise): ?>
+							 <a href="<?= ($videoLinkExcercise['link']) ?>" target="_blank"><h2><?= ($videoLinkExcercise['link']) ?></h2></a>
+						<?php endforeach; ?>
+						                     
                         <!-- Start of edit module-->
                                     <div class="modal fade editExerciseVideo<?= ($exercise['exercise_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
@@ -271,6 +306,7 @@ li {
 							<div class="col-sm-6">
 								<div contenteditable="true">
 									<form action="./editExerciseQuestion/<?= ($exerciseID) ?>" id="question" method="post" class="form-horizontal">
+										
 										<?php foreach (($questions_array?:[]) as $question): ?>
 											<li id="list-group">
 												<div class="input-group input-group-lg">
@@ -279,6 +315,7 @@ li {
 											</li>
 											<br>
 										<?php endforeach; ?>
+										
 											<li id="list-group">
 												<div class="input-group input-group-lg">
 													<input name="questions[]" id="questions" class="form-control" type="text" placeholder="Enter a new question here"></input>

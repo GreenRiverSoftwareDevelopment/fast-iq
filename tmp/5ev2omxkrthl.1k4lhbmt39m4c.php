@@ -125,12 +125,12 @@
 									
 								</div>
 						</div>
-						<!-- Collapse for Videos-->
+						<!-- Collapse for Media-->
 						<div class="row">
 							<div class="col-sm-12">
 								<div class="panel panel-primary">
 									<div class="panel-heading">
-										<a role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1 id="tabHeading">Video</h1>
+										<a role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1 id="tabHeading">Media</h1>
 									</div></a>
 									<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
 										<div class="panel-body">
