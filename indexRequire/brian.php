@@ -118,7 +118,7 @@
         else
         {
                
-            $f3->reroute('/categorySecond');
+            $f3->reroute('/');
         }
 
     });
@@ -126,5 +126,5 @@
     $f3->route('GET /logout', function($f3)
     {
         session_destroy();
-        $f3->reroute('/categorySecond');
+        $f3->reroute('/');
     });

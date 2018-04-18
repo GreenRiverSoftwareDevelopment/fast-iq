@@ -6,6 +6,7 @@
      *
      *CREATE TABLE grades
         (
+        grade_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
         student_id int NOT NULL,
         exercise_id int NOT NULL,
         grade int
@@ -44,8 +45,6 @@
         //CREATE
         function addGrade($exercise_id, $grade)
         {
-            
-            
             $insert = 'INSERT INTO grades (exercise_id, grade) VALUES (:exercise_id, :grade)';
              
             $statement = $this->_pdo->prepare($insert);
@@ -56,22 +55,37 @@
             return $this->_pdo->lastInsertId();
         }
         
+        function getGradeID($student_id, $exercise_id)
+        {
+            $insert = 'SELECT grade_id FROM `grades` WHERE student_id = :student_id AND exercise_id = :exercise_id';
+             
+            $statement = $this->_pdo->prepare($insert);
+            $statement->bindValue(':student_id', $student_id, PDO::PARAM_INT);
+            $statement->bindValue(':exercise_id', $exercise_id, PDO::PARAM_INT);
+                    
+            $statement->execute();
+            return $statement->fetch(PDO::FETCH_ASSOC);
+        }
+        
         //UPDATE
         function updateGrade($student_id, $exercise_id, $grade)
         {
             $update = 
                 'INSERT INTO grades
-                (student_id, exercise_id, grade)
+                (grade_id, student_id, exercise_id, grade)
                 VALUES
-                (:student_id, :exercise_id, :grade) 
+                (:grade_id, :student_id, :exercise_id, :grade) 
                 ON DUPLICATE KEY
-                UPDATE
+                UPDATE 
                 grade = :grade';
                         
             $statement = $this->_pdo->prepare($update);
             
-            $statement->bindValue(':student_id', $student_id, PDO::PARAM_STR);
-            $statement->bindValue(':exercise_id', $exercise_id, PDO::PARAM_STR);
+            $grade_id = $this->getGradeID($student_id, $exercise_id);
+            
+            $statement->bindValue(':grade_id', array_pop($grade_id), PDO::PARAM_INT);
+            $statement->bindValue(':student_id', $student_id, PDO::PARAM_INT);
+            $statement->bindValue(':exercise_id', $exercise_id, PDO::PARAM_INT);
             $statement->bindValue(':grade', $grade, PDO::PARAM_INT);
             
             $statement->execute();
@@ -98,7 +112,7 @@
         {
             $select =
             'SELECT
-            students.fName, students.lName, exercises.exercise_name, grades.grade
+            grades.grade_id, grades.student_id, students.fName, students.lName, exercises.exercise_name, grades.grade
             FROM
             grades
             INNER JOIN
@@ -117,7 +131,7 @@
              
             //map each student id to a row of data for that student
             while ($row = $results->fetch(PDO::FETCH_ASSOC)) {
-                $resultsArray[$row['grades.student_id']] = $row;
+                $resultsArray[$row['grade_id']] = $row;
             }
              
             return $resultsArray;

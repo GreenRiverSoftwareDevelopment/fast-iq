@@ -248,8 +248,8 @@
                                     </div>
 									<!-- End of Grade module-->
 				<div class="col-md-2 text-center">
-					<a href="./studentInfo"><button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target=".attendance">
-						<h3>Student Attendance</h3>
+					<a href="./studentInfo"><button type="button" class="btn btn-primary btn-lg">
+						<h3>Student Info</h3>
 					</button></a>
 				</div>
 									

@@ -140,7 +140,7 @@
             
             $f3->route('POST /studentGrade', function($f3)
             {
-                $GLOBALS['gradeDB']->updateGrade($_POST['student'], $_POST['exercise'], $_POST['grade']);
+               $GLOBALS['gradeDB']->updateGrade($_POST['student'], $_POST['exercise'], $_POST['grade']);
                 $f3->reroute('/');
             });
             
