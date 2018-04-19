@@ -82,8 +82,18 @@
             $statement = $this->_pdo->prepare($update);
             
             $grade_id = $this->getGradeID($student_id, $exercise_id);
+            if(!empty($grade_id))
+            {
+                $grade_id = array_pop($grade_id);
+                $statement->bindValue(':grade_id', $grade_id, PDO::PARAM_INT);
+            }
+            else
+            {
+                $grade_id = 1;
+                $statement->bindValue(':grade_id', $grade_id, PDO::PARAM_INT);
+            }
             
-            $statement->bindValue(':grade_id', array_pop($grade_id), PDO::PARAM_INT);
+            
             $statement->bindValue(':student_id', $student_id, PDO::PARAM_INT);
             $statement->bindValue(':exercise_id', $exercise_id, PDO::PARAM_INT);
             $statement->bindValue(':grade', $grade, PDO::PARAM_INT);

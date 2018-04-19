@@ -20,7 +20,7 @@
             <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
                 <ul class="nav nav-pills nav-fill">
                     <li class="nav-item">
-						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+						<button id="loginButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
 							<h3>Login</h3>
 						</button>
                     </li>
@@ -64,7 +64,7 @@
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Close</button>
-                              <button type="Submit" class="btn btn-primary btn-lg">Login</button>
+                              <button id="submit" type="Submit" class="btn btn-primary btn-lg">Login</button>
                             </div> 
                       </form>
                     </div>
@@ -248,7 +248,7 @@
                                     </div>
 									<!-- End of Grade module-->
 				<div class="col-md-2 text-center">
-					<a href="./studentInfo"><button type="button" class="btn btn-primary btn-lg">
+					<a href="./studentInfo"><button id="studentInfo" type="button" class="btn btn-primary btn-lg">
 						<h3>Student Info</h3>
 					</button></a>
 				</div>

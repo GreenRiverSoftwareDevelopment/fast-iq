@@ -2453,3 +2453,24 @@ Stack trace:
 [17-Apr-2018 21:12:11 America/Chicago] ','SERVER_SOFTWARE'=>'Apache','UNIQUE_ID'=>'Wtape8C5U1IAAVVTYhAAAAAJ','PHP_SELF'=>'/485/fast-iq/index.php','REQUEST_TIME_FLOAT'=>1524017531.409264087677001953125,'REQUEST_TIME'=>1524017531,'argv'=>[],'argc'=>0],'ENV'=>['CONTENT_LENGTH'=>'29','CONTENT_TYPE'=>'application/x-www-form-urlencoded','DOCUMENT_ROOT'=>'/home/bsaylor/public_html','GATEWAY_INTERFACE'=>'CGI/1.1','HTTP_ACCEPT'=>'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8','HTTP_ACCEPT_ENCODING'=>'gzip, deflate','HTTP_ACCEPT_LANGUAGE'=>'en-US,en;q=0.9','HTTP_CACHE_CONTROL'=>'max-age=0','HTTP_COOKIE'=>'PHPSESSID=eafa872ee4041000334d50b37c723f27; cpsession=bsaylor%3aV7oOklVzh4hoALo3%2c8e5e61eb25e6b81552c027491d7fc343','HTTP_HOST'=>'bsaylor.greenrivertech.net','HTTP_ORIGIN'=>'http://bsaylor.greenrivertech.net','HTTP_REFERER'=>'http://bsaylor.greenrivertech.net/485/fast-iq/','HTTP_UPGRADE_INSECURE_REQUESTS'=>'1','HTTP_USER_AGENT'=>'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36','HTTP_X_HTTP_PROTO'=>'HTTP/1.1','HTTP_X_REAL_IP'=>'168.156.136.52','PATH'=>'/bin:/usr/bin','PHPRC'=>'/opt/php71/lib','QUERY_STRING'=>'','REDIRECT_STATUS'=>'200','REDIRECT_UNIQUE_ID'=>'Wtape8C5U1IAAVVTYhAAAAAJ','REDIRECT_URL'=>'/485/fast-iq/studentGrade','REMOTE_ADDR'=>'168.156.136.52','REMOTE_PORT'=>'46000','REQUEST_METHOD'=>'POST','REQUEST_URI'=>'/485/fast-iq/studentGrade','SCRIPT_FILENAME'=>'/home/bsaylor/public_html/485/fast-iq/index.php','SCRIPT_NAME'=>'/485/fast-iq/index.php','SERVER_ADDR'=>'192.185.191.52','SERVER_ADMIN'=>'webmaster@bsaylor.greenrivertech.net','SERVER_NAME'=>'bsaylor.greenrivertech.net','SERVER_PORT'=>'80','SERVER_PROTOCOL'=>'HTTP/1.1','SERVER_SIGNATURE'=>'<address>Apache Server at bsaylor.greenrivertech.net Port 80</address>
 [17-Apr-2018 21:12:11 America/Chicago] ','SERVER_SOFTWARE'=>'Apache','UNIQUE_ID'=>'Wtape8C5U1IAAVVTYhAAAAAJ']],'languages'=>['en-US','en'],'locks'=>[],'fallback'=>'en']),['/studentGrade'],Closure::__set_state([])],'beforeroute,afterroute')
 [17-Apr-2018 21:12:11 America/Chicago] [485/fast-iq/index.php:170] Base->run()
+[19-Apr-2018 14:02:27 America/Chicago] array_pop() expects parameter 1 to be array, boolean given
+[19-Apr-2018 14:02:27 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:2219] Base->error()
+[19-Apr-2018 14:02:27 America/Chicago] [485/fast-iq/model/gradedb.php:86] array_pop()
+[19-Apr-2018 14:02:27 America/Chicago] [485/fast-iq/index.php:143] GradesDB->updateGrade()
+[19-Apr-2018 14:02:27 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1834] {closure}()
+[19-Apr-2018 14:02:27 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1642] Base->call()
+[19-Apr-2018 14:02:27 America/Chicago] [485/fast-iq/index.php:176] Base->run()
+[19-Apr-2018 14:05:04 America/Chicago] array_pop() expects parameter 1 to be array, boolean given
+[19-Apr-2018 14:05:04 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:2219] Base->error()
+[19-Apr-2018 14:05:04 America/Chicago] [485/fast-iq/model/gradedb.php:86] array_pop()
+[19-Apr-2018 14:05:04 America/Chicago] [485/fast-iq/index.php:143] GradesDB->updateGrade()
+[19-Apr-2018 14:05:04 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1834] {closure}()
+[19-Apr-2018 14:05:04 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1642] Base->call()
+[19-Apr-2018 14:05:04 America/Chicago] [485/fast-iq/index.php:176] Base->run()
+[19-Apr-2018 14:05:09 America/Chicago] array_pop() expects parameter 1 to be array, boolean given
+[19-Apr-2018 14:05:09 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:2219] Base->error()
+[19-Apr-2018 14:05:09 America/Chicago] [485/fast-iq/model/gradedb.php:86] array_pop()
+[19-Apr-2018 14:05:09 America/Chicago] [485/fast-iq/index.php:143] GradesDB->updateGrade()
+[19-Apr-2018 14:05:09 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1834] {closure}()
+[19-Apr-2018 14:05:09 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1642] Base->call()
+[19-Apr-2018 14:05:09 America/Chicago] [485/fast-iq/index.php:176] Base->run()
