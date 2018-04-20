@@ -129,8 +129,10 @@
                 }
                 
                 $exercises =  $GLOBALS['exerciseDB']->exercisesByUnit($_SESSION['unitID']);
-                
                 $unitName = $GLOBALS['unitDB']->getUnitByID($_SESSION['unitID']);
+                $categoryName = $GLOBALS['categoryDB']->getCategoryByID($_SESSION['categoryID']);
+                
+                $f3->set('categoryName', $categoryName);
                 
                 $f3->set('categoryID', $_SESSION['categoryID']);
                 $f3->set('unitName', $unitName);

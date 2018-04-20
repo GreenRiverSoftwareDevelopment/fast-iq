@@ -5,10 +5,10 @@
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            
+
 
             <style>
-               
+
 
 .hoverImage {
   opacity: 1;
@@ -39,14 +39,14 @@
 }
 
 .text {
-  
+
   color: white;
   font-size: 16px;
   padding: 16px 32px;
 }
 
 p {
-  font-size: medium;  
+  font-size: medium;
 }
 
 input {
@@ -54,13 +54,13 @@ input {
 }
 
 li {
-  font-size: medium;  
+  font-size: medium;
 }
 	 a:hover{
 			text-decoration: none;
 			color:white;
 }
-            </style>            
+            </style>
             <!-- bootstrap -->
                 <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -70,7 +70,7 @@ li {
                 <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
                 <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
                 <![endif]-->
-                
+
 
         </head>
         <body>
@@ -87,7 +87,7 @@ li {
                           <a data-toggle="modal" data-target="#signUpModal"><h3>Create New Admin</h3></a>
                         </li>
                     </ul>
-                    
+
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
                         <h3>Logout</h3>
                     </button>
@@ -114,12 +114,12 @@ li {
                             <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                           </div>
                           <button type="submit" class="btn btn-primary" id="createdAdminBtn">Create</button>
-                        </form>                        
+                        </form>
                       </div>
 
                     </div>
                   </div>
-                </div>            
+                </div>
             <!--*********************************** THIS IS LOGOUT THE MODAL*************************************-->
                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
@@ -139,36 +139,36 @@ li {
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">No</button>
                               <button type="Submit" class="btn btn-primary btn-lg">Yes</button>
-                            </div> 
+                            </div>
                       </form>
                     </div>
                   </div>
                 </div>
         <!--*********************************** THIS IS LOGOUT THE MODAL*************************************-->
-                
-                
-               
-                
-	<h1 class="display-2 text-center"><?= ($exercise['exercise_name']) ?></h1><br>
+
+
+
+
+	<h1 class="display-3 text-center"><strong><?= ($categoryName['category_name']) ?></strong> > <strong><?= ($unitName['unit_name']) ?></strong> > <strong><?= ($exercise['exercise_name']) ?></strong></h1><br>
 			<div class="col-xs-11 col-sm-7">
     <div class="panel-group" id="accordion">
 
         <!-- start panel left -->
         <!--<div class="panel-left col-sm-6">-->
 		<div class="col-sm-10 col-sm-offset-5">
-            
-            
+
+
             <!-- start panel -->
             <div class="panel panel-primary">
-                
+
                 <div class="panel-heading">
-                    
+
                     <h4 class="panel-title">
                         <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#TEST_1">
 						<h1 id="tabHeading">Exercise Summary</h1>
                     </h4>
                 </div></a>
-                 
+
                 <div id="TEST_1" class="panel-collapse show">
                     <div class="panel-body">
 						<div class="row">
@@ -187,7 +187,7 @@ li {
 								</button>
 							</div>
 						</div>
-                         
+
                     <!-- Start of edit module-->
                                     <div class="modal fade editExerciseSummary<?= ($exercise['exercise_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
@@ -216,7 +216,7 @@ li {
                     </div>
                 </div>
             </div>
-            
+
             <!-- end panel -->
 
             <!-- start panel -->
@@ -231,14 +231,14 @@ li {
                 <div id="TEST_2" class="panel-collapse collapse show">
                     <div class="panel-body">
                         <div class="container">
-						<div class="hoverImage">	
-                            
+						<div class="hoverImage">
+
                          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?= ($youtubeEmbededCode) ?>" width="100%" height="460px" allowfullscreen></iframe>
 						</div>
-						
+
                       <!-- Edit and Delete hover over -->
                         <div class="middle">
-							
+
 							<div class="text">
 								<button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target=".editExerciseVideo<?= ($exercise['exercise_id']) ?>">
 									<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  Edit
@@ -249,7 +249,7 @@ li {
 						<?php foreach (($videoLinkExcercises?:[]) as $videoLinkExcercise): ?>
 							 <a href="<?= ($videoLinkExcercise['link']) ?>" target="_blank"><h2><?= ($videoLinkExcercise['link']) ?></h2></a>
 						<?php endforeach; ?>
-						                     
+
                         <!-- Start of edit module-->
                                     <div class="modal fade editExerciseVideo<?= ($exercise['exercise_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
@@ -299,14 +299,14 @@ li {
 						</a>
                     </h4>
                 </div>
-				
+
                 <div id="TEST_3" class="panel-collapse show">
                     <div class="panel-body">
 						<div class="row">
 							<div class="col-sm-6">
 								<div contenteditable="true">
 									<form action="./editExerciseQuestion/<?= ($exerciseID) ?>" id="question" method="post" class="form-horizontal">
-										
+
 										<?php foreach (($questions_array?:[]) as $question): ?>
 											<li id="list-group">
 												<div class="input-group input-group-lg">
@@ -315,7 +315,7 @@ li {
 											</li>
 											<br>
 										<?php endforeach; ?>
-										
+
 											<li id="list-group">
 												<div class="input-group input-group-lg">
 													<input name="questions[]" id="questions" class="form-control" type="text" placeholder="Enter a new question here"></input>
@@ -333,8 +333,8 @@ li {
 							</div>
 						</div>
                         <br>
-						
-                        
+
+
                            <!-- Start of edit module-->
                                     <div class="modal fade editExerciseQuestion<?= ($exercise['exercise_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
@@ -383,11 +383,11 @@ li {
                         <div class="container">
                             <div class="hoverImage">
 						<img src="<?= ($exercise['exercise_image']) ?>" class="img-fluid" alt="Responsive image">
-                   
+
                         </div>
                         <!-- Edit and Delete hover over -->
                         <div class="middle">
-							<div class="text">     
+							<div class="text">
 								<button type="button" class="btn btn-primary btn-warning btn-lg" data-toggle="modal" data-target=".editExerciseImage<?= ($exercise['exsercise_id']) ?>">
 									<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  Edit
 								</button>
@@ -430,7 +430,7 @@ li {
                     </div>
                 </div>
 			</div>
- 
+
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
             <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -440,3 +440,4 @@ li {
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         </body>
     </html>
+
