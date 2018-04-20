@@ -8,7 +8,7 @@
             <!-- bootstrap -->
                 <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-                <link href="css/categorySecond.css" rel="stylesheet" media="screen"> 
+                <link href="css/categorySecond.css" rel="stylesheet" media="screen">
 			    <!--[if lt IE 9]>
                 <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
                 <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -23,21 +23,21 @@
                         <a class="nav-link" href="./"><h3>Home</h3></a>
                     </li>
                     <li class="nav-item">
-                        
+
                     </li>
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
 							<h3>Login</h3>
 						</button>
                 </ul>
-              
-                
+
+
 
             </nav>
             </div>
-            
+
             <!--*********************************** THIS IS THE LOGIN MODAL*************************************-->
-            
-           
+
+
                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -69,22 +69,22 @@
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Close</button>
                               <button type="Submit" class="btn btn-primary btn-lg">Login</button>
-                            </div> 
+                            </div>
                       </form>
                     </div>
                   </div>
                 </div>
         <!--*********************************** THIS IS THE LOGIN MODAL*************************************-->
-		
-        
+
+
         <h1 class="display-2 text-center">Student Information</h1>
 		<br>
 		<br>
 		<br>
-		
+
 			<div class="row">
 				<div class="col-md-4">
-                    
+
                 </div>
 				<div class="col-md-4">
 					<form action="./addStudent" method="post" class="form-horizontal">
@@ -105,17 +105,17 @@
 					</form>
                 </div>
 				<div class="col-md-4">
-                    
+
                 </div>
 			</div>
-		
+
 		<br>
 		<br>
 		<br>
-		
+
 			<div class="row">
                 <div class="col-md-1">
-                    
+
                 </div>
 				<div class="col-md-5 text-center">
                     <h3 class="display-3 text-center">Student Attendance</h2>
@@ -161,10 +161,10 @@
 				</div>
                 <div class="col-md-1"></div>
 			</div>
-            
+
         <br>
-			  
-            
+
+
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
             <!-- Include all compiled plugins (below), or include individual files as needed -->

@@ -2474,3 +2474,6 @@ Stack trace:
 [19-Apr-2018 14:05:09 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1834] {closure}()
 [19-Apr-2018 14:05:09 America/Chicago] [485/fast-iq/vendor/bcosca/fatfree-core/base.php:1642] Base->call()
 [19-Apr-2018 14:05:09 America/Chicago] [485/fast-iq/index.php:176] Base->run()
+[20-Apr-2018 00:42:05 America/Chicago] PHP Parse error:  syntax error, unexpected ',' in /home/smoon/public_html/fast-iq/indexRequire/brian.php on line 86
+[20-Apr-2018 00:42:05 America/Chicago] Fatal error: syntax error, unexpected ','
+[20-Apr-2018 00:42:05 America/Chicago] [fast-iq/indexRequire/brian.php:86] 

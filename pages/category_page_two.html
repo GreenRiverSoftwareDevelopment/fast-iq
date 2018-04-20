@@ -8,7 +8,7 @@
             <!-- bootstrap -->
                 <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-                <link href="css/categorySecond.css" rel="stylesheet" media="screen"> 
+                <link href="css/categorySecond.css" rel="stylesheet" media="screen">
 			    <!--[if lt IE 9]>
                 <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
                 <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -25,15 +25,15 @@
 						</button>
                     </li>
                 </ul>
-              
-                
+
+
 
             </nav>
             </div>
-            
+
             <!--*********************************** THIS IS THE LOGIN MODAL*************************************-->
-            
-           
+
+
                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -65,13 +65,13 @@
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Close</button>
                               <button id="submit" type="Submit" class="btn btn-primary btn-lg">Login</button>
-                            </div> 
+                            </div>
                       </form>
                     </div>
                   </div>
                 </div>
         <!--*********************************** THIS IS THE LOGIN MODAL*************************************-->
-		
+
 		<br>
 		<br>
 
@@ -83,7 +83,7 @@
 								  <h3 class="text-center">Select a Category:</h3>
 								  <select class="form-control form-control-lg" id="category_select">
 									<option disabled selected>Please select</option>
-									
+
 									 <repeat group="{{ @categories }}" value="{{ @category }}">
 										<option value="{{ @category.category_id }}">{{ @category.category_name }}</option>
                                     </repeat>
@@ -96,18 +96,18 @@
 									<!--What ever is being echoed is echoed here-->
 								  </select>
                             </div>
-                            
+
                             <div class= "col-sm-2">
 								<h3 class="text-center">Select a Exercise:</h3>
 								 <select class="form-control form-control-lg" id="excercise_select">
 									<!--What ever is being echoed is echoed here-->
 								  </select>
 							</div>
-                        <div class="col-sm-3"></div>    
-                    
+                        <div class="col-sm-3"></div>
+
                     </div>
 			<!--End of COLS Bottom-->
-		   
+
             <!--This is the Main body of the page-->
 		<div class="summary-view" id="summary-view">
             <h1 class="display-2 text-center">Summary Page</h1>
@@ -122,7 +122,7 @@
 								<a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1 id="tabHeading">Exercise Summary</h1>
 							</div></a>
 								<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-									
+
 								</div>
 						</div>
 						<!-- Collapse for Media-->
@@ -149,14 +149,14 @@
 										<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
 											<div class="panel-body">
 												<div class="panel-body">
-													
+
 												</div>
 											</div>
-										</div>   
+										</div>
 								</div>
 							</div>
 						</div>
-						<!-- Collapse for pictures-->	
+						<!-- Collapse for pictures-->
 						<div class="row">
 							<div class="col-sm-12"><div class="panel panel-primary">
 								<div class="panel-heading">
@@ -169,14 +169,14 @@
 										</div>
 									</div>
 								</div>
-							</div>                
-						</div>		
+							</div>
+						</div>
 					</div>
 				</div>
 		</div>
-		
+
 		<br>
-		
+
 			<div class="row">
 				<div class="col-md-3">
 				</div>
@@ -200,7 +200,7 @@
                                                     <br>
                                                     <br>
                                                     <div class="col-sm-2"></div>
-                                                    
+
                                                     <div class="col-sm-8 text-center">
 														<div class="form-group">
 															<h3 for="student">Students</h3>
@@ -252,7 +252,7 @@
 						<h3>Student Info</h3>
 					</button></a>
 				</div>
-									
+
 				<div class="col-md-2 text-center">
 					<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target=".attendance">
 						<h3>Student Attendance</h3>
@@ -273,7 +273,7 @@
                                                     <br>
                                                     <br>
                                                     <div class="col-sm-2"></div>
-                                                    
+
                                                     <div class="col-sm-8 text-center">
 														<div class="form-group">
 															<h3 for="student">Student</h3>
@@ -307,32 +307,32 @@
                                     </div>
 									<!-- End of Attendance module-->
 				<div class="col-md-3">
-					
+
 				</div>
 			</div>
-            
+
         <br>
-                
+
             <script>
-				
+
 				var summary_view = document.getElementById("summary-view");
 				summary_view.style.display = "none";
-				
+
 				function updateUnits() {
 				  var cat_select = document.getElementById("category_select");
 				  var subcat_select = document.getElementById("unit_select");
 				  var exercise_select = document.getElementById("excercise_select");
-				  
-		  
+
+
 				  var cat_id = cat_select.options[cat_select.selectedIndex].value;
-		  
+
 				  var url = './grabUnits/' + cat_id;
 				  console.log(cat_id);
-					
+
 				  var xhr = new XMLHttpRequest();
 				  xhr.open('GET', url, true);
 				  xhr.onreadystatechange = function () {
-				   
+
 					  //cat_select.innerHTML = xhr.responseText;
 					  subcat_select.innerHTML = xhr.responseText;
 					  exercise_select.innerHTML = " ";
@@ -343,28 +343,28 @@
 					  }
 					  $('#collapseOne').collapse('show');
 					  //subcat_select.style.display = 'inline';
-					
+
 				  };
 				  xhr.send();
 				}
-		  
+
 				var cat_select = document.getElementById("category_select");
 				cat_select.addEventListener("change", updateUnits);
-				
-				
+
+
 				function updateExcercise() {
 				  var unit_select = document.getElementById("unit_select");
 				  var exercise_select = document.getElementById("excercise_select");
-				  
+
 				  var unit_id = unit_select.options[unit_select.selectedIndex].value;
-		  
+
 				  var url = './grabExercise/' + unit_id;
 				  console.log(unit_id);
-					
+
 				  var xhr = new XMLHttpRequest();
 				  xhr.open('GET', url, true);
 				  xhr.onreadystatechange = function () {
-				   
+
 					  //cat_select.innerHTML = xhr.responseText;
 					  exercise_select.innerHTML = xhr.responseText;
 					  console.log(xhr.responseText);
@@ -372,136 +372,136 @@
 					  {
 						summary_view.style.display = "none";
 					  }
-					  
-					  
+
+
 					 //subcat_select.style.display = 'inline';
-					
+
 				  };
 				  xhr.send();
 				}
-		  
+
 				var unit_select = document.getElementById("unit_select");
 				unit_select.addEventListener("change", updateExcercise);
-				
-				
+
+
 				//Summary
 				function updateSummary() {
 				  var excercise_select = document.getElementById("excercise_select");
 				  var summary_select = document.getElementById("collapseOne");
-		  
-		
+
+
 				var summary_view = document.getElementById("summary-view");
-				
+
 				  var summary_id = excercise_select.options[excercise_select.selectedIndex].value;
-		  
+
 				  var url = './summaryExercise/' + summary_id;
 				  console.log(summary_id);
-					
+
 				  var xhr = new XMLHttpRequest();
 				  xhr.open('GET', url, true);
 				  xhr.onreadystatechange = function () {
-				   
+
 					//cat_select.innerHTML = xhr.responseText;
 					summary_select.innerHTML = xhr.responseText;
 					console.log(xhr.responseText);
 					if(summary_view.style.display === "none")
 					  {
-						
+
 						summary_view.style.display = "block";
 					  }
-					  
+
 					//  if(summary_view.style.display === "none")
 					//  {
 					//	summary_view.style.display = "block";
 					//  }
 					 //subcat_select.style.display = 'inline';
-					
+
 				  };
 				  xhr.send();
 				}
-		  
+
 				var unit_select = document.getElementById("excercise_select");
 				unit_select.addEventListener("change", updateSummary);
-				
-				
+
+
 				//Video
 				function updateVideo() {
 				  var excercise_select = document.getElementById("excercise_select");
 				  var video_select = document.getElementById("collapseTwo");
-				
+
 				  var video_id = excercise_select.options[excercise_select.selectedIndex].value;
-				
+
 				  var url = './videoExercise/' + video_id;
 				  console.log(video_id);
-					
+
 				  var xhr = new XMLHttpRequest();
 				  xhr.open('GET', url, true);
 				  xhr.onreadystatechange = function () {
-				   
+
 					  //cat_select.innerHTML = xhr.responseText;
 					  video_select.innerHTML = xhr.responseText;
 					  console.log(xhr.responseText);
 					 //subcat_select.style.display = 'inline';
-					
+
 				  };
 				  xhr.send();
 				}
-				
+
 				//Questions
 				function updateQuestions() {
 				  var excercise_select = document.getElementById("excercise_select");
 				  var question_select = document.getElementById("collapseThree");
-		  
+
 				  var question_id = excercise_select.options[excercise_select.selectedIndex].value;
-					
-				  
-		  
+
+
+
 				  var url = './questionsExercise/' + question_id;
 				  console.log(question_id);
-					
+
 				  var xhr = new XMLHttpRequest();
 				  xhr.open('GET', url, true);
 				  xhr.onreadystatechange = function () {
-				   
+
 					  //cat_select.innerHTML = xhr.responseText;
 					  question_select.innerHTML = xhr.responseText;
 					  console.log(xhr.responseText);
 					 //subcat_select.style.display = 'inline';
-					
+
 				  };
 				  xhr.send();
 				}
-				
+
 				//Picture
 				function updatePicture() {
 				  var excercise_select = document.getElementById("excercise_select");
 				  var picture_select = document.getElementById("collapseFour");
-		  
+
 				  var picture_id = excercise_select.options[excercise_select.selectedIndex].value;
-		  
+
 				  var url = './pictureExercise/' + picture_id;
 				  console.log(picture_id);
-					
+
 				  var xhr = new XMLHttpRequest();
 				  xhr.open('GET', url, true);
 				  xhr.onreadystatechange = function () {
-				   
+
 					  //cat_select.innerHTML = xhr.responseText;
 					  picture_select.innerHTML = xhr.responseText;
 					  //console.log(xhr.responseText);
 					 //subcat_select.style.display = 'inline';
-					
+
 				  };
 				  xhr.send();
 				}
-		  
+
 				unit_select.addEventListener("change", updateVideo);
 				unit_select.addEventListener("change", updateQuestions);
 				unit_select.addEventListener("change", updatePicture);
-				
+
 			</script>
-			  
-            
+
+
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
             <!-- Include all compiled plugins (below), or include individual files as needed -->
