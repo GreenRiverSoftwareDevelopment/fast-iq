@@ -90,144 +90,161 @@
 
             <?php foreach (($categories?:[]) as $category): ?>
             <br>
+            
                 <div class="row">
-                    <div class="d-flex justify-content-center col-sm-2">
-                        <button type="button" class="btn btn-primary btn-warning btn-lg" data-toggle="modal" data-target=".editCategory<?= ($category['category_id']) ?>">
-                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  Edit
-                        </button>
+                    <div class="d-flex justify-content-center col-sm-1"></div>
+                    <div class="d-flex justify-content-center col-sm-10">
+                        <a class="btn btn-primary btn-lg btn-block" id="<?= ($category['category_name']) ?>" href="./unitsBackend/<?= ($category['category_id']) ?>" role="button">
+                            <h4><?= ($category['category_name']) ?></h4>
+                        </a>
                     </div>
-
-                    <!-- Start of edit module-->
-                                    <div class="modal fade editCategory<?= ($category['category_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg">
-                                            <div class="modal-content" id="modalcontent">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Edit <?= ($category['category_name']) ?></h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <!-- inner modal -->
-                                                <form action="./editCategory/<?= ($category['category_id']) ?>" method="post" class="form-horizontal">
-                                                    <br>
-                                                    <br>
-                                                    <div class="col-sm-2"></div>
-
-                                                    <div class="col-sm-8 text-center">
-                                                        <div class="form-group">
-                                                            <label for="category"><h3>Category Name</h3></label>
-                                                            <div class="input-group input-group-lg">
-                                                                <input class="form-control" type="text" name="category_name" id="category_name" value="<?= ($category['category_name']) ?>" placeholder="Name" required>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input class="btn btn-warning btn-lg" type="submit" value="Save">
-                                                        </div>
-                                                        <br>
-                                                        <br>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                    <!-- End of edit module-->
-
-                            <div class="d-flex justify-content-center col-sm-8">
-                                <a class="btn btn-primary btn-lg btn-block" id="<?= ($category['category_name']) ?>" href="./unitsBackend/<?= ($category['category_id']) ?>" role="button">
-                                    <h4><?= ($category['category_name']) ?></h4>
-                                </a>
-                            </div>
-
-                    <div class="d-flex justify-content-center col-sm-2">
-                        <button type="button" class="btn btn-primary btn-danger btn-lg" data-toggle="modal" data-target=".deleteCategory<?= ($category['category_id']) ?>">
-                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>  Delete
-                        </button>
-                    </div>
-
-                    <!-- Start of delete module-->
-                                    <div class="modal fade deleteCategory<?= ($category['category_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg">
-                                            <div class="modal-content" id="modalcontent">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Delete <?= ($category['category_name']) ?></h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <!-- inner modal -->
-                                                <form action="./deleteCategory/<?= ($category['category_id']) ?>" method="get" class="form-horizontal">
-                                                    <br>
-                                                    <br>
-                                                    <div class="col-sm-2"></div>
-
-                                                    <div class="col-sm-12 text-center">
-                                                            <label for="exercise"><h3>Are you sure you want to delete this category?</h3></label>
-                                                            <br>
-                                                        <div class="form-group">
-                                                            <input class="btn btn-danger btn-lg" type="submit" value="DELETE">
-                                                        </div>
-                                                        <br>
-                                                        <br>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                    <!-- End of delete module-->
+                    <div class="d-flex justify-content-center col-sm-1"></div>
                 </div>
+                
             <?php endforeach; ?>
 
 
             <br>
 
             <div class="row">
-                <div class="d-flex justify-content-center col-sm-2"></div>
-                    <div class="d-flex justify-content-center col-sm-8">
-                        <button type="button" class="btn btn-primary btn-lg btn-success btn-block" data-toggle="modal" data-target=".viewCategory<?= ($category['category_name']) ?>">
-                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span><h5>Add</h5>
-                        </button>
-                    </div>
+                
+                <div class="d-flex justify-content-center col-sm-1"></div>
+                
+                <div class="d-flex justify-content-center col-sm-2">
+                    <button type="button" class="btn btn-primary btn-lg btn-warning btn-block" data-toggle="modal" data-target=".editCategory">
+                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  Edit
+                    </button>
+                </div>
+                <!--*********************************** START OF EDIT MODAL *************************************-->
+                <div class="modal fade editCategory" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content" id="modalcontent">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Edit Categories</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <!-- inner modal -->
+                            <form action="./editCategoryNames" method="post" class="form-horizontal">
+                                <br>
+                                <br>
+                                <div class="col-sm-2"></div>
 
-                    <!-- Start of add module-->
-                                    <div class="modal fade viewCategory<?= ($category['category_name']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg">
-                                            <div class="modal-content" id="modalcontent">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Add a Category</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <!-- inner modal -->
-                                                <form action="./addCategory/<?= ($category['category_id']) ?>" method="post" class="form-horizontal">
-                                                    <br>
-                                                    <br>
-                                                    <div class="col-sm-2"></div>
-
-                                                    <div class="col-sm-8 text-center">
-                                                        <div class="form-group">
-                                                            <label for="category"><h3>Category Name</h3></label>
-
-                                                            <input class="form-control" type="text" name="category_name" id="category_name" placeholder="Category Name">
-
-                                                            <div class="input-group input-group-lg">
-                                                                <input class="form-control" type="text" name="category_name" id="category_name" placeholder="Category Name" required>
-                                                            </div>
-
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input class="btn btn-success btn-lg" type="submit" value="Add">
-                                                        </div>
-                                                        <br>
-                                                        <br>
-                                                    </div>
-                                                </form>
+                                <div class="col-sm-8 text-center">
+                                    <div class="form-group">
+                                        <label for="category"><h3>Category Names</h3></label>
+                                        
+                                        <?php foreach (($categories?:[]) as $category): ?>
+                                            <div class="input-group input-group-lg">
+                                                <input class="form-control" type="text" name="category_name[]" id="category_name" placeholder="<?= ($category['category_name']) ?>" value="<?= ($category['category_name']) ?>"required>
+                                                <input class="form-control" type="hidden" name="category_id[]" id="category_id" value="<?= ($category['category_id']) ?>"required>
                                             </div>
-                                        </div>
-                                    </div>
-                    <!-- End of add module-->
+                                            <br>
+                                        <?php endforeach; ?>
 
-                <div class="d-flex justify-content-center col-sm-2"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="btn btn-warning btn-lg" type="submit" value="Edit">
+                                    </div>
+                                    <br>
+                                    <br>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!--*********************************** END OF EDIT MODAL *************************************-->
+                
+                
+                <div class="d-flex justify-content-center col-sm-6">
+                    <button type="button" class="btn btn-primary btn-lg btn-success btn-block" data-toggle="modal" data-target=".addCategory">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span><h5>Add</h5>
+                    </button>
+                </div>
+
+                <!--*********************************** START OF ADD MODAL *************************************-->
+                <div class="modal fade addCategory" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content" id="modalcontent">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Add a Category</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <!-- inner modal -->
+                            <form action="./addCategory/<?= ($category['category_id']) ?>" method="post" class="form-horizontal">
+                                <br>
+                                <br>
+                                <div class="col-sm-2"></div>
+
+                                <div class="col-sm-8 text-center">
+                                    <div class="form-group">
+                                        <label for="category"><h3>Category Name</h3></label>
+
+                                        <div class="input-group input-group-lg">
+                                            <input class="form-control" type="text" name="category_name" id="category_name" placeholder="Category Name" required>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="btn btn-success btn-lg" type="submit" value="Add">
+                                    </div>
+                                    <br>
+                                    <br>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!--*********************************** END OF ADD MODAL *************************************-->
+
+
+                <div class="d-flex justify-content-center col-sm-2">
+                    <button type="button" class="btn btn-primary btn-lg btn-danger btn-block" data-toggle="modal" data-target=".deleteCategory">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>  Delete
+                    </button>
+                </div>
+                <!--*********************************** START OF DELETE MODAL *************************************-->
+                <div class="modal fade deleteCategory" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content" id="modalcontent">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Add a Category</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <!-- inner modal -->
+                            <form action="" method="post" class="form-horizontal">
+                                <br>
+                                <br>
+                                <div class="col-sm-2"></div>
+
+                                <div class="col-sm-8 text-center">
+                                    <div class="form-group">
+                                        <label for="category"><h3>Category Name</h3></label>
+
+                                        <div class="input-group input-group-lg">
+                                            <input class="form-control" type="text" name="category_name" id="category_name" placeholder="Category Name" required>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="btn btn-success btn-lg" type="submit" value="Add">
+                                    </div>
+                                    <br>
+                                    <br>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!--*********************************** END OF DELETE MODAL *************************************-->
+                
+                <div class="d-flex justify-content-center col-sm-1"></div>
+                
             </div>
 
 
