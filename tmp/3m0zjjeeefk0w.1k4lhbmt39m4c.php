@@ -20,7 +20,7 @@
             <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
                 <ul class="nav nav-pills nav-fill">
                     <li class="nav-item">
-						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+						<button id="loginButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
 							<h3>Login</h3>
 						</button>
                     </li>
@@ -31,7 +31,7 @@
             </nav>
             </div>
             
-            <!--*********************************** THIS IS THE MODAL*************************************-->
+            <!--*********************************** THIS IS THE LOGIN MODAL*************************************-->
             
            
                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -64,13 +64,13 @@
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Close</button>
-                              <button type="Submit" class="btn btn-primary btn-lg">Login</button>
+                              <button id="submit" type="Submit" class="btn btn-primary btn-lg">Login</button>
                             </div> 
                       </form>
                     </div>
                   </div>
                 </div>
-        <!--*********************************** THIS IS THE MODAL*************************************-->
+        <!--*********************************** THIS IS THE LOGIN MODAL*************************************-->
 		
 		<br>
 		<br>
@@ -125,12 +125,12 @@
 									
 								</div>
 						</div>
-						<!-- Collapse for Videos-->
+						<!-- Collapse for Media-->
 						<div class="row">
 							<div class="col-sm-12">
 								<div class="panel panel-primary">
 									<div class="panel-heading">
-										<a role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1 id="tabHeading">Video</h1>
+										<a role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1 id="tabHeading">Media</h1>
 									</div></a>
 									<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
 										<div class="panel-body">
@@ -180,8 +180,8 @@
 			<div class="row">
 				<div class="col-md-3">
 				</div>
-				<div class="col-md-3 text-center">
-					<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target=".grade">
+				<div class="col-md-2 text-center">
+					<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target=".grade">
 						<h3>Grade Students</h3>
 					</button>
 				</div>
@@ -203,17 +203,17 @@
                                                     
                                                     <div class="col-sm-8 text-center">
 														<div class="form-group">
-															<label for="student">Students</label>
-															<select class="form-control form-control-lg" id="student" required>
+															<h3 for="student">Students</h3>
+															<select class="form-control form-control-lg" name="student" id="student" required>
 																	<option disabled selected>Please select</option>
 																<?php foreach (($students?:[]) as $student): ?>
-																	<option value="<?= ($student['student_id']) ?>"><?= ($student['fName']) ?></option>
+																	<option value="<?= ($student['student_id']) ?>"><?= ($student['fName']) ?> <?= ($student['lName']) ?></option>
 																<?php endforeach; ?>
 															</select>
 														</div>
 														<div class="form-group">
-															<label for="exercise">Exercises</label>
-															<select class="form-control form-control-lg" id="exercise" required>
+															<h3 for="exercise">Exercises</h3>
+															<select class="form-control form-control-lg" name="exercise" id="exercise" required>
 																	<option disabled selected>Please select</option>
 																<?php foreach (($exercises?:[]) as $exercise): ?>
 																	<option value="<?= ($exercise['exercise_id']) ?>"><?= ($exercise['exercise_name']) ?></option>
@@ -221,8 +221,8 @@
 															</select>
 														</div>
                                                         <div class="form-group">
-															<label for="grade">Grade</label>
-															<select class="form-control form-control-lg" id="grade" required>
+															<h3 for="grade">Grade</h3>
+															<select class="form-control form-control-lg" name="grade" id="grade" required>
 																<option disabled selected>Please select</option>
 																<option value="1">1</option>
 																<option value="2">2</option>
@@ -247,7 +247,13 @@
                                         </div>
                                     </div>
 									<!-- End of Grade module-->
-				<div class="col-md-3 text-center">
+				<div class="col-md-2 text-center">
+					<a href="./studentInfo"><button id="studentInfo" type="button" class="btn btn-primary btn-lg">
+						<h3>Student Info</h3>
+					</button></a>
+				</div>
+									
+				<div class="col-md-2 text-center">
 					<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target=".attendance">
 						<h3>Student Attendance</h3>
 					</button>
@@ -270,17 +276,17 @@
                                                     
                                                     <div class="col-sm-8 text-center">
 														<div class="form-group">
-															<label for="student">Student</label>
-															<select class="form-control form-control-lg" id="student" required>
+															<h3 for="student">Student</h3>
+															<select class="form-control form-control-lg" name="student" id="student" required>
 																	<option disabled selected>Please select</option>
 																<?php foreach (($students?:[]) as $student): ?>
-																	<option value="<?= ($student['student_id']) ?>"><?= ($student['fName']) ?></option>
+																	<option value="<?= ($student['student_id']) ?>"><?= ($student['fName']) ?> <?= ($student['lName']) ?></option>
 																<?php endforeach; ?>
 															</select>
 														</div>
                                                         <div class="form-group">
-															<label for="daysMissed">How many days were missed?</label>
-															<select class="form-control form-control-lg" id="daysMissed" required>
+															<h3 for="daysMissed">How many days were missed?</h3>
+															<select class="form-control form-control-lg" name="daysMissed" id="daysMissed" required>
 																<option disabled selected>Please select</option>
 																<option value="1">1</option>
 																<option value="2">2</option>

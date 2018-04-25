@@ -224,7 +224,7 @@ li {
                 <div class="panel-heading">
                     <h4 class="panel-title">
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#TEST_2">
-                        <h1 id="tabHeading">Videos/Links</h1>
+                        <h1 id="tabHeading">Media</h1>
                     </a>
                     </h4>
                 </div>
