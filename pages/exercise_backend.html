@@ -61,7 +61,10 @@
                 </div>
         <!--*********************************** THIS IS LOGOUT THE MODAL*************************************-->
 
-            <h1 class="display-2 text-center" id="{{ @unitName.unit_name }}">{{ @categoryName.category_name }} > {{ @unitName.unit_name }}</h1>
+            <h1 class="display-2 text-center" id="{{ @unitName.unit_name }}">
+                <strong><a href="./unitsBackend/{{ @categoryID }}">{{ @categoryName.category_name }}</a></strong> >
+                <strong>{{ @unitName.unit_name }}</strong>
+            </h1>
 
 
             <repeat group="{{ @exercises }}" value="{{ @exercise }}">

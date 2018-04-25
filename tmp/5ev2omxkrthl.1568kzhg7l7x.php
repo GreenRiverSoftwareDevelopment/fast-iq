@@ -25,7 +25,7 @@
                             <a class="nav-link" href="./unitsBackend/<?= ($categoryID) ?>"><h3>Go Back</h3></a>
                         </li>
                         <li class="nav-item">
-                          <a data-toggle="modal" data-target="#signUpModal"><h3>Create New Admin</h3></a>
+                          <a data-toggle="modal" data-target="#signUpModal"><h3>Create New Admin now</h3></a>
                         </li>
                     </ul>
 
@@ -61,7 +61,10 @@
                 </div>
         <!--*********************************** THIS IS LOGOUT THE MODAL*************************************-->
 
-            <h1 class="display-2 text-center" id="<?= ($unitName['unit_name']) ?>"><?= ($categoryName['category_name']) ?> > <?= ($unitName['unit_name']) ?></h1>
+            <h1 class="display-2 text-center" id="<?= ($unitName['unit_name']) ?>">
+                <strong><a href="./unitsBackend/<?= ($categoryID) ?>"><?= ($categoryName['category_name']) ?></a></strong> >
+                <strong><?= ($unitName['unit_name']) ?></strong>
+            </h1>
 
 
             <?php foreach (($exercises?:[]) as $exercise): ?>

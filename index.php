@@ -134,6 +134,7 @@
                 
                 $f3->set('categoryName', $categoryName);
                 
+                $f3->set('unitID', $_SESSION['unitID']);
                 $f3->set('categoryID', $_SESSION['categoryID']);
                 $f3->set('unitName', $unitName);
                 $f3->set('exercises', $exercises);

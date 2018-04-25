@@ -89,7 +89,9 @@
                 </div>
         <!--*********************************** THIS IS LOGOUT THE MODAL*************************************-->
             
-            <h1 class="display-2 text-center" id="{{ @categoryName.category_name }}">{{ @categoryName.category_name }}</h1>
+            <h1 class="display-2 text-center" id="{{ @categoryName.category_name }}">
+                <strong>{{ @categoryName.category_name }}</strong>
+            </h1>
             
             
             <repeat group="{{ @units }}" value="{{ @unit }}">
