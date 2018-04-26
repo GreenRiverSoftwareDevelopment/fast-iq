@@ -149,7 +149,12 @@ li {
 
 
 
-	<h1 class="display-3 text-center"><strong>{{ @categoryName.category_name}}</strong> > <strong>{{ @unitName.unit_name }}</strong> > <strong>{{ @exercise.exercise_name }}</strong></h1><br>
+	<h1 class="display-3 text-center">
+		<strong><a href="./unitsBackend/{{ @categoryID }}">{{ @categoryName.category_name}}</a></strong> >
+		<strong><a href="./exercisesBackend/{{ @unitID }}">{{ @unitName.unit_name }}</a></strong> >
+		<strong>{{ @exercise.exercise_name }}</strong>
+	</h1>
+	<br>
 			<div class="col-xs-11 col-sm-7">
     <div class="panel-group" id="accordion">
 
@@ -309,17 +314,23 @@ li {
 
 										<repeat group="{{ @questions_array }}" value="{{ @question }}">
 											<li id="list-group">
-												<div class="input-group input-group-lg">
+												<!-- <div class="input-group input-group-lg">
 													<input name="questions[]" id="questions" class="form-control" type="text" placeholder="Enter a new question here" value="{{ @question }}"></input>
-												</div>
+												-->
+												<textarea rows="3" cols="50" class="form-control"  name="questions[]" id="questions" placeholder="Enter a question here" value="{{ @question }}" style="font-size: 14px">{{ @question }}</textarea>
+								
+												
+												<!--</div>-->
 											</li>
 											<br>
 										</repeat>
 
 											<li id="list-group">
-												<div class="input-group input-group-lg">
+												<!--<div class="input-group input-group-lg">
 													<input name="questions[]" id="questions" class="form-control" type="text" placeholder="Enter a new question here"></input>
-												</div>
+												</div>-->
+												<textarea rows="3" cols="50" class="form-control"  name="questions[]" id="questions" placeholder="Enter a new question here" style="font-size: 14px"></textarea>
+								
 											</li>
 									</form>
 								</div>

@@ -6,17 +6,28 @@
             $f3->reroute('/categoryBackend');
         });
         
-            $f3->route('POST /editCategory/@id', function($f3, $params)
-            {
-                $GLOBALS['categoryDB']->editCategory($_POST['category_name'], $params['id']);
-                $f3->reroute('/categoryBackend');
-            });
-            
+            //$f3->route('POST /editCategory/@id', function($f3, $params)
+            //{
+            //    $GLOBALS['categoryDB']->editCategory($_POST['category_name'], $params['id']);
+            //    $f3->reroute('/categoryBackend');
+            //});
+
                 $f3->route('GET /deleteCategory/@id', function($f3, $params)
                 {
                     $GLOBALS['categoryDB']->deleteCategory($params['id']);
                     $f3->reroute('/categoryBackend');
                 });
+                
+                    $f3->route('POST /editCategoryNames', function($f3, $params)
+                    {
+                        $categoryArray = $_POST['category_name'];
+                        $idArray = $_POST['category_id'];
+                        for($i = 0; $i < count($categoryArray); ++$i)
+                        {
+                             $GLOBALS['categoryDB']->editCategory($categoryArray[$i], $idArray[$i]);   
+                        }
+                        $f3->reroute('/categoryBackend');
+                    });
         
         $f3->route('POST /addUnit/@id', function($f3, $params)
         {
@@ -24,11 +35,11 @@
             $f3->reroute('/unitsBackend');
         });
         
-            $f3->route('POST /editUnit/@id', function($f3, $params)
-            {
-                $GLOBALS['unitDB']->editUnit($_POST['unit_name'], $params['id']);
-                $f3->reroute('/unitsBackend');
-            });
+            //$f3->route('POST /editUnit/@id', function($f3, $params)
+            //{
+            //    $GLOBALS['unitDB']->editUnit($_POST['unit_name'], $params['id']);
+            //    $f3->reroute('/unitsBackend');
+            //});
             
                 $f3->route('GET /deleteUnit/@id', function($f3, $params)
                 {
@@ -36,24 +47,46 @@
                     $f3->reroute('/unitsBackend');
                 });
                 
+                    $f3->route('POST /editUnitNames', function($f3, $params)
+                    {
+                        $unitArray = $_POST['unit_name'];
+                        $idArray = $_POST['unit_id'];
+                        for($i = 0; $i < count($unitArray); ++$i)
+                        {
+                             $GLOBALS['unitDB']->editUnit($unitArray[$i], $idArray[$i]);   
+                        }
+                        $f3->reroute('/unitsBackend');
+                    });
+                
         $f3->route('POST /addExercise/@id', function($f3, $params)
         {
             $GLOBALS['exerciseDB']->addExerciseName($_SESSION['unitID'], $_POST['exercise_name']);
             $f3->reroute('/exercisesBackend');
         });
         
-            $f3->route('POST /editExercise/@id', function($f3, $params)
-            {
-                $_SESSION['exercise_id'] = $params['id'];
-                $GLOBALS['exerciseDB']->editExerciseName($params['id'], $_POST['exercise_name']);
-                $f3->reroute('/exercisesBackend');
-            });
+            //$f3->route('POST /editExercise/@id', function($f3, $params)
+            //{
+            //    $_SESSION['exercise_id'] = $params['id'];
+            //    $GLOBALS['exerciseDB']->editExerciseName($params['id'], $_POST['exercise_name']);
+            //    $f3->reroute('/exercisesBackend');
+            //});
             
                 $f3->route('GET /deleteExercise/@id', function($f3, $params)
                 {
                     $GLOBALS['exerciseDB']->deleteExercise($params['id']);
                     $f3->reroute('/exercisesBackend');
                 });
+                
+                    $f3->route('POST /editExerciseNames', function($f3, $params)
+                    {
+                        $exerciseArray = $_POST['exercise_name'];
+                        $idArray = $_POST['exercise_id'];
+                        for($i = 0; $i < count($exerciseArray); ++$i)
+                        {
+                             $GLOBALS['exerciseDB']->editExerciseName($idArray[$i], $exerciseArray[$i]);   
+                        }
+                        $f3->reroute('/exercisesBackend');
+                    });
 
     //$f3->route('GET /exercises/@id', function($f3, $params)
     //{
