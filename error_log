@@ -2477,3 +2477,15 @@ Stack trace:
 [20-Apr-2018 00:42:05 America/Chicago] PHP Parse error:  syntax error, unexpected ',' in /home/smoon/public_html/fast-iq/indexRequire/brian.php on line 86
 [20-Apr-2018 00:42:05 America/Chicago] Fatal error: syntax error, unexpected ','
 [20-Apr-2018 00:42:05 America/Chicago] [fast-iq/indexRequire/brian.php:86] 
+[25-Apr-2018 19:00:30 America/Chicago] preg_split(): No ending delimiter '=' found
+[25-Apr-2018 19:00:30 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:2205] Base->error()
+[25-Apr-2018 19:00:30 America/Chicago] [fast-iq/indexRequire/sonie.php:59] preg_split()
+[25-Apr-2018 19:00:30 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:1821] {closure}()
+[25-Apr-2018 19:00:30 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:1642] Base->call()
+[25-Apr-2018 19:00:30 America/Chicago] [fast-iq/index.php:178] Base->run()
+[25-Apr-2018 19:00:54 America/Chicago] preg_split(): No ending delimiter '=' found
+[25-Apr-2018 19:00:54 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:2205] Base->error()
+[25-Apr-2018 19:00:54 America/Chicago] [fast-iq/indexRequire/sonie.php:59] preg_split()
+[25-Apr-2018 19:00:54 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:1821] {closure}()
+[25-Apr-2018 19:00:54 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:1642] Base->call()
+[25-Apr-2018 19:00:54 America/Chicago] [fast-iq/index.php:178] Base->run()

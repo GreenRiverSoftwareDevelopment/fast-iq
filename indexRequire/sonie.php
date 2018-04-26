@@ -55,11 +55,14 @@
                 //setting exercise id 
                 $f3->set('exerciseID', $_SESSION['exerciseID']);
                 $youtubeLink = $exercise['exercise_video'];
-            $youtubeEmbededCode = substr($youtubeLink, strpos($youtubeLink, "=") + 1); 
-            $video = '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/'.$youtubeEmbededCode.'" width="100%" height="460px" allowfullscreen></iframe>';
-            $f3->set('youtubeEmbededCode', $youtubeEmbededCode);
+            $youtubeEmbededCode = substr($youtubeLink, strpos($youtubeLink, "=") + 1);
+            $splitTwoEqualSigns = explode("=", $youtubeEmbededCode);
+            $splitByAndSymbol = explode("&", $youtubeEmbededCode);
+            $linkWeNeed = $splitByAndSymbol[0];
+            $video = '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/'.$linkWeNeed.'" width="100%" height="460px" allowfullscreen></iframe>';
+            $f3->set('youtubeEmbededCode', $linkWeNeed);
             $f3->set('videoLinkExcercises', $allVideoLinks);
-                
+                echo "The link is: " . $linkWeNeed;
             
         echo Template::instance()->render('pages/exercise_summary_backend.html');
      });
