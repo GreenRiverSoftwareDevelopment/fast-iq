@@ -105,8 +105,8 @@
         }
 
         function allVideoLinks($exerciseId) {
-            $select = 'SELECT videoId, exerciseId, link FROM videolink WHERE
-            exerciseId='. $exerciseId; $results = $this->_pdo->query($select);
+            $select = 'SELECT videoId, exerciseId, link FROM videolink WHERE exerciseId='. $exerciseId;
+            $results = $this->_pdo->query($select);
 
             $resultsArray = array();
 
