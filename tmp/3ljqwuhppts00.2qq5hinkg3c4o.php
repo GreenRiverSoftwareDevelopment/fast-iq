@@ -248,7 +248,7 @@ li {
 						<?php foreach (($videoLinkExcercises?:[]) as $videoLinkExcercise): ?>
 							
 							 <!--<a href="<?= ($videoLinkExcercise['link']) ?>" target="_blank"><h2><?= ($videoLinkExcercise['link']) ?></h2></a>-->
-							 <textarea rows="3" cols="50" class="form-control"  name="videolink" id="videolink" placeholder="Enter a link here" value= "<?= ($videoLinkExcercise['link']) ?>" style="font-size: 14px"><?= ($videoLinkExcercise['link']) ?></textarea>
+							 <textarea rows="3" cols="50" class="form-control"  name="videolink" id="videolink" placeholder="Enter a link here" value= "<?= ($videoLinkExcercise['link']) ?>" style="font-size: 14px"><?= ($videoLinkExercise['link']) ?></textarea>
 								<br>
 						<?php endforeach; ?>
 						
@@ -478,7 +478,7 @@ li {
                 </div>
 			</div>
 				<br>
-					<button type="submit" class="btn btn-primary btn-success btn-lg" data-toggle="modal" data-target=".editExerciseSummary<?= ($exercise['exercise_id']) ?>">
+					<button type="submit" class="btn btn-primary btn-success btn-lg btn-block" data-toggle="modal" data-target=".editExerciseSummary<?= ($exercise['exercise_id']) ?>">
 									<span class="glyphicon glyphicon-saved" aria-hidden="true"></span>  Save
 								</button>
 					</form>
