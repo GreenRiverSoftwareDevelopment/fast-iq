@@ -182,7 +182,7 @@
                                 <div class="col-sm-8 text-center">
                                     <div class="form-group">
                                         <label for="category"><h3>Category Name</h3></label>
-
+                                        
                                         <div class="input-group input-group-lg">
                                             <input class="form-control" type="text" name="category_name" id="category_name" placeholder="Category Name" required>
                                         </div>
@@ -211,28 +211,42 @@
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content" id="modalcontent">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Add a Category</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">Delete a Category</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <!-- inner modal -->
-                            <form action="" method="post" class="form-horizontal">
+                            <form action="./deleteCategory" method="post" class="form-horizontal">
                                 <br>
                                 <br>
                                 <div class="col-sm-2"></div>
 
                                 <div class="col-sm-8 text-center">
-                                    <div class="form-group">
-                                        <label for="category"><h3>Category Name</h3></label>
-
-                                        <div class="input-group input-group-lg">
-                                            <input class="form-control" type="text" name="category_name" id="category_name" placeholder="Category Name" required>
+                                    <label><h2>Category Name</h2></label>
+                                    <h4>(Check the boxes that you want to delete)</h4>
+                                    <br>
+                                    
+                                    <?php foreach (($categories?:[]) as $category): ?>
+                                    <div class="row">
+                                        <div class="col-sm-3"></div>
+                                        <div class="col-sm-2 text-center">
+                                            <div class="form-check">
+                                                <input class="input-group" type="checkbox" name="category_id[]" value="<?= ($category['category_id']) ?>" id="<?= ($category['category_id']) ?>">
+                                            </div>
                                         </div>
-
+                                        <div class="col-sm-4">
+                                            <label class="form-check-label" for="<?= ($category['category_id']) ?>">
+                                                <h4><?= ($category['category_name']) ?></h4>
+                                            </label>
+                                        </div>
+                                        <div class="col-sm-3"></div>
                                     </div>
+                                    <?php endforeach; ?>
+                                    
                                     <div class="form-group">
-                                        <input class="btn btn-success btn-lg" type="submit" value="Add">
+                                        <br>
+                                        <input class="btn btn-danger btn-lg" type="submit" value="Delete">
                                     </div>
                                     <br>
                                     <br>

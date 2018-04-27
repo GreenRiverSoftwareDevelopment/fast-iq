@@ -12,10 +12,14 @@
             //    $f3->reroute('/categoryBackend');
             //});
 
-                $f3->route('GET /deleteCategory/@id', function($f3, $params)
+                $f3->route('POST /deleteCategory', function($f3, $params)
                 {
-                    $GLOBALS['categoryDB']->deleteCategory($params['id']);
-                    $f3->reroute('/categoryBackend');
+                        $idArray = $_POST['category_id'];
+                        for($i = 0; $i < count($idArray); ++$i)
+                        {
+                             $GLOBALS['categoryDB']->deleteCategory($idArray[$i]);   
+                        }
+                        $f3->reroute('/categoryBackend');
                 });
                 
                     $f3->route('POST /editCategoryNames', function($f3, $params)
