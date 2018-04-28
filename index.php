@@ -74,7 +74,12 @@
                 }
                 
                 $categories =  $GLOBALS['categoryDB']->allCategories();
+                $students =  $GLOBALS['studentDB']->allStudents();
+                $exercises =  $GLOBALS['exerciseDB']->allExercises();
+                
                 $f3->set('categories', $categories);
+                $f3->set('students', $students);
+                $f3->set('exercises', $exercises);
                 echo Template::instance()->render('pages/category_backend.html');
             });
     
@@ -144,13 +149,13 @@
             $f3->route('POST /studentGrade', function($f3)
             {
                $GLOBALS['gradeDB']->updateGrade($_POST['student'], $_POST['exercise'], $_POST['grade']);
-                $f3->reroute('/');
+                $f3->reroute('/categoryBackend');
             });
             
             $f3->route('POST /studentAttendance', function($f3)
             {
                 $GLOBALS['studentDB']->updateStudent($_POST['student'], $_POST['daysMissed']);
-                $f3->reroute('/');
+                $f3->reroute('/categoryBackend');
             });
             
             $f3->route('POST /addStudent', function($f3)
