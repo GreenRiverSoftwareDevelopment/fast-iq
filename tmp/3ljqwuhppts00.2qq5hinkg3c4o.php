@@ -149,7 +149,12 @@ li {
 
 
 
-	<h1 class="display-3 text-center"><strong><?= ($categoryName['category_name']) ?></strong> > <strong><?= ($unitName['unit_name']) ?></strong> > <strong><?= ($exercise['exercise_name']) ?></strong></h1><br>
+	<h1 class="display-3 text-center">
+		<strong><a href="./unitsBackend/<?= ($categoryID) ?>">Category - <?= ($categoryName['category_name']) ?></a></strong> >
+		<strong><a href="./exercisesBackend/<?= ($unitID) ?>"><?= ($unitName['unit_name']) ?></a></strong> >
+		<strong><?= ($exercise['exercise_name']) ?></strong>
+	</h1>
+	<br>
 			<div class="col-xs-11 col-sm-7">
     <div class="panel-group" id="accordion">
 
@@ -245,12 +250,24 @@ li {
 							</div>
                         </div>-->
                         <!-- Edit and Delete hover over end -->
+						
 						<?php foreach (($videoLinkExcercises?:[]) as $videoLinkExcercise): ?>
 							
 							 <!--<a href="<?= ($videoLinkExcercise['link']) ?>" target="_blank"><h2><?= ($videoLinkExcercise['link']) ?></h2></a>-->
-							 <textarea rows="3" cols="50" class="form-control"  name="videolink" id="videolink" placeholder="Enter a link here" value= "<?= ($videoLinkExcercise['link']) ?>" style="font-size: 14px"><?= ($videoLinkExcercise['link']) ?></textarea>
+							 <textarea rows="3" cols="50" class="form-control"  name="videolink[]" id="videolink" placeholder="Enter a link here" value= "<?= ($videoLinkExcercise['link']) ?>" style="font-size: 14px"><?= ($videoLinkExcercise['link']) ?></textarea>
 								<br>
 						<?php endforeach; ?>
+						
+						
+						
+						<!-- new video link entry -->
+						<li id="list-group">
+												<!--<div class="input-group input-group-lg">
+													<input name="questions[]" id="questions" class="form-control" type="text" placeholder="Enter a new question here"></input>
+												</div>-->
+												<textarea rows="3" cols="50" class="form-control"  name="newlink" id="newlink" placeholder="Enter a new link here" style="font-size: 14px"></textarea>
+								
+											</li>
 						
 						
 								<!--

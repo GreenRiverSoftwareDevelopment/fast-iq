@@ -90,7 +90,7 @@
         <!--*********************************** THIS IS THE END OF THE CREATE A NEW ADMIN MODAL*************************************-->
 
             <h1 class="display-2 text-center" id="<?= ($unitName['unit_name']) ?>">
-                <strong><a href="./unitsBackend/<?= ($categoryID) ?>"><?= ($categoryName['category_name']) ?></a></strong> >
+                <strong><a href="./unitsBackend/<?= ($categoryID) ?>">Category - <?= ($categoryName['category_name']) ?></a></strong> >
                 <strong><?= ($unitName['unit_name']) ?></strong>
             </h1>
 
@@ -167,7 +167,7 @@
                     </button>
                 </div>
 
-                <!-- Start of add module-->
+                <!--*********************************** START OF ADD MODAL *************************************-->
                 <div class="modal fade addExercise<?= ($exercise['exercise_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content" id="modalcontent">
@@ -200,13 +200,64 @@
                         </div>
                     </div>
                 </div>
-                <!-- End of add module-->
+                <!--*********************************** END OF ADD MODAL *************************************-->
 
                 <div class="d-flex justify-content-center col-sm-2">
-                    <button type="button" class="btn btn-primary btn-lg btn-danger btn-block" data-toggle="modal" data-target=".deleteExercise<?= ($exercise['exercise_id']) ?>">
+                    <button type="button" class="btn btn-primary btn-lg btn-danger btn-block" data-toggle="modal" data-target=".deleteExercise">
                         <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>  Delete
                     </button>
                 </div>
+                
+                <!--*********************************** START OF DELETE MODAL *************************************-->
+                <div class="modal fade deleteExercise" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content" id="modalcontent">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Delete a Exercise</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <!-- inner modal -->
+                            <form action="./deleteExercise" method="post" class="form-horizontal">
+                                <br>
+                                <br>
+                                <div class="col-sm-2"></div>
+
+                                <div class="col-sm-8 text-center">
+                                    <label><h2>Exercise Name</h2></label>
+                                    <h4>(Check the boxes that you want to delete)</h4>
+                                    <br>
+                                    
+                                    <?php foreach (($exercises?:[]) as $exercise): ?>
+                                    <div class="row">
+                                        <div class="col-sm-3"></div>
+                                        <div class="col-sm-2 text-center">
+                                            <div class="form-check">
+                                                <input class="input-group" type="checkbox" name="exercise_id[]" value="<?= ($exercise['exercise_id']) ?>" id="<?= ($exercise['exercise_id']) ?>">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <label class="form-check-label" for="<?= ($exercise['exercise_id']) ?>">
+                                                <h4><?= ($exercise['exercise_name']) ?></h4>
+                                            </label>
+                                        </div>
+                                        <div class="col-sm-3"></div>
+                                    </div>
+                                    <?php endforeach; ?>
+                                    
+                                    <div class="form-group">
+                                        <br>
+                                        <input class="btn btn-danger btn-lg" type="submit" value="Delete">
+                                    </div>
+                                    <br>
+                                    <br>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!--*********************************** END OF DELETE MODAL *************************************-->
                 
                 <div class="d-flex justify-content-center col-sm-1">
                     

@@ -53,7 +53,7 @@
                     </div>
                   </div>
                 </div>
-        <!--*********************************** THIS IS LOGOUT THE MODAL*************************************-->
+            <!--*********************************** THIS IS LOGOUT THE MODAL*************************************-->
 
             <!--*********************************** THIS IS THE create a new admin MODAL*************************************-->
                 <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -83,6 +83,138 @@
                   </div>
                 </div>
         <!--*********************************** THIS IS THE Sign Up MODAL*************************************-->
+            
+            <br>
+            <br>
+            <div class="row">
+				<div class="col-md-3">
+				</div>
+				<div class="col-md-2 text-center">
+					<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target=".grade">
+						<h3>Grade Students</h3>
+					</button>
+				</div>
+									<!-- Start of Grade module-->
+                                    <div class="modal fade grade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content" id="modalcontent">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Grading Students</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <!-- inner modal -->
+                                                <form action="./studentGrade" method="post" class="form-horizontal">
+                                                    <br>
+                                                    <br>
+                                                    <div class="col-sm-2"></div>
+
+                                                    <div class="col-sm-8 text-center">
+														<div class="form-group">
+															<h3 for="student">Students</h3>
+															<select class="form-control form-control-lg" name="student" id="student" required>
+																<?php foreach (($students?:[]) as $student): ?>
+																	<option value="<?= ($student['student_id']) ?>"><?= ($student['fName']) ?> <?= ($student['lName']) ?></option>
+																<?php endforeach; ?>
+															</select>
+														</div>
+														<div class="form-group">
+															<h3 for="exercise">Exercises</h3>
+															<select class="form-control form-control-lg" name="exercise" id="exercise" required>
+																<?php foreach (($exercises?:[]) as $exercise): ?>
+																	<option value="<?= ($exercise['exercise_id']) ?>"><?= ($exercise['exercise_name']) ?></option>
+																<?php endforeach; ?>
+															</select>
+														</div>
+                                                        <div class="form-group">
+															<h3 for="grade">Grade</h3>
+															<select class="form-control form-control-lg" name="grade" id="grade" required>
+																<option value="1">1</option>
+																<option value="2">2</option>
+																<option value="3">3</option>
+																<option value="4">4</option>
+																<option value="5">5</option>
+																<option value="6">6</option>
+																<option value="7">7</option>
+																<option value="8">8</option>
+																<option value="9">9</option>
+																<option value="10">10</option>
+															</select>
+														</div>
+                                                        <div class="form-group">
+                                                            <input class="btn btn-success btn-lg" type="submit" value="Save">
+                                                        </div>
+                                                        <br>
+                                                        <br>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+									<!-- End of Grade module-->
+				<div class="col-md-2 text-center">
+					<a href="./studentInfo"><button id="studentInfo" type="button" class="btn btn-primary btn-lg">
+						<h3>Student Info</h3>
+					</button></a>
+				</div>
+
+				<div class="col-md-2 text-center">
+					<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target=".attendance">
+						<h3>Student Attendance</h3>
+					</button>
+				</div>
+									<!-- Start of Attendance module-->
+                                    <div class="modal fade attendance" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content" id="modalcontent">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Attendance for Students</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <!-- inner modal -->
+                                                <form action="./studentAttendance" method="post" class="form-horizontal">
+                                                    <br>
+                                                    <br>
+                                                    <div class="col-sm-2"></div>
+
+                                                    <div class="col-sm-8 text-center">
+														<div class="form-group">
+															<h3 for="student">Student</h3>
+															<select class="form-control form-control-lg" name="student" id="student" required>
+																<?php foreach (($students?:[]) as $student): ?>
+																	<option value="<?= ($student['student_id']) ?>"><?= ($student['fName']) ?> <?= ($student['lName']) ?></option>
+																<?php endforeach; ?>
+															</select>
+														</div>
+                                                        <div class="form-group">
+															<h3 for="daysMissed">How many days were missed?</h3>
+															<select class="form-control form-control-lg" name="daysMissed" id="daysMissed" required>
+																<option value="1">1</option>
+																<option value="2">2</option>
+																<option value="3">3</option>
+																<option value="4">4</option>
+																<option value="5">5</option>
+															</select>
+														</div>
+                                                        <div class="form-group">
+                                                            <input class="btn btn-success btn-lg" type="submit" value="Save">
+                                                        </div>
+                                                        <br>
+                                                        <br>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+									<!-- End of Attendance module-->
+				<div class="col-md-3">
+				</div>
+			</div>
+            <br>
+            <br>
 
 
             <h1 class="display-2 text-center">Categories</h1>
@@ -182,7 +314,7 @@
                                 <div class="col-sm-8 text-center">
                                     <div class="form-group">
                                         <label for="category"><h3>Category Name</h3></label>
-
+                                        
                                         <div class="input-group input-group-lg">
                                             <input class="form-control" type="text" name="category_name" id="category_name" placeholder="Category Name" required>
                                         </div>
@@ -211,28 +343,42 @@
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content" id="modalcontent">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Add a Category</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">Delete a Category</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <!-- inner modal -->
-                            <form action="" method="post" class="form-horizontal">
+                            <form action="./deleteCategory" method="post" class="form-horizontal">
                                 <br>
                                 <br>
                                 <div class="col-sm-2"></div>
 
                                 <div class="col-sm-8 text-center">
-                                    <div class="form-group">
-                                        <label for="category"><h3>Category Name</h3></label>
-
-                                        <div class="input-group input-group-lg">
-                                            <input class="form-control" type="text" name="category_name" id="category_name" placeholder="Category Name" required>
+                                    <label><h2>Category Name</h2></label>
+                                    <h4>(Check the boxes that you want to delete)</h4>
+                                    <br>
+                                    
+                                    <?php foreach (($categories?:[]) as $category): ?>
+                                    <div class="row">
+                                        <div class="col-sm-3"></div>
+                                        <div class="col-sm-2 text-center">
+                                            <div class="form-check">
+                                                <input class="input-group" type="checkbox" name="category_id[]" value="<?= ($category['category_id']) ?>" id="<?= ($category['category_id']) ?>">
+                                            </div>
                                         </div>
-
+                                        <div class="col-sm-4">
+                                            <label class="form-check-label" for="<?= ($category['category_id']) ?>">
+                                                <h4><?= ($category['category_name']) ?></h4>
+                                            </label>
+                                        </div>
+                                        <div class="col-sm-3"></div>
                                     </div>
+                                    <?php endforeach; ?>
+                                    
                                     <div class="form-group">
-                                        <input class="btn btn-success btn-lg" type="submit" value="Add">
+                                        <br>
+                                        <input class="btn btn-danger btn-lg" type="submit" value="Delete">
                                     </div>
                                     <br>
                                     <br>
