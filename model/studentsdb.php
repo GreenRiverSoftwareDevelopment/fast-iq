@@ -5,7 +5,7 @@
      * @version 1.0
      *
 CREATE TABLE students ( student_id int NOT NULL AUTO_INCREMENT PRIMARY
-        KEY, fName varchar(255), lName varchar(255), daysMissed int ); */
+        KEY, fName varchar(255), lName varchar(255), hoursMissed int ); */
 
     //CONNECT
     class StudentsDB {
@@ -34,7 +34,7 @@ CREATE TABLE students ( student_id int NOT NULL AUTO_INCREMENT PRIMARY
 
         //CREATE
         function addStudent($fName, $lName) {
-            $insert = 'INSERT INTO students (fName, lName, daysMissed) VALUES
+            $insert = 'INSERT INTO students (fName, lName, hoursMissed) VALUES
             (:fName ,:lName ,0)';
 
             $statement = $this->_pdo->prepare($insert);
@@ -44,13 +44,13 @@ CREATE TABLE students ( student_id int NOT NULL AUTO_INCREMENT PRIMARY
             $statement->execute(); return $this->_pdo->lastInsertId();
         }
 
-        function updateStudent($student_id, $daysMissed) {
+        function updateStudent($student_id, $hoursMissed) {
             $update = 'UPDATE
-                        students SET daysMissed = daysMissed + :daysMissed WHERE
+                        students SET hoursMissed = hoursMissed + :hoursMissed WHERE
                         student_id = :student_id';
 
             $statement = $this->_pdo->prepare($update);
-            $statement->bindValue(':daysMissed', $daysMissed, PDO::PARAM_INT);
+            $statement->bindValue(':hoursMissed', $hoursMissed, PDO::PARAM_INT);
             $statement->bindValue(':student_id', $student_id, PDO::PARAM_STR);
 
             $statement->execute();

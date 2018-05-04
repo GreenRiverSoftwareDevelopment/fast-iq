@@ -154,7 +154,7 @@
             
             $f3->route('POST /studentAttendance', function($f3)
             {
-                $GLOBALS['studentDB']->updateStudent($_POST['student'], $_POST['daysMissed']);
+                $GLOBALS['studentDB']->updateStudent($_POST['student'], $_POST['hoursMissed']);
                 $f3->reroute('/categoryBackend');
             });
             

@@ -191,7 +191,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <input class="btn btn-success btn-lg" type="submit" value="Add">
+                                        <input class="btn btn-success btn-lg" id="add" type="submit" value="Add">
                                     </div>
                                     <br>
                                     <br>
@@ -203,10 +203,57 @@
                 <!--*********************************** END OF ADD MODAL *************************************-->
 
                 <div class="d-flex justify-content-center col-sm-2">
-                    <button type="button" class="btn btn-primary btn-lg btn-danger btn-block" data-toggle="modal" data-target=".deleteExercise">
+                    <button type="button" class="btn btn-primary btn-lg btn-danger btn-block" data-toggle="modal" data-target=".confirmation">
                         <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>  Delete
                     </button>
                 </div>
+                
+                <!--*********************************** START OF CONFIRMATION DELETE MODAL *************************************-->
+                <div class="modal fade confirmation" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content" id="modalcontent">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Delete a Category</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <!-- inner modal -->
+                            <form action="./deleteCategory" method="post" class="form-horizontal">
+                                <br>
+                                <br>
+								<div class="row">
+									<div class="col-sm-1"></div>
+	
+									<div class="col-sm-10 text-center">
+										<h2 class="text-center">Deleting a Exercise will delete everything in its hierarchy.</h2>
+										<h2 class="text-center">Are you sure you want to continue?</h2>
+										<br>
+										<br>
+										<br>
+									</div>
+									<div class="col-sm-1"></div>
+								</div>
+								<div class="row">
+                                        <div class="col-sm-2"></div>
+                                        <div class="col-sm-2 text-center">
+											<input class="btn btn-light btn-lg" type="button" data-dismiss="modal" value="No">
+										</div>
+										<div class="col-sm-4"></div>
+                                        <div class="col-sm-2 text-center">
+											<button type="button" class="btn btn-primary btn-lg btn-danger btn-block" data-dismiss="modal" data-toggle="modal" data-target=".deleteExercise">
+												<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>  Yes
+											</button>
+										</div>
+                                        <div class="col-sm-2"></div>
+                                </div>
+								<br>
+								<br>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!--*********************************** END OF CONFIRMATION DELETE MODAL *************************************-->
                 
                 <!--*********************************** START OF DELETE MODAL *************************************-->
                 <div class="modal fade deleteExercise" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -234,7 +281,7 @@
                                         <div class="col-sm-3"></div>
                                         <div class="col-sm-2 text-center">
                                             <div class="form-check">
-                                                <input class="input-group" type="checkbox" name="exercise_id[]" value="<?= ($exercise['exercise_id']) ?>" id="<?= ($exercise['exercise_id']) ?>">
+                                                <input class="input-group" type="checkbox" name="exercise_id[]" value="<?= ($exercise['exercise_id']) ?>" id="<?= ($exercise['exercise_name']) ?>">
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
@@ -247,8 +294,17 @@
                                     <?php endforeach; ?>
                                     
                                     <div class="form-group">
-                                        <br>
-                                        <input class="btn btn-danger btn-lg" type="submit" value="Delete">
+                                        <div class="row">
+											<div class="col-sm-2"></div>
+											<div class="col-sm-2 text-center">
+												<input class="btn btn-light btn-lg" type="button" data-dismiss="modal" value="No">
+											</div>
+											<div class="col-sm-4"></div>
+											<div class="col-sm-2 text-center">
+												<input class="btn btn-danger btn-lg" type="submit" value="Delete">
+											</div>
+											<div class="col-sm-2"></div>
+										</div>
                                     </div>
                                     <br>
                                     <br>

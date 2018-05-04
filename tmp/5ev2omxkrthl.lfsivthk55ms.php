@@ -201,10 +201,57 @@
                 <!--*********************************** END OF ADD MODAL *************************************-->
                     
                 <div class="d-flex justify-content-center col-sm-2">
-                    <button type="button" class="btn btn-primary btn-lg btn-danger btn-block" data-toggle="modal" data-target=".deleteUnit">
+                    <button type="button" class="btn btn-primary btn-lg btn-danger btn-block" data-toggle="modal" data-target=".confirmation">
                         <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>  Delete
                     </button>
                 </div>
+                
+                <!--*********************************** START OF CONFIRMATION DELETE MODAL *************************************-->
+                <div class="modal fade confirmation" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content" id="modalcontent">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Delete a Category</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <!-- inner modal -->
+                            <form action="./deleteCategory" method="post" class="form-horizontal">
+                                <br>
+                                <br>
+								<div class="row">
+									<div class="col-sm-1"></div>
+	
+									<div class="col-sm-10 text-center">
+										<h2 class="text-center">Deleting a Unit will delete everything in its hierarchy.</h2>
+										<h2 class="text-center">Are you sure you want to continue?</h2>
+										<br>
+										<br>
+										<br>
+									</div>
+									<div class="col-sm-1"></div>
+								</div>
+								<div class="row">
+                                        <div class="col-sm-2"></div>
+                                        <div class="col-sm-2 text-center">
+											<input class="btn btn-light btn-lg" type="button" data-dismiss="modal" value="No">
+										</div>
+										<div class="col-sm-4"></div>
+                                        <div class="col-sm-2 text-center">
+											<button type="button" class="btn btn-primary btn-lg btn-danger btn-block" data-dismiss="modal" data-toggle="modal" data-target=".deleteUnit">
+												<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>  Yes
+											</button>
+										</div>
+                                        <div class="col-sm-2"></div>
+                                </div>
+								<br>
+								<br>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!--*********************************** END OF CONFIRMATION DELETE MODAL *************************************-->
                 
                 <!--*********************************** START OF DELETE MODAL *************************************-->
                 <div class="modal fade deleteUnit" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -245,8 +292,17 @@
                                     <?php endforeach; ?>
                                     
                                     <div class="form-group">
-                                        <br>
-                                        <input class="btn btn-danger btn-lg" type="submit" value="Delete">
+                                        <div class="row">
+											<div class="col-sm-2"></div>
+											<div class="col-sm-2 text-center">
+												<input class="btn btn-light btn-lg" type="button" data-dismiss="modal" value="No">
+											</div>
+											<div class="col-sm-4"></div>
+											<div class="col-sm-2 text-center">
+												<input class="btn btn-danger btn-lg" type="submit" value="Delete">
+											</div>
+											<div class="col-sm-2"></div>
+										</div>
                                     </div>
                                     <br>
                                     <br>
