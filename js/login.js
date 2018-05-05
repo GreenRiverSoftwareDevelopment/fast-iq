@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document.body).ready(function(){
     
         $('form.loginInput').on('submit', function()
         {
@@ -26,18 +26,21 @@ $(document).ready(function(){
                success: function(data)
                {
                     var myObject = data;
-                    console.log(myObject);
+                    if(myObject == 1)
+                    {
+                        window.location.replace("http://bsaylor.greenrivertech.net/485/fast-iq/categoryBackend");
+                        return true;
+                    }
+                    else
+                    {
+                        $("#myModal").effect( "shake" );
+                        $("#errorMessage").fadeIn();
+                        return false;
+                    }
+                    
                }
             });
-            console.log(data);
-            console.log(url +' '+ type);
             
             return false;
         });
-    
-        var username = $('#username').val();
-        var password = $('#password').val();
-        
-        
-    
     });
