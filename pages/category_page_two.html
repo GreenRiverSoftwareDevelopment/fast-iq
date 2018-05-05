@@ -43,7 +43,7 @@
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
-                      <form action="./login" method="POST">
+                      <form action="./verifyLogin" method="POST" class="loginInput">
                             <div class="modal-body">
                                 <div class="form-group row">
                                   <label for="example-time-input" class="col-2 col-form-label"><h4>Email</h4></label>
@@ -64,7 +64,7 @@
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Close</button>
-                              <button id="submit" type="Submit" class="btn btn-primary btn-lg">Login</button>
+                              <button id="submit" type="submit" class="btn btn-primary btn-lg">Login</button>
                             </div>
                       </form>
                     </div>
@@ -371,10 +371,16 @@
 
 
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+            <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
             <!-- Include all compiled plugins (below), or include individual files as needed -->
             <script src="js/bootstrap.min.js"></script>
-            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+			<script src="js/login.js"></script>
+			<script
+				src="https://code.jquery.com/jquery-3.3.1.min.js"
+				integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+				crossorigin="anonymous"></script>
+            <!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         </body>

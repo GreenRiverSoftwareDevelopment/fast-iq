@@ -48,8 +48,7 @@
     
     $f3->route('GET /angularTest', function($f3)
     {
-        $view = new View;
-        echo $view->render('pages/angularTest.html');
+       echo Template::instance()->render('pages/angularTest.html');
     });
     
     $f3->route('GET /', function($f3)
@@ -179,6 +178,7 @@
     require("./indexRequire/brian.php");
     require("./indexRequire/kevin.php");
     require("./indexRequire/sonie.php");
+    require("./indexRequire/verificationRoutes.php");
 
     //Run fat free
     $f3->run();
