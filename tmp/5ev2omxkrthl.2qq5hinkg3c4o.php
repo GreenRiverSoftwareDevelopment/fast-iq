@@ -250,12 +250,24 @@ li {
 							</div>
                         </div>-->
                         <!-- Edit and Delete hover over end -->
+						
 						<?php foreach (($videoLinkExcercises?:[]) as $videoLinkExcercise): ?>
 							
 							 <!--<a href="<?= ($videoLinkExcercise['link']) ?>" target="_blank"><h2><?= ($videoLinkExcercise['link']) ?></h2></a>-->
-							 <textarea rows="3" cols="50" class="form-control"  name="videolink" id="videolink" placeholder="Enter a link here" value= "<?= ($videoLinkExcercise['link']) ?>" style="font-size: 14px"><?= ($videoLinkExcercise['link']) ?></textarea>
+							 <textarea rows="3" cols="50" class="form-control"  name="videolink[]" id="videolink" placeholder="Enter a link here" value= "<?= ($videoLinkExcercise['link']) ?>" style="font-size: 14px"><?= ($videoLinkExcercise['link']) ?></textarea>
 								<br>
 						<?php endforeach; ?>
+						
+						
+						
+						<!-- new video link entry -->
+						<li id="list-group">
+												<!--<div class="input-group input-group-lg">
+													<input name="questions[]" id="questions" class="form-control" type="text" placeholder="Enter a new question here"></input>
+												</div>-->
+												<textarea rows="3" cols="50" class="form-control"  name="newlink" id="newlink" placeholder="Enter a new link here" style="font-size: 14px"></textarea>
+								
+											</li>
 						
 						
 								<!--
@@ -349,13 +361,11 @@ li {
 											<br>
 										<?php endforeach; ?>
 
-											<li id="list-group">
-												<!--<div class="input-group input-group-lg">
-													<input name="questions[]" id="questions" class="form-control" type="text" placeholder="Enter a new question here"></input>
-												</div>-->
-												<textarea rows="3" cols="50" class="form-control"  name="questions[]" id="questions" placeholder="Enter a new question here" style="font-size: 14px"></textarea>
-								
-											</li>
+											<div class="input_fields_wrap">
+												<button class="add_field_button">Add More Fields</button>
+											</div>
+		<!--<textarea rows="3" cols="50" class="form-control"
+		name="questions[]" id="questions" placeholder="Enter a new question here" style="font-size: 14px"></textarea>-->
 									<!--</form>-->
 								</div>
 							</div>
@@ -493,6 +503,7 @@ li {
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
             <!-- Include all compiled plugins (below), or include individual files as needed -->
             <script src="js/bootstrap.min.js"></script>
+			<script src="js/addQuestion.js"></script>
 			<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
