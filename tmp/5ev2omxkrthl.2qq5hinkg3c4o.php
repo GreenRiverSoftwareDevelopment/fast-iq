@@ -344,29 +344,15 @@ li {
 						<div class="row">
 							<div class="col-sm-6">
 								<div contenteditable="true">
-									<!--<form action="./editExerciseQuestion/<?= ($exerciseID) ?>" id="question" method="post" class="form-horizontal">-->
-
-										<?php foreach (($questions_array?:[]) as $question): ?>
-											
-											<li id="list-group">
-												
-												<!-- <div class="input-group input-group-lg">
-													<input name="questions[]" id="questions" class="form-control" type="text" placeholder="Enter a new question here" value="<?= ($question) ?>"></input>
-												-->
-												<textarea rows="3" cols="50" class="form-control"  name="questions[]" id="questions" placeholder="Enter a question here" value="<?= ($question) ?>" style="font-size: 14px"><?= ($question) ?></textarea>
-								
-												
-												<!--</div>-->
-											</li>
-											<br>
-										<?php endforeach; ?>
-
-											<div class="input_fields_wrap">
-												<button class="add_field_button">Add More Fields</button>
-											</div>
-		<!--<textarea rows="3" cols="50" class="form-control"
-		name="questions[]" id="questions" placeholder="Enter a new question here" style="font-size: 14px"></textarea>-->
-									<!--</form>-->
+									<li id="list-group">
+									<?php foreach (($questions_array?:[]) as $question): ?>
+										<textarea rows="3" cols="50" class="form-control" name="questions[]" id="questions" placeholder="Enter a question here" value="<?= ($question) ?>" style="font-size: 14px"><?= ($question) ?></textarea>
+										<br>
+									<?php endforeach; ?>
+									<div class="input_fields_wrap">
+											<button class="add_field_button">Add More Fields</button>
+										</div>
+									</li>
 								</div>
 							</div>
 							<div class="justify-content-center col-sm-1">

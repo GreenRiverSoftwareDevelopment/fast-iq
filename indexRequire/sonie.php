@@ -25,44 +25,44 @@
      $f3->route('GET /exerciseSummaryBackend', function($f3){
           
         $usernameCheck = $_SESSION['username'];
-                $passwordCheck = $_SESSION['password'];
-                if($usernameCheck == null || $passwordCheck == null)
-                {
-                    $f3->reroute('/');
-                }
-        
-        
-        
-                
-                $exercises =  $GLOBALS['exerciseDB']->exercisesByUnit($_SESSION['unitID']);
-                $allVideoLinks = $GLOBALS['exerciseDB']->allVideoLinks($_SESSION['exerciseID']);
-                $unitName = $GLOBALS['unitDB']->getUnitByID($_SESSION['unitID']);
-                
-                $exercise = $GLOBALS['exerciseDB']->getExerciseByID($_SESSION['exerciseID']);
-                
-                $categoryName = $GLOBALS['categoryDB']->getCategoryByID($_SESSION['categoryID']);
-                
-                
-                
-                $f3->set('categoryName', $categoryName);
-                
-                 $questions_array = explode(',', $exercise['exercise_questions']);
-                 
-                 
-                 
-                $f3->set('questions_array', $questions_array);
-                $f3->set('unitID', $_SESSION['unitID']);
-                $f3->set('categoryID', $_SESSION['categoryID']);
-                $f3->set('unitName', $unitName);
-                $f3->set('exercises', $exercises);
-                $f3->set('exercise', $exercise);
-                
-                
-                
-                //setting exercise id 
-                $f3->set('exerciseID', $_SESSION['exerciseID']);
-                $youtubeLink = $exercise['exercise_video'];
-                $links = $allVideoLinks['videoId']['link'];
+            $passwordCheck = $_SESSION['password'];
+            if($usernameCheck == null || $passwordCheck == null)
+            {
+                $f3->reroute('/');
+            }
+    
+    
+    
+            
+            $exercises =  $GLOBALS['exerciseDB']->exercisesByUnit($_SESSION['unitID']);
+            $allVideoLinks = $GLOBALS['exerciseDB']->allVideoLinks($_SESSION['exerciseID']);
+            $unitName = $GLOBALS['unitDB']->getUnitByID($_SESSION['unitID']);
+            
+            $exercise = $GLOBALS['exerciseDB']->getExerciseByID($_SESSION['exerciseID']);
+            
+            $categoryName = $GLOBALS['categoryDB']->getCategoryByID($_SESSION['categoryID']);
+            
+            
+            
+            $f3->set('categoryName', $categoryName);
+            
+             $questions_array = explode(',', $exercise['exercise_questions']);
+             
+             
+             
+            $f3->set('questions_array', $questions_array);
+            $f3->set('unitID', $_SESSION['unitID']);
+            $f3->set('categoryID', $_SESSION['categoryID']);
+            $f3->set('unitName', $unitName);
+            $f3->set('exercises', $exercises);
+            $f3->set('exercise', $exercise);
+            
+            
+            
+            //setting exercise id 
+            $f3->set('exerciseID', $_SESSION['exerciseID']);
+            $youtubeLink = $exercise['exercise_video'];
+            $links = $allVideoLinks['videoId']['link'];
             //$youtubeEmbededCode = substr($youtubeLink, strpos($youtubeLink, "=") + 1); 
             //$video = '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/'.$youtubeEmbededCode.'" width="100%" height="460px" allowfullscreen></iframe>';
             //$f3->set('youtubeEmbededCode', $youtubeEmbededCode);
@@ -78,8 +78,6 @@
             $f3->set('youtubeEmbededCode', $linkWeNeed);
             $f3->set('videoLinkExcercises', $allVideoLinks);
             
-            
-            print_r($allVideoLinks);
         echo Template::instance()->render('pages/exercise_summary_backend.html');
      });
      
@@ -119,11 +117,18 @@
                 $questionsArrayWithSpacesDeleted = array_filter($unmodifiedArray);
                 $questions = implode(',', $questionsArrayWithSpacesDeleted);
                 
+                echo $_POST["questions"][0];
+                echo "<br>";
+                echo $_POST["questions"][1];
+                echo "<br>";
+                echo $_POST["questions"][2];
+                echo "<br>";
+                echo $_POST["questions"][3];
                 $GLOBALS['exerciseDB']->editExerciseQuestion($params['id'], $questions);
                 //$id, $exercise_name, $exercise_summary, $exercise_image, $exercise_video, $exercise_questions
                 
                 //$id, $exercise_name, $exercise_summary, $exercise_image, $exercise_video, $exercise_questions
-                $f3->reroute('/exerciseSummaryBackend');
+                //$f3->reroute('/exerciseSummaryBackend');
                 //print_r($_POST['questions']);
                 //echo Template::instance()->render('pages/exercise_summary_backend.html');
             });
