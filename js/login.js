@@ -28,7 +28,7 @@ $(document.body).ready(function(){
                     var myObject = data;
                     if(myObject == 1)
                     {
-                        window.location.replace("http://bsaylor.greenrivertech.net/485/fast-iq/categoryBackend");
+                        window.location.replace("./categoryBackend");
                         return true;
                     }
                     else
