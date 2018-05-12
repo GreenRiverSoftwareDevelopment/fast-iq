@@ -167,9 +167,11 @@
             {
                 $students = $GLOBALS['studentDB']->allStudents();
                 $grades = $GLOBALS['gradeDB']->allGrades();
+                $exercises = $GLOBALS['exerciseDB']->allExercises();
                 
                 $f3->set('students', $students);
                 $f3->set('grades', $grades);
+                $f3->set('exercises', $exercises);
                 echo Template::instance()->render('pages/student_info.html');
             });
     
