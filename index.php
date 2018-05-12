@@ -148,13 +148,13 @@
             $f3->route('POST /studentGrade', function($f3)
             {
                $GLOBALS['gradeDB']->updateGrade($_POST['student'], $_POST['exercise'], $_POST['grade']);
-                $f3->reroute('/categoryBackend');
+                $f3->reroute('/studentInfo');
             });
             
             $f3->route('POST /studentAttendance', function($f3)
             {
                 $GLOBALS['studentDB']->updateStudent($_POST['student'], $_POST['hoursMissed']);
-                $f3->reroute('/categoryBackend');
+                $f3->reroute('/studentInfo');
             });
             
             $f3->route('POST /addStudent', function($f3)
