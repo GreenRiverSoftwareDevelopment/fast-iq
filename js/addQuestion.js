@@ -12,12 +12,14 @@ $(document).ready(function()
         if(x < max_fields)
         { //max input box allowed
             x++; //text box increment
-            $(wrapper).append('<textarea rows="3" cols="50" class="form-control" name="questions[]" id="questions" placeholder="Enter a question here" style="font-size: 14px"></textarea><a href="#" class="remove_field">Remove</a>'); //add input box
+            $(wrapper).append('<textarea rows="3" cols="50" class="form-control" name="naa[]" id="naa" placeholder="Enter a question here" style="font-size: 14px"></textarea><a href="#" class="remove_field">Remove</a>'); //add input box
         }
     });
     
     $(wrapper).on("click",".remove_field", function(e)
     { //user click on remove text
+        console.log($('#naa').val());
+        console.log('hello');
         e.preventDefault(); $(this).parent('div').remove(); x--;
     });
 });

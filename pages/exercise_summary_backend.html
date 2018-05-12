@@ -344,12 +344,12 @@ li {
 						<div class="row">
 							<div class="col-sm-6">
 								<div contenteditable="true">
-									<li id="list-group">
+									<li id="list-group" class="input_fields_wrap">
 									<repeat group="{{ @questions_array }}" value="{{ @question }}">
 										<textarea rows="3" cols="50" class="form-control" name="questions[]" id="questions" placeholder="Enter a question here" value="{{ @question }}" style="font-size: 14px">{{ @question }}</textarea>
 										<br>
 									</repeat>
-										<div class="input_fields_wrap">
+										<div class="input_fields_wra">
 											<button class="add_field_button">Add More Fields</button>
 										</div>
 									</li>
@@ -479,10 +479,15 @@ li {
                 </div>
 			</div>
 				<br>
-					<button type="submit" class="btn btn-primary btn-success btn-lg btn-block" data-toggle="modal" data-target=".editExerciseSummary{{ @exercise.exercise_id }}">
-									<span class="glyphicon glyphicon-saved" aria-hidden="true"></span>  Save
-								</button>
+					<button type="submit" class="btn btn-primary btn-success btn-lg btn-block">
+						<span class="glyphicon glyphicon-saved" aria-hidden="true"></span>  Save
+					</button>
 					</form>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
 			</div>
 
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
