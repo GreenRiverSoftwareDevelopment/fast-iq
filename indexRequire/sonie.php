@@ -117,21 +117,12 @@
                 $questionsArrayWithSpacesDeleted = array_filter($unmodifiedArray);
                 $questions = implode(',', $questionsArrayWithSpacesDeleted);
                 
-                echo $_POST["questions"][0];
-                echo "<br>";
-                echo $_POST["questions"][1];
-                echo "<br>";
-                echo $_POST["questions"][2];
-                echo $_POST["test"];
-                echo $_POST["test"][0];
-                echo $_POST["test"][0][0];
-                
                 $GLOBALS['exerciseDB']->editExerciseQuestion($params['id'], $questions);
                 //$id, $exercise_name, $exercise_summary, $exercise_image, $exercise_video, $exercise_questions
                 
                 //$id, $exercise_name, $exercise_summary, $exercise_image, $exercise_video, $exercise_questions
                 //$f3->reroute('/exerciseSummaryBackend');
-                //print_r($_POST['questions']);
+                print_r($_POST['questions']);
                 //echo Template::instance()->render('pages/exercise_summary_backend.html');
             });
             
