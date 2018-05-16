@@ -177,18 +177,14 @@ li {
                 <div id="TEST_1" class="panel-collapse show">
                     <div class="panel-body">
 						<div class="row">
-							<div class="col-sm-6">
+							<div class="col-sm-12">
 								<form action="./editExerciseSummary/{{ @exerciseID }}" id="summary" method="post" class="form-horizontal">
 									<div class="input-group">
-										<textarea rows="8" cols="50" class="form-control"  name="exercise_summary" id="exercise_summary" placeholder="Enter a Summary here" value="{{ @exercise.exercise_summary }}" style="font-size: 14px">{{ @exercise.exercise_summary }}</textarea>
+										<textarea rows="8" cols="100" class="col-md-12 form-control"  name="exercise_summary" id="exercise_summary" placeholder="Enter a Summary here" style="font-size: 14px"></textarea>
 									</div>
 								
 							</div>
-							<div class="justify-content-center col-sm-1">
-							</div>
-							<div class="justify-content-center col-sm-2">
-								
-							</div>
+							
 						</div>
 
                     <!-- Start of edit module-->
@@ -342,7 +338,7 @@ li {
                 <div id="TEST_3" class="panel-collapse show">
                     <div class="panel-body">
 						<div class="row">
-							<div class="col-sm-6">
+							<div class="col-sm-12">
 								<div contenteditable="true">
 									<li id="list-group" class="input_fields_wrap">
 									<repeat group="{{ @questions_array }}" value="{{ @question }}">

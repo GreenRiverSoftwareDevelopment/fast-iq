@@ -2508,6 +2508,11 @@ Stack trace:
 [25-Apr-2018 03:20:09 America/Chicago] ','SERVER_SOFTWARE'=>'Apache','UNIQUE_ID'=>'WuA6OcC5U1IABRLkLJAAAAEE']],'languages'=>['en-US','en'],'locks'=>[],'fallback'=>'en']),['/editExerciseNames'],Closure::__set_state([])],'beforeroute,afterroute')
 [25-Apr-2018 03:20:09 America/Chicago] [485/fast-iq/index.php:179] Base->run()
 >>>>>>> cf303ec7dcec66b3ad4911ee1f4f5f7adf25fe4a
+<<<<<<< HEAD
+[25-Apr-2018 19:26:39 America/Chicago] HTTP 405 (POST /categoryBackend)
+[25-Apr-2018 19:26:39 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:1691] Base->error()
+[25-Apr-2018 19:26:39 America/Chicago] [fast-iq/index.php:179] Base->run()
+=======
 [26-Apr-2018 20:23:52 America/Chicago] Illegal string offset 'link'
 [26-Apr-2018 20:23:52 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:2219] Base->error()
 [26-Apr-2018 20:23:52 America/Chicago] [fast-iq/indexRequire/sonie.php:63] Base->{closure}()
@@ -2729,3 +2734,4 @@ Stack trace:
 [01-May-2018 18:13:36 America/Chicago] HTTP 404 (GET /editExerciseSummary/js/bootstrap.min.js)
 [01-May-2018 18:13:36 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:1675] Base->error()
 [01-May-2018 18:13:36 America/Chicago] [fast-iq/index.php:184] Base->run()
+>>>>>>> 5c353ac5c4f7c2198b23c90bf3b378fabcebcb2a

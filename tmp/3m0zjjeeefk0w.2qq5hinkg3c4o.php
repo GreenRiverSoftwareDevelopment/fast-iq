@@ -10,7 +10,7 @@
             <style>
 
 
-.hoverImage {
+/*.hoverImage {
   opacity: 1;
   display: block;
   width: 100%;
@@ -36,7 +36,7 @@
 
 .container:hover .middle {
   opacity: 1;
-}
+}*/
 
 .text {
 
@@ -149,7 +149,12 @@ li {
 
 
 
-	<h1 class="display-3 text-center"><strong><?= ($categoryName['category_name']) ?></strong> > <strong><?= ($unitName['unit_name']) ?></strong> > <strong><?= ($exercise['exercise_name']) ?></strong></h1><br>
+	<h1 class="display-3 text-center">
+		<strong><a href="./unitsBackend/<?= ($categoryID) ?>">Category - <?= ($categoryName['category_name']) ?></a></strong> >
+		<strong><a href="./exercisesBackend/<?= ($unitID) ?>"><?= ($unitName['unit_name']) ?></a></strong> >
+		<strong><?= ($exercise['exercise_name']) ?></strong>
+	</h1>
+	<br>
 			<div class="col-xs-11 col-sm-7">
     <div class="panel-group" id="accordion">
 
@@ -172,20 +177,14 @@ li {
                 <div id="TEST_1" class="panel-collapse show">
                     <div class="panel-body">
 						<div class="row">
-							<div class="col-sm-6">
+							<div class="col-sm-12">
 								<form action="./editExerciseSummary/<?= ($exerciseID) ?>" id="summary" method="post" class="form-horizontal">
 									<div class="input-group">
-										<textarea rows="8" cols="50" class="form-control"  name="exercise_summary" id="exercise_summary" placeholder="Enter a Summary here" value="<?= ($exercise['exercise_summary']) ?>" style="font-size: 14px"><?= ($exercise['exercise_summary']) ?></textarea>
+										<textarea rows="8" cols="100" class="col-md-12 form-control"  name="exercise_summary" id="exercise_summary" placeholder="Enter a Summary here" style="font-size: 14px"></textarea>
 									</div>
-								</form>
+								
 							</div>
-							<div class="justify-content-center col-sm-1">
-							</div>
-							<div class="justify-content-center col-sm-2">
-								<button type="button" class="btn btn-primary btn-success btn-lg" data-toggle="modal" data-target=".editExerciseSummary<?= ($exercise['exercise_id']) ?>">
-									<span class="glyphicon glyphicon-saved" aria-hidden="true"></span>  Save
-								</button>
-							</div>
+							
 						</div>
 
                     <!-- Start of edit module-->
@@ -234,9 +233,10 @@ li {
 						<div class="hoverImage">
 
                          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?= ($youtubeEmbededCode) ?>" width="100%" height="460px" allowfullscreen></iframe>
+						
 						</div>
 
-                      <!-- Edit and Delete hover over -->
+                      <!-- Edit and Delete hover over 
                         <div class="middle">
 
 							<div class="text">
@@ -244,13 +244,45 @@ li {
 									<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  Edit
 								</button>
 							</div>
-                        </div>
+                        </div>-->
                         <!-- Edit and Delete hover over end -->
+						
 						<?php foreach (($videoLinkExcercises?:[]) as $videoLinkExcercise): ?>
-							 <a href="<?= ($videoLinkExcercise['link']) ?>" target="_blank"><h2><?= ($videoLinkExcercise['link']) ?></h2></a>
+							
+							 <!--<a href="<?= ($videoLinkExcercise['link']) ?>" target="_blank"><h2><?= ($videoLinkExcercise['link']) ?></h2></a>-->
+							 <textarea rows="3" cols="50" class="form-control"  name="videolink[]" id="videolink" placeholder="Enter a link here" value= "<?= ($videoLinkExcercise['link']) ?>" style="font-size: 14px"><?= ($videoLinkExcercise['link']) ?></textarea>
+								<br>
 						<?php endforeach; ?>
+						
+						
+						
+						<!-- new video link entry -->
+						<li id="list-group">
+												<!--<div class="input-group input-group-lg">
+													<input name="questions[]" id="questions" class="form-control" type="text" placeholder="Enter a new question here"></input>
+												</div>-->
+												<textarea rows="3" cols="50" class="form-control"  name="newlink" id="newlink" placeholder="Enter a new link here" style="font-size: 14px"></textarea>
+								
+											</li>
+						
+						
+								<!--
+								 <form action="./editExerciseVideo/<?= ($exerciseID) ?>" id="video" method="post" class="form-horizontal">					
 
-                        <!-- Start of edit module-->
+											<li id="list-group">
+												<!--<div class="input-group input-group-lg">
+													<input name="questions[]" id="questions" class="form-control" type="text" placeholder="Enter a new question here"></input>
+												</div>
+												<textarea rows="3" cols="50" class="form-control"  name="questions[]" id="questions" placeholder="Enter a new link here" style="font-size: 14px"></textarea>
+								
+											</li>
+									</form>-->
+
+
+
+
+
+                        <!-- Start of edit module
                                     <div class="modal fade editExerciseVideo<?= ($exercise['exercise_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content" id="modalcontent">
@@ -260,28 +292,31 @@ li {
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
-                                                <!-- inner modal -->
+                                                <!-- inner modal 
                                                     <br>
                                                     <br>
                                                     <div class="col-sm-12 text-center">
                                                             <label for="exercise"></label>
 																<h3>Enter a YouTube link.</h3>
+																<!--
                                                                 <form action="./editExerciseVideo/<?= ($exerciseID) ?>" id="video" method="post" class="form-horizontal">
 																	<div class="input-group input-group-lg">
 																		<input class="form-control" name="videolink" id="videolink"  value="<?= ($exercise['exercise_video']) ?>">
 																	</div>
                                                                 </form>
+																
 																<br>
                                                         <div class="form-group">
                                                             <input form="video" class="btn btn-info btn-lg" type="submit" value="Save">
                                                         </div>
                                                         <br>
                                                         <br>
-                                                    </div>
+						</div>
+					
                                             </div>
                                         </div>
                                     </div>
-                    <!-- End of edit module-->
+                     End of edit module-->
 						</div>
 					</div>
 				</div>
@@ -303,39 +338,31 @@ li {
                 <div id="TEST_3" class="panel-collapse show">
                     <div class="panel-body">
 						<div class="row">
-							<div class="col-sm-6">
+							<div class="col-sm-12">
 								<div contenteditable="true">
-									<form action="./editExerciseQuestion/<?= ($exerciseID) ?>" id="question" method="post" class="form-horizontal">
-
-										<?php foreach (($questions_array?:[]) as $question): ?>
-											<li id="list-group">
-												<div class="input-group input-group-lg">
-													<input name="questions[]" id="questions" class="form-control" type="text" placeholder="Enter a new question here" value="<?= ($question) ?>"></input>
-												</div>
-											</li>
-											<br>
-										<?php endforeach; ?>
-
-											<li id="list-group">
-												<div class="input-group input-group-lg">
-													<input name="questions[]" id="questions" class="form-control" type="text" placeholder="Enter a new question here"></input>
-												</div>
-											</li>
-									</form>
+									<li id="list-group" class="input_fields_wrap">
+									<?php foreach (($questions_array?:[]) as $question): ?>
+										<textarea rows="3" cols="50" class="form-control" name="questions[]" id="questions" placeholder="Enter a question here" value="<?= ($question) ?>" style="font-size: 14px"><?= ($question) ?></textarea>
+										<br>
+									<?php endforeach; ?>
+										<div class="input_fields_wra">
+											<button class="add_field_button">Add More Fields</button>
+										</div>
+									</li>
 								</div>
 							</div>
 							<div class="justify-content-center col-sm-1">
 							</div>
 							<div class="justify-content-center col-sm-2">
-								<button type="button" class="btn btn-primary btn-success btn-lg" data-toggle="modal" data-target=".editExerciseQuestion<?= ($exercise['exercise_id']) ?>">
+								<!--<button type="button" class="btn btn-primary btn-success btn-lg" data-toggle="modal" data-target=".editExerciseQuestion<?= ($exercise['exercise_id']) ?>">
 									<span class="glyphicon glyphicon-saved" aria-hidden="true"></span>  Save
-								</button>
+								</button>-->
 							</div>
 						</div>
                         <br>
 
 
-                           <!-- Start of edit module-->
+                           <!-- Start of edit module
                                     <div class="modal fade editExerciseQuestion<?= ($exercise['exercise_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content" id="modalcontent">
@@ -345,7 +372,7 @@ li {
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
-                                                <!-- inner modal -->
+                                                <!-- inner modal 
                                                     <br>
                                                     <br>
 													<div class="col-sm-12 text-center">
@@ -359,7 +386,7 @@ li {
                                             </div>
                                         </div>
                                     </div>
-                    <!-- End of edit module-->
+                     End of edit module-->
                         <!--<?= ($exercise['exercise_questions']) ?>-->
                     </div>
                 </div>
@@ -385,15 +412,31 @@ li {
 						<img src="<?= ($exercise['exercise_image']) ?>" class="img-fluid" alt="Responsive image">
 
                         </div>
-                        <!-- Edit and Delete hover over -->
+							
+							
+											<li id="list-group">
+												<!-- <div class="input-group input-group-lg">
+													<input name="questions[]" id="questions" class="form-control" type="text" placeholder="Enter a new question here" value="<?= ($question) ?>"></input>
+												-->
+												<textarea rows="3" cols="50" class="form-control"  name="imagelink" id="imagelink" placeholder="image link here " value="<?= ($exercise['exsercise_image']) ?>" style="font-size: 14px"><?= ($exercise['exercise_image']) ?></textarea>
+								
+												
+												<!--</div>-->
+											</li>
+											<br>
+										
+									
+							
+							
+                        <!-- Edit and Delete hover over 
                         <div class="middle">
 							<div class="text">
 								<button type="button" class="btn btn-primary btn-warning btn-lg" data-toggle="modal" data-target=".editExerciseImage<?= ($exercise['exsercise_id']) ?>">
 									<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  Edit
 								</button>
 							</div>
-                        </div>
-                         <!-- Start of edit module-->
+                        </div>-->
+                         <!-- Start of edit module
                                     <div class="modal fade editExerciseImage<?= ($exercise['exercise_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content" id="modalcontent">
@@ -403,7 +446,7 @@ li {
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
-                                                <!-- inner modal -->
+                                                <!-- inner modal 
                                                     <br>
                                                     <br>
                                                     <div class="col-sm-12 text-center">
@@ -423,18 +466,31 @@ li {
                                                     </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>-->
 						<!-- End of edit module-->
                         <!-- Edit and Delete hover over end -->
                         </div>
                     </div>
+						
                 </div>
+			</div>
+				<br>
+					<button type="submit" class="btn btn-primary btn-success btn-lg btn-block">
+						<span class="glyphicon glyphicon-saved" aria-hidden="true"></span>  Save
+					</button>
+					</form>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
 			</div>
 
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
             <!-- Include all compiled plugins (below), or include individual files as needed -->
             <script src="js/bootstrap.min.js"></script>
+			<script src="js/addQuestion.js"></script>
 			<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
