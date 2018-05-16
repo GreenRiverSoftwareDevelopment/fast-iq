@@ -48,8 +48,7 @@
     
     $f3->route('GET /angularTest', function($f3)
     {
-        $view = new View;
-        echo $view->render('pages/angularTest.html');
+       echo Template::instance()->render('pages/angularTest.html');
     });
     
     $f3->route('GET /', function($f3)
@@ -74,7 +73,12 @@
                 }
                 
                 $categories =  $GLOBALS['categoryDB']->allCategories();
+                $students =  $GLOBALS['studentDB']->allStudents();
+                $exercises =  $GLOBALS['exerciseDB']->allExercises();
+                
                 $f3->set('categories', $categories);
+                $f3->set('students', $students);
+                $f3->set('exercises', $exercises);
                 echo Template::instance()->render('pages/category_backend.html');
             });
     
@@ -144,13 +148,13 @@
             $f3->route('POST /studentGrade', function($f3)
             {
                $GLOBALS['gradeDB']->updateGrade($_POST['student'], $_POST['exercise'], $_POST['grade']);
-                $f3->reroute('/');
+                $f3->reroute('/studentInfo');
             });
             
             $f3->route('POST /studentAttendance', function($f3)
             {
-                $GLOBALS['studentDB']->updateStudent($_POST['student'], $_POST['daysMissed']);
-                $f3->reroute('/');
+                $GLOBALS['studentDB']->updateStudent($_POST['student'], $_POST['hoursMissed']);
+                $f3->reroute('/studentInfo');
             });
             
             $f3->route('POST /addStudent', function($f3)
@@ -163,9 +167,11 @@
             {
                 $students = $GLOBALS['studentDB']->allStudents();
                 $grades = $GLOBALS['gradeDB']->allGrades();
+                $exercises = $GLOBALS['exerciseDB']->allExercises();
                 
                 $f3->set('students', $students);
                 $f3->set('grades', $grades);
+                $f3->set('exercises', $exercises);
                 echo Template::instance()->render('pages/student_info.html');
             });
     
@@ -174,6 +180,7 @@
     require("./indexRequire/brian.php");
     require("./indexRequire/kevin.php");
     require("./indexRequire/sonie.php");
+    require("./indexRequire/verificationRoutes.php");
 
     //Run fat free
     $f3->run();

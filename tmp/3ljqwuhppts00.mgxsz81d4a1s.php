@@ -90,8 +90,69 @@
 				<div class="col-md-3">
 				</div>
 				<div class="col-md-2 text-center">
+					<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target=".grade">
+						<h3>Grade Students</h3>
+					</button>
 				</div>
-				
+									<!-- Start of Grade module-->
+                                    <div class="modal fade grade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content" id="modalcontent">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Grading Students</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <!-- inner modal -->
+                                                <form action="./studentGrade" method="post" class="form-horizontal">
+                                                    <br>
+                                                    <br>
+                                                    <div class="col-sm-2"></div>
+
+                                                    <div class="col-sm-8 text-center">
+														<div class="form-group">
+															<h3 for="student">Students</h3>
+															<select class="form-control form-control-lg" name="student" id="student" required>
+																<?php foreach (($students?:[]) as $student): ?>
+																	<option value="<?= ($student['student_id']) ?>"><?= ($student['fName']) ?> <?= ($student['lName']) ?></option>
+																<?php endforeach; ?>
+															</select>
+														</div>
+														<div class="form-group">
+															<h3 for="exercise">Exercises</h3>
+															<select class="form-control form-control-lg" name="exercise" id="exercise" required>
+																<?php foreach (($exercises?:[]) as $exercise): ?>
+																	<option value="<?= ($exercise['exercise_id']) ?>"><?= ($exercise['exercise_name']) ?></option>
+																<?php endforeach; ?>
+															</select>
+														</div>
+                                                        <div class="form-group">
+															<h3 for="grade">Grade</h3>
+															<select class="form-control form-control-lg" name="grade" id="grade" required>
+																<option value="1">1</option>
+																<option value="2">2</option>
+																<option value="3">3</option>
+																<option value="4">4</option>
+																<option value="5">5</option>
+																<option value="6">6</option>
+																<option value="7">7</option>
+																<option value="8">8</option>
+																<option value="9">9</option>
+																<option value="10">10</option>
+															</select>
+														</div>
+                                                        <div class="form-group">
+                                                            <input class="btn btn-success btn-lg" type="submit" value="Save">
+                                                        </div>
+                                                        <br>
+                                                        <br>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+									<!-- End of Grade module-->
 				<div class="col-md-2 text-center">
 					<a href="./studentInfo"><button id="studentInfo" type="button" class="btn btn-primary btn-lg">
 						<h3>Student Info</h3>
@@ -99,7 +160,56 @@
 				</div>
 
 				<div class="col-md-2 text-center">
+					<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target=".attendance">
+						<h3>Student Attendance</h3>
+					</button>
 				</div>
+									<!-- Start of Attendance module-->
+                                    <div class="modal fade attendance" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content" id="modalcontent">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Attendance for Students</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <!-- inner modal -->
+                                                <form action="./studentAttendance" method="post" class="form-horizontal">
+                                                    <br>
+                                                    <br>
+                                                    <div class="col-sm-2"></div>
+
+                                                    <div class="col-sm-8 text-center">
+														<div class="form-group">
+															<h3 for="student">Student</h3>
+															<select class="form-control form-control-lg" name="student" id="student" required>
+																<?php foreach (($students?:[]) as $student): ?>
+																	<option value="<?= ($student['student_id']) ?>"><?= ($student['fName']) ?> <?= ($student['lName']) ?></option>
+																<?php endforeach; ?>
+															</select>
+														</div>
+                                                        <div class="form-group">
+															<h3 for="daysMissed">How many days were missed?</h3>
+															<select class="form-control form-control-lg" name="daysMissed" id="daysMissed" required>
+																<option value="1">1</option>
+																<option value="2">2</option>
+																<option value="3">3</option>
+																<option value="4">4</option>
+																<option value="5">5</option>
+															</select>
+														</div>
+                                                        <div class="form-group">
+                                                            <input class="btn btn-success btn-lg" type="submit" value="Save">
+                                                        </div>
+                                                        <br>
+                                                        <br>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+									<!-- End of Attendance module-->
 				<div class="col-md-3">
 				</div>
 			</div>
@@ -110,20 +220,20 @@
             <h1 class="display-2 text-center">Categories</h1>
 
 
-            <repeat group="{{ @categories }}" value="{{ @category }}">
+            <?php foreach (($categories?:[]) as $category): ?>
             <br>
             
                 <div class="row">
                     <div class="d-flex justify-content-center col-sm-1"></div>
                     <div class="d-flex justify-content-center col-sm-10">
-                        <a class="btn btn-primary btn-lg btn-block" id="{{ @category.category_name }}" href="./unitsBackend/{{ @category.category_id }}" role="button">
-                            <h4>{{ @category.category_name }}</h4>
+                        <a class="btn btn-primary btn-lg btn-block" id="<?= ($category['category_name']) ?>" href="./unitsBackend/<?= ($category['category_id']) ?>" role="button">
+                            <h4><?= ($category['category_name']) ?></h4>
                         </a>
                     </div>
                     <div class="d-flex justify-content-center col-sm-1"></div>
                 </div>
                 
-            </repeat>
+            <?php endforeach; ?>
 
 
             <br>
@@ -157,13 +267,13 @@
                                     <div class="form-group">
                                         <label for="category"><h3>Category Names</h3></label>
                                         
-                                        <repeat group="{{ @categories }}" value="{{ @category }}">
+                                        <?php foreach (($categories?:[]) as $category): ?>
                                             <div class="input-group input-group-lg">
-                                                <input class="form-control" type="text" name="category_name[]" id="category_name" placeholder="{{ @category.category_name }}" value="{{ @category.category_name }}"required>
-                                                <input class="form-control" type="hidden" name="category_id[]" id="category_id" value="{{ @category.category_id }}"required>
+                                                <input class="form-control" type="text" name="category_name[]" id="category_name" placeholder="<?= ($category['category_name']) ?>" value="<?= ($category['category_name']) ?>"required>
+                                                <input class="form-control" type="hidden" name="category_id[]" id="category_id" value="<?= ($category['category_id']) ?>"required>
                                             </div>
                                             <br>
-                                        </repeat>
+                                        <?php endforeach; ?>
 
                                     </div>
                                     <div class="form-group">
@@ -196,7 +306,7 @@
                                 </button>
                             </div>
                             <!-- inner modal -->
-                            <form action="./addCategory/{{ @category.category_id }}" method="post" class="form-horizontal">
+                            <form action="./addCategory/<?= ($category['category_id']) ?>" method="post" class="form-horizontal">
                                 <br>
                                 <br>
                                 <div class="col-sm-2"></div>
@@ -224,58 +334,10 @@
 
 
                 <div class="d-flex justify-content-center col-sm-2">
-                    <button type="button" class="btn btn-primary btn-lg btn-danger btn-block" data-toggle="modal" data-target=".confirmation">
+                    <button type="button" class="btn btn-primary btn-lg btn-danger btn-block" data-toggle="modal" data-target=".deleteCategory">
                         <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>  Delete
                     </button>
                 </div>
-				
-				<!--*********************************** START OF CONFIRMATION DELETE MODAL *************************************-->
-                <div class="modal fade confirmation" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content" id="modalcontent">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Delete a Category</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <!-- inner modal -->
-                            <form action="./deleteCategory" method="post" class="form-horizontal">
-                                <br>
-                                <br>
-								<div class="row">
-									<div class="col-sm-1"></div>
-	
-									<div class="col-sm-10 text-center">
-										<h2 class="text-center">Deleting a Category will delete everything in its hierarchy.</h2>
-										<h2 class="text-center">Are you sure you want to continue?</h2>
-										<br>
-										<br>
-										<br>
-									</div>
-									<div class="col-sm-1"></div>
-								</div>
-								<div class="row">
-                                        <div class="col-sm-2"></div>
-                                        <div class="col-sm-2 text-center">
-											<input class="btn btn-light btn-lg" type="button" data-dismiss="modal" value="No">
-										</div>
-										<div class="col-sm-4"></div>
-                                        <div class="col-sm-2 text-center">
-											<button type="button" class="btn btn-primary btn-lg btn-danger btn-block" data-dismiss="modal" data-toggle="modal" data-target=".deleteCategory">
-												<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>  Yes
-											</button>
-										</div>
-                                        <div class="col-sm-2"></div>
-                                </div>
-								<br>
-								<br>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <!--*********************************** END OF CONFIRMATION DELETE MODAL *************************************-->
-				
                 <!--*********************************** START OF DELETE MODAL *************************************-->
                 <div class="modal fade deleteCategory" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg">
@@ -293,40 +355,30 @@
                                 <div class="col-sm-2"></div>
 
                                 <div class="col-sm-8 text-center">
-                                    <label><h2>Category Names</h2></label>
+                                    <label><h2>Category Name</h2></label>
                                     <h4>(Check the boxes that you want to delete)</h4>
                                     <br>
                                     
-                                    <repeat group="{{ @categories }}" value="{{ @category }}">
+                                    <?php foreach (($categories?:[]) as $category): ?>
                                     <div class="row">
-                                        <div class="col-sm-2"></div>
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-3"></div>
+                                        <div class="col-sm-2 text-center">
                                             <div class="form-check">
-                                                <input class="input-group" type="checkbox" name="category_id[]" value="{{ @category.category_id }}" id="{{ @category.category_id }}">
+                                                <input class="input-group" type="checkbox" name="category_id[]" value="<?= ($category['category_id']) ?>" id="<?= ($category['category_id']) ?>">
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
-                                            <label class="form-check-label" for="{{ @category.category_id }}">
-                                                <h4>{{ @category.category_name }}</h4>
+                                            <label class="form-check-label" for="<?= ($category['category_id']) ?>">
+                                                <h4><?= ($category['category_name']) ?></h4>
                                             </label>
                                         </div>
-                                        <div class="col-sm-2"></div>
+                                        <div class="col-sm-3"></div>
                                     </div>
-                                    </repeat>
+                                    <?php endforeach; ?>
                                     
                                     <div class="form-group">
                                         <br>
-										<div class="row">
-											<div class="col-sm-2"></div>
-											<div class="col-sm-2 text-center">
-												<input class="btn btn-light btn-lg" type="button" data-dismiss="modal" value="No">
-											</div>
-											<div class="col-sm-4"></div>
-											<div class="col-sm-2 text-center">
-												<input class="btn btn-danger btn-lg" type="submit" value="Delete">
-											</div>
-											<div class="col-sm-2"></div>
-										</div>
+                                        <input class="btn btn-danger btn-lg" type="submit" value="Delete">
                                     </div>
                                     <br>
                                     <br>
@@ -336,7 +388,6 @@
                     </div>
                 </div>
                 <!--*********************************** END OF DELETE MODAL *************************************-->
-				
                 
                 <div class="d-flex justify-content-center col-sm-1"></div>
                 

@@ -20,176 +20,68 @@
             <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
                 <ul class="nav nav-pills nav-fill">
                     <li class="nav-item">
-                        <a class="nav-link" href="./categoryBackend"><h3>Home</h3></a>
+                        <a class="nav-link" href="./"><h3>Home</h3></a>
                     </li>
                     <li class="nav-item">
 
                     </li>
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                        <h3>Logout</h3>
-                    </button>
+							<h3>Login</h3>
+						</button>
                 </ul>
+
+
+
             </nav>
             </div>
 
-            <!--*********************************** THIS IS LOGOUT THE MODAL*************************************-->
+            <!--*********************************** THIS IS THE LOGIN MODAL*************************************-->
+
+
                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h3 class="modal-title" id="exampleModalLabel">Logout</h3>
+                        <h2 class="modal-title" id="exampleModalLabel">Login To Make Changes</h2>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
-                      <form action="./logout" method="GET">
+                      <form action="./login" method="POST">
                             <div class="modal-body">
-                                <div class="col-md-12">
-                                    <h3>Are you sure you want to logout?</h3>
+                                <div class="form-group row">
+                                  <label for="example-time-input" class="col-2 col-form-label"><h4>Email</h4></label>
+                                  <div class="col-10">
+									<div class="input-group input-group-lg">
+										<input class="form-control form-control-lg" type="Text" name="username" placeholder="username" id="username" required="true">
+									</div>
+                                  </div>
+                                </div>
+                                <div class="form-group row">
+                                  <label for="example-color-input" class="col-2 col-form-label"><h4>Password</h4></label>
+                                  <div class="col-10">
+									<div class="input-group input-group-lg">
+										<input class="form-control" type="password" name="password" placeholder="password" id="password" required="true">
+									</div>
+                                  </div>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">No</button>
-                              <button type="Submit" class="btn btn-primary btn-lg">Yes</button>
+                              <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Close</button>
+                              <button type="Submit" class="btn btn-primary btn-lg">Login</button>
                             </div>
                       </form>
                     </div>
                   </div>
                 </div>
-            <!--*********************************** THIS IS LOGOUT THE MODAL*************************************-->
+        <!--*********************************** THIS IS THE LOGIN MODAL*************************************-->
 
 
         <h1 class="display-2 text-center">Student Information</h1>
 		<br>
 		<br>
 		<br>
-		
-		<div class="row">
-			<div class="col-md-3">
-			</div>
-			<div class="col-md-3 text-center">
-				<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target=".grade">
-					<h3>Grade Students</h3>
-				</button>
-			</div>
-				<!--*********************************** START OF GRADE MODAL *************************************-->
-				<div class="modal fade grade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-					<div class="modal-dialog modal-lg">
-						<div class="modal-content" id="modalcontent">
-							<div class="modal-header">
-								<h5 class="modal-title" id="exampleModalLabel">Grading Students</h5>
-								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
-							</div>
-							<!-- inner modal -->
-							<form action="./studentGrade" method="post" class="form-horizontal">
-								<br>
-								<br>
-								<div class="col-sm-2"></div>
 
-								<div class="col-sm-8 text-center">
-									<div class="form-group">
-										<h3 for="student">Students</h3>
-										<select class="form-control form-control-lg" name="student" id="student" required>
-											<?php foreach (($students?:[]) as $student): ?>
-												<option value="<?= ($student['student_id']) ?>"><?= ($student['fName']) ?> <?= ($student['lName']) ?></option>
-											<?php endforeach; ?>
-										</select>
-									</div>
-									<div class="form-group">
-										<h3 for="exercise">Exercises</h3>
-										<select class="form-control form-control-lg" name="exercise" id="exercise" required>
-											<?php foreach (($exercises?:[]) as $exercise): ?>
-												<option value="<?= ($exercise['exercise_id']) ?>"><?= ($exercise['exercise_name']) ?></option>
-											<?php endforeach; ?>
-										</select>
-									</div>
-									<div class="form-group">
-										<h3 for="grade">Grade</h3>
-										<select class="form-control form-control-lg" name="grade" id="grade" required>
-											<option value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
-											<option value="4">4</option>
-											<option value="5">5</option>
-											<option value="6">6</option>
-											<option value="7">7</option>
-											<option value="8">8</option>
-											<option value="9">9</option>
-											<option value="10">10</option>
-										</select>
-									</div>
-									<div class="form-group">
-										<input class="btn btn-success btn-lg" type="submit" value="Save">
-									</div>
-									<br>
-									<br>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-				<!--*********************************** START OF GRADE MODAL *************************************-->
-
-			<div class="col-md-3 text-center">
-				<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target=".attendance">
-					<h3>Student Attendance</h3>
-				</button>
-			</div>
-				<!--*********************************** START OF ATTENDANCE MODAL *************************************-->
-				<div class="modal fade attendance" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-					<div class="modal-dialog modal-lg">
-						<div class="modal-content" id="modalcontent">
-							<div class="modal-header">
-								<h5 class="modal-title" id="exampleModalLabel">Attendance for Students</h5>
-								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
-							</div>
-							<!-- inner modal -->
-							<form action="./studentAttendance" method="post" class="form-horizontal">
-								<br>
-								<br>
-								<div class="col-sm-2"></div>
-
-								<div class="col-sm-8 text-center">
-									<div class="form-group">
-										<h3 for="student">Student</h3>
-										<select class="form-control form-control-lg" name="student" id="student" required>
-											<?php foreach (($students?:[]) as $student): ?>
-												<option value="<?= ($student['student_id']) ?>"><?= ($student['fName']) ?> <?= ($student['lName']) ?></option>
-											<?php endforeach; ?>
-										</select>
-									</div>
-									<div class="form-group">
-										<h3 for="hoursMissed">How many hours were missed?</h3>
-										<select class="form-control form-control-lg" name="hoursMissed" id="hoursMissed" required>
-											<option value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
-											<option value="4">4</option>
-											<option value="5">5</option>
-										</select>
-									</div>
-									<div class="form-group">
-										<input class="btn btn-success btn-lg" type="submit" value="Save">
-									</div>
-									<br>
-									<br>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-				<!--*********************************** START OF ATTENDANCE MODAL *************************************-->
-			<div class="col-md-3">
-			</div>
-		</div>
-		<br>
-		<br>
-		<br>
-		
 			<div class="row">
 				<div class="col-md-4">
 
@@ -232,7 +124,7 @@
                             <tr>
                                 <th scope="col"><h3>First</h3></th>
                                 <th scope="col"><h3>Last</h3></th>
-                                <th scope="col"><h3>Hours Missed</h3></th>
+                                <th scope="col"><h3>Days Missed</h3></th>
                             </tr>
                         </thead>
                         <tbody>

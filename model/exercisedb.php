@@ -82,6 +82,16 @@
 
             $statement->execute();
         }
+        
+        //function editVideoLink($exercise_id, $link){
+        //    $update = 'UPDATE videolink (link) VALUES (:link) where exerciseId=:exerciseId';
+        //    
+        //    $statement = $this->_pdo->prepare($update);
+        //    $statement->bindValue(':exerciseId', $exercise_id, PDO::PARAM_INT);
+        //    $statement->bindValue(':link', $link, PDO::PARAM_STR);
+        //
+        //    $statement->execute();
+        //}
 
         //READ
         /**
@@ -105,8 +115,8 @@
         }
 
         function allVideoLinks($exerciseId) {
-            $select = 'SELECT videoId, exerciseId, link FROM videolink WHERE
-            exerciseId='. $exerciseId; $results = $this->_pdo->query($select);
+            $select = 'SELECT videoId, exerciseId, link FROM videolink WHERE exerciseId='. $exerciseId;
+            $results = $this->_pdo->query($select);
 
             $resultsArray = array();
 
@@ -184,6 +194,8 @@
 
             $statement->execute();
         }
+        
+        
 
                       /**
          *Edit exercise summary */
@@ -215,6 +227,9 @@
 
             $statement->execute();
         }
+        
+  
+        
 
         /**
          * Grabs all exercises from a specific unit_id */

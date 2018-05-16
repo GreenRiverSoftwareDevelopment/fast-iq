@@ -12,10 +12,14 @@
             //    $f3->reroute('/categoryBackend');
             //});
 
-                $f3->route('GET /deleteCategory/@id', function($f3, $params)
+                $f3->route('POST /deleteCategory', function($f3, $params)
                 {
-                    $GLOBALS['categoryDB']->deleteCategory($params['id']);
-                    $f3->reroute('/categoryBackend');
+                        $idArray = $_POST['category_id'];
+                        for($i = 0; $i < count($idArray); ++$i)
+                        {
+                             $GLOBALS['categoryDB']->deleteCategory($idArray[$i]);   
+                        }
+                        $f3->reroute('/categoryBackend');
                 });
                 
                     $f3->route('POST /editCategoryNames', function($f3, $params)
@@ -41,9 +45,13 @@
             //    $f3->reroute('/unitsBackend');
             //});
             
-                $f3->route('GET /deleteUnit/@id', function($f3, $params)
+                $f3->route('POST /deleteUnit', function($f3, $params)
                 {
-                    $GLOBALS['unitDB']->deleteUnit($params['id']);
+                        $idArray = $_POST['unit_id'];
+                        for($i = 0; $i < count($idArray); ++$i)
+                        {
+                             $GLOBALS['unitDB']->deleteUnit($idArray[$i]);   
+                        }
                     $f3->reroute('/unitsBackend');
                 });
                 
@@ -71,9 +79,13 @@
             //    $f3->reroute('/exercisesBackend');
             //});
             
-                $f3->route('GET /deleteExercise/@id', function($f3, $params)
+                $f3->route('POST /deleteExercise', function($f3, $params)
                 {
-                    $GLOBALS['exerciseDB']->deleteExercise($params['id']);
+                        $idArray = $_POST['exercise_id'];
+                        for($i = 0; $i < count($idArray); ++$i)
+                        {
+                             $GLOBALS['exerciseDB']->deleteExercise($idArray[$i]);   
+                        }
                     $f3->reroute('/exercisesBackend');
                 });
                 

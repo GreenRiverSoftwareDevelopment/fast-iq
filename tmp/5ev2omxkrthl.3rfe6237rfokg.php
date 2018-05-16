@@ -1,16 +1,30 @@
 <!DOCTYPE html>
 <html>
-
-<body>
-
-<div ng-app="">
- 
-<p>Input something in the input box:</p>
-<p>Name : <input type="text" ng-model="name" placeholder="Enter name here"></p>
-<h1>Hello <?= (name) ?></h1>
-
-</div>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-
-</body>
+    <head>
+        <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    </head>
+    
+    <body>
+        
+        <input type="text" id="input" onkeydown="typing();"></input>
+    
+    <script>
+        $(document).ready(function(){
+                        
+                        console.log('reached');
+                        
+                        });
+        
+        function typing()
+        {
+            var input = $('#input').val();
+        
+            console.log(input);
+        }
+    </script>
+    
+    </body>
 </html>
