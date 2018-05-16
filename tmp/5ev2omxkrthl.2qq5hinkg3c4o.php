@@ -155,6 +155,7 @@ li {
 		<strong><?= ($exercise['exercise_name']) ?></strong>
 	</h1>
 	<br>
+	<form action="./editExerciseSummary/<?= ($exerciseID) ?>" id="summary" method="post" class="form-horizontal">
 			<div class="col-xs-11 col-sm-7">
     <div class="panel-group" id="accordion">
 
@@ -178,7 +179,7 @@ li {
                     <div class="panel-body">
 						<div class="row">
 							<div class="col-sm-12">
-								<form action="./editExerciseSummary/<?= ($exerciseID) ?>" id="summary" method="post" class="form-horizontal">
+								
 									<div class="input-group">
 										<textarea rows="8" cols="100" class="col-md-12 form-control"  name="exercise_summary" id="exercise_summary" placeholder="Enter a Summary here" style="font-size: 14px"></textarea>
 									</div>
@@ -261,62 +262,9 @@ li {
 												<!--<div class="input-group input-group-lg">
 													<input name="questions[]" id="questions" class="form-control" type="text" placeholder="Enter a new question here"></input>
 												</div>-->
-												<textarea rows="3" cols="50" class="form-control"  name="newlink" id="newlink" placeholder="Enter a new link here" style="font-size: 14px"></textarea>
+							<textarea rows="3" cols="50" class="form-control"  name="newlink" id="newlink" placeholder="Enter a new link here" style="font-size: 14px"></textarea>
 								
-											</li>
-						
-						
-								<!--
-								 <form action="./editExerciseVideo/<?= ($exerciseID) ?>" id="video" method="post" class="form-horizontal">					
-
-											<li id="list-group">
-												<!--<div class="input-group input-group-lg">
-													<input name="questions[]" id="questions" class="form-control" type="text" placeholder="Enter a new question here"></input>
-												</div>
-												<textarea rows="3" cols="50" class="form-control"  name="questions[]" id="questions" placeholder="Enter a new link here" style="font-size: 14px"></textarea>
-								
-											</li>
-									</form>-->
-
-
-
-
-
-                        <!-- Start of edit module
-                                    <div class="modal fade editExerciseVideo<?= ($exercise['exercise_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg">
-                                            <div class="modal-content" id="modalcontent">
-												<div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Save changes for video</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <!-- inner modal 
-                                                    <br>
-                                                    <br>
-                                                    <div class="col-sm-12 text-center">
-                                                            <label for="exercise"></label>
-																<h3>Enter a YouTube link.</h3>
-																<!--
-                                                                <form action="./editExerciseVideo/<?= ($exerciseID) ?>" id="video" method="post" class="form-horizontal">
-																	<div class="input-group input-group-lg">
-																		<input class="form-control" name="videolink" id="videolink"  value="<?= ($exercise['exercise_video']) ?>">
-																	</div>
-                                                                </form>
-																
-																<br>
-                                                        <div class="form-group">
-                                                            <input form="video" class="btn btn-info btn-lg" type="submit" value="Save">
-                                                        </div>
-                                                        <br>
-                                                        <br>
-						</div>
-					
-                                            </div>
-                                        </div>
-                                    </div>
-                     End of edit module-->
+						</li>
 						</div>
 					</div>
 				</div>
@@ -361,34 +309,6 @@ li {
 							</div>
 						</div>
                         <br>
-
-
-                           <!-- Start of edit module
-                                    <div class="modal fade editExerciseQuestion<?= ($exercise['exercise_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg">
-                                            <div class="modal-content" id="modalcontent">
-												<div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Save changes for questions</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <!-- inner modal 
-                                                    <br>
-                                                    <br>
-													<div class="col-sm-12 text-center">
-                                                            <label for="exercise"><h3>Are you sure you want to save changes?</h3></label>
-                                                        <div class="form-group">
-                                                            <input form="question" class="btn btn-info btn-lg" type="submit" value="Save">
-                                                        </div>
-                                                        <br>
-                                                        <br>
-                                                    </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                     End of edit module-->
-                        <!--<?= ($exercise['exercise_questions']) ?>-->
                     </div>
                 </div>
             </div>
@@ -425,51 +345,6 @@ li {
 												<!--</div>-->
 											</li>
 											<br>
-										
-									
-							
-							
-                        <!-- Edit and Delete hover over 
-                        <div class="middle">
-							<div class="text">
-								<button type="button" class="btn btn-primary btn-warning btn-lg" data-toggle="modal" data-target=".editExerciseImage<?= ($exercise['exsercise_id']) ?>">
-									<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  Edit
-								</button>
-							</div>
-                        </div>-->
-                         <!-- Start of edit module
-                                    <div class="modal fade editExerciseImage<?= ($exercise['exercise_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg">
-                                            <div class="modal-content" id="modalcontent">
-												<div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Save changes for images</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <!-- inner modal 
-                                                    <br>
-                                                    <br>
-                                                    <div class="col-sm-12 text-center">
-                                                            <label for="exercise"></label>
-																<h3>Enter a Photo link.</h3>
-																	<form action="./editExerciseImage/<?= ($exerciseID) ?>" id="image" method="post" class="form-horizontal">
-																		<div class="input-group input-group-lg">
-																			<input class="form-control" name="imagelink" id="imagelink"  value="<?= ($exercise['exercise_image']) ?>">
-																		</div>
-																	</form>
-																	<br>
-                                                        <div class="form-group">
-                                                            <input form="image" class="btn btn-info btn-lg" type="submit" value="Save">
-                                                        </div>
-                                                        <br>
-                                                        <br>
-                                                    </div>
-                                            </div>
-                                        </div>
-                                    </div>-->
-						<!-- End of edit module-->
-                        <!-- Edit and Delete hover over end -->
                         </div>
                     </div>
 						
@@ -479,14 +354,14 @@ li {
 					<button type="submit" id="submit_button" class="btn btn-primary btn-success btn-lg btn-block">
 						<span class="glyphicon glyphicon-saved" aria-hidden="true"></span>  Save
 					</button>
-					</form>
+					
 					<br>
 					<br>
 					<br>
 					<br>
 					<br>
 			</div>
-
+</form>
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
             <!-- Include all compiled plugins (below), or include individual files as needed -->

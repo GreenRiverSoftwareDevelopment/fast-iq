@@ -155,6 +155,7 @@ li {
 		<strong>{{ @exercise.exercise_name }}</strong>
 	</h1>
 	<br>
+	<form action="./editExerciseSummary/{{ @exerciseID }}" id="summary" method="post" class="form-horizontal">
 			<div class="col-xs-11 col-sm-7">
     <div class="panel-group" id="accordion">
 
@@ -178,7 +179,7 @@ li {
                     <div class="panel-body">
 						<div class="row">
 							<div class="col-sm-12">
-								<form action="./editExerciseSummary/{{ @exerciseID }}" id="summary" method="post" class="form-horizontal">
+								
 									<div class="input-group">
 										<textarea rows="8" cols="100" class="col-md-12 form-control"  name="exercise_summary" id="exercise_summary" placeholder="Enter a Summary here" style="font-size: 14px"></textarea>
 									</div>
@@ -353,14 +354,14 @@ li {
 					<button type="submit" id="submit_button" class="btn btn-primary btn-success btn-lg btn-block">
 						<span class="glyphicon glyphicon-saved" aria-hidden="true"></span>  Save
 					</button>
-					</form>
+					
 					<br>
 					<br>
 					<br>
 					<br>
 					<br>
 			</div>
-
+</form>
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
             <!-- Include all compiled plugins (below), or include individual files as needed -->
