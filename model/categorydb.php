@@ -60,7 +60,8 @@
          * Returns all categories in the database. */
         function allCategories() {
             $select = 'SELECT category_id, category_name FROM categories ORDER
-            BY category_name'; $results = $this->_pdo->query($select);
+            BY category_name';
+            $results = $this->_pdo->query($select);
 
             $resultsArray = array();
 

@@ -156,12 +156,12 @@ li {
 	</h1>
 	<br>
 	<form action="./editExerciseSummary/<?= ($exerciseID) ?>" id="summary" method="post" class="form-horizontal">
-			<div class="col-xs-11 col-sm-7">
+		<div class="row">
+			<div class="col-sm-1 col-md-2"></div>
+			<div class="col-sm-10 col-md-8">
     <div class="panel-group" id="accordion">
 
         <!-- start panel left -->
-        <!--<div class="panel-left col-sm-6">-->
-		<div class="col-sm-10 col-sm-offset-5">
 
 
             <!-- start panel -->
@@ -291,7 +291,9 @@ li {
 									<li id="list-group">
 									
 										<div class="input_fields_wrap">
-											<button class="add_field_button">Add More Fields</button>
+											<button class="add_field_button btn btn-primary btn-lg">Add More Fields</button>
+											<br>
+											<br>
 											<?php foreach (($questions_array?:[]) as $question): ?>
 												<textarea rows="3" cols="50" class="form-control" name="questions[]" id="questions" placeholder="Enter a question here" value="<?= ($question) ?>" style="font-size: 14px"><?= ($question) ?></textarea>
 												<br>
@@ -360,8 +362,11 @@ li {
 					<br>
 					<br>
 					<br>
-			</div>
 </form>
+			</div>
+			<div class="col-sm-1 col-md-2"></div>
+		</div>
+			
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
             <!-- Include all compiled plugins (below), or include individual files as needed -->

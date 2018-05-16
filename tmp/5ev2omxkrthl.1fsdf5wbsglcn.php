@@ -93,7 +93,7 @@
 										<h3 for="student">Students</h3>
 										<select class="form-control form-control-lg" name="student" id="student" required>
 											<?php foreach (($students?:[]) as $student): ?>
-												<option value="<?= ($student['student_id']) ?>"><?= ($student['fName']) ?> <?= ($student['lName']) ?></option>
+												<option id="<?= ($student['student_id']) ?>" value="<?= ($student['student_id']) ?>"><?= ($student['fName']) ?> <?= ($student['lName']) ?></option>
 											<?php endforeach; ?>
 										</select>
 									</div>
@@ -101,7 +101,7 @@
 										<h3 for="exercise">Exercises</h3>
 										<select class="form-control form-control-lg" name="exercise" id="exercise" required>
 											<?php foreach (($exercises?:[]) as $exercise): ?>
-												<option value="<?= ($exercise['exercise_id']) ?>"><?= ($exercise['exercise_name']) ?></option>
+												<option id="<?= ($exercise['exercise_id']) ?>" value="<?= ($exercise['exercise_id']) ?>"><?= ($exercise['exercise_name']) ?></option>
 											<?php endforeach; ?>
 										</select>
 									</div>
@@ -158,7 +158,7 @@
 										<h3 for="student">Student</h3>
 										<select class="form-control form-control-lg" name="student" id="student" required>
 											<?php foreach (($students?:[]) as $student): ?>
-												<option value="<?= ($student['student_id']) ?>"><?= ($student['fName']) ?> <?= ($student['lName']) ?></option>
+												<option id="<?= ($student['student_id']) ?>" value="<?= ($student['student_id']) ?>"><?= ($student['fName']) ?> <?= ($student['lName']) ?></option>
 											<?php endforeach; ?>
 										</select>
 									</div>
@@ -240,7 +240,7 @@
                             <tr>
                                 <th scope="row"><h4><?= ($student['fName']) ?></h4></th>
                                 <th><h4><?= ($student['lName']) ?></h4></th>
-                                <th><h4><?= ($student['daysMissed']) ?></h4></th>
+                                <th><h4><?= ($student['hoursMissed']) ?></h4></th>
                             </tr>
                             <?php endforeach; ?>
                         </tbody>

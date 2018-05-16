@@ -58,8 +58,8 @@ CREATE TABLE students ( student_id int NOT NULL AUTO_INCREMENT PRIMARY
 
         //READ
         function allStudents() {
-            $select = 'SELECT * FROM students ORDER BY student_id'; $results =
-            $this->_pdo->query($select);
+            $select = 'SELECT * FROM students ORDER BY student_id';
+            $results = $this->_pdo->query($select);
 
             $resultsArray = array();
 
