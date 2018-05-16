@@ -178,7 +178,7 @@ li {
                     <div class="panel-body">
 						<div class="row">
 							<div class="col-sm-6">
-								<form action="./editExerciseSummary/<?= ($exerciseID) ?>" id="summary" method="post" class="form-horizontal">
+								<form action="./editExerciseSummary/<?= ($exerciseID) ?>" id="summary" method="post" class="addQuestion form-horizontal">
 									<div class="input-group">
 										<textarea rows="8" cols="50" class="form-control"  name="exercise_summary" id="exercise_summary" placeholder="Enter a Summary here" value="<?= ($exercise['exercise_summary']) ?>" style="font-size: 14px"><?= ($exercise['exercise_summary']) ?></textarea>
 									</div>
@@ -349,7 +349,7 @@ li {
 										<textarea rows="3" cols="50" class="form-control" name="questions[]" id="questions" placeholder="Enter a question here" value="<?= ($question) ?>" style="font-size: 14px"><?= ($question) ?></textarea>
 										<br>
 									<?php endforeach; ?>
-										<div class="input_fields_wra">
+										<div class="input_fields_wrap">
 											<button class="add_field_button">Add More Fields</button>
 										</div>
 									</li>
@@ -479,7 +479,7 @@ li {
                 </div>
 			</div>
 				<br>
-					<button type="submit" class="btn btn-primary btn-success btn-lg btn-block">
+					<button type="submit" id="submit_button" class="btn btn-primary btn-success btn-lg btn-block">
 						<span class="glyphicon glyphicon-saved" aria-hidden="true"></span>  Save
 					</button>
 					</form>

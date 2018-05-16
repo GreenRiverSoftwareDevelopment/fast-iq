@@ -122,6 +122,10 @@
                 echo $_POST["questions"][1];
                 echo "<br>";
                 echo $_POST["questions"][2];
+                echo $_POST["test"];
+                echo $_POST["test"][0];
+                echo $_POST["test"][0][0];
+                
                 $GLOBALS['exerciseDB']->editExerciseQuestion($params['id'], $questions);
                 //$id, $exercise_name, $exercise_summary, $exercise_image, $exercise_video, $exercise_questions
                 

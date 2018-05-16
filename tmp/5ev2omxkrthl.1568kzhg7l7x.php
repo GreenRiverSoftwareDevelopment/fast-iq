@@ -301,7 +301,7 @@
 											</div>
 											<div class="col-sm-4"></div>
 											<div class="col-sm-2 text-center">
-												<input class="btn btn-danger btn-lg" type="submit" value="Delete">
+												<input class="btn btn-danger btn-lg" id="delete" type="submit" value="Delete">
 											</div>
 											<div class="col-sm-2"></div>
 										</div>
