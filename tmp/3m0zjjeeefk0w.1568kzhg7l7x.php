@@ -60,173 +60,157 @@
                   </div>
                 </div>
         <!--*********************************** THIS IS LOGOUT THE MODAL*************************************-->
+        <!--*********************************** THIS IS THE CREATE A NEW ADMIN MODAL*************************************-->
+                <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Create a new admin</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="container-fluid">
+                        <form action="./createAdmin" method="post">
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp" placeholder="Enter username">
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                          </div>
+                          <button type="submit" class="btn btn-primary" id="createdAdminBtn">Create</button>
+                        </form>                        
+                      </div>
 
-            <h1 class="display-2 text-center" id="<?= ($unitName['unit_name']) ?>"><?= ($categoryName['category_name']) ?> > <?= ($unitName['unit_name']) ?></h1>
+                    </div>
+                  </div>
+                </div>
+        <!--*********************************** THIS IS THE END OF THE CREATE A NEW ADMIN MODAL*************************************-->
+
+            <h1 class="display-2 text-center" id="<?= ($unitName['unit_name']) ?>">
+                <strong><a href="./unitsBackend/<?= ($categoryID) ?>"><?= ($categoryName['category_name']) ?></a></strong> >
+                <strong><?= ($unitName['unit_name']) ?></strong>
+            </h1>
 
 
             <?php foreach (($exercises?:[]) as $exercise): ?>
             <br>
                 <div class="row">
-                    <div class="d-flex justify-content-center col-sm-2">
-                        <button type="button" class="btn btn-primary btn-warning btn-lg" data-toggle="modal" data-target=".editExercise<?= ($exercise['exercise_id']) ?>">
-                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  Edit
-                        </button>
-                    </div>
-
-                        <!-- Start of edit module-->
-                                    <div class="modal fade editExercise<?= ($exercise['exercise_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg">
-                                            <div class="modal-content" id="modalcontent">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Edit <?= ($exercise['exercise_name']) ?></h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <!-- inner modal -->
-                                                <form action="./editExercise/<?= ($exercise['exercise_id']) ?>" method="post" class="form-horizontal">
-                                                    <br>
-                                                    <br>
-                                                    <div class="col-sm-2"></div>
-
-                                                    <div class="col-sm-8 text-center">
-                                                        <div class="form-group">
-                                                            <label for="exercise"><h3>Exercise Name</h3></label>
-                                                            <div class="input-group input-group-lg">
-                                                                <input class="form-control" type="text" name="exercise_name" id="exercise_name" value="<?= ($exercise['exercise_name']) ?>" placeholder="Name" required>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input class="btn btn-warning btn-lg" type="submit" value="Save">
-                                                        </div>
-                                                        <br>
-                                                        <br>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                    <!-- End of edit module-->
-            <!--*********************************** THIS IS THE create a new admin MODAL*************************************-->
-                          <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <h5 class="modal-title" id="exampleModalLabel">Create a new admin</h5>
-                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                  </button>
-                                </div>
-                                <div class="container-fluid">
-                                  <form action="./createAdmin" method="post">
-                                    <div class="form-group">
-                                      <label for="exampleInputEmail1">Username</label>
-                                      <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp" placeholder="Enter username">
-                                    </div>
-                                    <div class="form-group">
-                                      <label for="exampleInputPassword1">Password</label>
-                                      <input type="password" class="form-control" id="password" name="password" placeholder="Password">
-                                    </div>
-                                    <button type="submit" class="btn btn-primary" id="createdAdminBtn">Create</button>
-                                  </form>
-                                </div>
-
-                              </div>
-                            </div>
-                          </div>
-                        <!-- End of edit module-->
-                            <div class="d-flex justify-content-center col-sm-8">
+                            <div class="d-flex justify-content-center col-sm-1"></div>
+                            <div class="d-flex justify-content-center col-sm-10">
                                 <a class="btn btn-primary btn-lg btn-block" id="<?= ($exercise['exercise_name']) ?>" href="./exerciseSummaryBackend/<?= ($exercise['exercise_id']) ?>" role="button">
                                     <h4><?= ($exercise['exercise_name']) ?></h4>
                                 </a>
                             </div>
-
-                    <div class="d-flex justify-content-center col-sm-2">
-                        <button type="button" class="btn btn-primary btn-danger btn-lg" data-toggle="modal" data-target=".deleteExercise<?= ($exercise['exercise_id']) ?>">
-                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>  Delete
-                        </button>
-                    </div>
-
-                    <!-- Start of delete module-->
-                                    <div class="modal fade deleteExercise<?= ($exercise['exercise_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg">
-                                            <div class="modal-content" id="modalcontent">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Delete <?= ($exercise['exercise_name']) ?></h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <!-- inner modal -->
-                                                <form action="./deleteExercise/<?= ($exercise['exercise_id']) ?>" method="get" class="form-horizontal">
-                                                    <br>
-                                                    <br>
-                                                    <div class="col-sm-2"></div>
-
-                                                    <div class="col-sm-12 text-center">
-                                                            <label for="exercise"><h3>Are you sure you want to delete this Exercise?</h3></label>
-                                                            <br>
-                                                        <div class="form-group">
-                                                            <input class="btn btn-danger btn-lg" type="submit" value="DELETE">
-                                                        </div>
-                                                        <br>
-                                                        <br>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                    <!-- End of delete module-->
-
+                            <div class="d-flex justify-content-center col-sm-1"></div>
                 </div>
             <?php endforeach; ?>
 
             <br>
 
             <div class="row">
-                <div class="d-flex justify-content-center col-sm-2"></div>
-                    <div class="d-flex justify-content-center col-sm-8">
-                        <button type="button" class="btn btn-primary btn-lg btn-success btn-block" data-toggle="modal" data-target=".addExercise<?= ($exercise['exercise_id']) ?>">
-                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span><h5>Add</h5>
-                        </button>
-                    </div>
+                <div class="d-flex justify-content-center col-sm-1">
+                    
+                </div>
+                
+                <div class="d-flex justify-content-center col-sm-2">
+                    <button type="button" class="btn btn-primary btn-lg btn-warning btn-block" data-toggle="modal" data-target=".editExercise">
+                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  Edit
+                    </button>
+                </div>
+                <!--*********************************** START OF EDIT MODAL *************************************-->
+                <div class="modal fade editExercise" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content" id="modalcontent">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Edit Exercises</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <!-- inner modal -->
+                            <form action="./editExerciseNames" method="post" class="form-horizontal">
+                                <br>
+                                <br>
+                                <div class="col-sm-2"></div>
 
-                    <!-- Start of add module-->
-                                    <div class="modal fade addExercise<?= ($exercise['exercise_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg">
-                                            <div class="modal-content" id="modalcontent">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Add a Exercise</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <!-- inner modal-->
-                                                <form action="./addExercise/<?= ($unitName['unit_id']) ?>" method="post" class="form-horizontal">
-                                                    <br>
-                                                    <br>
-                                                    <div class="col-sm-2"></div>
-
-                                                    <div class="col-sm-8 text-center">
-                                                        <div class="form-group">
-                                                            <label for="exercise"><h3>Exercise Name</h3></label>
-                                                            <div class="input-group input-group-lg">
-                                                                <input class="form-control" type="text" name="exercise_name" id="exercise_name" placeholder="Exercise Name" required>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input class="btn btn-success btn-lg" type="submit" value="Add">
-                                                        </div>
-                                                        <br>
-                                                        <br>
-                                                    </div>
-                                                </form>
+                                <div class="col-sm-8 text-center">
+                                    <div class="form-group">
+                                        <label for="category"><h3>Exercise Names</h3></label>
+                                        
+                                        <?php foreach (($exercises?:[]) as $exercise): ?>
+                                            <div class="input-group input-group-lg">
+                                                <input class="form-control" type="text" name="exercise_name[]" id="exercise_name" placeholder="<?= ($exercise['exercise_name']) ?>" value="<?= ($exercise['exercise_name']) ?>"required>
+                                                <input class="form-control" type="hidden" name="exercise_id[]" id="exercise_id" value="<?= ($exercise['exercise_id']) ?>"required>
                                             </div>
+                                            <br>
+                                        <?php endforeach; ?>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="btn btn-warning btn-lg" type="submit" value="Edit">
+                                    </div>
+                                    <br>
+                                    <br>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!--*********************************** END OF EDIT MODAL *************************************-->
+            
+                <div class="d-flex justify-content-center col-sm-6">
+                    <button type="button" class="btn btn-primary btn-lg btn-success btn-block" data-toggle="modal" data-target=".addExercise<?= ($exercise['exercise_id']) ?>">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span><h5>Add</h5>
+                    </button>
+                </div>
+
+                <!-- Start of add module-->
+                <div class="modal fade addExercise<?= ($exercise['exercise_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content" id="modalcontent">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Add a Exercise</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <!-- inner modal-->
+                            <form action="./addExercise/<?= ($unitName['unit_id']) ?>" method="post" class="form-horizontal">
+                                <br>
+                                <br>
+                                <div class="col-sm-2"></div>
+
+                                <div class="col-sm-8 text-center">
+                                    <div class="form-group">
+                                        <label for="exercise"><h3>Exercise Name</h3></label>
+                                        <div class="input-group input-group-lg">
+                                            <input class="form-control" type="text" name="exercise_name" id="exercise_name" placeholder="Exercise Name" required>
                                         </div>
                                     </div>
-                    <!-- End of add module-->
+                                    <div class="form-group">
+                                        <input class="btn btn-success btn-lg" type="submit" value="Add">
+                                    </div>
+                                    <br>
+                                    <br>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of add module-->
 
-                <div class="d-flex justify-content-center col-sm-2"></div>
+                <div class="d-flex justify-content-center col-sm-2">
+                    <button type="button" class="btn btn-primary btn-lg btn-danger btn-block" data-toggle="modal" data-target=".deleteExercise<?= ($exercise['exercise_id']) ?>">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>  Delete
+                    </button>
+                </div>
+                
+                <div class="d-flex justify-content-center col-sm-1">
+                    
+                </div>
             </div>
 
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

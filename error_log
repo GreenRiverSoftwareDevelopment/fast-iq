@@ -2508,3 +2508,6 @@ Stack trace:
 [25-Apr-2018 03:20:09 America/Chicago] ','SERVER_SOFTWARE'=>'Apache','UNIQUE_ID'=>'WuA6OcC5U1IABRLkLJAAAAEE']],'languages'=>['en-US','en'],'locks'=>[],'fallback'=>'en']),['/editExerciseNames'],Closure::__set_state([])],'beforeroute,afterroute')
 [25-Apr-2018 03:20:09 America/Chicago] [485/fast-iq/index.php:179] Base->run()
 >>>>>>> cf303ec7dcec66b3ad4911ee1f4f5f7adf25fe4a
+[25-Apr-2018 19:26:39 America/Chicago] HTTP 405 (POST /categoryBackend)
+[25-Apr-2018 19:26:39 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:1691] Base->error()
+[25-Apr-2018 19:26:39 America/Chicago] [fast-iq/index.php:179] Base->run()
