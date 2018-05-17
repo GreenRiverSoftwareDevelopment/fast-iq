@@ -163,6 +163,15 @@
                 $f3->reroute('/studentInfo');
             });
             
+            //method to delete one student
+            $f3->route('POST /deleteStudent', function($f3)
+            {
+                $GLOBALS['studentDB']->deleteOneStudent($_POST['student']);
+                
+                $f3->reroute('/studentInfo');
+            });
+            
+            
             $f3->route('GET /studentInfo', function($f3)
             {
                 $students = $GLOBALS['studentDB']->allStudents();
@@ -172,6 +181,8 @@
                 $f3->set('students', $students);
                 $f3->set('grades', $grades);
                 $f3->set('exercises', $exercises);
+                
+                
                 echo Template::instance()->render('pages/student_info.html');
             });
     
