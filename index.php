@@ -171,6 +171,32 @@
                 $f3->reroute('/studentInfo');
             });
             
+             //method to edit students names 
+            $f3->route('POST /studentEdit', function($f3)
+            {
+                //$GLOBALS['studentDB']->editStudentName($_POST['student'], $_POST['fName'], $_POST['lName']);
+               
+                $student_fName = $_POST['student_fName'];
+                $student_lName = $_POST['student_lName'];
+                $student_id = $_POST['student_id'];
+                
+                       
+                       for($i = 0; $i < count($student_id); ++$i)
+                        {
+                            //print_r($student_fName[$i]);
+                            //print_r($student_lName[$i]);
+                            //print_r($student_id[$i]);
+                            //print_r("  ");
+                            //
+;                           $GLOBALS['studentDB']->editStudentName($student_id[$i], $student_fName[$i], $student_lName[$i]);
+                        
+                
+                        }
+                
+                
+                $f3->reroute('/studentInfo');
+            });
+            
             
             $f3->route('GET /studentInfo', function($f3)
             {

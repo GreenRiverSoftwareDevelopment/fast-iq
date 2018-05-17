@@ -67,7 +67,7 @@
 		<div class="row">
 			<div class="col-md-3">
 			</div>
-			<div class="col-md-3 text-center">
+			<!--<div class="col-md-3 text-center">
 				<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target=".grade">
 					<h3>Grade Students</h3>
 				</button>
@@ -131,6 +131,60 @@
 					</div>
 				</div>
 				<!--*********************************** START OF GRADE MODAL *************************************-->
+
+
+
+		<! **** START OF EDITING STUDENT -->
+			<div class="col-md-3 text-center">
+				<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target=".studentEdit">
+					<h3>Edit Student Name</h3>
+				</button>
+			</div>
+				<!--*********************************** START OF GRADE MODAL *************************************-->
+				<div class="modal fade studentEdit" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content" id="modalcontent">
+							<div class="modal-header">
+								<h5 class="modal-title" id="exampleModalLabel">Editing Students Name</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<!-- inner modal -->
+							<form action="./studentEdit" method="post" class="form-horizontal">
+								<br>
+								<br>
+								<div class="col-sm-2"></div>
+
+								<div class="col-sm-8 text-center">
+									<div class="form-group">
+										<h3 for="student">Students</h3>
+									
+									<repeat group="{{ @students }}" value="{{ @student }}">
+                                            <div class="input-group input-group-lg">
+                                                <input class="form-control" type="text" name="student_fName[]" id="student_fName" placeholder="{{ @student.fName }}" value="{{ @student.fName }}" required>
+												 <input class="form-control" type="text" name="student_lName[]" id="student_lName" placeholder="{{ @student.lName }}" value="{{ @student.lName }}" required>
+                                            
+                                                <input class="form-control" type="hidden" name="student_id[]" id="student_id" value="{{ @student.student_id }}"required>
+                                            </div>
+                                            <br>
+                                        </repeat>
+									
+										
+									</div>
+									
+								
+									<div class="form-group">
+										<input class="btn btn-success btn-lg" type="submit" value="Save">
+									</div>
+									<br>
+									<br>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+
 
 
 	<!--*********************************** START OF GRADE MODAL *************************************-->

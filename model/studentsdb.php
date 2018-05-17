@@ -55,11 +55,24 @@ CREATE TABLE students ( student_id int NOT NULL AUTO_INCREMENT PRIMARY
 
             $statement->execute();
         }
+        
+         function editStudentName($student_id, $fName, $lName) {
+            $update = 'UPDATE
+                        students SET fName =:fName, lName =:lName WHERE
+                        student_id =:student_id';
+
+            $statement = $this->_pdo->prepare($update);
+            $statement->bindValue(':fName', $fName, PDO::PARAM_STR);
+            $statement->bindValue(':lName', $lName, PDO::PARAM_STR);
+            $statement->bindValue(':student_id', $student_id, PDO::PARAM_STR);
+
+            $statement->execute();
+        }
 
         //READ
         function allStudents() {
-            $select = 'SELECT * FROM students ORDER BY student_id';
-            $results = $this->_pdo->query($select);
+            $select = 'SELECT * FROM students ORDER BY student_id'; $results =
+            $this->_pdo->query($select);
 
             $resultsArray = array();
 
