@@ -89,19 +89,19 @@
                 $GLOBALS['exerciseDB']->editExerciseSummary($params['id'], $_POST['exercise_summary']);
                 //$id, $exercise_name, $exercise_summary, $exercise_image, $exercise_video, $exercise_questions
                 
-                $newVideoLink = $_POST['newlink'];
+                $newVideoLink = $_POST['newLink'];
                 $linksArray = $_POST['videolink'];
                 
                 
-                if(!empty($newVideoLink)){
-                    $exercise = $GLOBALS['exerciseDB']->addVidelink($params['id'], $newVideoLink);
-                
+                foreach($newVideoLink as $video)
+                {
+                    $exercise = $GLOBALS['exerciseDB']->addVidelink($params['id'], $video);
                 }
                 
                 
-                foreach( $linksArray as $link){
+                foreach( $linksArray as $link)
+                {
                     $GLOBALS['exerciseDB']->editExerciseVideo($params['id'], $link);
-                
                 }
                 
                 $GLOBALS['exerciseDB']->editExerciseImage($params['id'], $_POST['imagelink']);

@@ -3,3 +3,7 @@ a
     cursor: pointer;
     color: inherit;
 }
+.dynamic_input
+{
+    margin-bottom: 20px;
+}

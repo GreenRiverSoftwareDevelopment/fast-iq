@@ -12,7 +12,7 @@ $(document).ready(function()
         if(x < max_fields)
         {
             //max input box allowed is 10
-            var item = $('<div class="row new_question"> '+
+            var item = $('<div class="row dynamic_input"> '+
                                '<div class="col-sm-11">'+
                                    '<textarea rows="3" cols="50" class="form-control" name="questions[]" id="questions" placeholder="Enter a question here" style="font-size: 14px"></textarea>'+
                                '</div>'+
@@ -22,8 +22,7 @@ $(document).ready(function()
                                         '<span aria-hidden="true"><h1>&times;</h1></span>'+
                                     '</a>'+
                                '</div>'+
-                         '</div>'+
-                         '<br>');
+                         '</div>');
             $(wrapper).append(item); //add input box
             x++; //text box increment
         }
@@ -32,7 +31,7 @@ $(document).ready(function()
     $(wrapper).on("click",".remove_field", function(e)
     { //user click on remove text
         e.preventDefault();
-        $('.new_question').remove(); x--;
+        $(this).parent('div').parent('div').remove(); x--;
     });
     //$(submit_button).click(function()
     //{
