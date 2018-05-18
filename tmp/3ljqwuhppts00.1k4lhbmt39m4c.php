@@ -83,8 +83,30 @@
 		<br>
 
 			<!--Buttom ROW OF COLS-->
-                    <div class="row">
-						<div class="col-sm-3"></div>
+                    <div class="row">		
+						
+						<div class="col-sm-3">
+							
+						
+							<form role="search">
+    
+
+							
+							<div class="panel panel-default">
+							<div class="panel-heading"><div class="form-group">
+							<div class="col-sm-9"><h3><input type="text" class="form-control" placeholder="Search"></h3></div>
+							</div>
+							<div class="col-sm-3"><button type="submit" class="btn btn-default btn-lg">
+							<span class="glyphicon glyphicon-search"></span>
+							</button></div></div>
+							<div class="panel-body">Search Results go here</div>
+							</form>
+							
+						
+				</div>
+							
+							
+						</div>
                             <div class= "col-sm-2">
 								<div id="form">
 								  <h3 class="text-center">Select a Category:</h3>
