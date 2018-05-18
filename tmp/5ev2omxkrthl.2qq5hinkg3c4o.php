@@ -235,15 +235,14 @@ li {
 								<div class="col-sm-12">
 									<div contenteditable="true">
 										<li id="list-group">
-											<?php foreach (($questions_array?:[]) as $question): ?>
-												<textarea rows="3" cols="50" class="form-control" name="questions[]" id="questions" placeholder="Enter a question here" value="<?= ($question) ?>" style="font-size: 14px"><?= ($question) ?></textarea>
-												<br>
-											<?php endforeach; ?>
 											<div class="question_fields_wrap">
 												<button class="add_questions_button btn btn-primary btn-lg">Add More Questions</button>
 												<br>
 												<br>
-												
+												<?php foreach (($questions_array?:[]) as $question): ?>
+													<textarea rows="3" cols="50" class="form-control" name="questions[]" id="questions" placeholder="Enter a question here" value="<?= ($question) ?>" style="font-size: 14px"><?= ($question) ?></textarea>
+													<br>
+												<?php endforeach; ?>
 											</div>
 										</li>
 									</div>
