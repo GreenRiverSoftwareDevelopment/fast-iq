@@ -122,8 +122,7 @@
                 
                 //$id, $exercise_name, $exercise_summary, $exercise_image, $exercise_video, $exercise_questions
                 //$f3->reroute('/exerciseSummaryBackend');
-                print_r($_POST['questions']);
-                //echo Template::instance()->render('pages/exercise_summary_backend.html');
+                echo Template::instance()->render('pages/exercise_summary_backend.html');
             });
             
             //$f3->route('GET|POST /editExerciseVideo/@id', function($f3, $params)
