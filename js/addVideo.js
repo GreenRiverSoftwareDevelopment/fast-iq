@@ -1,8 +1,8 @@
 $(document).ready(function()
 {
     var max_fields      = 10; //maximum input boxes allowed
-    var wrapper         = $(".question_fields_wrap"); //Fields wrapper
-    var add_button      = $(".add_questions_button"); //Add button ID
+    var wrapper         = $(".video_fields_wrap"); //Fields wrapper
+    var add_button      = $(".add_videos_button"); //Add button ID
     //var submit_button      = $("#submit_button"); //Add button ID
     
     var x = 1; //initlal text box count
@@ -12,7 +12,7 @@ $(document).ready(function()
         if(x < max_fields)
         { //max input box allowed
             x++; //text box increment
-            $(wrapper).append('<div><textarea rows="3" cols="50" class="form-control" name="questions[]" id="questions" placeholder="Enter a question here" style="font-size: 14px"></textarea><a href="#" class="remove_field">Remove</a></div>'); //add input box
+            $(wrapper).append('<div><textarea rows="3" cols="50" class="form-control" name="videolink[]" id="videolink" placeholder="Enter a video here" style="font-size: 14px"></textarea><a href="#" class="remove_field">Remove</a></div>'); //add input box
         }
     });
     
