@@ -20,9 +20,13 @@
                 <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
                     <ul class="nav nav-pills nav-fill">
                         <li class="nav-item">
-                          <a data-toggle="modal" data-target="#signUpModal" class="createAdminLink"><h3 >Create New Admin</h3></a>
+                          <a data-toggle="modal" data-target="#signUpModal" class="createAdminLink"><button type="button" class="btn btn-primary btn-lg"><h3 >Create New Admin</h3></button></a>
                         </li>
+						
                     </ul>
+					<a href="./studentInfo"><button id="studentInfo" type="button" class="btn btn-primary btn-lg">
+						<h3>Student Info</h3>
+					</button></a>
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
                         <h3>Logout</h3>
                     </button>
@@ -92,11 +96,7 @@
 				<div class="col-md-2 text-center">
 				</div>
 				
-				<div class="col-md-2 text-center">
-					<a href="./studentInfo"><button id="studentInfo" type="button" class="btn btn-primary btn-lg">
-						<h3>Student Info</h3>
-					</button></a>
-				</div>
+
 
 				<div class="col-md-2 text-center">
 				</div>
