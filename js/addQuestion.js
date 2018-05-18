@@ -12,7 +12,17 @@ $(document).ready(function()
         if(x < max_fields)
         { //max input box allowed
             x++; //text box increment
-            var item = $('<div><textarea rows="3" cols="50" class="form-control" name="questions[]" id="questions" placeholder="Enter a question here" style="font-size: 14px"></textarea><a href="#" class="remove_field">Remove</a></div>');
+            var item = $('<div class="row"> '+
+                               '<div class="col-sm-11">'+
+                                   '<textarea rows="3" cols="50" class="form-control" name="questions[]" id="questions" placeholder="Enter a question here" style="font-size: 14px"></textarea>'+
+                               '</div>'+
+                               '<div class="col-sm-1 text-center">'+
+                                    '<br>'+
+                                    '<a href="#" class="remove_field">'+
+                                        '<span aria-hidden="true"><h1>&times;</h1></span>'+
+                                    '</a>'+
+                               '</div>'+
+                         '</div>');
             $(wrapper).append(item); //add input box
         }
     });

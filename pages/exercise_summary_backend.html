@@ -66,6 +66,7 @@ li {
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 				<link href="css/categorySecond.css" rel="stylesheet" media="screen">
 				<link href="css/categorystyle.css" rel="stylesheet" media="screen">
+				<link href="css/exercise_summary_backend.css" rel="stylesheet" media="screen">
                 <!--[if lt IE 9]>
                 <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
                 <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -196,23 +197,21 @@ li {
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-sm-12">
-									<div contenteditable="true">
-										<div class="hoverImage">
-											<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ @youtubeEmbededCode }}" width="100%" height="460px" allowfullscreen></iframe>
-										</div>
-										<li id="list-group">
-											<!--<textarea rows="3" cols="50" class="form-control"  name="newlink" id="newlink" placeholder="Enter a new link here" style="font-size: 14px"></textarea>-->
-											<div class="video_fields_wrap">
-												<button class="add_videos_button btn btn-primary btn-lg">Add More Videos</button>
-												<br>
-												<br>
-												<repeat group="{{ @videoLinkExcercises }}" value="{{ @videoLinkExcercise }}">
-													<textarea rows="3" cols="50" class="form-control"  name="videolink[]" id="videolink" placeholder="Enter a link here" value= "{{ @videoLinkExcercise.link }}" style="font-size: 14px">{{ @videoLinkExcercise.link }}</textarea>
-													<br>
-												</repeat>
-											</div>
-										</li>
+									<div class="hoverImage">
+										<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ @youtubeEmbededCode }}" width="100%" height="460px" allowfullscreen></iframe>
 									</div>
+									<li id="list-group">
+										<!--<textarea rows="3" cols="50" class="form-control"  name="newlink" id="newlink" placeholder="Enter a new link here" style="font-size: 14px"></textarea>-->
+										<div class="video_fields_wrap">
+											<button class="add_videos_button btn btn-primary btn-lg">Add More Videos</button>
+											<br>
+											<br>
+											<repeat group="{{ @videoLinkExcercises }}" value="{{ @videoLinkExcercise }}">
+												<textarea rows="3" cols="50" class="form-control"  name="videolink[]" id="videolink" placeholder="Enter a link here" value= "{{ @videoLinkExcercise.link }}" style="font-size: 14px">{{ @videoLinkExcercise.link }}</textarea>
+												<br>
+											</repeat>
+										</div>
+									</li>
 								</div>
 							</div>
 						</div>
@@ -233,23 +232,17 @@ li {
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-sm-12">
-									<div contenteditable="true">
-										<li id="list-group">
-											<div class="question_fields_wrap">
-												<button class="add_questions_button btn btn-primary btn-lg">Add More Questions</button>
+									<li id="list-group">
+										<div class="question_fields_wrap">
+											<button class="add_questions_button btn btn-primary btn-lg">Add More Questions</button>
+											<br>
+											<br>
+											<repeat group="{{ @questions_array }}" value="{{ @question }}">
+												<textarea rows="3" cols="50" class="form-control" name="questions[]" id="questions" placeholder="Enter a question here" value="{{ @question }}" style="font-size: 14px">{{ @question }}</textarea>
 												<br>
-												<br>
-												<repeat group="{{ @questions_array }}" value="{{ @question }}">
-													<textarea rows="3" cols="50" class="form-control" name="questions[]" id="questions" placeholder="Enter a question here" value="{{ @question }}" style="font-size: 14px">{{ @question }}</textarea>
-													<br>
-												</repeat>
-											</div>
-										</li>
-									</div>
-								</div>
-								<div class="justify-content-center col-sm-1">
-								</div>
-								<div class="justify-content-center col-sm-2">
+											</repeat>
+										</div>
+									</li>
 								</div>
 							</div>
 							<br>
