@@ -235,14 +235,15 @@ li {
 								<div class="col-sm-12">
 									<div contenteditable="true">
 										<li id="list-group">
+											<?php foreach (($questions_array?:[]) as $question): ?>
+												<textarea rows="3" cols="50" class="form-control" name="questions[]" id="questions" placeholder="Enter a question here" value="<?= ($question) ?>" style="font-size: 14px"><?= ($question) ?></textarea>
+												<br>
+											<?php endforeach; ?>
 											<div class="question_fields_wrap">
 												<button class="add_questions_button btn btn-primary btn-lg">Add More Questions</button>
 												<br>
 												<br>
-												<?php foreach (($questions_array?:[]) as $question): ?>
-													<textarea rows="3" cols="50" class="form-control" name="questions[]" id="questions" placeholder="Enter a question here" value="<?= ($question) ?>" style="font-size: 14px"><?= ($question) ?></textarea>
-													<br>
-												<?php endforeach; ?>
+												
 											</div>
 										</li>
 									</div>
@@ -297,6 +298,15 @@ li {
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
             <!-- Include all compiled plugins (below), or include individual files as needed -->
+			
+			<script
+				src="https://code.jquery.com/jquery-3.3.1.min.js"
+				integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+				crossorigin="anonymous"></script>
+			<script
+				src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+				integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+				crossorigin="anonymous"></script>
             <script src="js/bootstrap.min.js"></script>
 			<script src="js/addVideo.js"></script>
 			<script src="js/addQuestion.js"></script>
