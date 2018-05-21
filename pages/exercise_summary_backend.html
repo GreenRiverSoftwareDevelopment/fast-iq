@@ -205,10 +205,10 @@ li {
 											<button class="add_videos_button btn btn-primary btn-lg">Add More Videos</button>
 											<br>
 											<br>
-											<repeat group="{{ @videoLinkExcercises }}" value="{{ @videoLinkExcercise }}">
+											<repeat group="{{ @videos_array }}" value="{{ @video }}">
 												<div class="row dynamic_input"> 
 													<div class="col-sm-11">
-														<textarea rows="3" cols="50" class="form-control"  name="videolink[]" id="videolink" placeholder="Enter a link here" value= "{{ @videoLinkExcercise.link }}" style="font-size: 14px">{{ @videoLinkExcercise.link }}</textarea>
+														<textarea rows="3" cols="50" class="form-control"  name="videoLink[]" id="videoLink" placeholder="Enter a link here" value= "{{ @video }}" style="font-size: 14px">{{ @video }}</textarea>
 													</div>
 													<div class="col-sm-1 text-center">
 														<br>

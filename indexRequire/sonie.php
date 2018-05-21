@@ -24,7 +24,7 @@
      
      $f3->route('GET /exerciseSummaryBackend', function($f3){
           
-        $usernameCheck = $_SESSION['username'];
+            $usernameCheck = $_SESSION['username'];
             $passwordCheck = $_SESSION['password'];
             if($usernameCheck == null || $passwordCheck == null)
             {
@@ -46,11 +46,13 @@
             
             $f3->set('categoryName', $categoryName);
             
-             $questions_array = explode(',', $exercise['exercise_questions']);
+            $questions_array = explode(',', $exercise['exercise_questions']);
+            $videos_array = explode(',', $exercise['exercise_video']);
              
              
              
             $f3->set('questions_array', $questions_array);
+            $f3->set('videos_array', $videos_array);
             $f3->set('unitID', $_SESSION['unitID']);
             $f3->set('categoryID', $_SESSION['categoryID']);
             $f3->set('unitName', $unitName);
@@ -85,12 +87,10 @@
         
             $f3->route('GET|POST /editExerciseSummary/@id', function($f3, $params)
             {
-                
                 $GLOBALS['exerciseDB']->editExerciseSummary($params['id'], $_POST['exercise_summary']);
-                //$id, $exercise_name, $exercise_summary, $exercise_image, $exercise_video, $exercise_questions
+                $GLOBALS['exerciseDB']->editExerciseImage($params['id'], $_POST['imagelink']);
                 
                 $newVideoLink = $_POST['newLink'];
-                $linksArray = $_POST['videolink'];
                 
                 if(empty($newVideoLink))
                 {
@@ -111,31 +111,27 @@
                     }
                 }
                 
-                
-                foreach( $linksArray as $link)
-                {
-                    $GLOBALS['exerciseDB']->editExerciseVideo($params['id'], $link);
-                }
-                
-                $GLOBALS['exerciseDB']->editExerciseImage($params['id'], $_POST['imagelink']);
-                
                 function trim_value(&$value) 
                 { 
                     $value = trim($value); 
                 }
                 
-                $unmodifiedArray = $_POST['questions'];
+                $unmodifiedQuestionArray = $_POST['questions'];
+                $unmodifiedVideoArray = $_POST['videoLink'];
                 
-                array_walk($unmodifiedArray, 'trim_value');
-                $questionsArrayWithSpacesDeleted = array_filter($unmodifiedArray);
+                array_walk($unmodifiedQuestionArray, 'trim_value');
+                array_walk($unmodifiedVideoArray, 'trim_value');
+                
+                $questionsArrayWithSpacesDeleted = array_filter($unmodifiedQuestionArray);
+                $videosArrayWithSpacesDeleted = array_filter($unmodifiedVideoArray);
+                
                 $questions = implode(',', $questionsArrayWithSpacesDeleted);
+                $videos = implode(',', $videosArrayWithSpacesDeleted);
                 
                 $GLOBALS['exerciseDB']->editExerciseQuestion($params['id'], $questions);
-                //$id, $exercise_name, $exercise_summary, $exercise_image, $exercise_video, $exercise_questions
+                $GLOBALS['exerciseDB']->editExerciseVideo($params['id'], $videos);
                 
-                //$id, $exercise_name, $exercise_summary, $exercise_image, $exercise_video, $exercise_questions
                 $f3->reroute('/exerciseSummaryBackend');
-                //echo Template::instance()->render('pages/exercise_summary_backend.html');
             });
             
             //$f3->route('GET|POST /editExerciseVideo/@id', function($f3, $params)
@@ -180,9 +176,3 @@
                 
                 //echo Template::instance()->render('pages/exercise_summary_backend.html');
             });
-            
-     
-     
-     
-     
-     
