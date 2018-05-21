@@ -92,10 +92,23 @@
                 $newVideoLink = $_POST['newLink'];
                 $linksArray = $_POST['videolink'];
                 
-                
-                foreach($newVideoLink as $video)
+                if(empty($newVideoLink))
                 {
-                    $exercise = $GLOBALS['exerciseDB']->addVidelink($params['id'], $video);
+                    
+                }
+                else
+                {
+                    foreach($newVideoLink as $video)
+                    {
+                        if(is_null($video))
+                        {
+                            //do nothing
+                        }
+                        else
+                        {
+                            $exercise = $GLOBALS['exerciseDB']->addVidelink($params['id'], $video);
+                        }
+                    }
                 }
                 
                 
