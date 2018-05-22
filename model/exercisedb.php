@@ -263,6 +263,22 @@
 
             return $statement->fetch(PDO::FETCH_ASSOC);
         }
+        
+        /**
+         * grabs a exercise that has the given id.
+         **/
+        function getExerciseByName($userSearch)
+        {
+            $select = 'SELECT exercise_id, exercise_name, exercise_image,
+            exercise_video, exercise_questions, exercise_summary FROM exercises
+            WHERE exercise_name=:userSearch';
+
+            $statement = $this->_pdo->prepare($select);
+            $statement->bindValue(':userSearch', $userSearch, PDO::PARAM_INT);
+            $statement->execute();
+
+            return $statement->fetch(PDO::FETCH_ASSOC);
+        }
 
         /**
          * deletes a exercise that has the given id. */
