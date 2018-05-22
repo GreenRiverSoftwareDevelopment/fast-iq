@@ -84,8 +84,8 @@
 
 			<!--Buttom ROW OF COLS-->
                     <div class="row">		
-						
-						<div class="col-sm-3">
+						<div class="col-sm-1"></div>
+						<div class="col-sm-2">
 							
 						
 							<form role="search">
@@ -100,10 +100,10 @@
 							<span class="glyphicon glyphicon-search"></span>
 							</button></div></div>
 							<div class="panel-body">Search Results go here</div>
-							</form>
+							</form></div>
 							
 						
-				</div>
+				
 							
 							
 						</div>
