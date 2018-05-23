@@ -13,3 +13,8 @@ a:link{
 {
     list-style-type: none;
 }
+
+.searchbar{
+    padding-left: 0;
+    padding-right: 0;
+}
