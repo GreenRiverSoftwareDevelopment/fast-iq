@@ -98,7 +98,7 @@
 							
 								<div id="searchResults">
 									<?php foreach ((@$exercises?:[]) as $exercise): ?>
-									<div class="panel-body"><h4> <?= ($exercise['exercise_name']) ?></h4></div>
+									<a href="#"><div class="panel-body"><h4> <?= ($exercise['exercise_name']) ?></h4></div></a>
 									<?php endforeach; ?>
 								</div>
 							
@@ -426,9 +426,9 @@
 							$('#searchResults').html("");
 							var resultFromDatabase = JSON.parse(result);
 							//console.log(resultFromDatabase);
-							for (searchResult in resultFromDatabase) {
+							for (searchResult in resultFromDatabase){
 							 var exerciseId = searchResult;
-							 $('#searchResults').append('<div class="panel-body"><h4>'+resultFromDatabase[exerciseId]['exercise_name']+'</h4></div>');
+							 $('#searchResults').append('<a href="#"><div class="panel-body"><h4>'+resultFromDatabase[exerciseId]['exercise_name']+'</h4></div></a>');
 							 console.log(searchResult);
 							}
 						}
