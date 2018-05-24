@@ -82,26 +82,27 @@
 		<br>
 		<br>
 		<div class="col-sm-1"></div>
-						<div class="col-sm-2">
+						<div class="col-sm-2" id="searchPanel">
 							
 						
 							<form role="search">
     
 
 							
-							<div class="panel panel-default">
-							<div class="panel-heading"><div class="form-group">
-							<div class="col-sm-12 searchbar"><h3><input type="text" class="form-control" placeholder="Search Exercise"></h3></div>
+							<div class="panel panel-default" id="searchPanel">
+							<div class="panel-heading">
+							<div class="form-group">
+							<div class="col-sm-12 searchbar"><h3><input type="text" name="searchInput" class="form-control" placeholder="Search Exercise" id="searchBarInput" onKeyUp="getExercise();"></h3></div>
 							</div>
 							</div>
-							<div class="panel-body"><h4>Search Results go here</h4></div>
 							
-							<div class="panel-body"><h4>Search Results go here</h4></div>
-							<div class="panel-body"><h4>Search Results go here</h4></div>
-							<div class="panel-body"><h4>Search Results go here</h4></div>
-							<div class="panel-body"><h4>Search Results go here</h4></div>
-							<div class="panel-body"><h4>Search Results go here</h4></div>
-							<div class="panel-body"><h4>Search Results go here</h4></div>
+								<div id="searchResults">
+									<repeat group ="{{@$exercises}}" value="{{@exercise}}">
+									<div class="panel-body"><h4> {{@exercise.exercise_name}}</h4></div>
+									</repeat>
+								</div>
+							
+
 							
 					
 							
@@ -408,7 +409,36 @@
 
 			</script>
 
-
+	
+			<!--This script will get the input of the user and querry the results frome the database-->
+			<script type="text/javascript">
+				
+				function getExercise(){
+					var searchInput = $('#searchBarInput').val();
+		
+					$.ajax({
+						type: "POST",
+						url: "./searchBarInput",
+						dataType: 'html',
+						data: {'searchInput': searchInput},
+						success: function(result)
+						{
+							$('#searchResults').html("");
+							var resultFromDatabase = JSON.parse(result);
+							//console.log(resultFromDatabase);
+							for (searchResult in resultFromDatabase) {
+							 var exerciseId = searchResult;
+							 $('#searchResults').append('<div class="panel-body"><h4>'+resultFromDatabase[exerciseId]['exercise_name']+'</h4></div>');
+							 console.log(searchResult);
+							}
+						}
+						
+						
+					});
+					
+					//console.log(searchInput);
+				}
+			</script>
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
             <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

@@ -18,3 +18,25 @@ a:link{
     padding-left: 0;
     padding-right: 0;
 }
+
+#searchPanel{
+     box-shadow: 2px 0px 9px grey;
+     border-radius: 15px;
+     padding: 0;
+}
+
+.navbar{
+    box-shadow: 4px 0px 9px grey;
+    
+}
+
+.panel-body:hover{
+    background: #e3f2fd;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+#searchPanel{
+    
+    margin: 0;
+}

@@ -17,6 +17,16 @@
         
     });
     
+    $f3->route('POST /searchBarInput', function($f3)
+    {
+        $searchInput = $_POST['searchInput'];
+        $searchResults = $GLOBALS['exerciseDB']->getExerciseByName($searchInput);
+        $searchAsJson = json_encode($searchResults, JSON_PRETTY_PRINT);
+        echo $searchAsJson;
+        
+        
+    });
+    
     $f3->route('POST /createAdmin', function($f3)
     {
         $cost = 10; //Cost of generating has. The higher the value the more secure, but the slower the load of the server.

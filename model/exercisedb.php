@@ -102,7 +102,8 @@
          * @return an associative array of exercises indexed by id */
         function allExercises() {
             $select = 'SELECT exercise_id, unit_id, exercise_name FROM exercises
-            ORDER BY exercise_id'; $results = $this->_pdo->query($select);
+            ORDER BY exercise_name';
+            $results = $this->_pdo->query($select);
 
             $resultsArray = array();
 
@@ -269,15 +270,38 @@
          **/
         function getExerciseByName($userSearch)
         {
+            $select = 'SELECT exercise_id, exercise_name FROM exercises
+            WHERE exercise_name LIKE "%'. $userSearch .'%"';
+            
+            $results = $this->_pdo->query($select);
+
+            $resultsArray = array();
+
+            //map each pet id to a row of data for that pet
+            while ($row = $results->fetch(PDO::FETCH_ASSOC)) {
+                $resultsArray[$row['exercise_id']] = $row;
+            }
+
+            return $resultsArray;
+        }
+        
+        /**
+         * grabs all exercise */
+        function getAllExercise() {
             $select = 'SELECT exercise_id, exercise_name, exercise_image,
             exercise_video, exercise_questions, exercise_summary FROM exercises
-            WHERE exercise_name=:userSearch';
+            WHERE 1';
 
-            $statement = $this->_pdo->prepare($select);
-            $statement->bindValue(':userSearch', $userSearch, PDO::PARAM_INT);
-            $statement->execute();
+            $results = $this->_pdo->query($select);
 
-            return $statement->fetch(PDO::FETCH_ASSOC);
+            $resultsArray = array();
+
+            //map each pet id to a row of data for that pet
+            while ($row = $results->fetch(PDO::FETCH_ASSOC)) {
+                $resultsArray[$row['exercise_id']] = $row;
+            }
+
+            return $resultsArray;
         }
 
         /**
