@@ -13,7 +13,7 @@ $(document).ready(function()
         { //max input box allowed
             var item = $('<div class="row dynamic_input"> '+
                                '<div class="col-sm-11">'+
-                                   '<textarea rows="3" cols="50" class="form-control" name="newLink[]" id="newLink" placeholder="Enter a link here" style="font-size: 14px"></textarea>'+
+                                   '<textarea rows="3" cols="50" class="form-control" name="videoLink[]" id="videoLink" placeholder="Enter a link here" style="font-size: 14px"></textarea>'+
                                '</div>'+
                                '<div class="col-sm-1 text-center">'+
                                     '<br>'+

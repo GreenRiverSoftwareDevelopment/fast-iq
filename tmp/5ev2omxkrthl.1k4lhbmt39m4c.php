@@ -81,11 +81,45 @@
 
 		<br>
 		<br>
+		<div class="col-sm-1"></div>
+						<div class="col-sm-2" id="searchPanel">
+							
+						
+							<form role="search">
+    
 
+							
+							<div class="panel panel-default" id="searchPanel">
+							<div class="panel-heading">
+							<div class="form-group">
+							<div class="col-sm-12 searchbar"><h3><input type="text" name="searchInput" class="form-control" placeholder="Search Exercise" id="searchBarInput" onKeyUp="getExercise();"></h3></div>
+							</div>
+							</div>
+							
+								<div id="searchResults">
+									<?php foreach ((@$exercises?:[]) as $exercise): ?>
+									<a href="#"><div class="panel-body"><h4> <?= ($exercise['exercise_name']) ?></h4></div></a>
+									<?php endforeach; ?>
+								</div>
+							
+
+							
+					
+							
+							</form></div>
+							
+						<!--<div class="col-sm-3"><button type="submit" class="btn btn-default btn-lg">
+							<span class="glyphicon glyphicon-search"></span>
+							</button></div>-->
+				
+							
+							
+						</div>
 			<!--Buttom ROW OF COLS-->
-                    <div class="row">
-						<div class="col-sm-3"></div>
-                            <div class= "col-sm-2">
+                    <div class="row">		
+				
+						
+                            <div class= "col-sm-3">
 								<div id="form">
 								  <h3 class="text-center">Select a Category:</h3>
 								  <select class="form-control form-control-lg" id="category_select">
@@ -97,14 +131,14 @@
 								  </select>
 								</div>
                             </div>
-                            <div class= "col-sm-2">
+                            <div class= "col-sm-3">
 								<h3 class="text-center">Select a Unit:</h3>
                                	  <select class="form-control form-control-lg" id="unit_select">
 									<!--What ever is being echoed is echoed here-->
 								  </select>
                             </div>
 
-                            <div class= "col-sm-2">
+                            <div class= "col-sm-3">
 								<h3 class="text-center">Select a Exercise:</h3>
 								 <select class="form-control form-control-lg" id="excercise_select">
 									<!--What ever is being echoed is echoed here-->
@@ -117,13 +151,12 @@
 
             <!--This is the Main body of the page-->
 		<div class="summary-view" id="summary-view">
-            <h1 class="display-2 text-center">Summary Page</h1>
+            
             <br>
 			<!-- Collapse for Summary-->
                 <div class="row">
-                    <div class="col-sm-3">
-					</div>
-                    <div class="col-sm-6">
+
+                    <div class="col-sm-9">
 						<div class="panel panel-primary">
 							<div class="panel-heading">
 								<a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1 id="tabHeading">Exercise Summary</h1>
@@ -376,7 +409,36 @@
 
 			</script>
 
-
+	
+			<!--This script will get the input of the user and querry the results frome the database-->
+			<script type="text/javascript">
+				
+				function getExercise(){
+					var searchInput = $('#searchBarInput').val();
+		
+					$.ajax({
+						type: "POST",
+						url: "./searchBarInput",
+						dataType: 'html',
+						data: {'searchInput': searchInput},
+						success: function(result)
+						{
+							$('#searchResults').html("");
+							var resultFromDatabase = JSON.parse(result);
+							//console.log(resultFromDatabase);
+							for (searchResult in resultFromDatabase){
+							 var exerciseId = searchResult;
+							 $('#searchResults').append('<a href="#"><div class="panel-body"><h4>'+resultFromDatabase[exerciseId]['exercise_name']+'</h4></div></a>');
+							 console.log(searchResult);
+							}
+						}
+						
+						
+					});
+					
+					//console.log(searchInput);
+				}
+			</script>
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
             <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

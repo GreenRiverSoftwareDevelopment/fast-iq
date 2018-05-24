@@ -7,3 +7,17 @@ a
 {
     margin-bottom: 20px;
 }
+.panel-body:hover
+{
+    background: #e3f2fd;
+    cursor: pointer;
+}
+#list-group
+{
+    list-style-type: none;
+}
+#submit_button
+{
+    position: fixed;
+    bottom: 0px;
+}
