@@ -64,7 +64,6 @@ li {
             <!-- bootstrap -->
                 <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-				<link href="css/categorySecond.css" rel="stylesheet" media="screen">
 				<link href="css/categorystyle.css" rel="stylesheet" media="screen">
 				<link href="css/exercise_summary_backend.css" rel="stylesheet" media="screen">
                 <!--[if lt IE 9]>
@@ -253,10 +252,12 @@ li {
 													</div>
 													<div class="col-sm-1 text-center">
 														<br>
+														
 														<a href="#" class="remove_field">
 															<span aria-hidden="true"><h1>&times;</h1></span>
 														</a>
 													</div>
+													<hr />
 												</div>
 												<br>
 											<?php endforeach; ?>
@@ -293,19 +294,21 @@ li {
 					</div>
 				</div>
 			<br>
-			<button type="submit" id="submit_button" class="btn btn-primary btn-success btn-lg btn-block">
-				<span class="glyphicon glyphicon-saved" aria-hidden="true"></span>  Save
-			</button>
+			
 			<br>
 			<br>
 			<br>
 			<br>
 			<br>
-	</form>
+	
 		</div>
 			<div class="col-sm-1 col-md-2"></div>
 		</div>
-			
+		
+			<button type="submit" id="submit_button" class="btn btn-primary btn-success btn-lg btn-block">
+				<span class="glyphicon glyphicon-saved" aria-hidden="true"></span><h5>Save</h5>
+			</button>
+	</form>
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
             <!-- Include all compiled plugins (below), or include individual files as needed -->
