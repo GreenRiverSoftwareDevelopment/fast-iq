@@ -305,7 +305,7 @@ li {
 			<div class="col-sm-1 col-md-2"></div>
 		</div>
 		
-			<button type="submit" id="submit_button" class="btn btn-primary btn-success btn-lg btn-block">
+			<button type="submit" id="submit_button" class="btn btn-primary btn-success btn-lg">
 				<span class="glyphicon glyphicon-saved" aria-hidden="true"></span><h5>Save</h5>
 			</button>
 	</form>
