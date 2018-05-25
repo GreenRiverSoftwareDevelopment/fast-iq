@@ -175,7 +175,7 @@ li {
 							<div class="row">
 								<div class="col-sm-12">
 									<div class="input-group">
-										<textarea rows="8" cols="100" class="col-md-12 form-control"  name="exercise_summary" id="exercise_summary" placeholder="Enter a Summary here" style="font-size: 14px"></textarea>
+										<textarea rows="8" cols="100" class="col-md-12 form-control"  name="exercise_summary" id="exercise_summary" placeholder="Enter a Summary here" value="<?= ($exercise['exercise_summary']) ?>" style="font-size: 14px"><?= ($exercise['exercise_summary']) ?></textarea>
 									</div>
 								</div>
 							</div>
@@ -252,10 +252,12 @@ li {
 													</div>
 													<div class="col-sm-1 text-center">
 														<br>
+														
 														<a href="#" class="remove_field">
 															<span aria-hidden="true"><h1>&times;</h1></span>
 														</a>
 													</div>
+													<hr />
 												</div>
 												<br>
 											<?php endforeach; ?>

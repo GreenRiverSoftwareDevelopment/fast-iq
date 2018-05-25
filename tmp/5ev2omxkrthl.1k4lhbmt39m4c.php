@@ -85,11 +85,11 @@
 						<div class="col-sm-2" id="searchPanel">
 							
 						
-							<form role="search">
+							
     
 
 							
-							<div class="panel panel-default" id="searchPanel">
+							<div class="panel panel-default"  id="searchPanel">
 							<div class="panel-heading">
 							<div class="form-group">
 							<div class="col-sm-12 searchbar"><h3><input type="text" name="searchInput" class="form-control" placeholder="Search Exercise" id="searchBarInput" onKeyUp="getExercise();"></h3></div>
@@ -106,7 +106,8 @@
 							
 					
 							
-							</form></div>
+							
+							</div>
 							
 						<!--<div class="col-sm-3"><button type="submit" class="btn btn-default btn-lg">
 							<span class="glyphicon glyphicon-search"></span>
