@@ -201,13 +201,22 @@ li {
 										<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?= ($youtubeEmbededCode) ?>" width="100%" height="460px" allowfullscreen></iframe>
 									</div>
 									<li id="list-group">
-										<!--<textarea rows="3" cols="50" class="form-control"  name="newlink" id="newlink" placeholder="Enter a new link here" style="font-size: 14px"></textarea>-->
 										<div class="video_fields_wrap">
 											<button class="add_videos_button btn btn-primary btn-lg">Add More Videos</button>
 											<br>
 											<br>
-											<?php foreach (($videoLinkExcercises?:[]) as $videoLinkExcercise): ?>
-												<textarea rows="3" cols="50" class="form-control"  name="videolink[]" id="videolink" placeholder="Enter a link here" value= "<?= ($videoLinkExcercise['link']) ?>" style="font-size: 14px"><?= ($videoLinkExcercise['link']) ?></textarea>
+											<?php foreach (($videos_array?:[]) as $video): ?>
+												<div class="row dynamic_input"> 
+													<div class="col-sm-11">
+														<textarea rows="3" cols="50" class="form-control"  name="videoLink[]" id="videoLink" placeholder="Enter a link here" value= "<?= ($video) ?>" style="font-size: 14px"><?= ($video) ?></textarea>
+													</div>
+													<div class="col-sm-1 text-center">
+														<br>
+														<a href="#" class="remove_field">
+															<span aria-hidden="true"><h1>&times;</h1></span>
+														</a>
+													</div>
+												</div>
 												<br>
 											<?php endforeach; ?>
 										</div>
@@ -238,7 +247,17 @@ li {
 											<br>
 											<br>
 											<?php foreach (($questions_array?:[]) as $question): ?>
-												<textarea rows="3" cols="50" class="form-control" name="questions[]" id="questions" placeholder="Enter a question here" value="<?= ($question) ?>" style="font-size: 14px"><?= ($question) ?></textarea>
+												<div class="row dynamic_input"> 
+													<div class="col-sm-11">
+														<textarea rows="3" cols="50" class="form-control" name="questions[]" id="questions" placeholder="Enter a question here" value="<?= ($question) ?>" style="font-size: 14px"><?= ($question) ?></textarea>
+													</div>
+													<div class="col-sm-1 text-center">
+														<br>
+														<a href="#" class="remove_field">
+															<span aria-hidden="true"><h1>&times;</h1></span>
+														</a>
+													</div>
+												</div>
 												<br>
 											<?php endforeach; ?>
 										</div>
@@ -288,7 +307,7 @@ li {
 		</div>
 			
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
             <!-- Include all compiled plugins (below), or include individual files as needed -->
 			
 			<script
