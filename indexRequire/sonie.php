@@ -56,9 +56,10 @@
         $splitTwoEqualSigns = explode("=", $youtubeEmbededCode);
         $splitByAndSymbol = explode("&", $youtubeEmbededCode);
         $linkWeNeed = $splitByAndSymbol[0];
-        $f3->set('youtubeEmbededCode', $linkWeNeed);
+        $videoEmbed = explode(',', $linkWeNeed);
+        $f3->set('youtubeEmbededCode', $videoEmbed[0]);
         $f3->set('videoLinkExcercises', $allVideoLinks);
-            
+
         echo Template::instance()->render('pages/exercise_summary_backend.html');
     });
      

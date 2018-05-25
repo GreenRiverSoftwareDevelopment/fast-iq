@@ -11,6 +11,10 @@ a:link
 {
     text-decoration: none;
 }
+li
+{
+    list-style-type: none;
+}
 .navbar
 {
     box-shadow: 4px 0px 9px grey;

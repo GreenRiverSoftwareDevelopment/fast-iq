@@ -38,27 +38,32 @@
   opacity: 1;
 }*/
 
-.text {
-
-  color: white;
-  font-size: 16px;
-  padding: 16px 32px;
+.text
+{
+	color: white;
+	font-size: 16px;
+	padding: 16px 32px;
 }
 
-p {
-  font-size: medium;
+p
+{
+	font-size: medium;
 }
 
-input {
+input
+{
     font-size: medium;
 }
 
-li {
-  font-size: medium;
+li
+{
+	font-size: medium;
+	list-style-type: none;
 }
-	 a:hover{
-			text-decoration: none;
-			color:white;
+a:hover
+{
+	text-decoration: none;
+	color:white;
 }
             </style>
             <!-- bootstrap -->
