@@ -28,9 +28,34 @@ $(document).ready(function()
     });
     
     $(wrapper).on("click",".remove_field", function(e)
-    { //user click on remove text
+    {
+        //user click on remove text
         e.preventDefault(); $(this).parent('div').parent('div').remove(); x--;
     });
+    
+    $(wrapper).on("click",".view_video", function()
+    {
+        data = {};
+        $('div.video_fields_wrap').find('textarea').each(function(index, value)
+        {
+            var eachInput = $(this),
+            name = eachInput.attr('name');
+            value = eachInput.val();
+            console.log('value: ' + value);
+            data[name] = value;
+        });
+        
+        console.log('data: ' + data);
+        
+        //user clicks to have video appear in Iframe
+        var id = this.id;
+        console.log('id: ' + id);
+        var pickup = $("#"+id).val();
+        //$('#txt-pickup').val($('#txt-destination').val());
+        //$('#txt-destination').val(pickup);
+        console.log('pickup: ' + pickup);
+    });
+
     //$(submit_button).click(function()
     //{
     //    console.log("submitting form");
