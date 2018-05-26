@@ -1,5 +1,13 @@
 <?php
 
+    $f3->route('GET /getSearchClick', function($f3)
+    {
+        $exerciseNumber = $_POST['exerciseNumber'];
+        $exerciseResult =  $GLOBALS['exerciseDB']->getExerciseByID($exerciseNumber);
+        $exerciseJson = json_encode($exerciseResult);
+        echo $exerciseJson;
+    });
+
     $f3->route('POST /loginCheck', function($f3)
     {
         $usernameAttempt = $_POST['username'];

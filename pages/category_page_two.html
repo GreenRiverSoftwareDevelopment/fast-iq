@@ -96,9 +96,30 @@
     
 
 							
+<<<<<<< HEAD
+							<div class="panel panel-default"  id="searchPanel">
+							<div class="panel-heading">
+							<div class="form-group">
+							<div class="col-sm-12 searchbar"><h3><input type="text" name="searchInput" class="form-control" placeholder="Search Exercise" id="searchBarInput" onKeyUp="getExercise();"></h3></div>
+							</div>
+							</div>
+							
+								<div id="searchResults">
+									<repeat group ="{{@$exercises}}" value="{{@exercise}}">
+									<a href="#"><div class="panel-body" exerciseNumber="{{@exercise.exercise_id}}" id="searchClick" onclick="getSeachClick(this);"><h4> {{@exercise.exercise_name}}</h4></div></a>
+									</repeat>
+								</div>
+							
+
+							
+					
+							
+							
+=======
 							<div class="panel panel-default">
 							<div class="panel-heading"><div class="form-group">
 							<div class="col-sm-9"><h3><input type="text" class="form-control" placeholder="Search"></h3></div>
+>>>>>>> bb76d09fd637c1c63ce08ac15ba60640d118226e
 							</div>
 							<div class="col-sm-3"><button type="submit" class="btn btn-default btn-lg">
 							<span class="glyphicon glyphicon-search"></span>
@@ -402,7 +423,58 @@
 
 			</script>
 
+<<<<<<< HEAD
+	
+			<!--This script will get the input of the user and querry the results frome the database-->
+			<script type="text/javascript">
+				
+				function getExercise(){
+					var searchInput = $('#searchBarInput').val();
+		
+					$.ajax({
+						type: "POST",
+						url: "./searchBarInput",
+						dataType: 'html',
+						data: {'searchInput': searchInput},
+						success: function(result)
+						{
+							$('#searchResults').html("");
+							var resultFromDatabase = JSON.parse(result);
+							//console.log(resultFromDatabase);
+							for (searchResult in resultFromDatabase){
+							 var exerciseId = searchResult;
+							 $('#searchResults').append('<div class="panel-body" onclick="getSeachClick(this)" exerciseNumber="'+exerciseId+'" id=searchClick"'+exerciseId+'"><h4>'+resultFromDatabase[exerciseId]['exercise_name']+'</h4></div></a>');
+							 //console.log(searchResult);
+							}
+						}
+						
+						
+					});
+					
+					//console.log(searchInput);
+				}
+				function getSeachClick(searchClickElement)
+				{
+					var exerciseNumber = $(searchClickElement).attr("exerciseNumber");
+					$.ajax({
+						type: "POST",
+						url: "./getSearchClick",
+						dataType: 'html',
+						data: {'exerciseNumber': exerciseNumber},
+						success: function(result)
+						{
+							
+						}
+						
+						
+					});
+					console.log(exerciseNumber);
+				}
+				
+			</script>
+=======
 
+>>>>>>> bb76d09fd637c1c63ce08ac15ba60640d118226e
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
             <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
