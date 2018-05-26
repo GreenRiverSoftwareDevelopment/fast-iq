@@ -5,6 +5,10 @@
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
+			
+			
+			<!-- logo -->
+				<link rel="icon" href="logo/fastiqlogo.png">
             <!-- bootstrap -->
                 <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -139,7 +143,7 @@
 
             <!--This is the Main body of the page-->
 		<div class="summary-view" id="summary-view">
-            <h1 class="display-2 text-center">Summary Page</h1>
+           <h1 class="display-2 text-center">Exercise Summary</h1>
             <br>
 			<!-- Collapse for Summary-->
                 <div class="row">
@@ -148,7 +152,7 @@
                     <div class="col-sm-6">
 						<div class="panel panel-primary">
 							<div class="panel-heading">
-								<a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1 id="tabHeading">Exercise Summary</h1>
+								<a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed"><h1 id="tabHeading">Objectives</h1>
 							</div></a>
 								<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
 

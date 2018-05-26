@@ -19,7 +19,9 @@
         }
         
         $exercises =  $GLOBALS['exerciseDB']->exercisesByUnit($_SESSION['unitID']);
+        
         $allVideoLinks = $GLOBALS['exerciseDB']->allVideoLinks($_SESSION['exerciseID']);
+        
         $unitName = $GLOBALS['unitDB']->getUnitByID($_SESSION['unitID']);
         
         $exercise = $GLOBALS['exerciseDB']->getExerciseByID($_SESSION['exerciseID']);
@@ -32,8 +34,6 @@
         
         $questions_array = explode(',', $exercise['exercise_questions']);
         $videos_array = explode(',', $exercise['exercise_video']);
-         
-         
          
         $f3->set('questions_array', $questions_array);
         $f3->set('videos_array', $videos_array);
@@ -49,10 +49,6 @@
         $f3->set('exerciseID', $_SESSION['exerciseID']);
         $youtubeLink = $exercise['exercise_video'];
         $links = $allVideoLinks['videoId']['link'];
-        //$youtubeEmbededCode = substr($youtubeLink, strpos($youtubeLink, "=") + 1); 
-        //$video = '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/'.$youtubeEmbededCode.'" width="100%" height="460px" allowfullscreen></iframe>';
-        //$f3->set('youtubeEmbededCode', $youtubeEmbededCode);
-        //$f3->set('videoLinkExcercises', $links);
             
         
         $youtubeLink = $exercise['exercise_video'];
@@ -60,10 +56,10 @@
         $splitTwoEqualSigns = explode("=", $youtubeEmbededCode);
         $splitByAndSymbol = explode("&", $youtubeEmbededCode);
         $linkWeNeed = $splitByAndSymbol[0];
-        $video = '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/'.$linkWeNeed.'" width="100%" height="460px" allowfullscreen></iframe>';
-        $f3->set('youtubeEmbededCode', $linkWeNeed);
+        $videoEmbed = explode(',', $linkWeNeed);
+        $f3->set('youtubeEmbededCode', $videoEmbed[0]);
         $f3->set('videoLinkExcercises', $allVideoLinks);
-            
+
         echo Template::instance()->render('pages/exercise_summary_backend.html');
     });
      

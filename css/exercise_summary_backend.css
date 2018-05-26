@@ -1,7 +1,23 @@
 a
 {
     cursor: pointer;
-    color: inherit;
+    color: black;
+}
+#tabHeading
+{
+    color: #FFFFFF;
+}
+a:link
+{
+    text-decoration: none;
+}
+li
+{
+    list-style-type: none;
+}
+.navbar
+{
+    box-shadow: 4px 0px 9px grey;
 }
 .dynamic_input
 {
@@ -11,6 +27,11 @@ a
 {
     background: #e3f2fd;
     cursor: pointer;
+    text-decoration: none;
+}
+#summary-view
+{
+    display: none;
 }
 #list-group
 {
@@ -20,4 +41,6 @@ a
 {
     position: fixed;
     bottom: 0px;
+    left: 0px;
+    width: 100%;
 }

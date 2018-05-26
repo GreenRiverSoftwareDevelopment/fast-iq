@@ -38,27 +38,32 @@
   opacity: 1;
 }*/
 
-.text {
-
-  color: white;
-  font-size: 16px;
-  padding: 16px 32px;
+.text
+{
+	color: white;
+	font-size: 16px;
+	padding: 16px 32px;
 }
 
-p {
-  font-size: medium;
+p
+{
+	font-size: medium;
 }
 
-input {
+input
+{
     font-size: medium;
 }
 
-li {
-  font-size: medium;
+li
+{
+	font-size: medium;
+	list-style-type: none;
 }
-	 a:hover{
-			text-decoration: none;
-			color:white;
+a:hover
+{
+	text-decoration: none;
+	color:white;
 }
             </style>
             <!-- bootstrap -->
@@ -175,7 +180,7 @@ li {
 							<div class="row">
 								<div class="col-sm-12">
 									<div class="input-group">
-										<textarea rows="8" cols="100" class="col-md-12 form-control"  name="exercise_summary" id="exercise_summary" placeholder="Enter a Summary here" style="font-size: 14px"></textarea>
+										<textarea rows="8" cols="100" class="col-md-12 form-control"  name="exercise_summary" id="exercise_summary" placeholder="Enter a Summary here" value="<?= ($exercise['exercise_summary']) ?>" style="font-size: 14px"><?= ($exercise['exercise_summary']) ?></textarea>
 									</div>
 								</div>
 							</div>
@@ -252,10 +257,12 @@ li {
 													</div>
 													<div class="col-sm-1 text-center">
 														<br>
+														
 														<a href="#" class="remove_field">
 															<span aria-hidden="true"><h1>&times;</h1></span>
 														</a>
 													</div>
+													<hr />
 												</div>
 												<br>
 											<?php endforeach; ?>
@@ -303,7 +310,7 @@ li {
 			<div class="col-sm-1 col-md-2"></div>
 		</div>
 		
-			<button type="submit" id="submit_button" class="btn btn-primary btn-success btn-lg btn-block">
+			<button type="submit" id="submit_button" class="btn btn-primary btn-success btn-lg">
 				<span class="glyphicon glyphicon-saved" aria-hidden="true"></span><h5>Save</h5>
 			</button>
 	</form>

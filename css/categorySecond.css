@@ -1,3 +1,8 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+body, html{
+    font-family: 'Poppins', sans-serif;
+
 #tabHeading{
     color: #FFFFFF;
 }
@@ -12,44 +17,4 @@ a:link{
 #list-group
 {
     list-style-type: none;
-}
-
-.searchbar{
-    padding-left: 0;
-    padding-right: 0;
-}
-
-#searchPanel{
-     box-shadow: 2px 0px 9px grey;
-     border-radius: 5px;
-     padding: 0;
-     margin-right: 50px;
-     
-}
-
-.navbar{
-    box-shadow: 4px 0px 9px grey;
-    
-}
-
-#searchPanel{
-    background: #FFFFFF;
-    height: 500px;
-    overflow-y: auto;    /* Trigger vertical scroll    */
-    overflow-x: hidden;  /* Hide the horizontal scroll */
-
-}
-.panel-body:hover{
-    background: #e3f2fd;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-#searchPanel{
-    
-    margin: 0;
-}
-
-a {
-    color: black;
 }
