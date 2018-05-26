@@ -98,7 +98,7 @@
 							
 								<div id="searchResults">
 									<?php foreach ((@$exercises?:[]) as $exercise): ?>
-									<a href="#"><div class="panel-body"><h4> <?= ($exercise['exercise_name']) ?></h4></div></a>
+									<a href="#"><div class="panel-body" exerciseNumber="<?= ($exercise['exercise_id']) ?>" id="searchClick" onclick="getSeachClick(this);"><h4> <?= ($exercise['exercise_name']) ?></h4></div></a>
 									<?php endforeach; ?>
 								</div>
 							
@@ -429,8 +429,8 @@
 							//console.log(resultFromDatabase);
 							for (searchResult in resultFromDatabase){
 							 var exerciseId = searchResult;
-							 $('#searchResults').append('<a href="#"><div class="panel-body"><h4>'+resultFromDatabase[exerciseId]['exercise_name']+'</h4></div></a>');
-							 console.log(searchResult);
+							 $('#searchResults').append('<div class="panel-body" onclick="getSeachClick(this)" exerciseNumber="'+exerciseId+'" id=searchClick"'+exerciseId+'"><h4>'+resultFromDatabase[exerciseId]['exercise_name']+'</h4></div></a>');
+							 //console.log(searchResult);
 							}
 						}
 						
@@ -439,6 +439,24 @@
 					
 					//console.log(searchInput);
 				}
+				function getSeachClick(searchClickElement)
+				{
+					var exerciseNumber = $(searchClickElement).attr("exerciseNumber");
+					$.ajax({
+						type: "POST",
+						url: "./getSearchClick",
+						dataType: 'html',
+						data: {'exerciseNumber': exerciseNumber},
+						success: function(result)
+						{
+							
+						}
+						
+						
+					});
+					console.log(exerciseNumber);
+				}
+				
 			</script>
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
             <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
