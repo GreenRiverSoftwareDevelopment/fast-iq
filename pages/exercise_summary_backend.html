@@ -151,7 +151,10 @@ a:hover
                 </div>
         <!--*********************************** THIS IS LOGOUT THE MODAL*************************************-->
 
-
+	<repeat group="{{ @id_array }}" value="{{ @index }}">
+		<h1>{{ @index.url }}</h1>
+		<h1>{{ @index.id }}</h1>
+	</repeat>
 
 
 	<h1 class="display-3 text-center">
@@ -210,10 +213,10 @@ a:hover
 											<br>
 											<br>
 											<h3>Video Being Shown</h3>
-											<repeat group="{{ @videos_array }}" value="{{ @video }}">
+											<repeat group="{{ @id_array }}" value="{{ @index }}">
 												<div class="row dynamic_input"> 
 													<div class="col-sm-10">
-														<textarea rows="3" cols="50" class="form-control"  name="videoLink[]" id="!!{{ @video }}" placeholder="Enter a link here" value= "{{ @video }}" style="font-size: 14px">{{ @video }}</textarea>
+														<textarea rows="3" cols="50" class="form-control"  name="videoLink[]" id="{{ @index.id }}" placeholder="Enter a link here" value= "{{ @index.url }}" style="font-size: 14px">{{ @index.url }}</textarea>
 													</div>
 													<div class="col-sm-1 text-center">
 														<br>
@@ -223,7 +226,7 @@ a:hover
 													</div>
 													<div class="col-sm-1 text-center">
 														<br>
-														<span class="glyphicon glyphicon-eye-open view_video" id="!!{{ @video }}" aria-hidden="true"></span>
+														<span class="glyphicon glyphicon-eye-open view_video {{ @index.id }}" id="{{ @index.id }}" aria-hidden="true"></span>
 													</div>
 												</div>
 												<br>

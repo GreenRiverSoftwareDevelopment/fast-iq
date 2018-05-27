@@ -34,14 +34,28 @@
         
         $questions_array = explode(',', $exercise['exercise_questions']);
         $videos_array = explode(',', $exercise['exercise_video']);
-         
+        $id_array = array();
+        for($i = 0; $i < count($videos_array); $i++)
+        {
+            $array = array(
+                    "url" => $videos_array[$i],
+                    "id" => $i,
+                );
+            array_push($id_array, $array);
+        }
+        
         $f3->set('questions_array', $questions_array);
         $f3->set('videos_array', $videos_array);
+        $f3->set('id_array', $id_array);
+        $f3->set('array', $array);
         $f3->set('unitID', $_SESSION['unitID']);
         $f3->set('categoryID', $_SESSION['categoryID']);
         $f3->set('unitName', $unitName);
         $f3->set('exercises', $exercises);
         $f3->set('exercise', $exercise);
+        
+        print_r($array);
+        print_r($categoryName);
         
         
         

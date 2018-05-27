@@ -1,5 +1,9 @@
 $(document).ready(function()
 {
+    
+    $('.0').hide();
+    
+    
     var max_fields      = 10; //maximum input boxes allowed
     var wrapper         = $(".video_fields_wrap"); //Fields wrapper
     var add_button      = $(".add_videos_button"); //Add button ID
@@ -34,26 +38,12 @@ $(document).ready(function()
     });
     
     $(wrapper).on("click",".view_video", function()
-    {
-        data = {};
-        $('div.video_fields_wrap').find('textarea').each(function(index, value)
-        {
-            var eachInput = $(this),
-            name = eachInput.attr('name');
-            value = eachInput.val();
-            console.log('value: ' + value);
-            data[name] = value;
-        });
-        
-        console.log('data: ' + data);
-        
+    {   
         //user clicks to have video appear in Iframe
         var id = this.id;
-        console.log('id: ' + id);
         var pickup = $("#"+id).val();
-        //$('#txt-pickup').val($('#txt-destination').val());
-        //$('#txt-destination').val(pickup);
-        console.log('pickup: ' + pickup);
+        $("#"+id).val($('#0').val());
+        $('#0').val(pickup);
     });
 
     //$(submit_button).click(function()
