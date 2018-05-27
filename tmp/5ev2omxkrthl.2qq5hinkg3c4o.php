@@ -151,10 +151,6 @@ a:hover
                 </div>
         <!--*********************************** THIS IS LOGOUT THE MODAL*************************************-->
 
-	<?php foreach (($id_array?:[]) as $index): ?>
-		<h1><?= ($index['url']) ?></h1>
-		<h1><?= ($index['id']) ?></h1>
-	<?php endforeach; ?>
 
 
 	<h1 class="display-3 text-center">

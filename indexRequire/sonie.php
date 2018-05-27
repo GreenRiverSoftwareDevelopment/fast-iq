@@ -52,12 +52,7 @@
         $f3->set('categoryID', $_SESSION['categoryID']);
         $f3->set('unitName', $unitName);
         $f3->set('exercises', $exercises);
-        $f3->set('exercise', $exercise);
-        
-        print_r($array);
-        print_r($categoryName);
-        
-        
+        $f3->set('exercise', $exercise);    
         
         //setting exercise id 
         $f3->set('exerciseID', $_SESSION['exerciseID']);
