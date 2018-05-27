@@ -143,8 +143,6 @@
         $videoEmbed = explode(',', $linkWeNeed);
         $f3->set('youtubeEmbededCode', $videoEmbed[0]);
         
-        <iframe width="854" height="480" src="https://www.youtube.com/embed/L4xx2ouEsLY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        
         echo '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/'.$videoEmbed[0].'" width="100%" height="460px" allowfullscreen></iframe>';
     });
     
