@@ -135,9 +135,15 @@
         $f3->set('exercise', $summaryEntries);
         $f3->set('exercise_id', $params['id']);
         
-            $youtubeLink = $summaryEntries['exercise_video'];
-            $youtubeEmbededCode = substr($youtubeLink, strpos($youtubeLink, "=") + 1);
-            echo '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/'.$youtubeEmbededCode.'" width="100%" height="460px" allowfullscreen></iframe>';
+        $youtubeLink = $summaryEntries['exercise_video'];
+        $youtubeEmbededCode = substr($youtubeLink, strpos($youtubeLink, "=") + 1);
+        $splitTwoEqualSigns = explode("=", $youtubeEmbededCode);
+        $splitByAndSymbol = explode("&", $youtubeEmbededCode);
+        $linkWeNeed = $splitByAndSymbol[0];
+        $videoEmbed = explode(',', $linkWeNeed);
+        $f3->set('youtubeEmbededCode', $videoEmbed[0]);
+        
+        echo '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/'.$videoEmbed[0].'" width="100%" height="460px" allowfullscreen></iframe>';
     });
     
     $f3->route('GET /questionsExercise/@id', function($f3, $params)
