@@ -362,7 +362,7 @@
 				
 				function getClickedElement(clickedElement){
 					var elementId = $(clickedElement).attr('id');
-					$.ajax({
+					$.ajax({//This call is to get the summary asyc..
 						type: 'GET',
 						url: './summaryExercise/' + elementId,
 						dataType: 'HTML',
@@ -373,7 +373,53 @@
 							 
 							 summary_select.innerHTML = exerciseSummary;
 							 summary_view.style.display = "block";
-							console.log(exerciseSummary);
+							//console.log(exerciseSummary);
+							
+								$.ajax({//This call on the success of the summary ajax call is going to get the questions
+									type: 'GET',
+									url: './videoExercise/' + elementId,
+									dataType: 'HTML',
+									data: {'elementId': elementId},
+									success: function(exerciseVideo){
+										 var video_select = document.getElementById("collapseTwo");
+										 var summary_view = document.getElementById("summary-view");
+										 
+										  summary_view.style.display = "block";
+										 video_select.innerHTML = exerciseVideo;
+										 
+										//console.log(exerciseSummary);
+										$.ajax({//On the success call of it's previous it will get the questions
+										type: 'GET',
+										url: './questionsExercise/' + elementId,
+										dataType: 'HTML',
+										data: {'elementId': elementId},
+										success: function(exerciseQuestions){
+											
+											var question_select = document.getElementById("collapseThree");
+											  var summary_view = document.getElementById("summary-view");
+											 question_select.innerHTML = exerciseQuestions;
+											  summary_view.style.display = "block";
+											//console.log(exerciseSummary);
+
+												$.ajax({//On the success call of it's previous it will get the questions
+												type: 'GET',
+												url: './pictureExercise/' + elementId,
+												dataType: 'HTML',
+												data: {'elementId': elementId},
+												success: function(exercisePicture){
+													
+													var picture_select = document.getElementById("collapseFour");  
+													picture_select.innerHTML = exercisePicture;
+
+													console.log(exercisePicture);
+		
+													
+												}
+											});											
+										}
+									});	
+								}
+							});							
 						}
 					});
 					
