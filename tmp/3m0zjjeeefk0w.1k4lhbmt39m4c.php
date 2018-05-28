@@ -361,8 +361,17 @@
 			<script type="text/javascript">
 				
 				function getClickedElement(clickedElement){
-					var elementsId = $(clickedElement).attr('id');
-					console.log(elementsId);
+					var elementId = $(clickedElement).attr('id');
+					$.ajax({
+						type: 'POST',
+						url: './getSearchClick',
+						dataType: 'json',
+						data: {'elementId': elementId},
+						success: function(exerciseRow){
+							console.log(exerciseRow);
+						}
+					});
+					//console.log(elementsId);
 				}
 				
 				function getExercise(){
@@ -381,7 +390,7 @@
 							for (searchResult in resultFromDatabase){
 							 var exerciseId = searchResult;
 							 $('#searchResults').append('<a href="#"><div class="panel-body" id="'+exerciseId+'" onclick="getClickedElement(this);"><h4>'+resultFromDatabase[exerciseId]['exercise_name']+'</h4></div></a>');
-							 console.log(searchResult);
+							 //console.log(searchResult);
 							}
 						}
 						

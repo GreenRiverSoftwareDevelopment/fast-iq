@@ -1,10 +1,11 @@
 <?php
 
-    $f3->route('GET /getSearchClick', function($f3)
+    $f3->route('POST /getSearchClick', function($f3)
     {
-        $exerciseNumber = $_POST['exerciseNumber'];
+        $exerciseNumber = $_POST['elementId'];
         $exerciseResult =  $GLOBALS['exerciseDB']->getExerciseByID($exerciseNumber);
         $exerciseJson = json_encode($exerciseResult);
+        //var_dump($exerciseNumber);
         echo $exerciseJson;
     });
 
