@@ -364,6 +364,7 @@
 							 
 							 summary_select.innerHTML = exerciseSummary;
 							 summary_view.style.display = "block";
+							  $('#collapseOne').collapse('show');
 							//console.log(exerciseSummary);
 							
 								$.ajax({//This call on the success of the summary ajax call is going to get the questions
