@@ -118,7 +118,7 @@
     });
         
         
-    $f3->route('GET /summaryExercise/@id', function($f3, $params)
+    $f3->route('GET|POST /summaryExercise/@id', function($f3, $params)
     {
         $summaryEntries =  $GLOBALS['exerciseDB']->getExerciseByID($params['id']);
         $f3->set('exercise', $summaryEntries);

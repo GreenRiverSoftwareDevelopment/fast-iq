@@ -323,13 +323,13 @@
 				  var question_select = document.getElementById("collapseThree");
 				  var question_id = excercise_select.options[excercise_select.selectedIndex].value;
 				  var url = './questionsExercise/' + question_id;
-				  console.log(question_id);
+				  //console.log(question_id);
 				  var xhr = new XMLHttpRequest();
 				  xhr.open('GET', url, true);
 				  xhr.onreadystatechange = function () {
 					  //cat_select.innerHTML = xhr.responseText;
 					  question_select.innerHTML = xhr.responseText;
-					  console.log(xhr.responseText);
+					  //console.log(xhr.responseText);
 					 //subcat_select.style.display = 'inline';
 				  };
 				  xhr.send();
@@ -340,7 +340,7 @@
 				  var picture_select = document.getElementById("collapseFour");
 				  var picture_id = excercise_select.options[excercise_select.selectedIndex].value;
 				  var url = './pictureExercise/' + picture_id;
-				  console.log(picture_id);
+				  //console.log(picture_id);
 				  var xhr = new XMLHttpRequest();
 				  xhr.open('GET', url, true);
 				  xhr.onreadystatechange = function () {
@@ -363,14 +363,21 @@
 				function getClickedElement(clickedElement){
 					var elementId = $(clickedElement).attr('id');
 					$.ajax({
-						type: 'POST',
-						url: './getSearchClick',
-						dataType: 'json',
+						type: 'GET',
+						url: './summaryExercise/' + elementId,
+						dataType: 'HTML',
 						data: {'elementId': elementId},
-						success: function(exerciseRow){
-							console.log(exerciseRow);
+						success: function(exerciseSummary){
+							 var summary_select = document.getElementById("collapseOne");
+							 var summary_view = document.getElementById("summary-view");
+							 
+							 summary_select.innerHTML = exerciseSummary;
+							 summary_view.style.display = "block";
+							console.log(exerciseSummary);
 						}
 					});
+					
+					//summary-view.display('block');
 					//console.log(elementsId);
 				}
 				

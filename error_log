@@ -3484,3 +3484,6 @@ Stack trace:
 [27-May-2018 22:52:08 America/Chicago] HTTP 405 (POST /getSearchClick)
 [27-May-2018 22:52:08 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:1691] Base->error()
 [27-May-2018 22:52:08 America/Chicago] [fast-iq/index.php:223] Base->run()
+[27-May-2018 23:07:18 America/Chicago] HTTP 405 (POST /questionsExercise/35)
+[27-May-2018 23:07:18 America/Chicago] [fast-iq/vendor/bcosca/fatfree-core/base.php:1691] Base->error()
+[27-May-2018 23:07:18 America/Chicago] [fast-iq/index.php:223] Base->run()
