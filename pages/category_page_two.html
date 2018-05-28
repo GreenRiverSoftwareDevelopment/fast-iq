@@ -98,7 +98,7 @@
 							
 								<div id="searchResults">
 									<repeat group ="{{@$exercises}}" value="{{@exercise}}">
-									<a href="#"><div class="panel-body"><h4> {{@exercise.exercise_name}}</h4></div></a>
+									<a href="#"><div class="panel-body" id="{{@exercise.exercise_id}}" onclick="getClickedElement(this);"><h4> {{@exercise.exercise_name}}</h4></div></a>
 									</repeat>
 								</div>
 							
@@ -360,6 +360,11 @@
 			<!--This script will get the input of the user and querry the results frome the database-->
 			<script type="text/javascript">
 				
+				function getClickedElement(clickedElement){
+					var elementsId = $(clickedElement).attr('id');
+					console.log(elementsId);
+				}
+				
 				function getExercise(){
 					var searchInput = $('#searchBarInput').val();
 		
@@ -375,7 +380,7 @@
 							//console.log(resultFromDatabase);
 							for (searchResult in resultFromDatabase){
 							 var exerciseId = searchResult;
-							 $('#searchResults').append('<a href="#"><div class="panel-body"><h4>'+resultFromDatabase[exerciseId]['exercise_name']+'</h4></div></a>');
+							 $('#searchResults').append('<a href="#"><div class="panel-body" id="'+exerciseId+'" onclick="getClickedElement(this);"><h4>'+resultFromDatabase[exerciseId]['exercise_name']+'</h4></div></a>');
 							 console.log(searchResult);
 							}
 						}
