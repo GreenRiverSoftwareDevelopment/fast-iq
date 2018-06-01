@@ -11,6 +11,7 @@
                 <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
                 <link href="css/categorystyle.css" rel="stylesheet" media="screen">
+				<link href="css/exercise_summary_backend.css" rel="stylesheet" media="screen">
                 <!--[if lt IE 9]>
                 <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
                 <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -22,13 +23,12 @@
                 <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
                     <ul class="nav nav-pills nav-fill">
                         <li class="nav-item">
-                          <a data-toggle="modal" data-target="#signUpModal" class="createAdminLink"><button type="button" class="btn btn-primary btn-lg"><h3 >Create New Admin</h3></button></a>
+                          <a data-toggle="modal" data-target="#signUpModal"><h3>Create New Admin</h3></a>
                         </li>
-						
                     </ul>
-					<a href="./studentInfo"><button id="studentInfo" type="button" class="btn btn-primary btn-lg">
+					<!--<a href="./studentInfo"><button id="studentInfo" type="button" class="btn btn-primary btn-lg">
 						<h3>Student Info</h3>
-					</button></a>
+					</button></a>-->
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
                         <h3>Logout</h3>
                     </button>
@@ -90,21 +90,6 @@
                 </div>
         <!--*********************************** THIS IS THE Sign Up MODAL*************************************-->
             
-            <br>
-            <br>
-            <div class="row">
-				<div class="col-md-3">
-				</div>
-				<div class="col-md-2 text-center">
-				</div>
-				
-
-
-				<div class="col-md-2 text-center">
-				</div>
-				<div class="col-md-3">
-				</div>
-			</div>
             <br>
             <br>
 

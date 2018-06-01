@@ -7,6 +7,19 @@ a
 {
     color: #FFFFFF;
 }
+.remove_field
+{
+    
+}
+.remove_icon
+{
+    color: #E50000;
+    font-size: 30px;
+}
+.video_icon
+{
+    font-size: 30px;
+}
 a:link
 {
     text-decoration: none;

@@ -22,7 +22,7 @@ $(document).ready(function()
                                '<div class="col-sm-1 text-center">'+
                                     '<br>'+
                                     '<a href="#" class="remove_field">'+
-                                        '<span aria-hidden="true"><h1>&times;</h1></span>'+
+                                        '<span class="text-center remove_icon glyphicon glyphicon-remove aria-hidden="true"></span>'+
                                     '</a>'+
                                '</div>'+
                          '</div>');

@@ -65,6 +65,14 @@ a:hover
 	text-decoration: none;
 	color:white;
 }
+
+.panel-primary>.panel-heading {
+				background-image: none;
+				background-color: #4169E1;
+				
+
+}
+
             </style>
             <!-- bootstrap -->
                 <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -153,9 +161,10 @@ a:hover
 
 
 
-	<h1 class="display-3 text-center">
-		<strong><a href="./unitsBackend/<?= ($categoryID) ?>">Category - <?= ($categoryName['category_name']) ?></a></strong> >
-		<strong><a href="./exercisesBackend/<?= ($unitID) ?>"><?= ($unitName['unit_name']) ?></a></strong> >
+	<h1 class="display-2 text-center">
+		<strong><a href="./categoryBackend">Category</a> ></strong>
+		<strong><a href="./unitsBackend/<?= ($categoryID) ?>"><?= ($categoryName['category_name']) ?></a> ></strong>
+		<strong><a href="./exercisesBackend/<?= ($unitID) ?>"><?= ($unitName['unit_name']) ?></a> ></strong>
 		<strong><?= ($exercise['exercise_name']) ?></strong>
 	</h1>
 	<br>
@@ -217,12 +226,14 @@ a:hover
 													<div class="col-sm-1 text-center">
 														<br>
 														<a href="#" class="remove_field">
-															<span aria-hidden="true"><h1>&times;</h1></span>
+															<span class="text-center remove_icon glyphicon glyphicon-remove aria-hidden="true"></span>
 														</a>
 													</div>
 													<div class="col-sm-1 text-center">
 														<br>
-														<span class="glyphicon glyphicon-eye-open view_video <?= ($index['id']) ?>" id="<?= ($index['id']) ?>" aria-hidden="true"></span>
+														<a href="#" data-toggle="tooltip" title="Press me to set this video in the frame above.">
+															<span class="text-center video_icon glyphicon glyphicon-eye-open view_video <?= ($index['id']) ?>" id="<?= ($index['id']) ?>" aria-hidden="true"></span>
+														</a>
 													</div>
 												</div>
 												<br>
@@ -262,7 +273,7 @@ a:hover
 													<div class="col-sm-1 text-center">
 														<br>
 														<a href="#" class="remove_field">
-															<span aria-hidden="true"><h1>&times;</h1></span>
+															<span class="text-center remove_icon glyphicon glyphicon-remove aria-hidden="true"></span>
 														</a>
 													</div>
 												</div>

@@ -11,6 +11,7 @@
                 <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
                 <link href="css/categorystyle.css" rel="stylesheet" media="screen">
+				<link href="css/exercise_summary_backend.css" rel="stylesheet" media="screen">
                 <!--[if lt IE 9]>
                 <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
                 <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -92,7 +93,8 @@
         <!--*********************************** THIS IS THE END OF THE CREATE A NEW ADMIN MODAL*************************************-->
 
             <h1 class="display-2 text-center" id="{{ @unitName.unit_name }}">
-                <strong><a href="./unitsBackend/{{ @categoryID }}">Category - {{ @categoryName.category_name }}</a></strong> >
+                <strong><a href="./categoryBackend">Category</a> ></strong>
+				<strong><a href="./unitsBackend/{{ @categoryID }}">{{ @categoryName.category_name }}</a> ></strong>
                 <strong>{{ @unitName.unit_name }}</strong>
             </h1>
 
