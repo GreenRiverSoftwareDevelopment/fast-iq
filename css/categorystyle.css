@@ -5,3 +5,11 @@
 a , a:active, a:visited{
     color: #007bff;
 }
+
+.panel-primary>.panel-heading {
+background-color: #4169E1;
+}
+
+.btn-primary { 
+background-color: #4169E1;
+}

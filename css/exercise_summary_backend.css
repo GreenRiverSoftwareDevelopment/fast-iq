@@ -18,6 +18,7 @@ li
 .navbar
 {
     box-shadow: 4px 0px 9px grey;
+    background-color: linear-gradient(to bottom, white, #6495ED);
 }
 .dynamic_input
 {
@@ -28,6 +29,10 @@ li
     background: #e3f2fd;
     cursor: pointer;
     text-decoration: none;
+}
+
+.panel-primary>.panel-heading {
+background-color: #4169E1;
 }
 #summary-view
 {

@@ -28,6 +28,11 @@
 button{
     margin-right: 6%; float: right;
 
+  
+}
+
+.btn-primary { 
+background-color: #4169E1;
 }
 
 input{

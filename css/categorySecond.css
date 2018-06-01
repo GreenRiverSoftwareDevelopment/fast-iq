@@ -30,6 +30,12 @@ a:link{
 .navbar{
     box-shadow: 4px 0px 9px grey;
     
+    background-color: linear-gradient(to bottom, white, #6495ED);
+    
+}
+
+.btn-primary { 
+background-color: #4169E1;
 }
 
 #searchPanel{
@@ -44,6 +50,10 @@ a:link{
     background: #e3f2fd;
     cursor: pointer;
     border-radius: 5px;
+}
+
+.panel-primary>.panel-heading {
+background-color: #4169E1;
 }
 
 #searchPanel{

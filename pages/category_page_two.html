@@ -17,7 +17,7 @@
         </head>
         <body>
             <div>
-            <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+            <nav class="navbar navbar-light" style="background-color: #87CEFA">
                 <ul class="nav nav-pills nav-fill">
                     <li class="nav-item">
 						<button id="loginButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
@@ -131,10 +131,16 @@
 										  </select>
 									</div>
 									
+									
+								<img src="logo/fastiqlogo.png" id="logoimage" style="padding-top: 5%; opacity: 0.5; filter: alpha(opacity=50);" class="img-fluid" alt="Responsive image">
+									
+									
 						<!--This is the Main body of the page-->
 					<div class="summary-view col-md-9" id="summary-view">
 						
 						<br>
+						
+							
 						<!-- Collapse for Summary-->
 							<div class="row">
 			
@@ -341,6 +347,7 @@
 					 //subcat_select.style.display = 'inline';
 				  };
 				  xhr.send();
+				  $('#logoimage').hide();
 				}
 				unit_select.addEventListener("change", updateVideo);
 				unit_select.addEventListener("change", updateQuestions);
