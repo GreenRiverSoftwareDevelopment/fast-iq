@@ -15,3 +15,6 @@ Inception Deck
 https://docs.google.com/presentation/d/1RkgnaoxpyDwtRGHKEvTLPOpVuyUxmuPF0-2yXaOfFTw/edit?usp=sharing
 
 # Software Transition Plan
+
+### Videos
+YouTube links could potentially be a issue, the parsing of the YouTube URL is important. If a issue with videos arises check the route that handles the parsing of the videos urls,
