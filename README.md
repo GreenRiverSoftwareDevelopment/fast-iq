@@ -18,6 +18,9 @@ https://docs.google.com/presentation/d/1RkgnaoxpyDwtRGHKEvTLPOpVuyUxmuPF0-2yXaOf
 
 ### Database
 Currently, some entries from the database will be in array format and will be delimited by ",". Also, the delete function will actually delete entries from the database permanently.
+##### Config File
+You will have to create a new config file to work with your web host's database.
 
 ### Videos
-YouTube links could potentially be a issue, the parsing of the YouTube URL is important. If a issue with videos arises check the route that handles the parsing of the videos urls,
+YouTube links could potentially be a issue, the parsing of the YouTube URL is important. If a issue with videos arises check the route that handles the parsing of the videos urls.
+
