@@ -17,7 +17,8 @@ https://docs.google.com/presentation/d/1RkgnaoxpyDwtRGHKEvTLPOpVuyUxmuPF0-2yXaOf
 # Software Transition Plan
 
 ### Database
-Currently, some entries from the database will be in array format and will be delimited by ",". Also, the delete function will actually delete entries from the database permanently. If something is deleted high in the hierarchy (Categories -> Units -> Exercises -> Exercise Summary) for example a Unit is deleted, everything underneath will still stay in the database.
+Currently, some entries from the database will be in array format and will be delimited by ",". Also, the delete function will actually delete entries from the database permanently. 
+- If something is deleted high in the hierarchy (Categories -> Units -> Exercises -> Exercise Summary) for example a Unit is deleted, everything underneath will still stay in the database.
 - You will have to create a new config file to work with your web host's database.
 
 ### Videos
